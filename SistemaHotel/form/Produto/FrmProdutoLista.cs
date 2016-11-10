@@ -25,7 +25,7 @@ namespace SistemaHotel.form.Produto
 
         private void atualizaLista()
         {
-            gridRegistros.DataSource = new BindingSource(new BindingList<model.Produto>(_produtoRepositorio.getProdutos()), null);
+            gridRegistros.DataSource = new BindingSource(new BindingList<model.Produto>(_produtoRepositorio.getProdutos(txtDescricao.Text)), null);
             gridRegistros.Refresh();
         }
 
@@ -124,7 +124,7 @@ namespace SistemaHotel.form.Produto
                 else
                 {
                     var produto = (model.Produto)gridRegistros.CurrentRow.DataBoundItem;
-                    FrmProdutoFormulario formulario = new FrmProdutoFormulario(Operacao.Exclusao, _produtoRepositorio, produto);
+                    FrmProdutoFormulario formulario = new FrmProdutoFormulario(Operacao.Consulta, _produtoRepositorio, produto);
                     formulario.ShowDialog();
                 }
 

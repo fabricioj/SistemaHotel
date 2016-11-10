@@ -36,7 +36,10 @@
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnInserir = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
+            this.txtDescricao = new System.Windows.Forms.TextBox();
+            this.lblDescricao = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridRegistros)).BeginInit();
+            this.pnlFiltros.SuspendLayout();
             this.pnlBotoes.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,6 +55,8 @@
             // pnlFiltros
             // 
             this.pnlFiltros.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlFiltros.Controls.Add(this.txtDescricao);
+            this.pnlFiltros.Controls.Add(this.lblDescricao);
             this.pnlFiltros.Location = new System.Drawing.Point(10, 11);
             this.pnlFiltros.Name = "pnlFiltros";
             this.pnlFiltros.Size = new System.Drawing.Size(448, 57);
@@ -120,6 +125,22 @@
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
+            // txtDescricao
+            // 
+            this.txtDescricao.Location = new System.Drawing.Point(6, 26);
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(389, 20);
+            this.txtDescricao.TabIndex = 3;
+            // 
+            // lblDescricao
+            // 
+            this.lblDescricao.AutoSize = true;
+            this.lblDescricao.Location = new System.Drawing.Point(3, 10);
+            this.lblDescricao.Name = "lblDescricao";
+            this.lblDescricao.Size = new System.Drawing.Size(55, 13);
+            this.lblDescricao.TabIndex = 2;
+            this.lblDescricao.Text = "Descrição";
+            // 
             // FrmProdutoLista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -136,6 +157,8 @@
             this.Text = "Produtos";
             this.Load += new System.EventHandler(this.FrmProdutoLista_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridRegistros)).EndInit();
+            this.pnlFiltros.ResumeLayout(false);
+            this.pnlFiltros.PerformLayout();
             this.pnlBotoes.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -151,5 +174,7 @@
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnInserir;
         private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.TextBox txtDescricao;
+        private System.Windows.Forms.Label lblDescricao;
     }
 }

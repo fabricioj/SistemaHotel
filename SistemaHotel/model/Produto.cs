@@ -17,6 +17,10 @@ namespace SistemaHotel.model
             entrega_mercadorias = new HashSet<Entrega_mercadorias>();
             orcamento_item = new HashSet<Orcamento_item>();
             procedimento_passo_produto = new HashSet<Procedimento_passo_produto>();
+
+            quantidade = 0;
+            editControla_estoque = SimNao.SIM;
+
         }
 
         [DisplayName("ID")]

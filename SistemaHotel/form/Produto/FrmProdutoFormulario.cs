@@ -58,7 +58,13 @@ namespace SistemaHotel.form.Produto
             {
                 txtDescricao.Enabled = false;
                 cbControla_estoque.Enabled = false;
-                
+
+                if (_op == Operacao.Exclusao)
+                    lblExcluir.Visible = true;
+
+                if (_op == Operacao.Consulta)
+                    btnConfirmar.Enabled = false;
+
             }
         }
         private void preencheObjeto()
@@ -83,17 +89,20 @@ namespace SistemaHotel.form.Produto
                 {
                     case Operacao.Insercao:
                         _produtoRepositorio.incluir(ref _produto);
+                        _produtoRepositorio.salvar();
                         _produto = new model.Produto();
                         preencheForm();
                         break;
 
                     case Operacao.Alteracao:
                         _produtoRepositorio.alterar(_produto);
+                        _produtoRepositorio.salvar();
                         Dispose();
                         break;
 
                     case Operacao.Exclusao:
                         _produtoRepositorio.excluir(_produto);
+                        _produtoRepositorio.salvar();
                         Dispose();
                         break;
 
