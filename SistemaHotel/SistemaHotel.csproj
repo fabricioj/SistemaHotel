@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{48E58D06-AAED-4C04-BDA2-B7244F8600C6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SistemaHotel</RootNamespace>
+    <AssemblyName>SistemaHotel</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.Entity.6.9.9\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="dao\FuncionalidadeDao.cs" />
+    <Compile Include="dao\OrcamentoDao.cs" />
+    <Compile Include="dao\Orcamento_itemDao.cs" />
+    <Compile Include="dao\ProdutoDao.cs" />
+    <Compile Include="dao\FornecedorDao.cs" />
+    <Compile Include="dao\PermissaoDao.cs" />
+    <Compile Include="form\Fornecedor\FrmFornecedorProcura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Fornecedor\FrmFornecedorProcura.Designer.cs">
+      <DependentUpon>FrmFornecedorProcura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Funcionalidade\FrmFuncionalidadeFormulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Funcionalidade\FrmFuncionalidadeFormulario.Designer.cs">
+      <DependentUpon>FrmFuncionalidadeFormulario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Funcionalidade\FrmFuncionalidadeLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Funcionalidade\FrmFuncionalidadeLista.Designer.cs">
+      <DependentUpon>FrmFuncionalidadeLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Perfil\FrmPerfilFormulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Perfil\FrmPerfilFormulario.Designer.cs">
+      <DependentUpon>FrmPerfilFormulario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Perfil\FrmPerfilLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Perfil\FrmPerfilLista.Designer.cs">
+      <DependentUpon>FrmPerfilLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Procedimento\FrmProcedimentoFormulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Procedimento\FrmProcedimentoFormulario.Designer.cs">
+      <DependentUpon>FrmProcedimentoFormulario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Produto\FrmProdutoProcura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Produto\FrmProdutoProcura.Designer.cs">
+      <DependentUpon>FrmProdutoProcura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSistemaHotel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSistemaHotel.Designer.cs">
+      <DependentUpon>FrmSistemaHotel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Fornecedor\FrmFornecedorFormulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Fornecedor\FrmFornecedorFormulario.Designer.cs">
+      <DependentUpon>FrmFornecedorFormulario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Fornecedor\FrmFornecedorLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Fornecedor\FrmFornecedorLista.Designer.cs">
+      <DependentUpon>FrmFornecedorLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Orcamento\FrmOrcamentoCorpo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Orcamento\FrmOrcamentoCorpo.Designer.cs">
+      <DependentUpon>FrmOrcamentoCorpo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Orcamento\FrmOrcamentoFormulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Orcamento\FrmOrcamentoFormulario.Designer.cs">
+      <DependentUpon>FrmOrcamentoFormulario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Orcamento\FrmOrcamentoItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Orcamento\FrmOrcamentoItem.Designer.cs">
+      <DependentUpon>FrmOrcamentoItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Orcamento\FrmOrcamentoLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Orcamento\FrmOrcamentoLista.Designer.cs">
+      <DependentUpon>FrmOrcamentoLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Produto\FrmProdutoFormulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Produto\FrmProdutoFormulario.Designer.cs">
+      <DependentUpon>FrmProdutoFormulario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Produto\FrmProdutoLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Produto\FrmProdutoLista.Designer.cs">
+      <DependentUpon>FrmProdutoLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="model\Fornecedor_old.cs" />
+    <Compile Include="model\Orcamento_old.cs" />
+    <Compile Include="model\Orcamento_item_old.cs" />
+    <Compile Include="model\Permissao_old.cs" />
+    <Compile Include="model\Pessoa.cs" />
+    <Compile Include="model\Produto_old.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="model\Apartamento.cs" />
+    <Compile Include="model\Area_comum.cs" />
+    <Compile Include="model\Atividade.cs" />
+    <Compile Include="repositorio\FornecedorRepositorio.cs" />
+    <Compile Include="repositorio\ProdutoRepositorio.cs" />
+    <Compile Include="util\BancoDados.cs" />
+    <Compile Include="model\Dependentes.cs" />
+    <Compile Include="util\Dominio.cs" />
+    <Compile Include="model\Entrega_mecadoria.cs" />
+    <Compile Include="model\Entrega_mercadorias.cs" />
+    <Compile Include="util\EnumHelper.cs" />
+    <Compile Include="model\Fornecedor.cs" />
+    <Compile Include="model\Funcionalidade.cs" />
+    <Compile Include="model\Funcionario.cs" />
+    <Compile Include="model\Moradia.cs" />
+    <Compile Include="model\Morador.cs" />
+    <Compile Include="model\Ocorrencia.cs" />
+    <Compile Include="model\Orcamento.cs" />
+    <Compile Include="model\Orcamento_item.cs" />
+    <Compile Include="model\Perfil.cs" />
+    <Compile Include="model\Permissao.cs" />
+    <Compile Include="model\Prestacao.cs" />
+    <Compile Include="model\Prestador.cs" />
+    <Compile Include="model\Procedimento.cs" />
+    <Compile Include="model\Procedimento_passo.cs" />
+    <Compile Include="model\Procedimento_passo_produto.cs" />
+    <Compile Include="model\Produto.cs" />
+    <Compile Include="model\Reserva_area_comum.cs" />
+    <Compile Include="model\SistemaHotelDb.cs" />
+    <Compile Include="model\Solicitacao.cs" />
+    <Compile Include="util\TabOrderManager.cs" />
+    <Compile Include="model\Usuario.cs" />
+    <Compile Include="util\Util.cs" />
+    <Compile Include="model\Vaga.cs" />
+    <Compile Include="model\Veiculo.cs" />
+    <Compile Include="model\Visitante.cs" />
+    <EmbeddedResource Include="form\Fornecedor\FrmFornecedorProcura.resx">
+      <DependentUpon>FrmFornecedorProcura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Funcionalidade\FrmFuncionalidadeFormulario.resx">
+      <DependentUpon>FrmFuncionalidadeFormulario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Funcionalidade\FrmFuncionalidadeLista.resx">
+      <DependentUpon>FrmFuncionalidadeLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Perfil\FrmPerfilFormulario.resx">
+      <DependentUpon>FrmPerfilFormulario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Perfil\FrmPerfilLista.resx">
+      <DependentUpon>FrmPerfilLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Procedimento\FrmProcedimentoFormulario.resx">
+      <DependentUpon>FrmProcedimentoFormulario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Produto\FrmProdutoProcura.resx">
+      <DependentUpon>FrmProdutoProcura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSistemaHotel.resx">
+      <DependentUpon>FrmSistemaHotel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Fornecedor\FrmFornecedorFormulario.resx">
+      <DependentUpon>FrmFornecedorFormulario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Fornecedor\FrmFornecedorLista.resx">
+      <DependentUpon>FrmFornecedorLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Orcamento\FrmOrcamentoCorpo.resx">
+      <DependentUpon>FrmOrcamentoCorpo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Orcamento\FrmOrcamentoFormulario.resx">
+      <DependentUpon>FrmOrcamentoFormulario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Orcamento\FrmOrcamentoItem.resx">
+      <DependentUpon>FrmOrcamentoItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Orcamento\FrmOrcamentoLista.resx">
+      <DependentUpon>FrmOrcamentoLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Produto\FrmProdutoFormulario.resx">
+      <DependentUpon>FrmProdutoFormulario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Produto\FrmProdutoLista.resx">
+      <DependentUpon>FrmProdutoLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
