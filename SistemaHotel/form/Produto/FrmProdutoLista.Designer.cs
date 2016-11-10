@@ -30,14 +30,15 @@
         {
             this.gridRegistros = new System.Windows.Forms.DataGridView();
             this.pnlFiltros = new System.Windows.Forms.Panel();
+            this.txtDescricao = new System.Windows.Forms.TextBox();
+            this.lblDescricao = new System.Windows.Forms.Label();
             this.pnlBotoes = new System.Windows.Forms.Panel();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnInserir = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
-            this.txtDescricao = new System.Windows.Forms.TextBox();
-            this.lblDescricao = new System.Windows.Forms.Label();
+            this.btnPermissao = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridRegistros)).BeginInit();
             this.pnlFiltros.SuspendLayout();
             this.pnlBotoes.SuspendLayout();
@@ -62,9 +63,26 @@
             this.pnlFiltros.Size = new System.Drawing.Size(448, 57);
             this.pnlFiltros.TabIndex = 8;
             // 
+            // txtDescricao
+            // 
+            this.txtDescricao.Location = new System.Drawing.Point(6, 26);
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(389, 20);
+            this.txtDescricao.TabIndex = 3;
+            // 
+            // lblDescricao
+            // 
+            this.lblDescricao.AutoSize = true;
+            this.lblDescricao.Location = new System.Drawing.Point(3, 10);
+            this.lblDescricao.Name = "lblDescricao";
+            this.lblDescricao.Size = new System.Drawing.Size(55, 13);
+            this.lblDescricao.TabIndex = 2;
+            this.lblDescricao.Text = "Descrição";
+            // 
             // pnlBotoes
             // 
             this.pnlBotoes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlBotoes.Controls.Add(this.btnPermissao);
             this.pnlBotoes.Controls.Add(this.btnConsultar);
             this.pnlBotoes.Controls.Add(this.btnExcluir);
             this.pnlBotoes.Controls.Add(this.btnAlterar);
@@ -125,21 +143,14 @@
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
-            // txtDescricao
+            // btnPermissao
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(6, 26);
-            this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(389, 20);
-            this.txtDescricao.TabIndex = 3;
-            // 
-            // lblDescricao
-            // 
-            this.lblDescricao.AutoSize = true;
-            this.lblDescricao.Location = new System.Drawing.Point(3, 10);
-            this.lblDescricao.Name = "lblDescricao";
-            this.lblDescricao.Size = new System.Drawing.Size(55, 13);
-            this.lblDescricao.TabIndex = 2;
-            this.lblDescricao.Text = "Descrição";
+            this.btnPermissao.Location = new System.Drawing.Point(4, 214);
+            this.btnPermissao.Name = "btnPermissao";
+            this.btnPermissao.Size = new System.Drawing.Size(126, 36);
+            this.btnPermissao.TabIndex = 1;
+            this.btnPermissao.Text = "PERMISSÃO";
+            this.btnPermissao.UseVisualStyleBackColor = true;
             // 
             // FrmProdutoLista
             // 
@@ -176,5 +187,6 @@
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Label lblDescricao;
+        private System.Windows.Forms.Button btnPermissao;
     }
 }

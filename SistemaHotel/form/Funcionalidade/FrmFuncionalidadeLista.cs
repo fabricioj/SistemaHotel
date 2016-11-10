@@ -24,8 +24,8 @@ namespace SistemaHotel.form.Funcionalidade
         }
 
         private void atualiza()
-        { 
-             gridRegistros.DataSource = new  BindingSource(new BindingList<model.Funcionalidade>)(_funcionalidadeRepositorio.getFuncionalidades(txtNome.Txt)),null);
+        {
+            gridRegistros.DataSource = new BindingSource(new BindingList<model.Funcionalidade>(_funcionalidadeRepositorio.getFuncionalidades()), null);
              gridRegistros.Refresh();//
         }
 

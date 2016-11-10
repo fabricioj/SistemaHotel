@@ -110,25 +110,17 @@ namespace SistemaHotel.form.Produto
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            if (_permissoes.excluir == util.SimNao.NAO && _permissoes.supervisor == util.SimNao.NAO)
+            if (gridRegistros.CurrentRow == null)
             {
-                MessageBox.Show("Usuário não tem permissão para excluir registros", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Nenhum registro selecionado", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-
-                if (gridRegistros.CurrentRow == null)
-                {
-                    MessageBox.Show("Nenhum registro selecionado", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    var produto = (model.Produto)gridRegistros.CurrentRow.DataBoundItem;
-                    FrmProdutoFormulario formulario = new FrmProdutoFormulario(Operacao.Consulta, _produtoRepositorio, produto);
-                    formulario.ShowDialog();
-                }
-
+                var produto = (model.Produto)gridRegistros.CurrentRow.DataBoundItem;
+                FrmProdutoFormulario formulario = new FrmProdutoFormulario(Operacao.Consulta, _produtoRepositorio, produto);
+                formulario.ShowDialog();
             }
+            
         }
     }
 }

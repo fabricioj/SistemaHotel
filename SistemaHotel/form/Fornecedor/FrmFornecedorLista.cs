@@ -79,6 +79,7 @@ namespace SistemaHotel.form.Fornecedor
                     var fornecedor = (model.Fornecedor)gridRegistros.CurrentRow.DataBoundItem;
                     FrmFornecedorFormulario formulario = new FrmFornecedorFormulario(Operacao.Alteracao, _fornecedorRepositorio,  fornecedor);
                     formulario.ShowDialog();
+                    atualizaLista();
                 }
 
             }
@@ -102,6 +103,7 @@ namespace SistemaHotel.form.Fornecedor
                     var fornecedor = (model.Fornecedor)gridRegistros.CurrentRow.DataBoundItem;
                     FrmFornecedorFormulario formulario = new FrmFornecedorFormulario(Operacao.Exclusao, _fornecedorRepositorio, fornecedor);
                     formulario.ShowDialog();
+                    atualizaLista();
                 }
 
             }

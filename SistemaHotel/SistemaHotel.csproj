@@ -66,7 +66,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="dao\FuncionalidadeDao.cs" />
     <Compile Include="dao\OrcamentoDao.cs" />
     <Compile Include="dao\Orcamento_itemDao.cs" />
     <Compile Include="dao\ProdutoDao.cs" />

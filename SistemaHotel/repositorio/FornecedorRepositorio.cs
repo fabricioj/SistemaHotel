@@ -18,13 +18,11 @@ namespace SistemaHotel.repositorio
         {
 
             _context.fornecedor.Add(fornecedor);
-            _context.SaveChanges();
 
         }
         public void alterar(Fornecedor fornecedor)
         {
             _context.Entry(fornecedor).State = System.Data.Entity.EntityState.Modified;
-            _context.SaveChanges();
             
         }
         public void excluir(Fornecedor fornecedor)
@@ -32,7 +30,6 @@ namespace SistemaHotel.repositorio
 
             var fornecedorTemp = getFornecedorporID(fornecedor.id);
             _context.fornecedor.Remove(fornecedorTemp);
-            _context.SaveChanges();
 
         }
         public Fornecedor getFornecedorporID(int id)
@@ -58,6 +55,11 @@ namespace SistemaHotel.repositorio
             List<Fornecedor> fornecedores = new List<Fornecedor>();
             fornecedores = _context.fornecedor.Where(f => f.nome.Contains(nome)).ToList();
             return fornecedores;
+        }
+
+        public void salvar()
+        {
+            _context.SaveChanges();
         }
     }
 }

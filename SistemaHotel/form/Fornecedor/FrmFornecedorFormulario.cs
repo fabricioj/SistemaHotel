@@ -105,17 +105,20 @@ namespace SistemaHotel.form.Fornecedor
                 {
                     case Operacao.Insercao:
                         _fornecedorRepositorio.incluir(_fornecedor);
+                        _fornecedorRepositorio.salvar();
                         _fornecedor = new model.Fornecedor();
                         preencheForm();
                         break;
 
                     case Operacao.Alteracao:
                         _fornecedorRepositorio.alterar(_fornecedor);
+                        _fornecedorRepositorio.salvar();
                         Dispose();
                         break;
 
                     case Operacao.Exclusao:
                         _fornecedorRepositorio.excluir(_fornecedor);
+                        _fornecedorRepositorio.salvar();
                         Dispose();
                         break;
 
