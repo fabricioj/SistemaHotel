@@ -28,3 +28,6 @@ C:\Temp\Csharp\SistemaHotel\SistemaHotel\obj\Debug\SistemaHotel.form.Funcionalid
 C:\Temp\Csharp\SistemaHotel\SistemaHotel\obj\Debug\SistemaHotel.form.Perfil.FrmPerfilFormulario.resources
 C:\Temp\Csharp\SistemaHotel\SistemaHotel\obj\Debug\SistemaHotel.form.Perfil.FrmPerfilLista.resources
 C:\Temp\Csharp\SistemaHotel\SistemaHotel\obj\Debug\SistemaHotel.form.Procedimento.FrmProcedimentoFormulario.resources
+C:\Projetos\CSharp\SistemaHotel\SistemaHotel\bin\Debug\SistemaHotel.exe.config
+C:\Projetos\CSharp\SistemaHotel\SistemaHotel\obj\Debug\SistemaHotel.exe
+C:\Projetos\CSharp\SistemaHotel\SistemaHotel\obj\Debug\SistemaHotel.pdb

@@ -124,6 +124,7 @@
             this.Controls.Add(this.pnlBotoes);
             this.Name = "FrmPerfilLista";
             this.Text = "FrmPerfilLista";
+            this.Load += new System.EventHandler(this.FrmPerfilLista_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridRegistros)).EndInit();
             this.pnlBotoes.ResumeLayout(false);
             this.ResumeLayout(false);

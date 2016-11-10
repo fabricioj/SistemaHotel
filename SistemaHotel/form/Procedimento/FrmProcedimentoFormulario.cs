@@ -16,5 +16,20 @@ namespace SistemaHotel.form.Procedimento
         {
             InitializeComponent();
         }
+
+        private void txtID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDescricao_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

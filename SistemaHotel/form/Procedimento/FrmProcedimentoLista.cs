@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SistemaHotel.form.Perfil
+namespace SistemaHotel.form.Procedimento
 {
-    public partial class FrmPerfilLista : Form
+    public partial class FrmProcedimentoLista : Form
     {
-        public FrmPerfilLista()
+        public FrmProcedimentoLista()
         {
             InitializeComponent();
-        }
-
-        private void FrmPerfilLista_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

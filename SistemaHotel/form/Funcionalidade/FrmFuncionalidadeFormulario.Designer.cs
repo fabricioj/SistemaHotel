@@ -131,6 +131,7 @@
             this.btnConfirmar.TabIndex = 0;
             this.btnConfirmar.Text = "CONFIRMAR";
             this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // FrmFuncionalidadeFormulario
             // 

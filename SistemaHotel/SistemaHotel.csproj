@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SistemaHotel</RootNamespace>
     <AssemblyName>SistemaHotel</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -107,11 +108,29 @@
     <Compile Include="form\Procedimento\FrmProcedimentoFormulario.Designer.cs">
       <DependentUpon>FrmProcedimentoFormulario.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\Procedimento\FrmProcedimentoLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Procedimento\FrmProcedimentoLista.Designer.cs">
+      <DependentUpon>FrmProcedimentoLista.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\Produto\FrmProdutoProcura.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="form\Produto\FrmProdutoProcura.Designer.cs">
       <DependentUpon>FrmProdutoProcura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Solicitacao\FrmSolicitacaoFormulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Solicitacao\FrmSolicitacaoFormulario.Designer.cs">
+      <DependentUpon>FrmSolicitacaoFormulario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Solicitacao\FrmSolicitacaoLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Solicitacao\FrmSolicitacaoLista.Designer.cs">
+      <DependentUpon>FrmSolicitacaoLista.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmSistemaHotel.cs">
       <SubType>Form</SubType>
@@ -179,6 +198,7 @@
     <Compile Include="model\Area_comum.cs" />
     <Compile Include="model\Atividade.cs" />
     <Compile Include="repositorio\FornecedorRepositorio.cs" />
+    <Compile Include="repositorio\FuncionalidadeRepositorio.cs" />
     <Compile Include="repositorio\ProdutoRepositorio.cs" />
     <Compile Include="util\BancoDados.cs" />
     <Compile Include="model\Dependentes.cs" />
@@ -229,8 +249,17 @@
     <EmbeddedResource Include="form\Procedimento\FrmProcedimentoFormulario.resx">
       <DependentUpon>FrmProcedimentoFormulario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form\Procedimento\FrmProcedimentoLista.resx">
+      <DependentUpon>FrmProcedimentoLista.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form\Produto\FrmProdutoProcura.resx">
       <DependentUpon>FrmProdutoProcura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Solicitacao\FrmSolicitacaoFormulario.resx">
+      <DependentUpon>FrmSolicitacaoFormulario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Solicitacao\FrmSolicitacaoLista.resx">
+      <DependentUpon>FrmSolicitacaoLista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSistemaHotel.resx">
       <DependentUpon>FrmSistemaHotel.cs</DependentUpon>
@@ -267,6 +296,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

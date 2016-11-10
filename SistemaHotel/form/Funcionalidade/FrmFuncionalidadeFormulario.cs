@@ -16,5 +16,16 @@ namespace SistemaHotel.form.Funcionalidade
         {
             InitializeComponent();
         }
+
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //r
+            }
+            catch (Exception ex) { 
+            
+            }
+        }
     }
 }

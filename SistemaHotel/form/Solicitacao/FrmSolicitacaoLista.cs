@@ -8,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SistemaHotel.form.Perfil
+namespace SistemaHotel.form.Solicitacao
 {
-    public partial class FrmPerfilLista : Form
+    public partial class FrmSolicitacaoLista : Form
     {
-        public FrmPerfilLista()
+        public FrmSolicitacaoLista()
         {
             InitializeComponent();
         }
 
-        private void FrmPerfilLista_Load(object sender, EventArgs e)
+        private void btnPesquisar_Click(object sender, EventArgs e)
         {
 
         }
