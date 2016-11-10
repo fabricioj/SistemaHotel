@@ -66,8 +66,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="dao\OrcamentoDao.cs" />
-    <Compile Include="dao\Orcamento_itemDao.cs" />
     <Compile Include="dao\ProdutoDao.cs" />
     <Compile Include="dao\FornecedorDao.cs" />
     <Compile Include="dao\PermissaoDao.cs" />
@@ -198,6 +196,8 @@
     <Compile Include="model\Atividade.cs" />
     <Compile Include="repositorio\FornecedorRepositorio.cs" />
     <Compile Include="repositorio\FuncionalidadeRepositorio.cs" />
+    <Compile Include="repositorio\OrcamentoRepositorio.cs" />
+    <Compile Include="repositorio\Orcamento_itemRepositorio.cs" />
     <Compile Include="repositorio\ProdutoRepositorio.cs" />
     <Compile Include="util\BancoDados.cs" />
     <Compile Include="model\Dependentes.cs" />

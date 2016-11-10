@@ -14,28 +14,25 @@ namespace SistemaHotel.form.Orcamento
 {
     public partial class FrmOrcamentoFormulario : Form
     {
-        public model.Orcamento_old orcamento;
-        private dao.OrcamentoDao _orcamentoDao;
+        public model.Orcamento orcamento;
+        private repositorio.OrcamentoRepositorio _orcamentoRepositorio;
         private Operacao _op;
-        private model.Fornecedor_old _fornecedor;
 
         public FrmOrcamentoFormulario()
         {
             InitializeComponent();
-            orcamento = new model.Orcamento_old();
-            _orcamentoDao = new dao.OrcamentoDao();
+            orcamento = new model.Orcamento();
+            _orcamentoRepositorio = new repositorio.OrcamentoRepositorio();
             _op = Operacao.Insercao;
-            _fornecedor = new model.Fornecedor_old();
             Util.acertaTabOrder(this);
         }
 
-        public FrmOrcamentoFormulario(Operacao op, model.Orcamento_old orcamento)
+        public FrmOrcamentoFormulario(Operacao op, repositorio.OrcamentoRepositorio orcamentoRepositorio, model.Orcamento orcamento)
         {
             InitializeComponent();
             this.orcamento = orcamento;
             _op = op;
-            _orcamentoDao = new dao.OrcamentoDao();
-            _fornecedor = new model.Fornecedor_old();
+            _orcamentoRepositorio = orcamentoRepositorio;
             Util.acertaTabOrder(this);
         }
 
@@ -47,17 +44,20 @@ namespace SistemaHotel.form.Orcamento
                 switch (_op)
                 {
                     case Operacao.Insercao:
-                        _orcamentoDao.incluir(ref orcamento);
+                        _orcamentoRepositorio.incluir(ref orcamento);
+                        _orcamentoRepositorio.salvar();
                         Close();
                         break;
 
                     case Operacao.Alteracao:
-                        _orcamentoDao.alterar(orcamento);
+                        _orcamentoRepositorio.alterar(orcamento);
+                        _orcamentoRepositorio.salvar();
                         Dispose();
                         break;
 
                     case Operacao.Exclusao:
-                        _orcamentoDao.excluir(orcamento);
+                        _orcamentoRepositorio.excluir(orcamento);
+                        _orcamentoRepositorio.salvar();
                         Dispose();
                         break;
 
@@ -71,10 +71,18 @@ namespace SistemaHotel.form.Orcamento
         private void preencheObjeto()
         {
             orcamento.id = int.Parse(txtID.Text);
-            orcamento.data_emissao = DateTime.Parse(txtData_emissao.Text);
-            orcamento.data_confirmacao = DateTime.Parse(txtData_confirmacao.Text);
+            orcamento.data_emissao = txtData_emissao.Value;
+            orcamento.data_confirmacao = txtData_confirmacao.Value;
+
             orcamento.fornecedor_id = int.Parse(txtFornecedor_id.Text);
-            //orcamento.atividade_id = int.parse(txtAtividade_id.text);
+            if (orcamento.fornecedor_id == 0)
+                orcamento.fornecedor_id = null;
+            else
+                valdaFornecedor();
+
+            orcamento.atividade_id = int.Parse(txtAtividade_id.Text);
+            if (orcamento.atividade_id == 0)
+                orcamento.atividade_id = null;
         }
 
         private void preencheForm()
@@ -83,21 +91,21 @@ namespace SistemaHotel.form.Orcamento
             txtID.Enabled = true;
             txtData_emissao.Enabled = true;
             txtData_confirmacao.Enabled = true;
-            txtData_confirmacao.Enabled = true;
             txtFornecedor_id.Enabled = true;
             txtFornecedor_nome.Enabled = true;
 
-            //txtAtividade_id.Enabled = true;
-            //txtAtividade_nome.Enabled = true;
+            txtAtividade_id.Enabled = true;
+            txtAtividade_nome.Enabled = true;
 
             txtID.Text = orcamento.id.ToString().Trim();
-            txtData_emissao.Text = orcamento.data_emissao.ToString();
-            txtData_confirmacao.Text = orcamento.data_confirmacao.ToString();
+            //txtData_emissao.Value = orcamento.data_emissao != null?(DateTime)orcamento.data_emissao: DateTime.MinValue;
+            //txtData_confirmacao.Value = orcamento.data_confirmacao != null ? (DateTime)orcamento.data_confirmacao : DateTime.MinValue;
             txtFornecedor_id.Text = orcamento.fornecedor_id.ToString().Trim();
             if (orcamento.fornecedor != null)
                 txtFornecedor_nome.Text = orcamento.fornecedor.nome;
-            //txtAtividade_id.Text   = orcamento.atividade.id.ToString();
-            //txtAtividade_nome.Text = orcamento.atividade.nome;
+            txtAtividade_id.Text   = orcamento.atividade_id.ToString().Trim();
+            if (orcamento.atividade != null)
+                txtAtividade_nome.Text = orcamento.atividade.nome;
 
 
             txtID.Enabled = false;
@@ -109,7 +117,7 @@ namespace SistemaHotel.form.Orcamento
             {
                 txtData_emissao.Enabled = false;
                 txtFornecedor_id.Enabled = false;
-                //txtAtividade_id.Enabled = false;
+                txtAtividade_id.Enabled = false;
 
             }
         }
@@ -129,7 +137,9 @@ namespace SistemaHotel.form.Orcamento
             try
             {
                 orcamento.fornecedor_id = int.Parse(txtFornecedor_id.Text);
-                atualizaFornecedor();
+                valdaFornecedor();
+                if (orcamento.fornecedor != null)
+                    txtFornecedor_nome.Text = orcamento.fornecedor.nome;
             }
             catch (Exception ex)
             {
@@ -138,19 +148,15 @@ namespace SistemaHotel.form.Orcamento
             }
         }
 
-        private void atualizaFornecedor()
+        private void valdaFornecedor()
         {
             txtFornecedor_nome.Text = string.Empty;
             if (orcamento.fornecedor_id != 0)
             {
-                orcamento.fornecedor = (new dao.FornecedorDao()).getFornecedorporID(orcamento.fornecedor_id);
+                orcamento.fornecedor = (new repositorio.FornecedorRepositorio()).getFornecedorporID((int)orcamento.fornecedor_id);
                 if (orcamento.fornecedor == null)
                 {
                     throw new Exception("Fornecedor não existe");
-                }
-                else
-                {
-                    txtFornecedor_nome.Text = orcamento.fornecedor.nome;
                 }
 
             }
@@ -163,14 +169,9 @@ namespace SistemaHotel.form.Orcamento
             procuraFornecedor.ShowDialog();
             if (procuraFornecedor.fornecedor != null)
             {
-                orcamento.fornecedor_id = procuraFornecedor.fornecedor.id;
+                txtFornecedor_id.Text = procuraFornecedor.fornecedor.id.ToString().Trim();
             }
             txtFornecedor_id.Focus();
-        }
-
-        private void txtID_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

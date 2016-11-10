@@ -15,27 +15,27 @@ namespace SistemaHotel.form.Orcamento
     public partial class FrmOrcamentoItem : Form
     {
         private Operacao _op;
-        private model.Orcamento_old _orcamento;
-        private model.Orcamento_item_old _orcamento_item;
-        private dao.Orcamento_itemDao _orcamento_itemDao;
+        private model.Orcamento _orcamento;
+        private model.Orcamento_item _orcamento_item;
+        private repositorio.Orcamento_itemRepositorio _orcamento_itemRepositorio;
 
-        public FrmOrcamentoItem(model.Orcamento_old orcamento)
+        public FrmOrcamentoItem(model.Orcamento orcamento)
         {
             InitializeComponent();
             this._op = Operacao.Insercao;
             this._orcamento = orcamento;
-            this._orcamento_item = new model.Orcamento_item_old();
-            this._orcamento_itemDao = new dao.Orcamento_itemDao();
+            this._orcamento_item = new model.Orcamento_item();
+            this._orcamento_itemRepositorio = new repositorio.Orcamento_itemRepositorio();
             Util.acertaTabOrder(this);
         }
 
-        public FrmOrcamentoItem(Operacao op, model.Orcamento_old orcamento, model.Orcamento_item_old orcamento_item)
+        public FrmOrcamentoItem(Operacao op, model.Orcamento orcamento, repositorio.Orcamento_itemRepositorio orcamento_itemRepositorio, model.Orcamento_item orcamento_item)
         {
             InitializeComponent();
             this._op = op;
             this._orcamento = orcamento;
             this._orcamento_item = orcamento_item;
-            this._orcamento_itemDao = new dao.Orcamento_itemDao();
+            this._orcamento_itemRepositorio = orcamento_itemRepositorio;
             Util.acertaTabOrder(this);
         }
 
@@ -81,12 +81,17 @@ namespace SistemaHotel.form.Orcamento
             _orcamento_item.observacao = txtObservacao.Text;
             _orcamento_item.orcamento_id = _orcamento.id;
             _orcamento_item.orcamento = _orcamento;
-            _orcamento_item.produto_id = int.Parse(txtProduto_id.Text);
-            if (_orcamento_item.produto_id != 0 && _orcamento_item.produto == null)
-                _orcamento_item.produto = new dao.ProdutoDao().getProdutoporID(_orcamento_item.produto_id);
+            
             _orcamento_item.quantidade = double.Parse(txtQuantidade.Text);
             _orcamento_item.quantidade_comprada = double.Parse(txtQuantidade_comprada.Text);
             _orcamento_item.valor = double.Parse(txtValor.Text);
+
+            
+            _orcamento_item.produto_id = int.Parse(txtProduto_id.Text);
+            if (_orcamento_item.produto_id == 0)
+                _orcamento_item.produto_id = null;
+            else
+                validaProduto();
 
         }
 
@@ -94,23 +99,22 @@ namespace SistemaHotel.form.Orcamento
         {
             try
             {
-                validaProduto();
                 preencheObjeto();
                 switch (_op)
                 {
                     case Operacao.Insercao:
-                        _orcamento_itemDao.incluir(ref _orcamento_item);
-                        _orcamento_item = new model.Orcamento_item_old();
+                        _orcamento_itemRepositorio.incluir(ref _orcamento_item);
+                        _orcamento_item = new model.Orcamento_item();
                         preencheForm();
                         break;
 
                     case Operacao.Alteracao:
-                        _orcamento_itemDao.alterar(_orcamento_item);
+                        _orcamento_itemRepositorio.alterar(_orcamento_item);
                         Dispose();
                         break;
 
                     case Operacao.Exclusao:
-                        _orcamento_itemDao.excluir(_orcamento_item);
+                        _orcamento_itemRepositorio.excluir(_orcamento_item);
                         Dispose();
                         break;
 
@@ -166,12 +170,15 @@ namespace SistemaHotel.form.Orcamento
             _orcamento_item.produto_id = int.Parse(txtProduto_id.Text);
             if (_orcamento_item.produto_id != 0)
             {
-                _orcamento_item.produto = (new dao.ProdutoDao()).getProdutoporID(_orcamento_item.produto_id);
+                _orcamento_item.produto = (new repositorio.ProdutoRepositorio()).getProdutoporID((int)_orcamento_item.produto_id);
 
                 if (_orcamento_item.produto == null)
                 {
                     throw new Exception("Produto não existe");
                 }
+            }else
+            {
+                throw new Exception("Produto é obrigatório");
             }
         }
     }

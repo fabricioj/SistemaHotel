@@ -14,16 +14,18 @@ namespace SistemaHotel.form.Orcamento
     public partial class FrmOrcamentoCorpo : Form
     {
         private Operacao _op;
-        private model.Orcamento_old _orcamento;
-        private dao.Orcamento_itemDao _orcamento_itemDao;
+        private repositorio.OrcamentoRepositorio _orcamentoRepositorio;
+        private model.Orcamento _orcamento;
+        private repositorio.Orcamento_itemRepositorio _orcamento_itemRepositorio;
 
-        public FrmOrcamentoCorpo(Operacao op, model.Orcamento_old orcamento)
+        public FrmOrcamentoCorpo(Operacao op, repositorio.OrcamentoRepositorio orcamentoRepositorio, model.Orcamento orcamento)
         {
             InitializeComponent();
             Util.acertaTabOrder(this);
             this._op = op;
             this._orcamento = orcamento;
-            this._orcamento_itemDao = new dao.Orcamento_itemDao();
+            this._orcamentoRepositorio = orcamentoRepositorio;
+            this._orcamento_itemRepositorio = new repositorio.Orcamento_itemRepositorio();
         }
 
         private void preencheForm()
@@ -60,7 +62,7 @@ namespace SistemaHotel.form.Orcamento
             //txtAtividade_nome.Enabled = false;
 
             //Aba Itens
-            gridItens.DataSource = new BindingSource(new BindingList<model.Orcamento_item_old>(_orcamento_itemDao.getOrcamento_itens(_orcamento.id)), null);
+            gridItens.DataSource = new BindingSource(new BindingList<model.Orcamento_item>(_orcamento_itemRepositorio.getOrcamento_itens(_orcamento.id)), null);
             gridItens.Refresh();
 
             btnConfirmar.Enabled = true;
@@ -96,7 +98,7 @@ namespace SistemaHotel.form.Orcamento
         {
             if (tabAbas.SelectedIndex == 1) //Itens
             {
-                FrmOrcamentoItem item = new FrmOrcamentoItem(_orcamento);
+                FrmOrcamentoItem item = new FrmOrcamentoItem(Operacao.Insercao, _orcamento, _orcamento_itemRepositorio, new model.Orcamento_item());
                 item.ShowDialog();
             }
             preencheForm();
@@ -107,7 +109,7 @@ namespace SistemaHotel.form.Orcamento
         {
             if (tabAbas.SelectedIndex == 0) //Principal
             {
-                FrmOrcamentoFormulario formulario = new FrmOrcamentoFormulario(Operacao.Alteracao, _orcamento);
+                FrmOrcamentoFormulario formulario = new FrmOrcamentoFormulario(Operacao.Alteracao, _orcamentoRepositorio, _orcamento);
                 formulario.ShowDialog();
                 formulario.Dispose();
 
@@ -118,8 +120,8 @@ namespace SistemaHotel.form.Orcamento
                 }
                 else
                 {
-                    var orcamento_item = (model.Orcamento_item_old)gridItens.CurrentRow.DataBoundItem;
-                    FrmOrcamentoItem item = new FrmOrcamentoItem(Operacao.Alteracao, _orcamento, orcamento_item);
+                    var orcamento_item = (model.Orcamento_item)gridItens.CurrentRow.DataBoundItem;
+                    FrmOrcamentoItem item = new FrmOrcamentoItem(Operacao.Alteracao, _orcamento, _orcamento_itemRepositorio, orcamento_item);
                     item.ShowDialog();
                 }
             }
@@ -136,8 +138,8 @@ namespace SistemaHotel.form.Orcamento
                 }
                 else
                 {
-                    var orcamento_item = (model.Orcamento_item_old)gridItens.CurrentRow.DataBoundItem;
-                    FrmOrcamentoItem item = new FrmOrcamentoItem(Operacao.Exclusao, _orcamento, orcamento_item);
+                    var orcamento_item = (model.Orcamento_item)gridItens.CurrentRow.DataBoundItem;
+                    FrmOrcamentoItem item = new FrmOrcamentoItem(Operacao.Exclusao, _orcamento, _orcamento_itemRepositorio, orcamento_item);
                     item.ShowDialog();
                 }
             }
@@ -148,7 +150,7 @@ namespace SistemaHotel.form.Orcamento
         {
             if (tabAbas.SelectedIndex == 0) //Principal
             {
-                FrmOrcamentoFormulario formulario = new FrmOrcamentoFormulario(Operacao.Consulta, _orcamento);
+                FrmOrcamentoFormulario formulario = new FrmOrcamentoFormulario(Operacao.Consulta, _orcamentoRepositorio, _orcamento);
                 formulario.ShowDialog();
                 formulario.Dispose();
             }
@@ -160,8 +162,8 @@ namespace SistemaHotel.form.Orcamento
                 }
                 else
                 {
-                    var orcamento_item = (model.Orcamento_item_old)gridItens.CurrentRow.DataBoundItem;
-                    FrmOrcamentoItem item = new FrmOrcamentoItem(Operacao.Consulta, _orcamento, orcamento_item);
+                    var orcamento_item = (model.Orcamento_item)gridItens.CurrentRow.DataBoundItem;
+                    FrmOrcamentoItem item = new FrmOrcamentoItem(Operacao.Consulta, _orcamento, _orcamento_itemRepositorio, orcamento_item);
                     item.ShowDialog();
                 }
             }

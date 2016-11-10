@@ -39,15 +39,15 @@
             this.lblFornecedor_id = new System.Windows.Forms.Label();
             this.txtAtividade_id = new System.Windows.Forms.TextBox();
             this.lblAtidade_id = new System.Windows.Forms.Label();
-            this.txtData_confirmacao = new System.Windows.Forms.TextBox();
             this.lblData_confirmacao = new System.Windows.Forms.Label();
-            this.txtData_emissao = new System.Windows.Forms.TextBox();
             this.lblData_emissao = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.lblId = new System.Windows.Forms.Label();
             this.pnlBotoes = new System.Windows.Forms.Panel();
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
+            this.txtData_confirmacao = new System.Windows.Forms.DateTimePicker();
+            this.txtData_emissao = new System.Windows.Forms.DateTimePicker();
             this.pnlInformacoes.SuspendLayout();
             this.pnlBotoes.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +55,8 @@
             // pnlInformacoes
             // 
             this.pnlInformacoes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlInformacoes.Controls.Add(this.txtData_emissao);
+            this.pnlInformacoes.Controls.Add(this.txtData_confirmacao);
             this.pnlInformacoes.Controls.Add(this.btnPesquisaFornecedor);
             this.pnlInformacoes.Controls.Add(this.btnPesquisaAtividade);
             this.pnlInformacoes.Controls.Add(this.txtFornecedor_nome);
@@ -65,9 +67,7 @@
             this.pnlInformacoes.Controls.Add(this.lblFornecedor_id);
             this.pnlInformacoes.Controls.Add(this.txtAtividade_id);
             this.pnlInformacoes.Controls.Add(this.lblAtidade_id);
-            this.pnlInformacoes.Controls.Add(this.txtData_confirmacao);
             this.pnlInformacoes.Controls.Add(this.lblData_confirmacao);
-            this.pnlInformacoes.Controls.Add(this.txtData_emissao);
             this.pnlInformacoes.Controls.Add(this.lblData_emissao);
             this.pnlInformacoes.Controls.Add(this.txtID);
             this.pnlInformacoes.Controls.Add(this.lblId);
@@ -160,28 +160,14 @@
             this.lblAtidade_id.TabIndex = 5;
             this.lblAtidade_id.Text = "Atividade";
             // 
-            // txtData_confirmacao
-            // 
-            this.txtData_confirmacao.Location = new System.Drawing.Point(191, 23);
-            this.txtData_confirmacao.Name = "txtData_confirmacao";
-            this.txtData_confirmacao.Size = new System.Drawing.Size(76, 20);
-            this.txtData_confirmacao.TabIndex = 19;
-            // 
             // lblData_confirmacao
             // 
             this.lblData_confirmacao.AutoSize = true;
-            this.lblData_confirmacao.Location = new System.Drawing.Point(188, 6);
+            this.lblData_confirmacao.Location = new System.Drawing.Point(205, 6);
             this.lblData_confirmacao.Name = "lblData_confirmacao";
             this.lblData_confirmacao.Size = new System.Drawing.Size(79, 13);
             this.lblData_confirmacao.TabIndex = 4;
             this.lblData_confirmacao.Text = "Dt confirmação";
-            // 
-            // txtData_emissao
-            // 
-            this.txtData_emissao.Location = new System.Drawing.Point(107, 23);
-            this.txtData_emissao.Name = "txtData_emissao";
-            this.txtData_emissao.Size = new System.Drawing.Size(60, 20);
-            this.txtData_emissao.TabIndex = 19;
             // 
             // lblData_emissao
             // 
@@ -198,7 +184,6 @@
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(60, 20);
             this.txtID.TabIndex = 19;
-            this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
             // 
             // lblId
             // 
@@ -239,6 +224,22 @@
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
+            // txtData_confirmacao
+            // 
+            this.txtData_confirmacao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtData_confirmacao.Location = new System.Drawing.Point(208, 23);
+            this.txtData_confirmacao.Name = "txtData_confirmacao";
+            this.txtData_confirmacao.Size = new System.Drawing.Size(82, 20);
+            this.txtData_confirmacao.TabIndex = 27;
+            // 
+            // txtData_emissao
+            // 
+            this.txtData_emissao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtData_emissao.Location = new System.Drawing.Point(107, 23);
+            this.txtData_emissao.Name = "txtData_emissao";
+            this.txtData_emissao.Size = new System.Drawing.Size(82, 20);
+            this.txtData_emissao.TabIndex = 27;
+            // 
             // FrmOrcamentoFormulario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -270,9 +271,7 @@
         private System.Windows.Forms.Panel pnlBotoes;
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Button btnConfirmar;
-        private System.Windows.Forms.TextBox txtData_confirmacao;
         private System.Windows.Forms.Label lblData_confirmacao;
-        private System.Windows.Forms.TextBox txtData_emissao;
         private System.Windows.Forms.Label lblData_emissao;
         private System.Windows.Forms.Button btnPesquisaAtividade;
         private System.Windows.Forms.TextBox txtAtividade_nome;
@@ -282,5 +281,7 @@
         private System.Windows.Forms.Label lblFornecedor_nome;
         private System.Windows.Forms.TextBox txtFornecedor_id;
         private System.Windows.Forms.Label lblFornecedor_id;
+        private System.Windows.Forms.DateTimePicker txtData_emissao;
+        private System.Windows.Forms.DateTimePicker txtData_confirmacao;
     }
 }
