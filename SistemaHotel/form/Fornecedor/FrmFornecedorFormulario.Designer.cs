@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlInformacoes = new System.Windows.Forms.Panel();
+            this.lblExcluir = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.txtBairro = new System.Windows.Forms.TextBox();
@@ -54,7 +55,6 @@
             this.pnlBotoes = new System.Windows.Forms.Panel();
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
-            this.lblExcluir = new System.Windows.Forms.Label();
             this.pnlInformacoes.SuspendLayout();
             this.pnlBotoes.SuspendLayout();
             this.SuspendLayout();
@@ -89,6 +89,18 @@
             this.pnlInformacoes.Name = "pnlInformacoes";
             this.pnlInformacoes.Size = new System.Drawing.Size(397, 367);
             this.pnlInformacoes.TabIndex = 4;
+            // 
+            // lblExcluir
+            // 
+            this.lblExcluir.AutoSize = true;
+            this.lblExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExcluir.ForeColor = System.Drawing.Color.Red;
+            this.lblExcluir.Location = new System.Drawing.Point(10, 4);
+            this.lblExcluir.Name = "lblExcluir";
+            this.lblExcluir.Size = new System.Drawing.Size(210, 17);
+            this.lblExcluir.TabIndex = 26;
+            this.lblExcluir.Text = "Confirma a deleção do registro?";
+            this.lblExcluir.Visible = false;
             // 
             // txtNome
             // 
@@ -295,18 +307,6 @@
             this.btnConfirmar.Text = "CONFIRMAR";
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
-            // 
-            // lblExcluir
-            // 
-            this.lblExcluir.AutoSize = true;
-            this.lblExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExcluir.ForeColor = System.Drawing.Color.Red;
-            this.lblExcluir.Location = new System.Drawing.Point(10, 4);
-            this.lblExcluir.Name = "lblExcluir";
-            this.lblExcluir.Size = new System.Drawing.Size(210, 17);
-            this.lblExcluir.TabIndex = 26;
-            this.lblExcluir.Text = "Confirma a deleção do registro?";
-            this.lblExcluir.Visible = false;
             // 
             // FrmFornecedorFormulario
             // 

@@ -10,9 +10,9 @@ namespace SistemaHotel.repositorio
     public class FornecedorRepositorio
     {
         private SistemaHotelContext _context;
-        public FornecedorRepositorio()
+        public FornecedorRepositorio(SistemaHotelContext context)
         {
-            _context = new SistemaHotelContext();
+            _context = context;
         }
         public void incluir(Fornecedor fornecedor)
         {

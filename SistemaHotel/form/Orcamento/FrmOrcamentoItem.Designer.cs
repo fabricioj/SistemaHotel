@@ -49,6 +49,7 @@
             this.pnlBotoes = new System.Windows.Forms.Panel();
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
+            this.lblExcluir = new System.Windows.Forms.Label();
             this.pnlInformacoes.SuspendLayout();
             this.pnlBotoes.SuspendLayout();
             this.SuspendLayout();
@@ -56,6 +57,7 @@
             // pnlInformacoes
             // 
             this.pnlInformacoes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlInformacoes.Controls.Add(this.lblExcluir);
             this.pnlInformacoes.Controls.Add(this.txtProduto_id);
             this.pnlInformacoes.Controls.Add(this.btnPesquisaProduto);
             this.pnlInformacoes.Controls.Add(this.txtObservacao);
@@ -75,12 +77,12 @@
             this.pnlInformacoes.Controls.Add(this.lblId);
             this.pnlInformacoes.Location = new System.Drawing.Point(12, 12);
             this.pnlInformacoes.Name = "pnlInformacoes";
-            this.pnlInformacoes.Size = new System.Drawing.Size(383, 292);
+            this.pnlInformacoes.Size = new System.Drawing.Size(383, 325);
             this.pnlInformacoes.TabIndex = 8;
             // 
             // txtProduto_id
             // 
-            this.txtProduto_id.Location = new System.Drawing.Point(9, 71);
+            this.txtProduto_id.Location = new System.Drawing.Point(11, 92);
             this.txtProduto_id.Mask = "00000";
             this.txtProduto_id.Name = "txtProduto_id";
             this.txtProduto_id.Size = new System.Drawing.Size(65, 20);
@@ -89,7 +91,7 @@
             // 
             // btnPesquisaProduto
             // 
-            this.btnPesquisaProduto.Location = new System.Drawing.Point(78, 71);
+            this.btnPesquisaProduto.Location = new System.Drawing.Point(80, 92);
             this.btnPesquisaProduto.Name = "btnPesquisaProduto";
             this.btnPesquisaProduto.Size = new System.Drawing.Size(20, 20);
             this.btnPesquisaProduto.TabIndex = 26;
@@ -99,7 +101,7 @@
             // 
             // txtObservacao
             // 
-            this.txtObservacao.Location = new System.Drawing.Point(9, 239);
+            this.txtObservacao.Location = new System.Drawing.Point(11, 260);
             this.txtObservacao.Multiline = true;
             this.txtObservacao.Name = "txtObservacao";
             this.txtObservacao.Size = new System.Drawing.Size(357, 46);
@@ -108,7 +110,7 @@
             // lblObservacao
             // 
             this.lblObservacao.AutoSize = true;
-            this.lblObservacao.Location = new System.Drawing.Point(6, 222);
+            this.lblObservacao.Location = new System.Drawing.Point(8, 243);
             this.lblObservacao.Name = "lblObservacao";
             this.lblObservacao.Size = new System.Drawing.Size(65, 13);
             this.lblObservacao.TabIndex = 5;
@@ -116,7 +118,7 @@
             // 
             // txtProduto_descricao
             // 
-            this.txtProduto_descricao.Location = new System.Drawing.Point(107, 71);
+            this.txtProduto_descricao.Location = new System.Drawing.Point(109, 92);
             this.txtProduto_descricao.Name = "txtProduto_descricao";
             this.txtProduto_descricao.Size = new System.Drawing.Size(259, 20);
             this.txtProduto_descricao.TabIndex = 25;
@@ -124,7 +126,7 @@
             // lblProduto_descricao
             // 
             this.lblProduto_descricao.AutoSize = true;
-            this.lblProduto_descricao.Location = new System.Drawing.Point(104, 54);
+            this.lblProduto_descricao.Location = new System.Drawing.Point(106, 75);
             this.lblProduto_descricao.Name = "lblProduto_descricao";
             this.lblProduto_descricao.Size = new System.Drawing.Size(55, 13);
             this.lblProduto_descricao.TabIndex = 5;
@@ -133,7 +135,7 @@
             // lblProduto_id
             // 
             this.lblProduto_id.AutoSize = true;
-            this.lblProduto_id.Location = new System.Drawing.Point(6, 54);
+            this.lblProduto_id.Location = new System.Drawing.Point(8, 75);
             this.lblProduto_id.Name = "lblProduto_id";
             this.lblProduto_id.Size = new System.Drawing.Size(44, 13);
             this.lblProduto_id.TabIndex = 5;
@@ -141,7 +143,7 @@
             // 
             // txtTotal
             // 
-            this.txtTotal.Location = new System.Drawing.Point(290, 134);
+            this.txtTotal.Location = new System.Drawing.Point(292, 155);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(76, 20);
             this.txtTotal.TabIndex = 19;
@@ -149,7 +151,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(287, 117);
+            this.lblTotal.Location = new System.Drawing.Point(289, 138);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(31, 13);
             this.lblTotal.TabIndex = 4;
@@ -157,15 +159,16 @@
             // 
             // txtValor
             // 
-            this.txtValor.Location = new System.Drawing.Point(107, 134);
+            this.txtValor.Location = new System.Drawing.Point(109, 155);
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(76, 20);
             this.txtValor.TabIndex = 19;
+            this.txtValor.Validated += new System.EventHandler(this.txtValor_Validated);
             // 
             // lblValor
             // 
             this.lblValor.AutoSize = true;
-            this.lblValor.Location = new System.Drawing.Point(104, 117);
+            this.lblValor.Location = new System.Drawing.Point(106, 138);
             this.lblValor.Name = "lblValor";
             this.lblValor.Size = new System.Drawing.Size(31, 13);
             this.lblValor.TabIndex = 4;
@@ -173,7 +176,7 @@
             // 
             // txtQuantidade_comprada
             // 
-            this.txtQuantidade_comprada.Location = new System.Drawing.Point(290, 192);
+            this.txtQuantidade_comprada.Location = new System.Drawing.Point(292, 213);
             this.txtQuantidade_comprada.Name = "txtQuantidade_comprada";
             this.txtQuantidade_comprada.Size = new System.Drawing.Size(76, 20);
             this.txtQuantidade_comprada.TabIndex = 19;
@@ -181,7 +184,7 @@
             // lblQuantidade_comprada
             // 
             this.lblQuantidade_comprada.AutoSize = true;
-            this.lblQuantidade_comprada.Location = new System.Drawing.Point(287, 175);
+            this.lblQuantidade_comprada.Location = new System.Drawing.Point(289, 196);
             this.lblQuantidade_comprada.Name = "lblQuantidade_comprada";
             this.lblQuantidade_comprada.Size = new System.Drawing.Size(74, 13);
             this.lblQuantidade_comprada.TabIndex = 4;
@@ -189,15 +192,16 @@
             // 
             // txtQuantidade
             // 
-            this.txtQuantidade.Location = new System.Drawing.Point(9, 134);
+            this.txtQuantidade.Location = new System.Drawing.Point(11, 155);
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(60, 20);
             this.txtQuantidade.TabIndex = 19;
+            this.txtQuantidade.Validated += new System.EventHandler(this.txtQuantidade_Validated);
             // 
             // lblQuantidade
             // 
             this.lblQuantidade.AutoSize = true;
-            this.lblQuantidade.Location = new System.Drawing.Point(6, 117);
+            this.lblQuantidade.Location = new System.Drawing.Point(8, 138);
             this.lblQuantidade.Name = "lblQuantidade";
             this.lblQuantidade.Size = new System.Drawing.Size(62, 13);
             this.lblQuantidade.TabIndex = 4;
@@ -205,7 +209,7 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(9, 23);
+            this.txtID.Location = new System.Drawing.Point(11, 44);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(60, 20);
             this.txtID.TabIndex = 19;
@@ -213,7 +217,7 @@
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(6, 6);
+            this.lblId.Location = new System.Drawing.Point(8, 27);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(18, 13);
             this.lblId.TabIndex = 4;
@@ -226,7 +230,7 @@
             this.pnlBotoes.Controls.Add(this.btnConfirmar);
             this.pnlBotoes.Location = new System.Drawing.Point(401, 12);
             this.pnlBotoes.Name = "pnlBotoes";
-            this.pnlBotoes.Size = new System.Drawing.Size(137, 292);
+            this.pnlBotoes.Size = new System.Drawing.Size(137, 325);
             this.pnlBotoes.TabIndex = 7;
             // 
             // btnFechar
@@ -249,11 +253,23 @@
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
+            // lblExcluir
+            // 
+            this.lblExcluir.AutoSize = true;
+            this.lblExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExcluir.ForeColor = System.Drawing.Color.Red;
+            this.lblExcluir.Location = new System.Drawing.Point(8, 4);
+            this.lblExcluir.Name = "lblExcluir";
+            this.lblExcluir.Size = new System.Drawing.Size(210, 17);
+            this.lblExcluir.TabIndex = 28;
+            this.lblExcluir.Text = "Confirma a deleção do registro?";
+            this.lblExcluir.Visible = false;
+            // 
             // FrmOrcamentoItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 311);
+            this.ClientSize = new System.Drawing.Size(542, 349);
             this.Controls.Add(this.pnlInformacoes);
             this.Controls.Add(this.pnlBotoes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -293,5 +309,6 @@
         private System.Windows.Forms.TextBox txtObservacao;
         private System.Windows.Forms.Label lblObservacao;
         private System.Windows.Forms.MaskedTextBox txtProduto_id;
+        private System.Windows.Forms.Label lblExcluir;
     }
 }

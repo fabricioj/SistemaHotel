@@ -14,24 +14,19 @@ namespace SistemaHotel.form.Produto
     public partial class FrmProdutoFormulario : Form
     {
         private Operacao _op;
+        private model.SistemaHotelContext _context;
         private model.Produto _produto;
         private repositorio.ProdutoRepositorio _produtoRepositorio;
 
-        public FrmProdutoFormulario()
+        public FrmProdutoFormulario(Operacao op, model.SistemaHotelContext context, model.Produto produto)
         {
-            InitializeComponent();
-            this._op = Operacao.Insercao;
-            this._produtoRepositorio = new repositorio.ProdutoRepositorio();
-            this._produto = new model.Produto();            
-            Util.acertaTabOrder(this);
-        }
+            
+            _op = op;
+            _context = context;
+            _produtoRepositorio = new repositorio.ProdutoRepositorio(_context);
+            _produto = produto;
 
-        public FrmProdutoFormulario(Operacao op, repositorio.ProdutoRepositorio produtoRepositorio, model.Produto produto)
-        {
             InitializeComponent();
-            this._op = op;
-            this._produtoRepositorio = produtoRepositorio;
-            this._produto = produto;
             Util.acertaTabOrder(this);
         }
 

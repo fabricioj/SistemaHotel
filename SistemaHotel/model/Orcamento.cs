@@ -28,22 +28,30 @@ namespace SistemaHotel.model
         public DateTime? data_confirmacao { get; set; }
 
         [Browsable(false)]
-        public int? atividade_id { get; set; }
-
-        [Browsable(false)]
         public int? fornecedor_id { get; set; }
 
-        [Browsable(false)]
-        public virtual Atividade atividade { get; set; }
-
-        [DisplayName("Atividade")]
-        public string atividade_nome {get { return atividade != null ? atividade.nome : string.Empty; } }
+        [NotMapped]
+        [DisplayName("ID fornecedor")]
+        public int edtFornecedor_id { get { return fornecedor_id != null ? (int)fornecedor_id : 0; } set { fornecedor_id = value != 0 ? (int?)value : null; } }
 
         [Browsable(false)]
         public virtual Fornecedor fornecedor { get; set; }
 
         [DisplayName("Fornecedor")]
         public string fornecedor_nome { get { return fornecedor != null ? fornecedor.nome : string.Empty; } }
+
+        [Browsable(false)]
+        public int? atividade_id { get; set; }
+
+        [NotMapped]
+        [DisplayName("ID atividade")]
+        public int edtAtividade_id { get { return atividade_id != null ? (int)atividade_id : 0; } set { atividade_id = value != 0 ? (int?)value : null; } }
+
+        [Browsable(false)]
+        public virtual Atividade atividade { get; set; }
+
+        [DisplayName("Atividade")]
+        public string atividade_nome { get { return atividade != null ? atividade.nome : string.Empty; } }
 
         [Browsable(false)]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

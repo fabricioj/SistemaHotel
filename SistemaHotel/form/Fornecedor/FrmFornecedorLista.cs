@@ -13,14 +13,18 @@ using System.Windows.Forms;
 namespace SistemaHotel.form.Fornecedor
 {
     public partial class FrmFornecedorLista : Form
-    { 
+    {
+        private model.SistemaHotelContext _context;
         private repositorio.FornecedorRepositorio _fornecedorRepositorio;
+
         private model.Permissao_old _permissoes;
 
-        public FrmFornecedorLista()
+        public FrmFornecedorLista( model.SistemaHotelContext context)
         {
-            InitializeComponent();
-            _fornecedorRepositorio = new repositorio.FornecedorRepositorio();
+            _context = context;
+            _fornecedorRepositorio = new repositorio.FornecedorRepositorio(_context);
+
+            InitializeComponent();            
             Util.acertaTabOrder(this);
 
         }
@@ -54,7 +58,7 @@ namespace SistemaHotel.form.Fornecedor
             }
             else
             {
-                FrmFornecedorFormulario formulario = new FrmFornecedorFormulario(Operacao.Insercao, _fornecedorRepositorio, new model.Fornecedor());
+                FrmFornecedorFormulario formulario = new FrmFornecedorFormulario(Operacao.Insercao, _context, new model.Fornecedor());
                 formulario.ShowDialog();
                 atualizaLista();
 
@@ -77,7 +81,7 @@ namespace SistemaHotel.form.Fornecedor
                 else
                 {
                     var fornecedor = (model.Fornecedor)gridRegistros.CurrentRow.DataBoundItem;
-                    FrmFornecedorFormulario formulario = new FrmFornecedorFormulario(Operacao.Alteracao, _fornecedorRepositorio,  fornecedor);
+                    FrmFornecedorFormulario formulario = new FrmFornecedorFormulario(Operacao.Alteracao, _context,  fornecedor);
                     formulario.ShowDialog();
                     atualizaLista();
                 }
@@ -101,7 +105,7 @@ namespace SistemaHotel.form.Fornecedor
                 else
                 {
                     var fornecedor = (model.Fornecedor)gridRegistros.CurrentRow.DataBoundItem;
-                    FrmFornecedorFormulario formulario = new FrmFornecedorFormulario(Operacao.Exclusao, _fornecedorRepositorio, fornecedor);
+                    FrmFornecedorFormulario formulario = new FrmFornecedorFormulario(Operacao.Exclusao, _context, fornecedor);
                     formulario.ShowDialog();
                     atualizaLista();
                 }
@@ -119,7 +123,7 @@ namespace SistemaHotel.form.Fornecedor
             else
             {
                 var fornecedor = (model.Fornecedor)gridRegistros.CurrentRow.DataBoundItem;
-                FrmFornecedorFormulario formulario = new FrmFornecedorFormulario(Operacao.Consulta, _fornecedorRepositorio, fornecedor);
+                FrmFornecedorFormulario formulario = new FrmFornecedorFormulario(Operacao.Consulta, _context, fornecedor);
                 formulario.ShowDialog();
             }
 

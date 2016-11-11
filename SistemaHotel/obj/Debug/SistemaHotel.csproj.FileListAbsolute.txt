@@ -1,7 +1,6 @@
 C:\Temp\Csharp\SistemaHotel\SistemaHotel\bin\Debug\SistemaHotel.exe.config
 C:\Temp\Csharp\SistemaHotel\SistemaHotel\bin\Debug\SistemaHotel.exe
 C:\Temp\Csharp\SistemaHotel\SistemaHotel\bin\Debug\SistemaHotel.pdb
-C:\Temp\Csharp\SistemaHotel\SistemaHotel\obj\Debug\SistemaHotel.csprojResolveAssemblyReference.cache
 C:\Temp\Csharp\SistemaHotel\SistemaHotel\obj\Debug\SistemaHotel.form.Fornecedor.FrmFornecedorFormulario.resources
 C:\Temp\Csharp\SistemaHotel\SistemaHotel\obj\Debug\SistemaHotel.form.Fornecedor.FrmFornecedorLista.resources
 C:\Temp\Csharp\SistemaHotel\SistemaHotel\obj\Debug\SistemaHotel.Properties.Resources.resources
@@ -34,3 +33,4 @@ C:\Projetos\CSharp\SistemaHotel\SistemaHotel\obj\Debug\SistemaHotel.pdb
 C:\Temp\Csharp\SistemaHotel\SistemaHotel\obj\Debug\SistemaHotel.form.Procedimento.FrmProcedimentoLista.resources
 C:\Temp\Csharp\SistemaHotel\SistemaHotel\obj\Debug\SistemaHotel.form.Solicitacao.FrmSolicitacaoFormulario.resources
 C:\Temp\Csharp\SistemaHotel\SistemaHotel\obj\Debug\SistemaHotel.form.Solicitacao.FrmSolicitacaoLista.resources
+C:\Temp\Csharp\SistemaHotel\SistemaHotel\obj\Debug\SistemaHotel.csprojResolveAssemblyReference.cache

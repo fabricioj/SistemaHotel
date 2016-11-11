@@ -11,9 +11,9 @@ namespace SistemaHotel.repositorio
     {
         private SistemaHotelContext _context;
 
-        public Orcamento_itemRepositorio()
+        public Orcamento_itemRepositorio(SistemaHotelContext context)
         {
-            _context = new SistemaHotelContext();
+            _context = context;
         }
 
         public void incluir(ref Orcamento_item orcamento_item)

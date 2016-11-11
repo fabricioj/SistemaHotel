@@ -16,22 +16,15 @@ namespace SistemaHotel.form.Fornecedor
         private Operacao _op;
         private model.Fornecedor _fornecedor;
         private repositorio.FornecedorRepositorio _fornecedorRepositorio;
+        private model.SistemaHotelContext _context;
 
-        public FrmFornecedorFormulario()
-        {
-            InitializeComponent();
-            this._op = Operacao.Insercao;
-            this._fornecedor = new model.Fornecedor();
-            this._fornecedorRepositorio = new repositorio.FornecedorRepositorio();
-            Util.acertaTabOrder(this);
-        }
-
-        public FrmFornecedorFormulario(Operacao op, repositorio.FornecedorRepositorio fornecedorRepositorio, model.Fornecedor fornecedor)
+        public FrmFornecedorFormulario(Operacao op, model.SistemaHotelContext context, model.Fornecedor fornecedor)
         {
             InitializeComponent();
             this._op = op;
+            this._context = context;
             this._fornecedor = fornecedor;
-            this._fornecedorRepositorio = fornecedorRepositorio;
+            this._fornecedorRepositorio = new repositorio.FornecedorRepositorio(context);
             Util.acertaTabOrder(this);
         }
 

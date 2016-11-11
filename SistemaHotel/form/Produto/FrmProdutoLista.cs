@@ -13,13 +13,15 @@ namespace SistemaHotel.form.Produto
 {
     public partial class FrmProdutoLista : Form
     {
+        private model.SistemaHotelContext _context;
         private repositorio.ProdutoRepositorio _produtoRepositorio;
         private model.Permissao_old _permissoes;
 
-        public FrmProdutoLista()
+        public FrmProdutoLista( model.SistemaHotelContext context)
         {
-            InitializeComponent();
-            _produtoRepositorio = new repositorio.ProdutoRepositorio();
+            _context = context;
+            _produtoRepositorio = new repositorio.ProdutoRepositorio(_context);
+            InitializeComponent();            
             Util.acertaTabOrder(this);
         }
 
@@ -53,7 +55,7 @@ namespace SistemaHotel.form.Produto
             }
             else
             {
-                FrmProdutoFormulario formulario = new FrmProdutoFormulario(Operacao.Insercao, _produtoRepositorio, new model.Produto());
+                FrmProdutoFormulario formulario = new FrmProdutoFormulario(Operacao.Insercao, _context, new model.Produto());
                 formulario.ShowDialog();
                 atualizaLista();
 
@@ -76,7 +78,7 @@ namespace SistemaHotel.form.Produto
                 else
                 {
                     var produto = (model.Produto)gridRegistros.CurrentRow.DataBoundItem;
-                    FrmProdutoFormulario formulario = new FrmProdutoFormulario(Operacao.Alteracao,  _produtoRepositorio, produto);
+                    FrmProdutoFormulario formulario = new FrmProdutoFormulario(Operacao.Alteracao, _context, produto);
                     formulario.ShowDialog();
                     atualizaLista();
                 }
@@ -100,7 +102,7 @@ namespace SistemaHotel.form.Produto
                 else
                 {
                     var produto = (model.Produto)gridRegistros.CurrentRow.DataBoundItem;
-                    FrmProdutoFormulario formulario = new FrmProdutoFormulario(Operacao.Exclusao, _produtoRepositorio, produto);
+                    FrmProdutoFormulario formulario = new FrmProdutoFormulario(Operacao.Exclusao, _context, produto);
                     formulario.ShowDialog();
                     atualizaLista();
                 }
@@ -117,7 +119,7 @@ namespace SistemaHotel.form.Produto
             else
             {
                 var produto = (model.Produto)gridRegistros.CurrentRow.DataBoundItem;
-                FrmProdutoFormulario formulario = new FrmProdutoFormulario(Operacao.Consulta, _produtoRepositorio, produto);
+                FrmProdutoFormulario formulario = new FrmProdutoFormulario(Operacao.Consulta, _context, produto);
                 formulario.ShowDialog();
             }
             

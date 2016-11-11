@@ -15,14 +15,16 @@ namespace SistemaHotel
 {
     public partial class FrmSistemaHotel : Form
     {
+        private model.SistemaHotelContext _context;
         public FrmSistemaHotel()
         {
+            _context = new model.SistemaHotelContext();
             InitializeComponent();
         }
 
         private void mnuProdutos_Click(object sender, EventArgs e)
         {
-            using (var lista = new FrmProdutoLista()) {
+            using (var lista = new FrmProdutoLista(_context)) {
                 lista.ShowDialog();
             } ;
             
@@ -30,14 +32,14 @@ namespace SistemaHotel
 
         private void mnuFornecedores_Click(object sender, EventArgs e)
         {
-            using (var lista = new FrmFornecedorLista()) {
+            using (var lista = new FrmFornecedorLista(_context)) {
                 lista.ShowDialog();
             };
         }
 
         private void mnuOrcamentos_Click(object sender, EventArgs e)
         {
-            using (var lista = new FrmOrcamentoLista()) {
+            using (var lista = new FrmOrcamentoLista(_context)) {
                 lista.ShowDialog();
             };
         }

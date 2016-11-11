@@ -1,4 +1,5 @@
 ﻿using SistemaHotel.form.Produto;
+using SistemaHotel.model;
 using SistemaHotel.util;
 using System;
 using System.Collections.Generic;
@@ -17,25 +18,18 @@ namespace SistemaHotel.form.Orcamento
         private Operacao _op;
         private model.Orcamento _orcamento;
         private model.Orcamento_item _orcamento_item;
+        private model.SistemaHotelContext _context;
         private repositorio.Orcamento_itemRepositorio _orcamento_itemRepositorio;
 
-        public FrmOrcamentoItem(model.Orcamento orcamento)
-        {
-            InitializeComponent();
-            this._op = Operacao.Insercao;
-            this._orcamento = orcamento;
-            this._orcamento_item = new model.Orcamento_item();
-            this._orcamento_itemRepositorio = new repositorio.Orcamento_itemRepositorio();
-            Util.acertaTabOrder(this);
-        }
-
-        public FrmOrcamentoItem(Operacao op, model.Orcamento orcamento, repositorio.Orcamento_itemRepositorio orcamento_itemRepositorio, model.Orcamento_item orcamento_item)
+        public FrmOrcamentoItem(Operacao op, model.SistemaHotelContext context, model.Orcamento orcamento, model.Orcamento_item orcamento_item)
         {
             InitializeComponent();
             this._op = op;
+            this._context = context;
             this._orcamento = orcamento;
             this._orcamento_item = orcamento_item;
-            this._orcamento_itemRepositorio = orcamento_itemRepositorio;
+            this._orcamento_itemRepositorio = new repositorio.Orcamento_itemRepositorio(_context);
+
             Util.acertaTabOrder(this);
         }
 
@@ -51,7 +45,7 @@ namespace SistemaHotel.form.Orcamento
 
             txtID.Text = _orcamento_item.id.ToString().Trim();
             txtObservacao.Text = _orcamento_item.observacao;
-            txtProduto_id.Text = _orcamento_item.produto_id.ToString().Trim();
+            txtProduto_id.Text = _orcamento_item.edtProduto_id.ToString().Trim();
 
             if (_orcamento_item.produto != null)
                 txtProduto_descricao.Text = _orcamento_item.produto.descricao;
@@ -59,7 +53,7 @@ namespace SistemaHotel.form.Orcamento
             txtQuantidade.Text = _orcamento_item.quantidade.ToString().Trim();
             txtQuantidade_comprada.Text = _orcamento_item.quantidade_comprada.ToString().Trim();
             txtValor.Text = _orcamento_item.valor.ToString().Trim();
-            txtTotal.Text = (_orcamento_item.quantidade * _orcamento_item.valor).ToString().Trim();
+            txtTotal.Text = _orcamento_item.total.ToString().Trim();
 
 
             txtID.Enabled = false;
@@ -74,6 +68,13 @@ namespace SistemaHotel.form.Orcamento
                 txtQuantidade.Enabled = false;
                 txtValor.Enabled = false;
 
+                btnPesquisaProduto.Enabled = false;
+
+                if (_op == Operacao.Exclusao)
+                    lblExcluir.Visible = true;
+
+                if (_op == Operacao.Consulta)
+                    btnConfirmar.Enabled = false;
             }
         }
         private void preencheObjeto() {
@@ -87,10 +88,8 @@ namespace SistemaHotel.form.Orcamento
             _orcamento_item.valor = double.Parse(txtValor.Text);
 
             
-            _orcamento_item.produto_id = int.Parse(txtProduto_id.Text);
-            if (_orcamento_item.produto_id == 0)
-                _orcamento_item.produto_id = null;
-            else
+            _orcamento_item.edtProduto_id = int.Parse(txtProduto_id.Text);
+            if (_orcamento_item.edtProduto_id != 0)
                 validaProduto();
 
         }
@@ -104,17 +103,20 @@ namespace SistemaHotel.form.Orcamento
                 {
                     case Operacao.Insercao:
                         _orcamento_itemRepositorio.incluir(ref _orcamento_item);
+                        _orcamento_itemRepositorio.salvar();
                         _orcamento_item = new model.Orcamento_item();
                         preencheForm();
                         break;
 
                     case Operacao.Alteracao:
                         _orcamento_itemRepositorio.alterar(_orcamento_item);
+                        _orcamento_itemRepositorio.salvar();
                         Dispose();
                         break;
 
                     case Operacao.Exclusao:
                         _orcamento_itemRepositorio.excluir(_orcamento_item);
+                        _orcamento_itemRepositorio.salvar();
                         Dispose();
                         break;
 
@@ -141,9 +143,9 @@ namespace SistemaHotel.form.Orcamento
             FrmProdutoProcura procuraProduto = new FrmProdutoProcura();
             procuraProduto.ShowDialog();
             if (procuraProduto.produto != null) {
-                _orcamento_item.produto_id = procuraProduto.produto.id;
+                _orcamento_item.edtProduto_id = procuraProduto.produto.id;
             }
-            txtProduto_id.Text = _orcamento_item.produto_id.ToString().Trim();
+            txtProduto_id.Text = _orcamento_item.edtProduto_id.ToString().Trim();
             txtProduto_id.Focus();
         }
 
@@ -165,21 +167,35 @@ namespace SistemaHotel.form.Orcamento
         private void validaProduto() {
             if (string.IsNullOrEmpty(txtProduto_id.Text))
                 txtProduto_id.Text = "0";
+
             _orcamento_item.produto = null;
 
-            _orcamento_item.produto_id = int.Parse(txtProduto_id.Text);
-            if (_orcamento_item.produto_id != 0)
+            _orcamento_item.edtProduto_id = int.Parse(txtProduto_id.Text);
+            if (_orcamento_item.edtProduto_id != 0)
             {
-                _orcamento_item.produto = (new repositorio.ProdutoRepositorio()).getProdutoporID((int)_orcamento_item.produto_id);
+                _orcamento_item.produto = (new repositorio.ProdutoRepositorio(_context)).getProdutoporID(_orcamento_item.edtProduto_id);
 
                 if (_orcamento_item.produto == null)
                 {
                     throw new Exception("Produto não existe");
                 }
-            }else
-            {
-                throw new Exception("Produto é obrigatório");
             }
+        }
+        private void atualizaTotal()
+        {
+            _orcamento_item.quantidade = double.Parse(txtQuantidade.Text);
+            _orcamento_item.valor = double.Parse(txtValor.Text);
+            txtTotal.Text = _orcamento_item.total.ToString().Trim();
+        }
+
+        private void txtQuantidade_Validated(object sender, EventArgs e)
+        {
+            atualizaTotal();
+        }
+
+        private void txtValor_Validated(object sender, EventArgs e)
+        {
+            atualizaTotal();
         }
     }
 }

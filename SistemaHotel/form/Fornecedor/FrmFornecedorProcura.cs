@@ -14,18 +14,18 @@ namespace SistemaHotel.form.Fornecedor
 {
     public partial class FrmFornecedorProcura : Form
     {
-        private FornecedorDao _fornecedorDao;
-        public model.Fornecedor_old fornecedor;
-        public FrmFornecedorProcura()
+        private repositorio.FornecedorRepositorio _fornecedorRepositorio;
+        public model.Fornecedor fornecedor;
+        public FrmFornecedorProcura(model.SistemaHotelContext context)
         {
-            this._fornecedorDao = new FornecedorDao();
+            this._fornecedorRepositorio = new repositorio.FornecedorRepositorio(context);
             InitializeComponent();
             Util.acertaTabOrder(this);
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            gridRegistros.DataSource = new BindingSource(new BindingList<model.Fornecedor_old>(_fornecedorDao.getFornecedores(txtNome.Text)), null);
+            gridRegistros.DataSource = new BindingSource(new BindingList<model.Fornecedor>(_fornecedorRepositorio.getFornecedores(txtNome.Text)), null);
             gridRegistros.Refresh();
         }
 
@@ -37,7 +37,7 @@ namespace SistemaHotel.form.Fornecedor
             }
             else
             {
-                this.fornecedor = (model.Fornecedor_old)gridRegistros.CurrentRow.DataBoundItem;
+                this.fornecedor = (model.Fornecedor)gridRegistros.CurrentRow.DataBoundItem;
             }
             Close();
         }

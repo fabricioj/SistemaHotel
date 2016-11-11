@@ -222,7 +222,7 @@
     <Compile Include="model\Procedimento_passo_produto.cs" />
     <Compile Include="model\Produto.cs" />
     <Compile Include="model\Reserva_area_comum.cs" />
-    <Compile Include="model\SistemaHotelDb.cs" />
+    <Compile Include="model\SistemaHotelContext.cs" />
     <Compile Include="model\Solicitacao.cs" />
     <Compile Include="util\TabOrderManager.cs" />
     <Compile Include="model\Usuario.cs" />

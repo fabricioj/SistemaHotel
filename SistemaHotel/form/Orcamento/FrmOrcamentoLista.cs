@@ -13,13 +13,15 @@ namespace SistemaHotel.form.Orcamento
 {
     public partial class FrmOrcamentoLista : Form
     {
+        private model.SistemaHotelContext _context;
         private repositorio.OrcamentoRepositorio _orcamentoRepositorio;
         private model.Permissao_old _permissoes;
 
-        public FrmOrcamentoLista()
+        public FrmOrcamentoLista(model.SistemaHotelContext context)
         {
+            _context = context;
+            _orcamentoRepositorio = new repositorio.OrcamentoRepositorio(_context);
             InitializeComponent();
-            _orcamentoRepositorio = new repositorio.OrcamentoRepositorio();
             Util.acertaTabOrder(this);
         }
 
@@ -43,11 +45,11 @@ namespace SistemaHotel.form.Orcamento
             }
             else
             {
-                FrmOrcamentoFormulario formulario = new FrmOrcamentoFormulario();
+                FrmOrcamentoFormulario formulario = new FrmOrcamentoFormulario(Operacao.Insercao, _context, new model.Orcamento());
                 formulario.ShowDialog();
                 if (formulario.orcamento.id != 0)
                 {
-                    FrmOrcamentoCorpo corpo = new FrmOrcamentoCorpo(Operacao.Insercao, _orcamentoRepositorio, formulario.orcamento);
+                    FrmOrcamentoCorpo corpo = new FrmOrcamentoCorpo(Operacao.Insercao, _context, formulario.orcamento);
                     corpo.ShowDialog();
                 }
                 formulario.Dispose();
@@ -71,7 +73,7 @@ namespace SistemaHotel.form.Orcamento
                 else
                 {
                     var orcamento = (model.Orcamento)gridRegistros.CurrentRow.DataBoundItem;
-                    FrmOrcamentoCorpo corpo = new FrmOrcamentoCorpo(Operacao.Alteracao, _orcamentoRepositorio, orcamento);
+                    FrmOrcamentoCorpo corpo = new FrmOrcamentoCorpo(Operacao.Alteracao, _context, orcamento);
                     corpo.ShowDialog();
                 }
 
@@ -95,7 +97,7 @@ namespace SistemaHotel.form.Orcamento
                 else
                 {
                     var orcamento = (model.Orcamento)gridRegistros.CurrentRow.DataBoundItem;
-                    FrmOrcamentoFormulario formulario = new FrmOrcamentoFormulario(Operacao.Exclusao, _orcamentoRepositorio, orcamento);
+                    FrmOrcamentoFormulario formulario = new FrmOrcamentoFormulario(Operacao.Exclusao, _context, orcamento);
                     formulario.ShowDialog();
                     formulario.Dispose();
                 }
@@ -113,7 +115,7 @@ namespace SistemaHotel.form.Orcamento
             else
             {
                 var orcamento = (model.Orcamento)gridRegistros.CurrentRow.DataBoundItem;
-                FrmOrcamentoCorpo corpo = new FrmOrcamentoCorpo(Operacao.Consulta, _orcamentoRepositorio, orcamento);
+                FrmOrcamentoCorpo corpo = new FrmOrcamentoCorpo(Operacao.Consulta, _context, orcamento);
                 corpo.ShowDialog();
             }
 

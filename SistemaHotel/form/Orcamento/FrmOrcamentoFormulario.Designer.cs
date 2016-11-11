@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.pnlInformacoes = new System.Windows.Forms.Panel();
+            this.txtData_emissao = new System.Windows.Forms.DateTimePicker();
+            this.txtData_confirmacao = new System.Windows.Forms.DateTimePicker();
             this.btnPesquisaFornecedor = new System.Windows.Forms.Button();
             this.btnPesquisaAtividade = new System.Windows.Forms.Button();
             this.txtFornecedor_nome = new System.Windows.Forms.TextBox();
@@ -46,8 +48,7 @@
             this.pnlBotoes = new System.Windows.Forms.Panel();
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
-            this.txtData_confirmacao = new System.Windows.Forms.DateTimePicker();
-            this.txtData_emissao = new System.Windows.Forms.DateTimePicker();
+            this.lblExcluir = new System.Windows.Forms.Label();
             this.pnlInformacoes.SuspendLayout();
             this.pnlBotoes.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +56,7 @@
             // pnlInformacoes
             // 
             this.pnlInformacoes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlInformacoes.Controls.Add(this.lblExcluir);
             this.pnlInformacoes.Controls.Add(this.txtData_emissao);
             this.pnlInformacoes.Controls.Add(this.txtData_confirmacao);
             this.pnlInformacoes.Controls.Add(this.btnPesquisaFornecedor);
@@ -73,12 +75,28 @@
             this.pnlInformacoes.Controls.Add(this.lblId);
             this.pnlInformacoes.Location = new System.Drawing.Point(12, 12);
             this.pnlInformacoes.Name = "pnlInformacoes";
-            this.pnlInformacoes.Size = new System.Drawing.Size(397, 177);
+            this.pnlInformacoes.Size = new System.Drawing.Size(397, 181);
             this.pnlInformacoes.TabIndex = 6;
+            // 
+            // txtData_emissao
+            // 
+            this.txtData_emissao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtData_emissao.Location = new System.Drawing.Point(104, 44);
+            this.txtData_emissao.Name = "txtData_emissao";
+            this.txtData_emissao.Size = new System.Drawing.Size(82, 20);
+            this.txtData_emissao.TabIndex = 27;
+            // 
+            // txtData_confirmacao
+            // 
+            this.txtData_confirmacao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtData_confirmacao.Location = new System.Drawing.Point(205, 44);
+            this.txtData_confirmacao.Name = "txtData_confirmacao";
+            this.txtData_confirmacao.Size = new System.Drawing.Size(82, 20);
+            this.txtData_confirmacao.TabIndex = 27;
             // 
             // btnPesquisaFornecedor
             // 
-            this.btnPesquisaFornecedor.Location = new System.Drawing.Point(78, 71);
+            this.btnPesquisaFornecedor.Location = new System.Drawing.Point(75, 92);
             this.btnPesquisaFornecedor.Name = "btnPesquisaFornecedor";
             this.btnPesquisaFornecedor.Size = new System.Drawing.Size(20, 20);
             this.btnPesquisaFornecedor.TabIndex = 26;
@@ -88,7 +106,7 @@
             // 
             // btnPesquisaAtividade
             // 
-            this.btnPesquisaAtividade.Location = new System.Drawing.Point(78, 120);
+            this.btnPesquisaAtividade.Location = new System.Drawing.Point(75, 141);
             this.btnPesquisaAtividade.Name = "btnPesquisaAtividade";
             this.btnPesquisaAtividade.Size = new System.Drawing.Size(20, 20);
             this.btnPesquisaAtividade.TabIndex = 26;
@@ -97,7 +115,7 @@
             // 
             // txtFornecedor_nome
             // 
-            this.txtFornecedor_nome.Location = new System.Drawing.Point(107, 71);
+            this.txtFornecedor_nome.Location = new System.Drawing.Point(104, 92);
             this.txtFornecedor_nome.Name = "txtFornecedor_nome";
             this.txtFornecedor_nome.Size = new System.Drawing.Size(259, 20);
             this.txtFornecedor_nome.TabIndex = 25;
@@ -105,7 +123,7 @@
             // lblFornecedor_nome
             // 
             this.lblFornecedor_nome.AutoSize = true;
-            this.lblFornecedor_nome.Location = new System.Drawing.Point(104, 54);
+            this.lblFornecedor_nome.Location = new System.Drawing.Point(101, 75);
             this.lblFornecedor_nome.Name = "lblFornecedor_nome";
             this.lblFornecedor_nome.Size = new System.Drawing.Size(35, 13);
             this.lblFornecedor_nome.TabIndex = 5;
@@ -113,14 +131,14 @@
             // 
             // txtAtividade_nome
             // 
-            this.txtAtividade_nome.Location = new System.Drawing.Point(107, 120);
+            this.txtAtividade_nome.Location = new System.Drawing.Point(104, 141);
             this.txtAtividade_nome.Name = "txtAtividade_nome";
             this.txtAtividade_nome.Size = new System.Drawing.Size(259, 20);
             this.txtAtividade_nome.TabIndex = 25;
             // 
             // txtFornecedor_id
             // 
-            this.txtFornecedor_id.Location = new System.Drawing.Point(9, 71);
+            this.txtFornecedor_id.Location = new System.Drawing.Point(6, 92);
             this.txtFornecedor_id.Name = "txtFornecedor_id";
             this.txtFornecedor_id.Size = new System.Drawing.Size(65, 20);
             this.txtFornecedor_id.TabIndex = 25;
@@ -129,7 +147,7 @@
             // lblAtividade_nome
             // 
             this.lblAtividade_nome.AutoSize = true;
-            this.lblAtividade_nome.Location = new System.Drawing.Point(104, 103);
+            this.lblAtividade_nome.Location = new System.Drawing.Point(101, 124);
             this.lblAtividade_nome.Name = "lblAtividade_nome";
             this.lblAtividade_nome.Size = new System.Drawing.Size(35, 13);
             this.lblAtividade_nome.TabIndex = 5;
@@ -138,7 +156,7 @@
             // lblFornecedor_id
             // 
             this.lblFornecedor_id.AutoSize = true;
-            this.lblFornecedor_id.Location = new System.Drawing.Point(6, 54);
+            this.lblFornecedor_id.Location = new System.Drawing.Point(3, 75);
             this.lblFornecedor_id.Name = "lblFornecedor_id";
             this.lblFornecedor_id.Size = new System.Drawing.Size(61, 13);
             this.lblFornecedor_id.TabIndex = 5;
@@ -146,7 +164,7 @@
             // 
             // txtAtividade_id
             // 
-            this.txtAtividade_id.Location = new System.Drawing.Point(9, 120);
+            this.txtAtividade_id.Location = new System.Drawing.Point(6, 141);
             this.txtAtividade_id.Name = "txtAtividade_id";
             this.txtAtividade_id.Size = new System.Drawing.Size(65, 20);
             this.txtAtividade_id.TabIndex = 25;
@@ -154,7 +172,7 @@
             // lblAtidade_id
             // 
             this.lblAtidade_id.AutoSize = true;
-            this.lblAtidade_id.Location = new System.Drawing.Point(6, 103);
+            this.lblAtidade_id.Location = new System.Drawing.Point(3, 124);
             this.lblAtidade_id.Name = "lblAtidade_id";
             this.lblAtidade_id.Size = new System.Drawing.Size(51, 13);
             this.lblAtidade_id.TabIndex = 5;
@@ -163,7 +181,7 @@
             // lblData_confirmacao
             // 
             this.lblData_confirmacao.AutoSize = true;
-            this.lblData_confirmacao.Location = new System.Drawing.Point(205, 6);
+            this.lblData_confirmacao.Location = new System.Drawing.Point(202, 27);
             this.lblData_confirmacao.Name = "lblData_confirmacao";
             this.lblData_confirmacao.Size = new System.Drawing.Size(79, 13);
             this.lblData_confirmacao.TabIndex = 4;
@@ -172,7 +190,7 @@
             // lblData_emissao
             // 
             this.lblData_emissao.AutoSize = true;
-            this.lblData_emissao.Location = new System.Drawing.Point(104, 6);
+            this.lblData_emissao.Location = new System.Drawing.Point(101, 27);
             this.lblData_emissao.Name = "lblData_emissao";
             this.lblData_emissao.Size = new System.Drawing.Size(59, 13);
             this.lblData_emissao.TabIndex = 4;
@@ -180,7 +198,7 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(9, 23);
+            this.txtID.Location = new System.Drawing.Point(6, 44);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(60, 20);
             this.txtID.TabIndex = 19;
@@ -188,7 +206,7 @@
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(6, 6);
+            this.lblId.Location = new System.Drawing.Point(3, 27);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(18, 13);
             this.lblId.TabIndex = 4;
@@ -201,7 +219,7 @@
             this.pnlBotoes.Controls.Add(this.btnConfirmar);
             this.pnlBotoes.Location = new System.Drawing.Point(415, 12);
             this.pnlBotoes.Name = "pnlBotoes";
-            this.pnlBotoes.Size = new System.Drawing.Size(137, 177);
+            this.pnlBotoes.Size = new System.Drawing.Size(137, 181);
             this.pnlBotoes.TabIndex = 5;
             // 
             // btnFechar
@@ -224,21 +242,17 @@
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
-            // txtData_confirmacao
+            // lblExcluir
             // 
-            this.txtData_confirmacao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtData_confirmacao.Location = new System.Drawing.Point(208, 23);
-            this.txtData_confirmacao.Name = "txtData_confirmacao";
-            this.txtData_confirmacao.Size = new System.Drawing.Size(82, 20);
-            this.txtData_confirmacao.TabIndex = 27;
-            // 
-            // txtData_emissao
-            // 
-            this.txtData_emissao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtData_emissao.Location = new System.Drawing.Point(107, 23);
-            this.txtData_emissao.Name = "txtData_emissao";
-            this.txtData_emissao.Size = new System.Drawing.Size(82, 20);
-            this.txtData_emissao.TabIndex = 27;
+            this.lblExcluir.AutoSize = true;
+            this.lblExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExcluir.ForeColor = System.Drawing.Color.Red;
+            this.lblExcluir.Location = new System.Drawing.Point(3, 4);
+            this.lblExcluir.Name = "lblExcluir";
+            this.lblExcluir.Size = new System.Drawing.Size(210, 17);
+            this.lblExcluir.TabIndex = 29;
+            this.lblExcluir.Text = "Confirma a deleção do registro?";
+            this.lblExcluir.Visible = false;
             // 
             // FrmOrcamentoFormulario
             // 
@@ -283,5 +297,6 @@
         private System.Windows.Forms.Label lblFornecedor_id;
         private System.Windows.Forms.DateTimePicker txtData_emissao;
         private System.Windows.Forms.DateTimePicker txtData_confirmacao;
+        private System.Windows.Forms.Label lblExcluir;
     }
 }
