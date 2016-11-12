@@ -33,7 +33,8 @@ namespace SistemaHotel.form.Orcamento
             Util.acertaTabOrder(this);
         }
 
-        private void preencheForm() {
+        private void preencheForm()
+        {
             txtID.Enabled = true;
             txtObservacao.Enabled = true;
             txtProduto_id.Enabled = true;
@@ -62,9 +63,9 @@ namespace SistemaHotel.form.Orcamento
             txtTotal.Enabled = false;
 
             if (_op == Operacao.Consulta || _op == Operacao.Exclusao)
-            {                
+            {
                 txtObservacao.Enabled = false;
-                txtProduto_id.Enabled = false;                
+                txtProduto_id.Enabled = false;
                 txtQuantidade.Enabled = false;
                 txtValor.Enabled = false;
 
@@ -77,17 +78,18 @@ namespace SistemaHotel.form.Orcamento
                     btnConfirmar.Enabled = false;
             }
         }
-        private void preencheObjeto() {
+        private void preencheObjeto()
+        {
             _orcamento_item.id = int.Parse(txtID.Text);
             _orcamento_item.observacao = txtObservacao.Text;
             _orcamento_item.orcamento_id = _orcamento.id;
             _orcamento_item.orcamento = _orcamento;
-            
+
             _orcamento_item.quantidade = double.Parse(txtQuantidade.Text);
             _orcamento_item.quantidade_comprada = double.Parse(txtQuantidade_comprada.Text);
             _orcamento_item.valor = double.Parse(txtValor.Text);
 
-            
+
             _orcamento_item.edtProduto_id = int.Parse(txtProduto_id.Text);
             if (_orcamento_item.edtProduto_id != 0)
                 validaProduto();
@@ -142,7 +144,8 @@ namespace SistemaHotel.form.Orcamento
         {
             FrmProdutoProcura procuraProduto = new FrmProdutoProcura();
             procuraProduto.ShowDialog();
-            if (procuraProduto.produto != null) {
+            if (procuraProduto.produto != null)
+            {
                 _orcamento_item.edtProduto_id = procuraProduto.produto.id;
             }
             txtProduto_id.Text = _orcamento_item.edtProduto_id.ToString().Trim();
@@ -158,13 +161,15 @@ namespace SistemaHotel.form.Orcamento
                 if (_orcamento_item.produto != null)
                     txtProduto_descricao.Text = _orcamento_item.produto.descricao;
 
-            } catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtProduto_id.Focus();
             }
         }
-        private void validaProduto() {
+        private void validaProduto()
+        {
             if (string.IsNullOrEmpty(txtProduto_id.Text))
                 txtProduto_id.Text = "0";
 
@@ -190,12 +195,29 @@ namespace SistemaHotel.form.Orcamento
 
         private void txtQuantidade_Validated(object sender, EventArgs e)
         {
-            atualizaTotal();
+            try
+            {
+                atualizaTotal();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtQuantidade.Focus();
+            }
+
         }
 
         private void txtValor_Validated(object sender, EventArgs e)
         {
-            atualizaTotal();
+            try
+            {
+                atualizaTotal();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtValor.Focus();
+            }
         }
     }
 }

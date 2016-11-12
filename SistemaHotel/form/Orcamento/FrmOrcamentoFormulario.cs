@@ -64,8 +64,8 @@ namespace SistemaHotel.form.Orcamento
         private void preencheObjeto()
         {
             orcamento.id = int.Parse(txtID.Text);
-            orcamento.data_emissao = txtData_emissao.Value;
-            orcamento.data_confirmacao = txtData_confirmacao.Value;
+            orcamento.data_emissao = txtData_emissao.Value != DateTimePicker.MinimumDateTime? txtData_emissao.Value: DateTime.MinValue ;
+            orcamento.data_confirmacao = txtData_confirmacao.Value != DateTimePicker.MinimumDateTime ? txtData_confirmacao.Value : DateTime.MinValue;
 
             orcamento.edtFornecedor_id = int.Parse(txtFornecedor_id.Text);
             if (orcamento.edtFornecedor_id != 0)
@@ -88,8 +88,8 @@ namespace SistemaHotel.form.Orcamento
             txtAtividade_nome.Enabled = true;
 
             txtID.Text = orcamento.id.ToString().Trim();
-            //txtData_emissao.Value = orcamento.data_emissao != null?(DateTime)orcamento.data_emissao: DateTime.MinValue;
-            //txtData_confirmacao.Value = orcamento.data_confirmacao != null ? (DateTime)orcamento.data_confirmacao : DateTime.MinValue;
+            txtData_emissao.Value = orcamento.data_emissao != null && orcamento.data_emissao != DateTime.MinValue? (DateTime)orcamento.data_emissao: DateTimePicker.MinimumDateTime;
+            txtData_confirmacao.Value = orcamento.data_confirmacao != null && orcamento.data_confirmacao != DateTime.MinValue? (DateTime)orcamento.data_confirmacao : DateTimePicker.MinimumDateTime;
             txtFornecedor_id.Text = orcamento.edtFornecedor_id.ToString().Trim();
             txtFornecedor_nome.Text = string.Empty;
             if (orcamento.fornecedor != null)

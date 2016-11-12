@@ -45,14 +45,14 @@
             this.lblFornecedor_id = new System.Windows.Forms.Label();
             this.txtAtividade_id = new System.Windows.Forms.TextBox();
             this.lblAtidade_id = new System.Windows.Forms.Label();
-            this.txtData_confirmacao = new System.Windows.Forms.TextBox();
             this.lblData_confirmacao = new System.Windows.Forms.Label();
-            this.txtData_emissao = new System.Windows.Forms.TextBox();
             this.lblData_emissao = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.lblId = new System.Windows.Forms.Label();
             this.tabItens = new System.Windows.Forms.TabPage();
             this.gridItens = new System.Windows.Forms.DataGridView();
+            this.txtData_emissao = new System.Windows.Forms.DateTimePicker();
+            this.txtData_confirmacao = new System.Windows.Forms.DateTimePicker();
             this.pnlBotoes.SuspendLayout();
             this.tabAbas.SuspendLayout();
             this.tabPrincipal.SuspendLayout();
@@ -149,6 +149,8 @@
             // 
             // tabPrincipal
             // 
+            this.tabPrincipal.Controls.Add(this.txtData_emissao);
+            this.tabPrincipal.Controls.Add(this.txtData_confirmacao);
             this.tabPrincipal.Controls.Add(this.txtFornecedor_nome);
             this.tabPrincipal.Controls.Add(this.lblFornecedor_nome);
             this.tabPrincipal.Controls.Add(this.txtAtividade_nome);
@@ -157,9 +159,7 @@
             this.tabPrincipal.Controls.Add(this.lblFornecedor_id);
             this.tabPrincipal.Controls.Add(this.txtAtividade_id);
             this.tabPrincipal.Controls.Add(this.lblAtidade_id);
-            this.tabPrincipal.Controls.Add(this.txtData_confirmacao);
             this.tabPrincipal.Controls.Add(this.lblData_confirmacao);
-            this.tabPrincipal.Controls.Add(this.txtData_emissao);
             this.tabPrincipal.Controls.Add(this.lblData_emissao);
             this.tabPrincipal.Controls.Add(this.txtID);
             this.tabPrincipal.Controls.Add(this.lblId);
@@ -235,28 +235,14 @@
             this.lblAtidade_id.TabIndex = 32;
             this.lblAtidade_id.Text = "Atividade";
             // 
-            // txtData_confirmacao
-            // 
-            this.txtData_confirmacao.Location = new System.Drawing.Point(201, 35);
-            this.txtData_confirmacao.Name = "txtData_confirmacao";
-            this.txtData_confirmacao.Size = new System.Drawing.Size(76, 20);
-            this.txtData_confirmacao.TabIndex = 33;
-            // 
             // lblData_confirmacao
             // 
             this.lblData_confirmacao.AutoSize = true;
-            this.lblData_confirmacao.Location = new System.Drawing.Point(198, 18);
+            this.lblData_confirmacao.Location = new System.Drawing.Point(215, 18);
             this.lblData_confirmacao.Name = "lblData_confirmacao";
             this.lblData_confirmacao.Size = new System.Drawing.Size(79, 13);
             this.lblData_confirmacao.TabIndex = 26;
             this.lblData_confirmacao.Text = "Dt confirmação";
-            // 
-            // txtData_emissao
-            // 
-            this.txtData_emissao.Location = new System.Drawing.Point(117, 35);
-            this.txtData_emissao.Name = "txtData_emissao";
-            this.txtData_emissao.Size = new System.Drawing.Size(60, 20);
-            this.txtData_emissao.TabIndex = 34;
             // 
             // lblData_emissao
             // 
@@ -306,6 +292,22 @@
             this.gridItens.Size = new System.Drawing.Size(416, 229);
             this.gridItens.TabIndex = 0;
             // 
+            // txtData_emissao
+            // 
+            this.txtData_emissao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtData_emissao.Location = new System.Drawing.Point(117, 35);
+            this.txtData_emissao.Name = "txtData_emissao";
+            this.txtData_emissao.Size = new System.Drawing.Size(82, 20);
+            this.txtData_emissao.TabIndex = 40;
+            // 
+            // txtData_confirmacao
+            // 
+            this.txtData_confirmacao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtData_confirmacao.Location = new System.Drawing.Point(218, 35);
+            this.txtData_confirmacao.Name = "txtData_confirmacao";
+            this.txtData_confirmacao.Size = new System.Drawing.Size(82, 20);
+            this.txtData_confirmacao.TabIndex = 41;
+            // 
             // FrmOrcamentoCorpo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -351,11 +353,11 @@
         private System.Windows.Forms.Label lblFornecedor_id;
         private System.Windows.Forms.TextBox txtAtividade_id;
         private System.Windows.Forms.Label lblAtidade_id;
-        private System.Windows.Forms.TextBox txtData_confirmacao;
         private System.Windows.Forms.Label lblData_confirmacao;
-        private System.Windows.Forms.TextBox txtData_emissao;
         private System.Windows.Forms.Label lblData_emissao;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.DateTimePicker txtData_emissao;
+        private System.Windows.Forms.DateTimePicker txtData_confirmacao;
     }
 }
