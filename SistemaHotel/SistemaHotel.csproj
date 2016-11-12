@@ -87,6 +87,24 @@
     <Compile Include="form\Funcionalidade\FrmFuncionalidadeLista.Designer.cs">
       <DependentUpon>FrmFuncionalidadeLista.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\Funcionario\FrmFuncionarioLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Funcionario\FrmFuncionarioLista.Designer.cs">
+      <DependentUpon>FrmFuncionarioLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Modelos\FrmModeloFormulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Modelos\FrmModeloFormulario.Designer.cs">
+      <DependentUpon>FrmModeloFormulario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Modelos\FrmModeloLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Modelos\FrmModeloLista.Designer.cs">
+      <DependentUpon>FrmModeloLista.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\Perfil\FrmPerfilFormulario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,6 +256,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form\Funcionalidade\FrmFuncionalidadeLista.resx">
       <DependentUpon>FrmFuncionalidadeLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Funcionario\FrmFuncionarioLista.resx">
+      <DependentUpon>FrmFuncionarioLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Modelos\FrmModeloFormulario.resx">
+      <DependentUpon>FrmModeloFormulario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Modelos\FrmModeloLista.resx">
+      <DependentUpon>FrmModeloLista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\Perfil\FrmPerfilFormulario.resx">
       <DependentUpon>FrmPerfilFormulario.cs</DependentUpon>

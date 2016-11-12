@@ -53,6 +53,7 @@ namespace SistemaHotel.form.Orcamento
                     corpo.ShowDialog();
                 }
                 formulario.Dispose();
+                atualizaLista();
             }
 
         }
@@ -75,6 +76,7 @@ namespace SistemaHotel.form.Orcamento
                     var orcamento = (model.Orcamento)gridRegistros.CurrentRow.DataBoundItem;
                     FrmOrcamentoCorpo corpo = new FrmOrcamentoCorpo(Operacao.Alteracao, _context, orcamento);
                     corpo.ShowDialog();
+                    atualizaLista();
                 }
 
             }
@@ -100,6 +102,7 @@ namespace SistemaHotel.form.Orcamento
                     FrmOrcamentoFormulario formulario = new FrmOrcamentoFormulario(Operacao.Exclusao, _context, orcamento);
                     formulario.ShowDialog();
                     formulario.Dispose();
+                    atualizaLista();
                 }
 
             }
@@ -121,7 +124,13 @@ namespace SistemaHotel.form.Orcamento
 
         }
         private void atualizaLista() {
-            gridRegistros.DataSource = new BindingSource(new BindingList<model.Orcamento>(_orcamentoRepositorio.getOrcamentos()), null);
+            gridRegistros.DataSource = new BindingSource(new BindingList<model.Orcamento>(_orcamentoRepositorio.getOrcamentos(txtFornecedor_nome.Text, txtAtividade_nome.Text)), null);
         }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            atualizaLista();
+        }
+
     }
 }
