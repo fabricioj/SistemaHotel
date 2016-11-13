@@ -32,7 +32,7 @@ namespace SistemaHotel.form.Produto
 
         private void preencheForm()
         {
-            cbControla_estoque.DataSource = util.EnumHelper.ToList(typeof(SimNao));
+            cbControla_estoque.DataSource = EnumHelper.ToList(typeof(SimNao));
             cbControla_estoque.DisplayMember = "Value";
             cbControla_estoque.ValueMember = "Key";
 
@@ -43,7 +43,7 @@ namespace SistemaHotel.form.Produto
 
             txtID.Text = _produto.id.ToString().Trim();
             txtDescricao.Text = _produto.descricao;
-            cbControla_estoque.SelectedItem = util.EnumHelper.SetValue(_produto.editControla_estoque);
+            cbControla_estoque.SelectedItem = EnumHelper.SetValue(_produto.editControla_estoque);
             txtQuantidade.Text = _produto.quantidade.ToString();
 
             txtID.Enabled = false;
@@ -66,7 +66,7 @@ namespace SistemaHotel.form.Produto
         {
             _produto.id =int.Parse(txtID.Text);
             _produto.descricao = txtDescricao.Text;
-            _produto.editControla_estoque = (SimNao)util.EnumHelper.GetValue(cbControla_estoque.SelectedItem);
+            _produto.editControla_estoque = (SimNao)EnumHelper.GetValue(cbControla_estoque.SelectedItem);
             _produto.quantidade = double.Parse(txtQuantidade.Text);
         }
 

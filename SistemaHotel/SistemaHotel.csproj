@@ -87,6 +87,12 @@
     <Compile Include="form\Funcionalidade\FrmFuncionalidadeLista.Designer.cs">
       <DependentUpon>FrmFuncionalidadeLista.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\Funcionario\FrmFuncionarioFormulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Funcionario\FrmFuncionarioFormulario.Designer.cs">
+      <DependentUpon>FrmFuncionarioFormulario.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\Funcionario\FrmFuncionarioLista.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,9 +223,10 @@
     <Compile Include="repositorio\FuncionarioRepositorio.cs" />
     <Compile Include="repositorio\OrcamentoRepositorio.cs" />
     <Compile Include="repositorio\Orcamento_itemRepositorio.cs" />
+    <Compile Include="repositorio\PermissaoRepositorio.cs" />
     <Compile Include="repositorio\ProdutoRepositorio.cs" />
     <Compile Include="util\BancoDados.cs" />
-    <Compile Include="model\Dependentes.cs" />
+    <Compile Include="model\Dependente.cs" />
     <Compile Include="util\Dominio.cs" />
     <Compile Include="model\Entrega_mecadoria.cs" />
     <Compile Include="model\Entrega_mercadorias.cs" />
@@ -257,6 +264,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form\Funcionalidade\FrmFuncionalidadeLista.resx">
       <DependentUpon>FrmFuncionalidadeLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Funcionario\FrmFuncionarioFormulario.resx">
+      <DependentUpon>FrmFuncionarioFormulario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\Funcionario\FrmFuncionarioLista.resx">
       <DependentUpon>FrmFuncionarioLista.cs</DependentUpon>

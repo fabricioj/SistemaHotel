@@ -1,4 +1,5 @@
 ﻿using SistemaHotel.form.Fornecedor;
+using SistemaHotel.form.Funcionario;
 using SistemaHotel.form.Orcamento;
 using SistemaHotel.form.Produto;
 using System;
@@ -42,6 +43,14 @@ namespace SistemaHotel
             using (var lista = new FrmOrcamentoLista(_context)) {
                 lista.ShowDialog();
             };
+        }
+
+        private void mnuFuncionarios_Click(object sender, EventArgs e)
+        {
+            using (var lista = new FrmFuncionarioLista(_context))
+            {
+                lista.ShowDialog();
+            }
         }
     }
 }

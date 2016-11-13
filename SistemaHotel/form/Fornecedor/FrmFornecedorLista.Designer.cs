@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.pnlFiltros = new System.Windows.Forms.Panel();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.lblNome = new System.Windows.Forms.Label();
             this.pnlBotoes = new System.Windows.Forms.Panel();
             this.btnPermissao = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
@@ -37,8 +39,13 @@
             this.btnInserir = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.gridRegistros = new System.Windows.Forms.DataGridView();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.lblNome = new System.Windows.Forms.Label();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.razao_social = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlFiltros.SuspendLayout();
             this.pnlBotoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridRegistros)).BeginInit();
@@ -53,6 +60,22 @@
             this.pnlFiltros.Name = "pnlFiltros";
             this.pnlFiltros.Size = new System.Drawing.Size(448, 57);
             this.pnlFiltros.TabIndex = 5;
+            // 
+            // txtNome
+            // 
+            this.txtNome.Location = new System.Drawing.Point(6, 26);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(389, 20);
+            this.txtNome.TabIndex = 3;
+            // 
+            // lblNome
+            // 
+            this.lblNome.AutoSize = true;
+            this.lblNome.Location = new System.Drawing.Point(3, 10);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(35, 13);
+            this.lblNome.TabIndex = 2;
+            this.lblNome.Text = "Nome";
             // 
             // pnlBotoes
             // 
@@ -133,27 +156,66 @@
             this.gridRegistros.AllowUserToAddRows = false;
             this.gridRegistros.AllowUserToDeleteRows = false;
             this.gridRegistros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridRegistros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.nome,
+            this.razao_social,
+            this.telefone,
+            this.email,
+            this.cidade,
+            this.estado});
             this.gridRegistros.Location = new System.Drawing.Point(12, 76);
             this.gridRegistros.Name = "gridRegistros";
             this.gridRegistros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridRegistros.Size = new System.Drawing.Size(448, 221);
             this.gridRegistros.TabIndex = 6;
             // 
-            // txtNome
+            // id
             // 
-            this.txtNome.Location = new System.Drawing.Point(6, 26);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(389, 20);
-            this.txtNome.TabIndex = 3;
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.Width = 50;
             // 
-            // lblNome
+            // nome
             // 
-            this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(3, 10);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(35, 13);
-            this.lblNome.TabIndex = 2;
-            this.lblNome.Text = "Nome";
+            this.nome.DataPropertyName = "nome";
+            this.nome.HeaderText = "Nome";
+            this.nome.Name = "nome";
+            this.nome.Width = 250;
+            // 
+            // razao_social
+            // 
+            this.razao_social.DataPropertyName = "razao_social";
+            this.razao_social.HeaderText = "Razão social";
+            this.razao_social.Name = "razao_social";
+            this.razao_social.Width = 250;
+            // 
+            // telefone
+            // 
+            this.telefone.DataPropertyName = "telefone";
+            this.telefone.HeaderText = "Telefone";
+            this.telefone.Name = "telefone";
+            // 
+            // email
+            // 
+            this.email.DataPropertyName = "email";
+            this.email.HeaderText = "Email";
+            this.email.Name = "email";
+            this.email.Width = 200;
+            // 
+            // cidade
+            // 
+            this.cidade.DataPropertyName = "cidade";
+            this.cidade.HeaderText = "Cidade";
+            this.cidade.Name = "cidade";
+            // 
+            // estado
+            // 
+            this.estado.DataPropertyName = "estado";
+            this.estado.HeaderText = "Estado";
+            this.estado.Name = "estado";
+            this.estado.Width = 50;
             // 
             // FrmFornecedorLista
             // 
@@ -190,5 +252,12 @@
         private System.Windows.Forms.Button btnPermissao;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn razao_social;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
     }
 }

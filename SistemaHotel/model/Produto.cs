@@ -36,7 +36,7 @@ namespace SistemaHotel.model
 
         [NotMapped]
         [Browsable(false)]
-        public util.SimNao editControla_estoque { get { return (SimNao)(int.Parse(controla_estoque)); } set { controla_estoque = ((int)value).ToString().Trim(); } }
+        public SimNao editControla_estoque { get { return (SimNao)(int.Parse(controla_estoque)); } set { controla_estoque = ((int)value).ToString().Trim(); } }
 
         [DisplayName("Controla estoque")]
         public string dspcontrola_estoque { get { return EnumHelper.GetDescription(editControla_estoque); } }

@@ -50,7 +50,7 @@ namespace SistemaHotel.repositorio
             return funcionarios;
         }
 
-        public List<Funcionario> getFuncionarioes(string nome)
+        public List<Funcionario> getFuncionarios(string nome)
         {
             List<Funcionario> funcionarios = new List<Funcionario>();
             funcionarios = _context.funcionario.Where(f => f.nome.Contains(nome)).ToList();

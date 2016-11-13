@@ -35,7 +35,7 @@ namespace SistemaHotel.model
 
         public virtual Apartamento apartamento { get; set; }
 
-        public virtual Dependentes dependentes { get; set; }
+        public virtual Dependente dependentes { get; set; }
 
         public virtual Morador morador { get; set; }
     }

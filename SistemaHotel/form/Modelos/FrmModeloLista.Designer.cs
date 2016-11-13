@@ -82,6 +82,7 @@
             this.btnPermissao.TabIndex = 0;
             this.btnPermissao.Text = "PERMISSÃO";
             this.btnPermissao.UseVisualStyleBackColor = true;
+            this.btnPermissao.Click += new System.EventHandler(this.btnPermissao_Click);
             // 
             // btnConsultar
             // 
@@ -91,6 +92,7 @@
             this.btnConsultar.TabIndex = 0;
             this.btnConsultar.Text = "CONSULTAR";
             this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // btnExcluir
             // 
@@ -100,6 +102,7 @@
             this.btnExcluir.TabIndex = 0;
             this.btnExcluir.Text = "EXCLUIR";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnAlterar
             // 
@@ -109,6 +112,7 @@
             this.btnAlterar.TabIndex = 0;
             this.btnAlterar.Text = "ALTERAR";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnInserir
             // 
@@ -118,6 +122,7 @@
             this.btnInserir.TabIndex = 0;
             this.btnInserir.Text = "INSERIR";
             this.btnInserir.UseVisualStyleBackColor = true;
+            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
             // btnPesquisar
             // 
@@ -127,6 +132,7 @@
             this.btnPesquisar.TabIndex = 0;
             this.btnPesquisar.Text = "PESQUISAR";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // FrmModeloLista
             // 
@@ -138,6 +144,7 @@
             this.Controls.Add(this.pnlBotoes);
             this.Name = "FrmModeloLista";
             this.Text = "FrmModeloLista";
+            this.Load += new System.EventHandler(this.FrmModelo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridRegistros)).EndInit();
             this.pnlBotoes.ResumeLayout(false);
             this.ResumeLayout(false);

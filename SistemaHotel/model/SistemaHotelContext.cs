@@ -15,7 +15,7 @@ namespace SistemaHotel.model
         public virtual DbSet<Apartamento> apartamento { get; set; }
         public virtual DbSet<Area_comum> area_comum { get; set; }
         public virtual DbSet<Atividade> atividade { get; set; }
-        public virtual DbSet<Dependentes> dependentes { get; set; }
+        public virtual DbSet<Dependente> dependentes { get; set; }
         public virtual DbSet<Entrega_mecadoria> entrega_mecadoria { get; set; }
         public virtual DbSet<Entrega_mercadorias> entrega_mercadorias { get; set; }
         public virtual DbSet<Fornecedor> fornecedor { get; set; }
@@ -89,39 +89,39 @@ namespace SistemaHotel.model
                 .WithOptional(e => e.atividade)
                 .HasForeignKey(e => e.atividade_id);
 
-            modelBuilder.Entity<Dependentes>()
+            modelBuilder.Entity<Dependente>()
                 .Property(e => e.nome)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Dependentes>()
+            modelBuilder.Entity<Dependente>()
                 .Property(e => e.rg)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Dependentes>()
+            modelBuilder.Entity<Dependente>()
                 .Property(e => e.cpf)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Dependentes>()
+            modelBuilder.Entity<Dependente>()
                 .Property(e => e.celular)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Dependentes>()
+            modelBuilder.Entity<Dependente>()
                 .Property(e => e.telefone_comercial)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Dependentes>()
+            modelBuilder.Entity<Dependente>()
                 .Property(e => e.profissao)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Dependentes>()
+            modelBuilder.Entity<Dependente>()
                 .Property(e => e.empresa)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Dependentes>()
+            modelBuilder.Entity<Dependente>()
                 .Property(e => e.email)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Dependentes>()
+            modelBuilder.Entity<Dependente>()
                 .HasMany(e => e.visitante)
                 .WithOptional(e => e.dependentes)
                 .HasForeignKey(e => e.dependentes_id);
@@ -213,15 +213,15 @@ namespace SistemaHotel.model
                 .IsUnicode(false);
 
             modelBuilder.Entity<Funcionario>()
-                .Property(e => e.nom_conjuge)
+                .Property(e => e.nome_conjuge)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Funcionario>()
-                .Property(e => e.nom_mae)
+                .Property(e => e.nome_mae)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Funcionario>()
-                .Property(e => e.nom_pai)
+                .Property(e => e.nome_pai)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Funcionario>()

@@ -39,6 +39,13 @@
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnInserir = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.funcao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.data_contratacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridRegistros)).BeginInit();
             this.pnlFiltros.SuspendLayout();
             this.pnlBotoes.SuspendLayout();
@@ -49,6 +56,14 @@
             this.gridRegistros.AllowUserToAddRows = false;
             this.gridRegistros.AllowUserToDeleteRows = false;
             this.gridRegistros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridRegistros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.nome,
+            this.funcao,
+            this.data_contratacao,
+            this.cidade,
+            this.estado,
+            this.telefone});
             this.gridRegistros.Location = new System.Drawing.Point(12, 76);
             this.gridRegistros.Name = "gridRegistros";
             this.gridRegistros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -103,6 +118,7 @@
             this.btnPermissao.TabIndex = 0;
             this.btnPermissao.Text = "PERMISSÃO";
             this.btnPermissao.UseVisualStyleBackColor = true;
+            this.btnPermissao.Click += new System.EventHandler(this.btnPermissao_Click);
             // 
             // btnConsultar
             // 
@@ -112,6 +128,7 @@
             this.btnConsultar.TabIndex = 0;
             this.btnConsultar.Text = "CONSULTAR";
             this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // btnExcluir
             // 
@@ -121,6 +138,7 @@
             this.btnExcluir.TabIndex = 0;
             this.btnExcluir.Text = "EXCLUIR";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnAlterar
             // 
@@ -130,6 +148,7 @@
             this.btnAlterar.TabIndex = 0;
             this.btnAlterar.Text = "ALTERAR";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnInserir
             // 
@@ -139,6 +158,7 @@
             this.btnInserir.TabIndex = 0;
             this.btnInserir.Text = "INSERIR";
             this.btnInserir.UseVisualStyleBackColor = true;
+            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
             // btnPesquisar
             // 
@@ -148,6 +168,55 @@
             this.btnPesquisar.TabIndex = 0;
             this.btnPesquisar.Text = "PESQUISAR";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.Width = 50;
+            // 
+            // nome
+            // 
+            this.nome.DataPropertyName = "nome";
+            this.nome.HeaderText = "Nome";
+            this.nome.Name = "nome";
+            this.nome.Width = 250;
+            // 
+            // funcao
+            // 
+            this.funcao.DataPropertyName = "funcao";
+            this.funcao.HeaderText = "Função";
+            this.funcao.Name = "funcao";
+            this.funcao.Width = 200;
+            // 
+            // data_contratacao
+            // 
+            this.data_contratacao.DataPropertyName = "data_contratacao";
+            this.data_contratacao.HeaderText = "Dt contratação";
+            this.data_contratacao.Name = "data_contratacao";
+            // 
+            // cidade
+            // 
+            this.cidade.DataPropertyName = "cidade";
+            this.cidade.HeaderText = "Cidade";
+            this.cidade.Name = "cidade";
+            this.cidade.Visible = false;
+            // 
+            // estado
+            // 
+            this.estado.DataPropertyName = "estado";
+            this.estado.HeaderText = "UF";
+            this.estado.Name = "estado";
+            this.estado.Visible = false;
+            // 
+            // telefone
+            // 
+            this.telefone.DataPropertyName = "telefone";
+            this.telefone.HeaderText = "Telefone";
+            this.telefone.Name = "telefone";
+            this.telefone.Visible = false;
             // 
             // FrmFuncionarioLista
             // 
@@ -158,9 +227,12 @@
             this.Controls.Add(this.pnlFiltros);
             this.Controls.Add(this.pnlBotoes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmFuncionarioLista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Funcionários";
+            this.Load += new System.EventHandler(this.FrmFuncionarioLista_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridRegistros)).EndInit();
             this.pnlFiltros.ResumeLayout(false);
             this.pnlFiltros.PerformLayout();
@@ -182,5 +254,12 @@
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnInserir;
         private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn funcao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn data_contratacao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefone;
     }
 }

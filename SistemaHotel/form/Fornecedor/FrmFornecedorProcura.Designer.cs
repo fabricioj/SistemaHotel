@@ -41,6 +41,8 @@
             this.razao_social = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridRegistros)).BeginInit();
             this.pnlFiltros.SuspendLayout();
             this.pnlBotoes.SuspendLayout();
@@ -54,7 +56,9 @@
             this.nome,
             this.razao_social,
             this.telefone,
-            this.email});
+            this.email,
+            this.cidade,
+            this.estado});
             this.gridRegistros.Location = new System.Drawing.Point(12, 75);
             this.gridRegistros.Name = "gridRegistros";
             this.gridRegistros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -162,6 +166,19 @@
             this.email.Name = "email";
             this.email.Visible = false;
             // 
+            // cidade
+            // 
+            this.cidade.HeaderText = "Cidade";
+            this.cidade.Name = "cidade";
+            this.cidade.Visible = false;
+            // 
+            // estado
+            // 
+            this.estado.DataPropertyName = "estado";
+            this.estado.HeaderText = "Estado";
+            this.estado.Name = "estado";
+            this.estado.Visible = false;
+            // 
             // FrmFornecedorProcura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -170,9 +187,12 @@
             this.Controls.Add(this.gridRegistros);
             this.Controls.Add(this.pnlFiltros);
             this.Controls.Add(this.pnlBotoes);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmFornecedorProcura";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmFornecedorProcura";
+            this.Text = "Listas de fornecedores";
             ((System.ComponentModel.ISupportInitialize)(this.gridRegistros)).EndInit();
             this.pnlFiltros.ResumeLayout(false);
             this.pnlFiltros.PerformLayout();
@@ -196,5 +216,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn razao_social;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefone;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
     }
 }

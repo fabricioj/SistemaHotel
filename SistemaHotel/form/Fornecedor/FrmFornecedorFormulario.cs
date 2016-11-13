@@ -20,11 +20,11 @@ namespace SistemaHotel.form.Fornecedor
 
         public FrmFornecedorFormulario(Operacao op, model.SistemaHotelContext context, model.Fornecedor fornecedor)
         {
+            _op = op;
+            _context = context;
+            _fornecedor = fornecedor;
+            _fornecedorRepositorio = new repositorio.FornecedorRepositorio(context);
             InitializeComponent();
-            this._op = op;
-            this._context = context;
-            this._fornecedor = fornecedor;
-            this._fornecedorRepositorio = new repositorio.FornecedorRepositorio(context);
             Util.acertaTabOrder(this);
         }
 
@@ -32,6 +32,7 @@ namespace SistemaHotel.form.Fornecedor
             txtID.Enabled           = true;
             txtNome.Enabled         = true;
             txtRazaoSocial.Enabled  = true;
+            txtEmail.Enabled        = true;
             txtCNPJ.Enabled         = true;
             txtTelefone.Enabled     = true;
             txtEndereco.Enabled     = true;
@@ -44,6 +45,7 @@ namespace SistemaHotel.form.Fornecedor
             txtID.Text          = _fornecedor.id.ToString().Trim();
             txtNome.Text        = _fornecedor.nome;
             txtRazaoSocial.Text = _fornecedor.razao_social;
+            txtEmail.Text       = _fornecedor.email;
             txtCNPJ.Text        = _fornecedor.cnpj;
             txtTelefone.Text    = _fornecedor.telefone;
             txtEndereco.Text    = _fornecedor.endereco;
@@ -59,6 +61,7 @@ namespace SistemaHotel.form.Fornecedor
             {   
                 txtNome.Enabled         = false;
                 txtRazaoSocial.Enabled  = false;
+                txtEmail.Enabled        = false;
                 txtCNPJ.Enabled         = false;
                 txtTelefone.Enabled     = false;
                 txtEndereco.Enabled     = false;
@@ -78,6 +81,7 @@ namespace SistemaHotel.form.Fornecedor
         private void preencheObjeto() {
             _fornecedor.id =int.Parse(txtID.Text);
             _fornecedor.nome         = txtNome.Text       ;
+            _fornecedor.email        = txtEmail.Text      ;
             _fornecedor.razao_social = txtRazaoSocial.Text;
             _fornecedor.cnpj         = txtCNPJ.Text       ;
             _fornecedor.telefone     = txtTelefone.Text   ;

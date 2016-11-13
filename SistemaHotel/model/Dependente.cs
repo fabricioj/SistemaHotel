@@ -6,21 +6,21 @@ namespace SistemaHotel.model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("sistemahoteldb.dependentes")]
-    public partial class Dependentes
+    [Table("sistemahoteldb.dependente")]
+    public partial class Dependente
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Dependentes()
+        public Dependente()
         {
             visitante = new HashSet<Visitante>();
         }
 
         public int id { get; set; }
 
-        [StringLength(45)]
+        [StringLength(50)]
         public string nome { get; set; }
 
-        [StringLength(14)]
+        [StringLength(15)]
         public string rg { get; set; }
 
         [StringLength(15)]

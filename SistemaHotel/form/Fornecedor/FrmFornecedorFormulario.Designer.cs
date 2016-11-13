@@ -55,6 +55,8 @@
             this.pnlBotoes = new System.Windows.Forms.Panel();
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.pnlInformacoes.SuspendLayout();
             this.pnlBotoes.SuspendLayout();
             this.SuspendLayout();
@@ -71,6 +73,8 @@
             this.pnlInformacoes.Controls.Add(this.lblBairro);
             this.pnlInformacoes.Controls.Add(this.lblCidade);
             this.pnlInformacoes.Controls.Add(this.lblEndereco);
+            this.pnlInformacoes.Controls.Add(this.txtEmail);
+            this.pnlInformacoes.Controls.Add(this.lblEmail);
             this.pnlInformacoes.Controls.Add(this.txtRazaoSocial);
             this.pnlInformacoes.Controls.Add(this.lblRazaoSocial);
             this.pnlInformacoes.Controls.Add(this.txtTelefone);
@@ -87,7 +91,7 @@
             this.pnlInformacoes.Controls.Add(this.lblId);
             this.pnlInformacoes.Location = new System.Drawing.Point(10, 12);
             this.pnlInformacoes.Name = "pnlInformacoes";
-            this.pnlInformacoes.Size = new System.Drawing.Size(397, 367);
+            this.pnlInformacoes.Size = new System.Drawing.Size(397, 413);
             this.pnlInformacoes.TabIndex = 4;
             // 
             // lblExcluir
@@ -120,21 +124,21 @@
             // 
             // txtBairro
             // 
-            this.txtBairro.Location = new System.Drawing.Point(13, 281);
+            this.txtBairro.Location = new System.Drawing.Point(13, 328);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(215, 20);
             this.txtBairro.TabIndex = 23;
             // 
             // txtCidade
             // 
-            this.txtCidade.Location = new System.Drawing.Point(13, 331);
+            this.txtCidade.Location = new System.Drawing.Point(13, 378);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(240, 20);
             this.txtCidade.TabIndex = 22;
             // 
             // txtEndereco
             // 
-            this.txtEndereco.Location = new System.Drawing.Point(13, 231);
+            this.txtEndereco.Location = new System.Drawing.Point(13, 278);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(240, 20);
             this.txtEndereco.TabIndex = 21;
@@ -142,7 +146,7 @@
             // lblBairro
             // 
             this.lblBairro.AutoSize = true;
-            this.lblBairro.Location = new System.Drawing.Point(10, 264);
+            this.lblBairro.Location = new System.Drawing.Point(10, 311);
             this.lblBairro.Name = "lblBairro";
             this.lblBairro.Size = new System.Drawing.Size(34, 13);
             this.lblBairro.TabIndex = 8;
@@ -151,7 +155,7 @@
             // lblCidade
             // 
             this.lblCidade.AutoSize = true;
-            this.lblCidade.Location = new System.Drawing.Point(10, 314);
+            this.lblCidade.Location = new System.Drawing.Point(10, 361);
             this.lblCidade.Name = "lblCidade";
             this.lblCidade.Size = new System.Drawing.Size(40, 13);
             this.lblCidade.TabIndex = 9;
@@ -160,7 +164,7 @@
             // lblEndereco
             // 
             this.lblEndereco.AutoSize = true;
-            this.lblEndereco.Location = new System.Drawing.Point(10, 214);
+            this.lblEndereco.Location = new System.Drawing.Point(10, 261);
             this.lblEndereco.Name = "lblEndereco";
             this.lblEndereco.Size = new System.Drawing.Size(53, 13);
             this.lblEndereco.TabIndex = 10;
@@ -184,7 +188,7 @@
             // 
             // txtTelefone
             // 
-            this.txtTelefone.Location = new System.Drawing.Point(195, 183);
+            this.txtTelefone.Location = new System.Drawing.Point(195, 230);
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(175, 20);
             this.txtTelefone.TabIndex = 18;
@@ -192,7 +196,7 @@
             // lblTelefone
             // 
             this.lblTelefone.AutoSize = true;
-            this.lblTelefone.Location = new System.Drawing.Point(192, 166);
+            this.lblTelefone.Location = new System.Drawing.Point(192, 213);
             this.lblTelefone.Name = "lblTelefone";
             this.lblTelefone.Size = new System.Drawing.Size(49, 13);
             this.lblTelefone.TabIndex = 13;
@@ -200,7 +204,7 @@
             // 
             // txtCNPJ
             // 
-            this.txtCNPJ.Location = new System.Drawing.Point(13, 183);
+            this.txtCNPJ.Location = new System.Drawing.Point(13, 230);
             this.txtCNPJ.Name = "txtCNPJ";
             this.txtCNPJ.Size = new System.Drawing.Size(175, 20);
             this.txtCNPJ.TabIndex = 24;
@@ -208,7 +212,7 @@
             // lblCNPJ
             // 
             this.lblCNPJ.AutoSize = true;
-            this.lblCNPJ.Location = new System.Drawing.Point(10, 166);
+            this.lblCNPJ.Location = new System.Drawing.Point(10, 213);
             this.lblCNPJ.Name = "lblCNPJ";
             this.lblCNPJ.Size = new System.Drawing.Size(34, 13);
             this.lblCNPJ.TabIndex = 14;
@@ -216,7 +220,7 @@
             // 
             // txtCep
             // 
-            this.txtCep.Location = new System.Drawing.Point(234, 281);
+            this.txtCep.Location = new System.Drawing.Point(234, 328);
             this.txtCep.Name = "txtCep";
             this.txtCep.Size = new System.Drawing.Size(136, 20);
             this.txtCep.TabIndex = 17;
@@ -224,7 +228,7 @@
             // lblCep
             // 
             this.lblCep.AutoSize = true;
-            this.lblCep.Location = new System.Drawing.Point(231, 264);
+            this.lblCep.Location = new System.Drawing.Point(231, 311);
             this.lblCep.Name = "lblCep";
             this.lblCep.Size = new System.Drawing.Size(28, 13);
             this.lblCep.TabIndex = 12;
@@ -232,7 +236,7 @@
             // 
             // txtUf
             // 
-            this.txtUf.Location = new System.Drawing.Point(269, 331);
+            this.txtUf.Location = new System.Drawing.Point(269, 378);
             this.txtUf.Name = "txtUf";
             this.txtUf.Size = new System.Drawing.Size(101, 20);
             this.txtUf.TabIndex = 16;
@@ -240,7 +244,7 @@
             // lblUf
             // 
             this.lblUf.AutoSize = true;
-            this.lblUf.Location = new System.Drawing.Point(266, 314);
+            this.lblUf.Location = new System.Drawing.Point(266, 361);
             this.lblUf.Name = "lblUf";
             this.lblUf.Size = new System.Drawing.Size(21, 13);
             this.lblUf.TabIndex = 7;
@@ -248,7 +252,7 @@
             // 
             // txtNumero
             // 
-            this.txtNumero.Location = new System.Drawing.Point(269, 231);
+            this.txtNumero.Location = new System.Drawing.Point(269, 278);
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(101, 20);
             this.txtNumero.TabIndex = 15;
@@ -256,7 +260,7 @@
             // lblNumero
             // 
             this.lblNumero.AutoSize = true;
-            this.lblNumero.Location = new System.Drawing.Point(266, 214);
+            this.lblNumero.Location = new System.Drawing.Point(266, 261);
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(44, 13);
             this.lblNumero.TabIndex = 6;
@@ -285,7 +289,7 @@
             this.pnlBotoes.Controls.Add(this.btnConfirmar);
             this.pnlBotoes.Location = new System.Drawing.Point(413, 12);
             this.pnlBotoes.Name = "pnlBotoes";
-            this.pnlBotoes.Size = new System.Drawing.Size(137, 367);
+            this.pnlBotoes.Size = new System.Drawing.Size(137, 413);
             this.pnlBotoes.TabIndex = 3;
             // 
             // btnFechar
@@ -308,11 +312,27 @@
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(10, 166);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(32, 13);
+            this.lblEmail.TabIndex = 11;
+            this.lblEmail.Text = "Email";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(13, 183);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(357, 20);
+            this.txtEmail.TabIndex = 20;
+            // 
             // FrmFornecedorFormulario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(555, 392);
+            this.ClientSize = new System.Drawing.Size(555, 438);
             this.Controls.Add(this.pnlInformacoes);
             this.Controls.Add(this.pnlBotoes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -358,5 +378,7 @@
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.Label lblExcluir;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label lblEmail;
     }
 }

@@ -20,4 +20,25 @@ namespace SistemaHotel.util
         [Description("NÃO")]
         NAO
     }
+
+    public enum EstadoCivil
+    {
+        [Description("0 - NENHUM")]
+        Nenhum,
+
+        [Description("1 - SOLTEIRO")]
+        Solteiro,
+
+        [Description("2 - CASADO")]
+        Casado,
+
+        [Description("3 - VIÚVO")]
+        Viuvo,
+
+        [Description("4 - DIVORCIADO")]
+        Divorciado,
+
+        [Description("5 - SEPARADO")]
+        Separado
+    }
 }

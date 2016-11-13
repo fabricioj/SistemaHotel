@@ -35,6 +35,8 @@
             this.mnuFornecedores = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMovimentos = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuOrcamentos = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFuncionarios = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuSistema.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,7 +56,9 @@
             this.mnuCadastros.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuProdutos,
             this.toolStripSeparator1,
-            this.mnuFornecedores});
+            this.mnuFornecedores,
+            this.toolStripSeparator2,
+            this.mnuFuncionarios});
             this.mnuCadastros.Name = "mnuCadastros";
             this.mnuCadastros.Size = new System.Drawing.Size(71, 20);
             this.mnuCadastros.Text = "Cadastros";
@@ -62,19 +66,19 @@
             // mnuProdutos
             // 
             this.mnuProdutos.Name = "mnuProdutos";
-            this.mnuProdutos.Size = new System.Drawing.Size(145, 22);
+            this.mnuProdutos.Size = new System.Drawing.Size(152, 22);
             this.mnuProdutos.Text = "Produtos";
             this.mnuProdutos.Click += new System.EventHandler(this.mnuProdutos_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(142, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // mnuFornecedores
             // 
             this.mnuFornecedores.Name = "mnuFornecedores";
-            this.mnuFornecedores.Size = new System.Drawing.Size(145, 22);
+            this.mnuFornecedores.Size = new System.Drawing.Size(152, 22);
             this.mnuFornecedores.Text = "Fornecedores";
             this.mnuFornecedores.Click += new System.EventHandler(this.mnuFornecedores_Click);
             // 
@@ -89,9 +93,21 @@
             // mnuOrcamentos
             // 
             this.mnuOrcamentos.Name = "mnuOrcamentos";
-            this.mnuOrcamentos.Size = new System.Drawing.Size(152, 22);
+            this.mnuOrcamentos.Size = new System.Drawing.Size(139, 22);
             this.mnuOrcamentos.Text = "Orçamentos";
             this.mnuOrcamentos.Click += new System.EventHandler(this.mnuOrcamentos_Click);
+            // 
+            // mnuFuncionarios
+            // 
+            this.mnuFuncionarios.Name = "mnuFuncionarios";
+            this.mnuFuncionarios.Size = new System.Drawing.Size(152, 22);
+            this.mnuFuncionarios.Text = "Funcionários";
+            this.mnuFuncionarios.Click += new System.EventHandler(this.mnuFuncionarios_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
             // 
             // FrmSistemaHotel
             // 
@@ -118,6 +134,8 @@
         private System.Windows.Forms.ToolStripMenuItem mnuFornecedores;
         private System.Windows.Forms.ToolStripMenuItem mnuMovimentos;
         private System.Windows.Forms.ToolStripMenuItem mnuOrcamentos;
+        private System.Windows.Forms.ToolStripMenuItem mnuFuncionarios;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     }
 }
 

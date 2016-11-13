@@ -15,7 +15,7 @@ namespace SistemaHotel.form.Orcamento
     {
         private model.SistemaHotelContext _context;
         private repositorio.OrcamentoRepositorio _orcamentoRepositorio;
-        private model.Permissao_old _permissoes;
+        private model.Permissao _permissoes;
 
         public FrmOrcamentoLista(model.SistemaHotelContext context)
         {
@@ -27,8 +27,8 @@ namespace SistemaHotel.form.Orcamento
 
         private void FrmOrcamentoLista_Load(object sender, EventArgs e)
         {
-            _permissoes = dao.PermissaoDao.getPermissaoFuncionalidadeNome(Name);
-            if (_permissoes.consultar == util.SimNao.NAO && _permissoes.supervisor == util.SimNao.NAO)
+            _permissoes = repositorio.PermissaoRepositorio.getPermissaoFuncionalidadeNome(_context, Name);
+            if (_permissoes.editConsultar == util.SimNao.NAO && _permissoes.editSupervisor == util.SimNao.NAO)
             {
                 MessageBox.Show("Usuário não tem permissão para consultar registros", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Dispose();
@@ -39,7 +39,7 @@ namespace SistemaHotel.form.Orcamento
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
-            if (_permissoes.inserir == util.SimNao.NAO && _permissoes.supervisor == util.SimNao.NAO)
+            if (_permissoes.editInserir == util.SimNao.NAO && _permissoes.editSupervisor == util.SimNao.NAO)
             {
                 MessageBox.Show("Usuário não tem permissão para inserir registros", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -60,7 +60,7 @@ namespace SistemaHotel.form.Orcamento
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            if (_permissoes.alterar == util.SimNao.NAO && _permissoes.supervisor == util.SimNao.NAO)
+            if (_permissoes.editAlterar == util.SimNao.NAO && _permissoes.editSupervisor == util.SimNao.NAO)
             {
                 MessageBox.Show("Usuário não tem permissão para alterar registros", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -85,7 +85,7 @@ namespace SistemaHotel.form.Orcamento
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            if (_permissoes.excluir == util.SimNao.NAO && _permissoes.supervisor == util.SimNao.NAO)
+            if (_permissoes.editExcluir == util.SimNao.NAO && _permissoes.editSupervisor == util.SimNao.NAO)
             {
                 MessageBox.Show("Usuário não tem permissão para alterar registros", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

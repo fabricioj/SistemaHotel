@@ -12,7 +12,7 @@ namespace SistemaHotel.model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Morador()
         {
-            dependentes = new HashSet<Dependentes>();
+            dependentes = new HashSet<Dependente>();
             entrega_mecadoria = new HashSet<Entrega_mecadoria>();
             entrega_mercadorias = new HashSet<Entrega_mercadorias>();
             moradia = new HashSet<Moradia>();
@@ -50,7 +50,7 @@ namespace SistemaHotel.model
         public string tel_comercial { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Dependentes> dependentes { get; set; }
+        public virtual ICollection<Dependente> dependentes { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Entrega_mecadoria> entrega_mecadoria { get; set; }
