@@ -27,5 +27,10 @@ namespace SistemaHotel.form.Funcionalidade
             
             }
         }
+
+        private void FrmFuncionalidadeFormulario_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

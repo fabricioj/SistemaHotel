@@ -142,6 +142,7 @@
             this.Controls.Add(this.pnlCorpo);
             this.Name = "FrmFuncionalidadeFormulario";
             this.Text = "FrmFuncionalidadeFormulario";
+            this.Load += new System.EventHandler(this.FrmFuncionalidadeFormulario_Load);
             this.pnlCorpo.ResumeLayout(false);
             this.pnlCorpo.PerformLayout();
             this.pnlBotoes.ResumeLayout(false);
