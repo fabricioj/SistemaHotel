@@ -214,6 +214,7 @@
     <Compile Include="model\Atividade.cs" />
     <Compile Include="repositorio\FornecedorRepositorio.cs" />
     <Compile Include="repositorio\FuncionalidadeRepositorio.cs" />
+    <Compile Include="repositorio\FuncionarioRepositorio.cs" />
     <Compile Include="repositorio\OrcamentoRepositorio.cs" />
     <Compile Include="repositorio\Orcamento_itemRepositorio.cs" />
     <Compile Include="repositorio\ProdutoRepositorio.cs" />

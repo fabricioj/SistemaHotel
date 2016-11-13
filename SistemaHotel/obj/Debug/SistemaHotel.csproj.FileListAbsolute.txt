@@ -36,3 +36,4 @@ C:\Temp\Csharp\SistemaHotel\SistemaHotel\obj\Debug\SistemaHotel.form.Solicitacao
 C:\Temp\Csharp\SistemaHotel\SistemaHotel\obj\Debug\SistemaHotel.csprojResolveAssemblyReference.cache
 C:\Temp\Csharp\SistemaHotel\SistemaHotel\obj\Debug\SistemaHotel.form.Funcionario.FrmFuncionarioLista.resources
 C:\Temp\Csharp\SistemaHotel\SistemaHotel\obj\Debug\SistemaHotel.form.Modelos.FrmModeloLista.resources
+C:\Temp\Csharp\SistemaHotel\SistemaHotel\obj\Debug\SistemaHotel.form.Modelos.FrmModeloFormulario.resources
