@@ -11,7 +11,6 @@ namespace SistemaHotel.model
 {
     public abstract class Pessoa
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [DisplayName("ID")]
         public int id { get; set; }
 

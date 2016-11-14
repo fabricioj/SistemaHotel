@@ -186,6 +186,7 @@ namespace SistemaHotel.form.Funcionario
             _funcionario.editEstado_civil = (EstadoCivil)EnumHelper.GetValue(cbEstado_civil.SelectedItem);
             _funcionario.nome_conjuge     = txtNome_conjuge.Text;
             _funcionario.nome_pai         = txtNome_pai.Text;
+            _funcionario.nome_mae         = txtNome_mae.Text;
             _funcionario.nacionalidade    = txtNacionalidade.Text;
 
             _funcionario.data_contratacao = txtData_contratacao.Value != DateTimePicker.MinimumDateTime? txtData_contratacao.Value: DateTime.MinValue;
