@@ -33,10 +33,14 @@
             this.mnuProdutos = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuFornecedores = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuFuncionarios = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuAreasComuns = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMovimentos = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuOrcamentos = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuFuncionarios = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuSolicitacoes = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSistema.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,7 +62,9 @@
             this.toolStripSeparator1,
             this.mnuFornecedores,
             this.toolStripSeparator2,
-            this.mnuFuncionarios});
+            this.mnuFuncionarios,
+            this.toolStripSeparator3,
+            this.mnuAreasComuns});
             this.mnuCadastros.Name = "mnuCadastros";
             this.mnuCadastros.Size = new System.Drawing.Size(71, 20);
             this.mnuCadastros.Text = "Cadastros";
@@ -66,25 +72,51 @@
             // mnuProdutos
             // 
             this.mnuProdutos.Name = "mnuProdutos";
-            this.mnuProdutos.Size = new System.Drawing.Size(152, 22);
+            this.mnuProdutos.Size = new System.Drawing.Size(149, 22);
             this.mnuProdutos.Text = "Produtos";
             this.mnuProdutos.Click += new System.EventHandler(this.mnuProdutos_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(146, 6);
             // 
             // mnuFornecedores
             // 
             this.mnuFornecedores.Name = "mnuFornecedores";
-            this.mnuFornecedores.Size = new System.Drawing.Size(152, 22);
+            this.mnuFornecedores.Size = new System.Drawing.Size(149, 22);
             this.mnuFornecedores.Text = "Fornecedores";
             this.mnuFornecedores.Click += new System.EventHandler(this.mnuFornecedores_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(146, 6);
+            // 
+            // mnuFuncionarios
+            // 
+            this.mnuFuncionarios.Name = "mnuFuncionarios";
+            this.mnuFuncionarios.Size = new System.Drawing.Size(149, 22);
+            this.mnuFuncionarios.Text = "Funcionários";
+            this.mnuFuncionarios.Click += new System.EventHandler(this.mnuFuncionarios_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(146, 6);
+            // 
+            // mnuAreasComuns
+            // 
+            this.mnuAreasComuns.Name = "mnuAreasComuns";
+            this.mnuAreasComuns.Size = new System.Drawing.Size(149, 22);
+            this.mnuAreasComuns.Text = "Áreas comuns";
+            this.mnuAreasComuns.Click += new System.EventHandler(this.mnuAreasComuns_Click);
             // 
             // mnuMovimentos
             // 
             this.mnuMovimentos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuSolicitacoes,
+            this.toolStripSeparator4,
             this.mnuOrcamentos});
             this.mnuMovimentos.Name = "mnuMovimentos";
             this.mnuMovimentos.Size = new System.Drawing.Size(86, 20);
@@ -93,21 +125,21 @@
             // mnuOrcamentos
             // 
             this.mnuOrcamentos.Name = "mnuOrcamentos";
-            this.mnuOrcamentos.Size = new System.Drawing.Size(139, 22);
+            this.mnuOrcamentos.Size = new System.Drawing.Size(152, 22);
             this.mnuOrcamentos.Text = "Orçamentos";
             this.mnuOrcamentos.Click += new System.EventHandler(this.mnuOrcamentos_Click);
             // 
-            // mnuFuncionarios
+            // toolStripSeparator4
             // 
-            this.mnuFuncionarios.Name = "mnuFuncionarios";
-            this.mnuFuncionarios.Size = new System.Drawing.Size(152, 22);
-            this.mnuFuncionarios.Text = "Funcionários";
-            this.mnuFuncionarios.Click += new System.EventHandler(this.mnuFuncionarios_Click);
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(149, 6);
             // 
-            // toolStripSeparator2
+            // mnuSolicitacoes
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+            this.mnuSolicitacoes.Name = "mnuSolicitacoes";
+            this.mnuSolicitacoes.Size = new System.Drawing.Size(152, 22);
+            this.mnuSolicitacoes.Text = "Solicitações";
+            this.mnuSolicitacoes.Click += new System.EventHandler(this.mnuSolicitacoes_Click);
             // 
             // FrmSistemaHotel
             // 
@@ -136,6 +168,10 @@
         private System.Windows.Forms.ToolStripMenuItem mnuOrcamentos;
         private System.Windows.Forms.ToolStripMenuItem mnuFuncionarios;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripMenuItem mnuAreasComuns;
+        private System.Windows.Forms.ToolStripMenuItem mnuSolicitacoes;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
     }
 }
 

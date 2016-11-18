@@ -487,6 +487,10 @@ namespace SistemaHotel.model
                 .IsUnicode(false);
 
             modelBuilder.Entity<Solicitacao>()
+                .Property(e => e.tipo)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Solicitacao>()
                 .Property(e => e.servico)
                 .IsUnicode(false);
 
@@ -509,7 +513,7 @@ namespace SistemaHotel.model
             modelBuilder.Entity<Solicitacao>()
                 .HasMany(e => e.atividade)
                 .WithOptional(e => e.solicitacao)
-                .HasForeignKey(e => e.solicitcao_id);
+                .HasForeignKey(e => e.solicitacao_id);
 
             modelBuilder.Entity<Solicitacao>()
                 .HasMany(e => e.reserva_area_comum)
@@ -541,17 +545,19 @@ namespace SistemaHotel.model
                 .IsUnicode(false);
 
             modelBuilder.Entity<Usuario>()
-                .Property(e => e.cidade)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Usuario>()
-                .Property(e => e.estado)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Usuario>()
                 .HasMany(e => e.permissao)
                 .WithOptional(e => e.usuario)
                 .HasForeignKey(e => e.usuario_id);
+
+            modelBuilder.Entity<Usuario>()
+                .HasMany(e => e.solicitacao_solicitante)
+                .WithOptional(e => e.usuario_solicitante)
+                .HasForeignKey(e => e.usuario_solicitante_id);
+
+            modelBuilder.Entity<Usuario>()
+                .HasMany(e => e.solicitacao_visualizacao)
+                .WithOptional(e => e.usuario_visualizacao)
+                .HasForeignKey(e => e.usuario_visualizacao_id);
 
             modelBuilder.Entity<Veiculo>()
                 .Property(e => e.marca)

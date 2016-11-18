@@ -46,12 +46,12 @@ namespace SistemaHotel.form.Orcamento
             txtID.Text = _orcamento.id.ToString().Trim();
             txtData_emissao.Value = _orcamento.data_emissao != null && _orcamento.data_emissao != DateTime.MinValue ? (DateTime)_orcamento.data_emissao : DateTimePicker.MinimumDateTime;
             txtData_confirmacao.Value = _orcamento.data_confirmacao != null && _orcamento.data_confirmacao != DateTime.MinValue ? (DateTime)_orcamento.data_confirmacao : DateTimePicker.MinimumDateTime;
-            txtFornecedor_id.Text = _orcamento.edtFornecedor_id.ToString().Trim();
+            txtFornecedor_id.Text = _orcamento.editFornecedor_id.ToString().Trim();
             txtFornecedor_nome.Text = string.Empty;
             if (_orcamento.fornecedor != null)
                 txtFornecedor_nome.Text = _orcamento.fornecedor.nome;
 
-            txtAtividade_id.Text   = _orcamento.edtAtividade_id.ToString();
+            txtAtividade_id.Text   = _orcamento.editAtividade_id.ToString();
             txtAtividade_nome.Text = string.Empty;
             if (_orcamento.atividade != null)
                 txtAtividade_nome.Text = _orcamento.atividade.nome;

@@ -41,4 +41,14 @@ namespace SistemaHotel.util
         [Description("5 - SEPARADO")]
         Separado
     }
+
+    public enum TipoSolicitacao
+    {
+        [Description("0 - NENHUM")]
+        Nenhum,
+        [Description("1 - SERVIÇO")]
+        Servico,
+        [Description("2 - RESERVA DE ÁREA COMUM")]
+        Reserva
+    }
 }

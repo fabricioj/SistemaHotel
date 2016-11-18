@@ -69,6 +69,24 @@
     <Compile Include="dao\ProdutoDao.cs" />
     <Compile Include="dao\FornecedorDao.cs" />
     <Compile Include="dao\PermissaoDao.cs" />
+    <Compile Include="form\AreaComum\FrmAreaComumFormulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\AreaComum\FrmAreaComumFormulario.Designer.cs">
+      <DependentUpon>FrmAreaComumFormulario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\AreaComum\FrmAreaComumLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\AreaComum\FrmAreaComumLista.Designer.cs">
+      <DependentUpon>FrmAreaComumLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\AreaComum\FrmAreaComumProcura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\AreaComum\FrmAreaComumProcura.Designer.cs">
+      <DependentUpon>FrmAreaComumProcura.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\Fornecedor\FrmFornecedorProcura.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,16 +117,16 @@
     <Compile Include="form\Funcionario\FrmFuncionarioLista.Designer.cs">
       <DependentUpon>FrmFuncionarioLista.cs</DependentUpon>
     </Compile>
-    <Compile Include="form\Modelos\FrmModeloFormulario.cs">
+    <Compile Include="form\Modelo\FrmModeloFormulario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form\Modelos\FrmModeloFormulario.Designer.cs">
+    <Compile Include="form\Modelo\FrmModeloFormulario.Designer.cs">
       <DependentUpon>FrmModeloFormulario.cs</DependentUpon>
     </Compile>
-    <Compile Include="form\Modelos\FrmModeloLista.cs">
+    <Compile Include="form\Modelo\FrmModeloLista.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form\Modelos\FrmModeloLista.Designer.cs">
+    <Compile Include="form\Modelo\FrmModeloLista.Designer.cs">
       <DependentUpon>FrmModeloLista.cs</DependentUpon>
     </Compile>
     <Compile Include="form\Perfil\FrmPerfilFormulario.cs">
@@ -218,6 +236,7 @@
     <Compile Include="model\Apartamento.cs" />
     <Compile Include="model\Area_comum.cs" />
     <Compile Include="model\Atividade.cs" />
+    <Compile Include="repositorio\Area_comumRepositorio.cs" />
     <Compile Include="repositorio\FornecedorRepositorio.cs" />
     <Compile Include="repositorio\FuncionalidadeRepositorio.cs" />
     <Compile Include="repositorio\FuncionarioRepositorio.cs" />
@@ -225,6 +244,7 @@
     <Compile Include="repositorio\Orcamento_itemRepositorio.cs" />
     <Compile Include="repositorio\PermissaoRepositorio.cs" />
     <Compile Include="repositorio\ProdutoRepositorio.cs" />
+    <Compile Include="repositorio\SolicitacaoRepositorio.cs" />
     <Compile Include="util\BancoDados.cs" />
     <Compile Include="model\Dependente.cs" />
     <Compile Include="util\Dominio.cs" />
@@ -256,6 +276,15 @@
     <Compile Include="model\Vaga.cs" />
     <Compile Include="model\Veiculo.cs" />
     <Compile Include="model\Visitante.cs" />
+    <EmbeddedResource Include="form\AreaComum\FrmAreaComumFormulario.resx">
+      <DependentUpon>FrmAreaComumFormulario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\AreaComum\FrmAreaComumLista.resx">
+      <DependentUpon>FrmAreaComumLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\AreaComum\FrmAreaComumProcura.resx">
+      <DependentUpon>FrmAreaComumProcura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form\Fornecedor\FrmFornecedorProcura.resx">
       <DependentUpon>FrmFornecedorProcura.cs</DependentUpon>
     </EmbeddedResource>
@@ -271,10 +300,10 @@
     <EmbeddedResource Include="form\Funcionario\FrmFuncionarioLista.resx">
       <DependentUpon>FrmFuncionarioLista.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form\Modelos\FrmModeloFormulario.resx">
+    <EmbeddedResource Include="form\Modelo\FrmModeloFormulario.resx">
       <DependentUpon>FrmModeloFormulario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form\Modelos\FrmModeloLista.resx">
+    <EmbeddedResource Include="form\Modelo\FrmModeloLista.resx">
       <DependentUpon>FrmModeloLista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\Perfil\FrmPerfilFormulario.resx">

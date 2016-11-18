@@ -23,7 +23,7 @@ namespace SistemaHotel.form.Fornecedor
             _op = op;
             _context = context;
             _fornecedor = fornecedor;
-            _fornecedorRepositorio = new repositorio.FornecedorRepositorio(context);
+            _fornecedorRepositorio = new repositorio.FornecedorRepositorio(_context);
             InitializeComponent();
             Util.acertaTabOrder(this);
         }

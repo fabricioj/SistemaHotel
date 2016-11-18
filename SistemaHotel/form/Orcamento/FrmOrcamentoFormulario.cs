@@ -67,12 +67,12 @@ namespace SistemaHotel.form.Orcamento
             orcamento.data_emissao = txtData_emissao.Value != DateTimePicker.MinimumDateTime? txtData_emissao.Value: DateTime.MinValue ;
             orcamento.data_confirmacao = txtData_confirmacao.Value != DateTimePicker.MinimumDateTime ? txtData_confirmacao.Value : DateTime.MinValue;
 
-            orcamento.edtFornecedor_id = int.Parse(txtFornecedor_id.Text);
-            if (orcamento.edtFornecedor_id != 0)
+            orcamento.editFornecedor_id = int.Parse(txtFornecedor_id.Text);
+            if (orcamento.editFornecedor_id != 0)
                 
                 validaFornecedor();
 
-            orcamento.edtAtividade_id = int.Parse(txtAtividade_id.Text);
+            orcamento.editAtividade_id = int.Parse(txtAtividade_id.Text);
         }
 
         private void preencheForm()
@@ -90,11 +90,11 @@ namespace SistemaHotel.form.Orcamento
             txtID.Text = orcamento.id.ToString().Trim();
             txtData_emissao.Value = orcamento.data_emissao != null && orcamento.data_emissao != DateTime.MinValue? (DateTime)orcamento.data_emissao: DateTimePicker.MinimumDateTime;
             txtData_confirmacao.Value = orcamento.data_confirmacao != null && orcamento.data_confirmacao != DateTime.MinValue? (DateTime)orcamento.data_confirmacao : DateTimePicker.MinimumDateTime;
-            txtFornecedor_id.Text = orcamento.edtFornecedor_id.ToString().Trim();
+            txtFornecedor_id.Text = orcamento.editFornecedor_id.ToString().Trim();
             txtFornecedor_nome.Text = string.Empty;
             if (orcamento.fornecedor != null)
                 txtFornecedor_nome.Text = orcamento.fornecedor.nome;
-            txtAtividade_id.Text   = orcamento.edtAtividade_id.ToString().Trim();
+            txtAtividade_id.Text   = orcamento.editAtividade_id.ToString().Trim();
             txtAtividade_nome.Text = string.Empty;
             if (orcamento.atividade != null)
                 txtAtividade_nome.Text = orcamento.atividade.nome;
@@ -139,7 +139,7 @@ namespace SistemaHotel.form.Orcamento
             {
                 txtFornecedor_nome.Text = string.Empty;
 
-                orcamento.edtFornecedor_id = int.Parse(txtFornecedor_id.Text);
+                orcamento.editFornecedor_id = int.Parse(txtFornecedor_id.Text);
                 validaFornecedor();                
                 if (orcamento.fornecedor != null)
                     txtFornecedor_nome.Text = orcamento.fornecedor.nome;
@@ -154,9 +154,9 @@ namespace SistemaHotel.form.Orcamento
         private void validaFornecedor()
         {
             orcamento.fornecedor = null;
-            if (orcamento.edtFornecedor_id != 0)
+            if (orcamento.editFornecedor_id != 0)
             {
-                orcamento.fornecedor = (new repositorio.FornecedorRepositorio(_context)).getFornecedorporID(orcamento.edtFornecedor_id);
+                orcamento.fornecedor = (new repositorio.FornecedorRepositorio(_context)).getFornecedorporID(orcamento.editFornecedor_id);
                 if (orcamento.fornecedor == null)
                 {
                     throw new Exception("Fornecedor não existe");

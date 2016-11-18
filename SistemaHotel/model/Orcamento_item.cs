@@ -27,7 +27,7 @@ namespace SistemaHotel.model
 
         [NotMapped]        
         [DisplayName("ID produto")]
-        public int edtProduto_id { get { return produto_id != null ? (int)produto_id : 0; } set { produto_id = value != 0 ? (int?)value : null; } }
+        public int editProduto_id { get { return produto_id != null ? (int)produto_id : 0; } set { produto_id = value != 0 ? (int?)value : null; } }
 
         [NotMapped]
         [DisplayName("Descrição produto")]

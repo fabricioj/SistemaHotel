@@ -1,6 +1,6 @@
-﻿namespace SistemaHotel.form.Solicitacao
+﻿namespace SistemaHotel.form.AreaComum
 {
-    partial class FrmSolicitacaoLista
+    partial class FrmAreaComumLista
     {
         /// <summary>
         /// Required designer variable.
@@ -37,7 +37,10 @@
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnInserir = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.lblNome = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridRegistros)).BeginInit();
+            this.pnlFiltros.SuspendLayout();
             this.pnlBotoes.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +58,8 @@
             // pnlFiltros
             // 
             this.pnlFiltros.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlFiltros.Controls.Add(this.txtNome);
+            this.pnlFiltros.Controls.Add(this.lblNome);
             this.pnlFiltros.Location = new System.Drawing.Point(12, 12);
             this.pnlFiltros.Name = "pnlFiltros";
             this.pnlFiltros.Size = new System.Drawing.Size(448, 57);
@@ -134,7 +139,23 @@
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
-            // FrmSolicitacaoLista
+            // txtNome
+            // 
+            this.txtNome.Location = new System.Drawing.Point(8, 25);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(307, 20);
+            this.txtNome.TabIndex = 49;
+            // 
+            // lblNome
+            // 
+            this.lblNome.AutoSize = true;
+            this.lblNome.Location = new System.Drawing.Point(5, 8);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(35, 13);
+            this.lblNome.TabIndex = 48;
+            this.lblNome.Text = "Nome";
+            // 
+            // FrmAreaComumLista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -145,11 +166,13 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmSolicitacaoLista";
+            this.Name = "FrmAreaComumLista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Solicitações";
-            this.Load += new System.EventHandler(this.FrmSolicitacao_Load);
+            this.Text = "Áreas comuns";
+            this.Load += new System.EventHandler(this.FrmAreaComum_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridRegistros)).EndInit();
+            this.pnlFiltros.ResumeLayout(false);
+            this.pnlFiltros.PerformLayout();
             this.pnlBotoes.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -166,5 +189,7 @@
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnInserir;
         private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.Label lblNome;
     }
 }

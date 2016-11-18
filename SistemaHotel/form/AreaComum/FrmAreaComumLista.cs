@@ -9,20 +9,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SistemaHotel.form.Solicitacao
+namespace SistemaHotel.form.AreaComum
 {
-    public partial class FrmSolicitacaoLista : Form
+    public partial class FrmAreaComumLista : Form
     {
-        private model.SistemaHotelContext _context;
-        private repositorio.SolicitacaoRepositorio _solicitacaoRepositorio;
         private model.Permissao _permissoes;
-        private model.Usuario _usarioLogado;
+        private model.SistemaHotelContext _context;
+        private repositorio.Area_comumRepositorio _area_comumRepositorio;
 
-        public FrmSolicitacaoLista(model.SistemaHotelContext context, model.Usuario usarioLogado)
+        public FrmAreaComumLista(model.SistemaHotelContext context)
         {
             _context = context;
-            _usarioLogado = usarioLogado;
-            _solicitacaoRepositorio = new repositorio.SolicitacaoRepositorio(_context);
+            _area_comumRepositorio = new repositorio.Area_comumRepositorio(_context);
             InitializeComponent();
             Util.acertaTabOrder(this);
         }
@@ -40,8 +38,7 @@ namespace SistemaHotel.form.Solicitacao
             }
             else
             {
-                
-                FrmSolicitacaoFormulario formulario = new FrmSolicitacaoFormulario(Operacao.Insercao, _context, new model.Solicitacao { usuario_solicitante_id = _usarioLogado.id});
+                FrmAreaComumFormulario formulario = new FrmAreaComumFormulario(Operacao.Insercao, _context, new model.Area_comum());
                 formulario.ShowDialog();
                 atualizaLista();
 
@@ -63,8 +60,8 @@ namespace SistemaHotel.form.Solicitacao
                 }
                 else
                 {
-                    var solicitacao = (model.Solicitacao)gridRegistros.CurrentRow.DataBoundItem;
-                    FrmSolicitacaoFormulario formulario = new FrmSolicitacaoFormulario(Operacao.Alteracao, _context, solicitacao);
+                    var area_comum = (model.Area_comum)gridRegistros.CurrentRow.DataBoundItem;
+                    FrmAreaComumFormulario formulario = new FrmAreaComumFormulario(Operacao.Alteracao, _context, area_comum);
                     formulario.ShowDialog();
                     atualizaLista();
                 }
@@ -87,8 +84,8 @@ namespace SistemaHotel.form.Solicitacao
                 }
                 else
                 {
-                    var solicitacao = (model.Solicitacao)gridRegistros.CurrentRow.DataBoundItem;
-                    FrmSolicitacaoFormulario formulario = new FrmSolicitacaoFormulario(Operacao.Exclusao, _context, solicitacao);
+                    var area_comum = (model.Area_comum)gridRegistros.CurrentRow.DataBoundItem;
+                    FrmAreaComumFormulario formulario = new FrmAreaComumFormulario(Operacao.Exclusao, _context, area_comum);
                     formulario.ShowDialog();
                     atualizaLista();
                 }
@@ -104,8 +101,8 @@ namespace SistemaHotel.form.Solicitacao
             }
             else
             {
-                var solicitacao = (model.Solicitacao)gridRegistros.CurrentRow.DataBoundItem;
-                FrmSolicitacaoFormulario formulario = new FrmSolicitacaoFormulario(Operacao.Consulta, _context, solicitacao);
+                var area_comum = (model.Area_comum)gridRegistros.CurrentRow.DataBoundItem;
+                FrmAreaComumFormulario formulario = new FrmAreaComumFormulario(Operacao.Consulta, _context, area_comum);
                 formulario.ShowDialog();
             }
         }
@@ -115,7 +112,7 @@ namespace SistemaHotel.form.Solicitacao
 
         }
 
-        private void FrmSolicitacao_Load(object sender, EventArgs e)
+        private void FrmAreaComum_Load(object sender, EventArgs e)
         {
             _permissoes = repositorio.PermissaoRepositorio.getPermissaoFuncionalidadeNome(_context, Name);
             if (_permissoes.editConsultar == util.SimNao.NAO && _permissoes.editSupervisor == util.SimNao.NAO)
@@ -133,7 +130,7 @@ namespace SistemaHotel.form.Solicitacao
         private void atualizaLista()
         {
 
-            gridRegistros.DataSource = new BindingSource(new BindingList<model.Solicitacao>(_solicitacaoRepositorio.getSolicitacoes()), null);
+            gridRegistros.DataSource = new BindingSource(new BindingList<model.Area_comum>(_area_comumRepositorio.getArea_comuns(txtNome.Text)), null);
             gridRegistros.Refresh();
         }
     }

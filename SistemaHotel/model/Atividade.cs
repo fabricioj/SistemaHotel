@@ -26,7 +26,7 @@ namespace SistemaHotel.model
         [Column(TypeName = "date")]
         public DateTime? data_confirmacao { get; set; }
 
-        public int? solicitcao_id { get; set; }
+        public int? solicitacao_id { get; set; }
 
         public int? procedimento_id { get; set; }
 

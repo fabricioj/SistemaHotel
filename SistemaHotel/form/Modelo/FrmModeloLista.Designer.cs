@@ -1,4 +1,4 @@
-﻿namespace SistemaHotel.form.Modelos
+﻿namespace SistemaHotel.form.Modelo
 {
     partial class FrmModeloLista
     {
@@ -142,8 +142,12 @@
             this.Controls.Add(this.gridRegistros);
             this.Controls.Add(this.pnlFiltros);
             this.Controls.Add(this.pnlBotoes);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmModeloLista";
-            this.Text = "FrmModeloLista";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Modelos";
             this.Load += new System.EventHandler(this.FrmModelo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridRegistros)).EndInit();
             this.pnlBotoes.ResumeLayout(false);

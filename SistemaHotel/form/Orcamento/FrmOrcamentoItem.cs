@@ -46,7 +46,7 @@ namespace SistemaHotel.form.Orcamento
 
             txtID.Text = _orcamento_item.id.ToString().Trim();
             txtObservacao.Text = _orcamento_item.observacao;
-            txtProduto_id.Text = _orcamento_item.edtProduto_id.ToString().Trim();
+            txtProduto_id.Text = _orcamento_item.editProduto_id.ToString().Trim();
 
             if (_orcamento_item.produto != null)
                 txtProduto_descricao.Text = _orcamento_item.produto.descricao;
@@ -90,8 +90,8 @@ namespace SistemaHotel.form.Orcamento
             _orcamento_item.valor = double.Parse(txtValor.Text);
 
 
-            _orcamento_item.edtProduto_id = int.Parse(txtProduto_id.Text);
-            if (_orcamento_item.edtProduto_id != 0)
+            _orcamento_item.editProduto_id = int.Parse(txtProduto_id.Text);
+            if (_orcamento_item.editProduto_id != 0)
                 validaProduto();
 
         }
@@ -146,9 +146,9 @@ namespace SistemaHotel.form.Orcamento
             procuraProduto.ShowDialog();
             if (procuraProduto.produto != null)
             {
-                _orcamento_item.edtProduto_id = procuraProduto.produto.id;
+                _orcamento_item.editProduto_id = procuraProduto.produto.id;
             }
-            txtProduto_id.Text = _orcamento_item.edtProduto_id.ToString().Trim();
+            txtProduto_id.Text = _orcamento_item.editProduto_id.ToString().Trim();
             txtProduto_id.Focus();
         }
 
@@ -175,10 +175,10 @@ namespace SistemaHotel.form.Orcamento
 
             _orcamento_item.produto = null;
 
-            _orcamento_item.edtProduto_id = int.Parse(txtProduto_id.Text);
-            if (_orcamento_item.edtProduto_id != 0)
+            _orcamento_item.editProduto_id = int.Parse(txtProduto_id.Text);
+            if (_orcamento_item.editProduto_id != 0)
             {
-                _orcamento_item.produto = (new repositorio.ProdutoRepositorio(_context)).getProdutoporID(_orcamento_item.edtProduto_id);
+                _orcamento_item.produto = (new repositorio.ProdutoRepositorio(_context)).getProdutoporID(_orcamento_item.editProduto_id);
 
                 if (_orcamento_item.produto == null)
                 {

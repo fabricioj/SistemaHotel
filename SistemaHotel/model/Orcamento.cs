@@ -3,9 +3,7 @@ namespace SistemaHotel.model
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
-    using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
     [Table("sistemahoteldb.orcamento")]
     public partial class Orcamento
@@ -32,7 +30,7 @@ namespace SistemaHotel.model
 
         [NotMapped]
         [DisplayName("ID fornecedor")]
-        public int edtFornecedor_id { get { return fornecedor_id != null ? (int)fornecedor_id : 0; } set { fornecedor_id = value != 0 ? (int?)value : null; } }
+        public int editFornecedor_id { get { return fornecedor_id != null ? (int)fornecedor_id : 0; } set { fornecedor_id = value != 0 ? (int?)value : null; } }
 
         [Browsable(false)]
         public virtual Fornecedor fornecedor { get; set; }
@@ -45,7 +43,7 @@ namespace SistemaHotel.model
 
         [NotMapped]
         [DisplayName("ID atividade")]
-        public int edtAtividade_id { get { return atividade_id != null ? (int)atividade_id : 0; } set { atividade_id = value != 0 ? (int?)value : null; } }
+        public int editAtividade_id { get { return atividade_id != null ? (int)atividade_id : 0; } set { atividade_id = value != 0 ? (int?)value : null; } }
 
         [Browsable(false)]
         public virtual Atividade atividade { get; set; }
