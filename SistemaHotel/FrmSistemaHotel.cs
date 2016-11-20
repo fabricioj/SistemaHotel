@@ -28,6 +28,28 @@ namespace SistemaHotel
             InitializeComponent();
         }
 
+        private void FrmSistemaHotel_Load(object sender, EventArgs e)
+        {
+            preencheForm();
+        }
+
+        private void preencheForm() {
+
+            mnuSolicitacoes.ToolTipText = string.Empty;
+            mnuSolicitacoes.Image = null;
+            var permissoes = repositorio.PermissaoRepositorio.getPermissaoFuncionalidadeNome(_context, "FrmSolicitacaoListar");
+            if (permissoes.editEspecial == util.SimNao.SIM || permissoes.editSupervisor == util.SimNao.SIM)
+            {
+                var qtdSolicitacoes = new repositorio.SolicitacaoRepositorio(_context).getQuantidadeSolicitacoesNVistas();
+
+                if (qtdSolicitacoes > 0)
+                {
+                    mnuSolicitacoes.ToolTipText = "Existe(m) " + qtdSolicitacoes.ToString().Trim() + " solicitação(ões) não vista(s).";
+                    mnuSolicitacoes.Image = SistemaHotel.Properties.Resources.alerta;
+                }
+            }
+        }
+
         private void mnuProdutos_Click(object sender, EventArgs e)
         {
             using (var lista = new FrmProdutoLista(_context)) {
@@ -71,7 +93,9 @@ namespace SistemaHotel
             using (var lista = new FrmSolicitacaoLista(_context, _usuarioLogado))
             {
                 lista.ShowDialog();
+                preencheForm();
             }
         }
+
     }
 }

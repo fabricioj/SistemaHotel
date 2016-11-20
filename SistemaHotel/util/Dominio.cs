@@ -61,4 +61,14 @@ namespace SistemaHotel.util
         [Description("2 - NEGADA")]
         Negada
     }
+
+    public enum TipoFuncionalidade
+    {
+        [Description("0 - NENHUM")]
+        Nenhum,
+        [Description("1 - MENU")]
+        Menu,
+        [Description("2 - AÇÃO ESPECIAL")]
+        Especial
+    }
 }

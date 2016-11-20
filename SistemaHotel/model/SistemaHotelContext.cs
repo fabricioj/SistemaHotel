@@ -187,6 +187,10 @@ namespace SistemaHotel.model
                 .IsUnicode(false);
 
             modelBuilder.Entity<Funcionalidade>()
+                .Property(e => e.tipo)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Funcionalidade>()
                 .HasMany(e => e.permissao)
                 .WithOptional(e => e.funcionalidade)
                 .HasForeignKey(e => e.funcionalidade_id);
@@ -374,6 +378,10 @@ namespace SistemaHotel.model
 
             modelBuilder.Entity<Permissao>()
                 .Property(e => e.excluir)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Permissao>()
+                .Property(e => e.especial)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Prestacao>()

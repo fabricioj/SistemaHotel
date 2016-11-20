@@ -11,14 +11,14 @@ using System.Windows.Forms;
 
 namespace SistemaHotel.form.Solicitacao
 {
-    public partial class FrmSolicitacaoVistar : Form
+    public partial class FrmSolicitacaoVisualizar : Form
     {
         private Operacao _op;
         private model.SistemaHotelContext _context;
         private model.Solicitacao _solicitacao;
         private repositorio.SolicitacaoRepositorio _solicitacaoRepositorio;
 
-        public FrmSolicitacaoVistar(Operacao op,model.Usuario usuarioLogado, model.SistemaHotelContext context, model.Solicitacao _solicitacao)
+        public FrmSolicitacaoVisualizar(Operacao op,model.Usuario usuarioLogado, model.SistemaHotelContext context, model.Solicitacao _solicitacao)
         {
             this._op = op;
             this._context = context;

@@ -100,9 +100,10 @@
             this.pnlInformacoes.Controls.Add(this.lblExcluir);
             this.pnlInformacoes.Controls.Add(this.txtID);
             this.pnlInformacoes.Controls.Add(this.lblId);
-            this.pnlInformacoes.Location = new System.Drawing.Point(12, 12);
+            this.pnlInformacoes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInformacoes.Location = new System.Drawing.Point(0, 0);
             this.pnlInformacoes.Name = "pnlInformacoes";
-            this.pnlInformacoes.Size = new System.Drawing.Size(405, 335);
+            this.pnlInformacoes.Size = new System.Drawing.Size(543, 334);
             this.pnlInformacoes.TabIndex = 10;
             // 
             // txtNome
@@ -541,9 +542,10 @@
             this.pnlBotoes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlBotoes.Controls.Add(this.btnFechar);
             this.pnlBotoes.Controls.Add(this.btnConfirmar);
-            this.pnlBotoes.Location = new System.Drawing.Point(423, 12);
+            this.pnlBotoes.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlBotoes.Location = new System.Drawing.Point(406, 0);
             this.pnlBotoes.Name = "pnlBotoes";
-            this.pnlBotoes.Size = new System.Drawing.Size(137, 335);
+            this.pnlBotoes.Size = new System.Drawing.Size(137, 334);
             this.pnlBotoes.TabIndex = 11;
             // 
             // btnFechar
@@ -570,7 +572,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(566, 359);
+            this.ClientSize = new System.Drawing.Size(543, 334);
             this.Controls.Add(this.pnlBotoes);
             this.Controls.Add(this.pnlInformacoes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

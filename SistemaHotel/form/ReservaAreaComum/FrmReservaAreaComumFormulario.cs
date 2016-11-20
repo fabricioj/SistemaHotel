@@ -9,21 +9,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SistemaHotel.form.Modelo
+namespace SistemaHotel.form.ReservaAreaComum
 {
-    public partial class FrmModeloFormulario : Form
+    public partial class FrmReservaAreaComumFormulario : Form
     {
         private Operacao _op;
         //private model.SistemaHotelContext _context;
-        //private model.Modelo _modelo;
-        //private repositorio.ModeloRepositorio _modeloRepositorio;
+        //private model.ReservaAreaComum _modelo;
+        //private repositorio.ReservaAreaComumRepositorio _modeloRepositorio;
 
-        public FrmModeloFormulario(Operacao op, model.SistemaHotelContext context/*, model.Modelo modelo*/)
+        public FrmReservaAreaComumFormulario(Operacao op, model.SistemaHotelContext context/*, model.ReservaAreaComum modelo*/)
         {
             _op = op;
             //_context = context;
             //_modelo = modelo;
-            //_modeloRepositorio = new repositorio.ModeloRepositorio(_context);
+            //_modeloRepositorio = new repositorio.ReservaAreaComumRepositorio(_context);
             InitializeComponent();
             Util.acertaTabOrder(this);
         }
@@ -38,7 +38,7 @@ namespace SistemaHotel.form.Modelo
                     case Operacao.Insercao:
                         //_modeloRepositorio.incluir(_modelo);
                         //_modeloRepositorio.salvar();
-                        //_modelo = new model.Modelo();
+                        //_modelo = new model.ReservaAreaComum();
                         preencheForm();
                         break;
 
@@ -67,7 +67,7 @@ namespace SistemaHotel.form.Modelo
             Dispose();
         }
 
-        private void FrmModeloFormulario_Load(object sender, EventArgs e)
+        private void FrmReservaAreaComumFormulario_Load(object sender, EventArgs e)
         {
             preencheForm();
         }

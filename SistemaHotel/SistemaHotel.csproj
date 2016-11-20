@@ -159,17 +159,17 @@
     <Compile Include="form\Produto\FrmProdutoProcura.Designer.cs">
       <DependentUpon>FrmProdutoProcura.cs</DependentUpon>
     </Compile>
-    <Compile Include="form\ReservaAreaComum\FrmModeloFormulario.cs">
+    <Compile Include="form\ReservaAreaComum\FrmReservaAreaComumFormulario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form\ReservaAreaComum\FrmModeloFormulario.Designer.cs">
-      <DependentUpon>FrmModeloFormulario.cs</DependentUpon>
+    <Compile Include="form\ReservaAreaComum\FrmReservaAreaComumFormulario.Designer.cs">
+      <DependentUpon>FrmReservaAreaComumFormulario.cs</DependentUpon>
     </Compile>
-    <Compile Include="form\ReservaAreaComum\FrmModeloLista.cs">
+    <Compile Include="form\ReservaAreaComum\FrmReservaAreaComumLista.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form\ReservaAreaComum\FrmModeloLista.Designer.cs">
-      <DependentUpon>FrmModeloLista.cs</DependentUpon>
+    <Compile Include="form\ReservaAreaComum\FrmReservaAreaComumLista.Designer.cs">
+      <DependentUpon>FrmReservaAreaComumLista.cs</DependentUpon>
     </Compile>
     <Compile Include="form\Solicitacao\FrmSolicitacaoFormulario.cs">
       <SubType>Form</SubType>
@@ -183,11 +183,11 @@
     <Compile Include="form\Solicitacao\FrmSolicitacaoLista.Designer.cs">
       <DependentUpon>FrmSolicitacaoLista.cs</DependentUpon>
     </Compile>
-    <Compile Include="form\Solicitacao\FrmSolicitacaoVistar.cs">
+    <Compile Include="form\Solicitacao\FrmSolicitacaoVisualizar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form\Solicitacao\FrmSolicitacaoVistar.Designer.cs">
-      <DependentUpon>FrmSolicitacaoVistar.cs</DependentUpon>
+    <Compile Include="form\Solicitacao\FrmSolicitacaoVisualizar.Designer.cs">
+      <DependentUpon>FrmSolicitacaoVisualizar.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmSistemaHotel.cs">
       <SubType>Form</SubType>
@@ -338,11 +338,11 @@
     <EmbeddedResource Include="form\Produto\FrmProdutoProcura.resx">
       <DependentUpon>FrmProdutoProcura.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form\ReservaAreaComum\FrmModeloFormulario.resx">
-      <DependentUpon>FrmModeloFormulario.cs</DependentUpon>
+    <EmbeddedResource Include="form\ReservaAreaComum\FrmReservaAreaComumFormulario.resx">
+      <DependentUpon>FrmReservaAreaComumFormulario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form\ReservaAreaComum\FrmModeloLista.resx">
-      <DependentUpon>FrmModeloLista.cs</DependentUpon>
+    <EmbeddedResource Include="form\ReservaAreaComum\FrmReservaAreaComumLista.resx">
+      <DependentUpon>FrmReservaAreaComumLista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\Solicitacao\FrmSolicitacaoFormulario.resx">
       <DependentUpon>FrmSolicitacaoFormulario.cs</DependentUpon>
@@ -350,8 +350,8 @@
     <EmbeddedResource Include="form\Solicitacao\FrmSolicitacaoLista.resx">
       <DependentUpon>FrmSolicitacaoLista.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form\Solicitacao\FrmSolicitacaoVistar.resx">
-      <DependentUpon>FrmSolicitacaoVistar.cs</DependentUpon>
+    <EmbeddedResource Include="form\Solicitacao\FrmSolicitacaoVisualizar.resx">
+      <DependentUpon>FrmSolicitacaoVisualizar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSistemaHotel.resx">
       <DependentUpon>FrmSistemaHotel.cs</DependentUpon>
@@ -405,15 +405,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1479585819_15_Tick_16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\certo.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\certo.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\alerta.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

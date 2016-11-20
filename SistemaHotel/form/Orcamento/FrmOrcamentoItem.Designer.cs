@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlInformacoes = new System.Windows.Forms.Panel();
+            this.lblExcluir = new System.Windows.Forms.Label();
             this.txtProduto_id = new System.Windows.Forms.MaskedTextBox();
             this.btnPesquisaProduto = new System.Windows.Forms.Button();
             this.txtObservacao = new System.Windows.Forms.TextBox();
@@ -49,7 +50,6 @@
             this.pnlBotoes = new System.Windows.Forms.Panel();
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
-            this.lblExcluir = new System.Windows.Forms.Label();
             this.pnlInformacoes.SuspendLayout();
             this.pnlBotoes.SuspendLayout();
             this.SuspendLayout();
@@ -75,10 +75,23 @@
             this.pnlInformacoes.Controls.Add(this.lblQuantidade);
             this.pnlInformacoes.Controls.Add(this.txtID);
             this.pnlInformacoes.Controls.Add(this.lblId);
-            this.pnlInformacoes.Location = new System.Drawing.Point(12, 12);
+            this.pnlInformacoes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInformacoes.Location = new System.Drawing.Point(0, 0);
             this.pnlInformacoes.Name = "pnlInformacoes";
-            this.pnlInformacoes.Size = new System.Drawing.Size(383, 325);
+            this.pnlInformacoes.Size = new System.Drawing.Size(405, 349);
             this.pnlInformacoes.TabIndex = 8;
+            // 
+            // lblExcluir
+            // 
+            this.lblExcluir.AutoSize = true;
+            this.lblExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExcluir.ForeColor = System.Drawing.Color.Red;
+            this.lblExcluir.Location = new System.Drawing.Point(8, 4);
+            this.lblExcluir.Name = "lblExcluir";
+            this.lblExcluir.Size = new System.Drawing.Size(210, 17);
+            this.lblExcluir.TabIndex = 28;
+            this.lblExcluir.Text = "Confirma a deleção do registro?";
+            this.lblExcluir.Visible = false;
             // 
             // txtProduto_id
             // 
@@ -228,9 +241,10 @@
             this.pnlBotoes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlBotoes.Controls.Add(this.btnFechar);
             this.pnlBotoes.Controls.Add(this.btnConfirmar);
-            this.pnlBotoes.Location = new System.Drawing.Point(401, 12);
+            this.pnlBotoes.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlBotoes.Location = new System.Drawing.Point(405, 0);
             this.pnlBotoes.Name = "pnlBotoes";
-            this.pnlBotoes.Size = new System.Drawing.Size(137, 325);
+            this.pnlBotoes.Size = new System.Drawing.Size(137, 349);
             this.pnlBotoes.TabIndex = 7;
             // 
             // btnFechar
@@ -252,18 +266,6 @@
             this.btnConfirmar.Text = "CONFIRMAR";
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
-            // 
-            // lblExcluir
-            // 
-            this.lblExcluir.AutoSize = true;
-            this.lblExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExcluir.ForeColor = System.Drawing.Color.Red;
-            this.lblExcluir.Location = new System.Drawing.Point(8, 4);
-            this.lblExcluir.Name = "lblExcluir";
-            this.lblExcluir.Size = new System.Drawing.Size(210, 17);
-            this.lblExcluir.TabIndex = 28;
-            this.lblExcluir.Text = "Confirma a deleção do registro?";
-            this.lblExcluir.Visible = false;
             // 
             // FrmOrcamentoItem
             // 

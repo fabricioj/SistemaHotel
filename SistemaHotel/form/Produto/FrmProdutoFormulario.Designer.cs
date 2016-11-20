@@ -32,6 +32,7 @@
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.pnlInformacoes = new System.Windows.Forms.Panel();
+            this.lblExcluir = new System.Windows.Forms.Label();
             this.cbControla_estoque = new System.Windows.Forms.ComboBox();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.lblControla_estoque = new System.Windows.Forms.Label();
@@ -40,7 +41,6 @@
             this.lblQuantidade = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.lblId = new System.Windows.Forms.Label();
-            this.lblExcluir = new System.Windows.Forms.Label();
             this.pnlBotoes.SuspendLayout();
             this.pnlInformacoes.SuspendLayout();
             this.SuspendLayout();
@@ -50,9 +50,10 @@
             this.pnlBotoes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlBotoes.Controls.Add(this.btnFechar);
             this.pnlBotoes.Controls.Add(this.btnConfirmar);
-            this.pnlBotoes.Location = new System.Drawing.Point(350, 12);
+            this.pnlBotoes.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlBotoes.Location = new System.Drawing.Point(345, 0);
             this.pnlBotoes.Name = "pnlBotoes";
-            this.pnlBotoes.Size = new System.Drawing.Size(137, 175);
+            this.pnlBotoes.Size = new System.Drawing.Size(137, 172);
             this.pnlBotoes.TabIndex = 4;
             // 
             // btnFechar
@@ -87,10 +88,23 @@
             this.pnlInformacoes.Controls.Add(this.lblQuantidade);
             this.pnlInformacoes.Controls.Add(this.txtID);
             this.pnlInformacoes.Controls.Add(this.lblId);
-            this.pnlInformacoes.Location = new System.Drawing.Point(13, 12);
+            this.pnlInformacoes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInformacoes.Location = new System.Drawing.Point(0, 0);
             this.pnlInformacoes.Name = "pnlInformacoes";
-            this.pnlInformacoes.Size = new System.Drawing.Size(331, 175);
+            this.pnlInformacoes.Size = new System.Drawing.Size(345, 172);
             this.pnlInformacoes.TabIndex = 5;
+            // 
+            // lblExcluir
+            // 
+            this.lblExcluir.AutoSize = true;
+            this.lblExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExcluir.ForeColor = System.Drawing.Color.Red;
+            this.lblExcluir.Location = new System.Drawing.Point(8, 4);
+            this.lblExcluir.Name = "lblExcluir";
+            this.lblExcluir.Size = new System.Drawing.Size(210, 17);
+            this.lblExcluir.TabIndex = 31;
+            this.lblExcluir.Text = "Confirma a deleção do registro?";
+            this.lblExcluir.Visible = false;
             // 
             // cbControla_estoque
             // 
@@ -158,23 +172,11 @@
             this.lblId.TabIndex = 26;
             this.lblId.Text = "ID";
             // 
-            // lblExcluir
-            // 
-            this.lblExcluir.AutoSize = true;
-            this.lblExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExcluir.ForeColor = System.Drawing.Color.Red;
-            this.lblExcluir.Location = new System.Drawing.Point(8, 4);
-            this.lblExcluir.Name = "lblExcluir";
-            this.lblExcluir.Size = new System.Drawing.Size(210, 17);
-            this.lblExcluir.TabIndex = 31;
-            this.lblExcluir.Text = "Confirma a deleção do registro?";
-            this.lblExcluir.Visible = false;
-            // 
             // FrmProdutoFormulario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(493, 195);
+            this.ClientSize = new System.Drawing.Size(482, 172);
             this.Controls.Add(this.pnlInformacoes);
             this.Controls.Add(this.pnlBotoes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

@@ -1,6 +1,6 @@
 ﻿namespace SistemaHotel.form.Solicitacao
 {
-    partial class FrmSolicitacaoVistar
+    partial class FrmSolicitacaoVisualizar
     {
         /// <summary>
         /// Required designer variable.
@@ -79,9 +79,10 @@
             this.pnlInformacoes.Controls.Add(this.lblTipo);
             this.pnlInformacoes.Controls.Add(this.txtID);
             this.pnlInformacoes.Controls.Add(this.lblId);
-            this.pnlInformacoes.Location = new System.Drawing.Point(12, 12);
+            this.pnlInformacoes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInformacoes.Location = new System.Drawing.Point(0, 0);
             this.pnlInformacoes.Name = "pnlInformacoes";
-            this.pnlInformacoes.Size = new System.Drawing.Size(351, 452);
+            this.pnlInformacoes.Size = new System.Drawing.Size(362, 447);
             this.pnlInformacoes.TabIndex = 10;
             // 
             // pnlResultado
@@ -336,9 +337,10 @@
             this.pnlBotoes.Controls.Add(this.btnPermissao);
             this.pnlBotoes.Controls.Add(this.btnFechar);
             this.pnlBotoes.Controls.Add(this.btnConfirmar);
-            this.pnlBotoes.Location = new System.Drawing.Point(369, 12);
+            this.pnlBotoes.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlBotoes.Location = new System.Drawing.Point(362, 0);
             this.pnlBotoes.Name = "pnlBotoes";
-            this.pnlBotoes.Size = new System.Drawing.Size(137, 452);
+            this.pnlBotoes.Size = new System.Drawing.Size(137, 447);
             this.pnlBotoes.TabIndex = 9;
             // 
             // btnPermissao
@@ -371,19 +373,19 @@
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
-            // FrmSolicitacaoVistar
+            // FrmSolicitacaoVisualizar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(513, 475);
+            this.ClientSize = new System.Drawing.Size(499, 447);
             this.Controls.Add(this.pnlInformacoes);
             this.Controls.Add(this.pnlBotoes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmSolicitacaoVistar";
+            this.Name = "FrmSolicitacaoVisualizar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Vistar solicitação";
+            this.Text = "Visualizar solicitação";
             this.Load += new System.EventHandler(this.FrmSolicitacaoVistar_Load);
             this.pnlInformacoes.ResumeLayout(false);
             this.pnlInformacoes.PerformLayout();

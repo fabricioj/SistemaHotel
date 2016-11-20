@@ -52,10 +52,17 @@ namespace SistemaHotel.repositorio
 
         public List<Solicitacao> getSolicitacoes(bool somenteNaoVisualizada, TipoSolicitacao tipoSolicitacao)
         {
+            var strTipo = ((int)tipoSolicitacao).ToString().Trim();
             List<Solicitacao> solicitacoes = new List<Solicitacao>();
             solicitacoes = _context.solicitacao.Include(s => s.area_comum).Include(s => s.usuario_solicitante).Include(s => s.usuario_visualizacao)
-                .Where(s => ((s.data_visualizacao == null || s.data_visualizacao == DateTime.MinValue) && somenteNaoVisualizada) || !somenteNaoVisualizada).Where(f => f.editTipo.Equals(tipoSolicitacao)).ToList();
+                .Where(s => ((s.data_visualizacao == null || s.data_visualizacao == DateTime.MinValue) && somenteNaoVisualizada) || !somenteNaoVisualizada)
+                .Where(f => f.tipo == strTipo || tipoSolicitacao == TipoSolicitacao.Nenhum).ToList();
             return solicitacoes;
+        }
+
+        public int getQuantidadeSolicitacoesNVistas()
+        {
+            return _context.solicitacao.Where(s => s.data_visualizacao == null || s.data_visualizacao == DateTime.MinValue).Count();
         }
 
         public void salvar()

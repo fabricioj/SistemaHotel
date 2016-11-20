@@ -35,8 +35,11 @@
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnInserir = new System.Windows.Forms.Button();
+            this.pnlCorpo = new System.Windows.Forms.Panel();
             this.tabAbas = new System.Windows.Forms.TabControl();
             this.tabPrincipal = new System.Windows.Forms.TabPage();
+            this.txtData_emissao = new System.Windows.Forms.DateTimePicker();
+            this.txtData_confirmacao = new System.Windows.Forms.DateTimePicker();
             this.txtFornecedor_nome = new System.Windows.Forms.TextBox();
             this.lblFornecedor_nome = new System.Windows.Forms.Label();
             this.txtAtividade_nome = new System.Windows.Forms.TextBox();
@@ -51,9 +54,8 @@
             this.lblId = new System.Windows.Forms.Label();
             this.tabItens = new System.Windows.Forms.TabPage();
             this.gridItens = new System.Windows.Forms.DataGridView();
-            this.txtData_emissao = new System.Windows.Forms.DateTimePicker();
-            this.txtData_confirmacao = new System.Windows.Forms.DateTimePicker();
             this.pnlBotoes.SuspendLayout();
+            this.pnlCorpo.SuspendLayout();
             this.tabAbas.SuspendLayout();
             this.tabPrincipal.SuspendLayout();
             this.tabItens.SuspendLayout();
@@ -70,9 +72,10 @@
             this.pnlBotoes.Controls.Add(this.btnAlterar);
             this.pnlBotoes.Controls.Add(this.btnInserir);
             this.pnlBotoes.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pnlBotoes.Location = new System.Drawing.Point(456, 13);
+            this.pnlBotoes.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlBotoes.Location = new System.Drawing.Point(463, 0);
             this.pnlBotoes.Name = "pnlBotoes";
-            this.pnlBotoes.Size = new System.Drawing.Size(137, 270);
+            this.pnlBotoes.Size = new System.Drawing.Size(137, 293);
             this.pnlBotoes.TabIndex = 8;
             // 
             // btnFechar
@@ -135,16 +138,26 @@
             this.btnInserir.UseVisualStyleBackColor = true;
             this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
+            // pnlCorpo
+            // 
+            this.pnlCorpo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlCorpo.Controls.Add(this.tabAbas);
+            this.pnlCorpo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlCorpo.Location = new System.Drawing.Point(0, 0);
+            this.pnlCorpo.Name = "pnlCorpo";
+            this.pnlCorpo.Size = new System.Drawing.Size(463, 293);
+            this.pnlCorpo.TabIndex = 9;
+            // 
             // tabAbas
             // 
             this.tabAbas.Controls.Add(this.tabPrincipal);
             this.tabAbas.Controls.Add(this.tabItens);
             this.tabAbas.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.tabAbas.Location = new System.Drawing.Point(13, 13);
+            this.tabAbas.Location = new System.Drawing.Point(11, 10);
             this.tabAbas.Name = "tabAbas";
             this.tabAbas.SelectedIndex = 0;
             this.tabAbas.Size = new System.Drawing.Size(437, 268);
-            this.tabAbas.TabIndex = 9;
+            this.tabAbas.TabIndex = 10;
             this.tabAbas.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabAbas_Selected);
             // 
             // tabPrincipal
@@ -170,6 +183,22 @@
             this.tabPrincipal.TabIndex = 0;
             this.tabPrincipal.Text = "Principal";
             this.tabPrincipal.UseVisualStyleBackColor = true;
+            // 
+            // txtData_emissao
+            // 
+            this.txtData_emissao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtData_emissao.Location = new System.Drawing.Point(117, 35);
+            this.txtData_emissao.Name = "txtData_emissao";
+            this.txtData_emissao.Size = new System.Drawing.Size(82, 20);
+            this.txtData_emissao.TabIndex = 40;
+            // 
+            // txtData_confirmacao
+            // 
+            this.txtData_confirmacao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtData_confirmacao.Location = new System.Drawing.Point(218, 35);
+            this.txtData_confirmacao.Name = "txtData_confirmacao";
+            this.txtData_confirmacao.Size = new System.Drawing.Size(82, 20);
+            this.txtData_confirmacao.TabIndex = 41;
             // 
             // txtFornecedor_nome
             // 
@@ -292,29 +321,13 @@
             this.gridItens.Size = new System.Drawing.Size(416, 229);
             this.gridItens.TabIndex = 0;
             // 
-            // txtData_emissao
-            // 
-            this.txtData_emissao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtData_emissao.Location = new System.Drawing.Point(117, 35);
-            this.txtData_emissao.Name = "txtData_emissao";
-            this.txtData_emissao.Size = new System.Drawing.Size(82, 20);
-            this.txtData_emissao.TabIndex = 40;
-            // 
-            // txtData_confirmacao
-            // 
-            this.txtData_confirmacao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtData_confirmacao.Location = new System.Drawing.Point(218, 35);
-            this.txtData_confirmacao.Name = "txtData_confirmacao";
-            this.txtData_confirmacao.Size = new System.Drawing.Size(82, 20);
-            this.txtData_confirmacao.TabIndex = 41;
-            // 
             // FrmOrcamentoCorpo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 293);
             this.ControlBox = false;
-            this.Controls.Add(this.tabAbas);
+            this.Controls.Add(this.pnlCorpo);
             this.Controls.Add(this.pnlBotoes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -324,6 +337,7 @@
             this.Text = "Orçamento";
             this.Load += new System.EventHandler(this.FrmOrcamentoCorpo_Load);
             this.pnlBotoes.ResumeLayout(false);
+            this.pnlCorpo.ResumeLayout(false);
             this.tabAbas.ResumeLayout(false);
             this.tabPrincipal.ResumeLayout(false);
             this.tabPrincipal.PerformLayout();
@@ -341,10 +355,11 @@
         private System.Windows.Forms.Button btnInserir;
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Button btnConfirmar;
+        private System.Windows.Forms.Panel pnlCorpo;
         private System.Windows.Forms.TabControl tabAbas;
         private System.Windows.Forms.TabPage tabPrincipal;
-        private System.Windows.Forms.TabPage tabItens;
-        private System.Windows.Forms.DataGridView gridItens;
+        private System.Windows.Forms.DateTimePicker txtData_emissao;
+        private System.Windows.Forms.DateTimePicker txtData_confirmacao;
         private System.Windows.Forms.TextBox txtFornecedor_nome;
         private System.Windows.Forms.Label lblFornecedor_nome;
         private System.Windows.Forms.TextBox txtAtividade_nome;
@@ -357,7 +372,7 @@
         private System.Windows.Forms.Label lblData_emissao;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label lblId;
-        private System.Windows.Forms.DateTimePicker txtData_emissao;
-        private System.Windows.Forms.DateTimePicker txtData_confirmacao;
+        private System.Windows.Forms.TabPage tabItens;
+        private System.Windows.Forms.DataGridView gridItens;
     }
 }

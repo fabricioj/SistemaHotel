@@ -123,7 +123,17 @@ namespace SistemaHotel.form.Solicitacao
                 MessageBox.Show("Usuário não tem permissão para consultar registros", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Dispose();
             }
+
+            cbTipo.DataSource = EnumHelper.ToList(typeof(TipoSolicitacao));
+            cbTipo.DisplayMember = "Value";
+            cbTipo.ValueMember = "Key";
+
+            cbTipo.SelectedItem = EnumHelper.SetValue(TipoSolicitacao.Nenhum);
+
+            ckSomenteNVisualizadas.Checked = false;
+
             atualizaLista();
+
             if (_permissoes.editSupervisor == util.SimNao.NAO)
             {
                 btnPermissao.Visible = false;
@@ -132,8 +142,8 @@ namespace SistemaHotel.form.Solicitacao
 
         private void atualizaLista()
         {
-
-            gridRegistros.DataSource = new BindingSource(new BindingList<model.Solicitacao>(_solicitacaoRepositorio.getSolicitacoes()), null);
+            var tipo = (TipoSolicitacao)EnumHelper.GetValue(cbTipo.SelectedItem);
+            gridRegistros.DataSource = new BindingSource(new BindingList<model.Solicitacao>(_solicitacaoRepositorio.getSolicitacoes(ckSomenteNVisualizadas.Checked, tipo)), null);
             gridRegistros.Refresh();
         }
 
@@ -147,18 +157,11 @@ namespace SistemaHotel.form.Solicitacao
             {
                 var solicitacao = (model.Solicitacao)gridRegistros.CurrentRow.DataBoundItem;
                 Operacao op = Operacao.Alteracao;
-                //if (solicitacao.data_visualizacao != null && solicitacao.data_visualizacao != DateTime.MinValue)
-                //{
-                //    op = Operacao.Consulta;
-                //}
-                //else
-                //{
-                //    op = Operacao.Alteracao;
-                //}
                                 
-                FrmSolicitacaoVistar formulario = new FrmSolicitacaoVistar(op, _usarioLogado, _context, solicitacao);
+                FrmSolicitacaoVisualizar formulario = new FrmSolicitacaoVisualizar(op, _usarioLogado, _context, solicitacao);
                 formulario.ShowDialog();
-                
+                atualizaLista();
+
             }
         }
     }

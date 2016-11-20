@@ -17,6 +17,7 @@ namespace SistemaHotel.model
             editInserir = SimNao.NAO;
             editAlterar = SimNao.NAO;
             editExcluir = SimNao.NAO;
+            editEspecial = SimNao.NAO;
         }
         public int id { get; set; }
 
@@ -67,6 +68,18 @@ namespace SistemaHotel.model
         [NotMapped]
         [DisplayName("Excluir")]
         public string dspExcluir { get { return EnumHelper.GetDescription(editExcluir); } }
+
+        [Browsable(false)]
+        [StringLength(1)]
+        public string especial { get; set; }
+
+        [NotMapped]
+        [Browsable(false)]
+        public SimNao editEspecial { get { return (SimNao)(int.Parse(especial)); } set { especial = ((int)value).ToString().Trim(); } }
+
+        [NotMapped]
+        [DisplayName("Especial")]
+        public string dspEspecial { get { return EnumHelper.GetDescription(editEspecial); } }
 
         public int? funcionalidade_id { get; set; }
 

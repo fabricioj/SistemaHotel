@@ -35,13 +35,19 @@
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnInserir = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
-            this.pnlFiltros = new System.Windows.Forms.Panel();
-            this.toolOpcoes = new System.Windows.Forms.ToolStrip();
-            this.toolVistarSolicitacao = new System.Windows.Forms.ToolStripButton();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.gridRegistros = new System.Windows.Forms.DataGridView();
+            this.toolOpcoes = new System.Windows.Forms.ToolStrip();
+            this.toolVisualizarSolicitacao = new System.Windows.Forms.ToolStripButton();
+            this.pnlFiltros = new System.Windows.Forms.Panel();
+            this.ckSomenteNVisualizadas = new System.Windows.Forms.CheckBox();
+            this.cbTipo = new System.Windows.Forms.ComboBox();
+            this.lblTipo = new System.Windows.Forms.Label();
             this.pnlBotoes.SuspendLayout();
-            this.toolOpcoes.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridRegistros)).BeginInit();
+            this.toolOpcoes.SuspendLayout();
+            this.pnlFiltros.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlBotoes
@@ -53,9 +59,10 @@
             this.pnlBotoes.Controls.Add(this.btnAlterar);
             this.pnlBotoes.Controls.Add(this.btnInserir);
             this.pnlBotoes.Controls.Add(this.btnPesquisar);
-            this.pnlBotoes.Location = new System.Drawing.Point(472, 12);
+            this.pnlBotoes.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlBotoes.Location = new System.Drawing.Point(475, 0);
             this.pnlBotoes.Name = "pnlBotoes";
-            this.pnlBotoes.Size = new System.Drawing.Size(137, 320);
+            this.pnlBotoes.Size = new System.Drawing.Size(137, 344);
             this.pnlBotoes.TabIndex = 7;
             // 
             // btnPermissao
@@ -118,55 +125,96 @@
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
-            // pnlFiltros
+            // panel1
             // 
-            this.pnlFiltros.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlFiltros.Location = new System.Drawing.Point(12, 38);
-            this.pnlFiltros.Name = "pnlFiltros";
-            this.pnlFiltros.Size = new System.Drawing.Size(448, 67);
-            this.pnlFiltros.TabIndex = 12;
-            // 
-            // toolOpcoes
-            // 
-            this.toolOpcoes.Dock = System.Windows.Forms.DockStyle.None;
-            this.toolOpcoes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolVistarSolicitacao});
-            this.toolOpcoes.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.toolOpcoes.Location = new System.Drawing.Point(12, 12);
-            this.toolOpcoes.Name = "toolOpcoes";
-            this.toolOpcoes.Size = new System.Drawing.Size(147, 23);
-            this.toolOpcoes.TabIndex = 14;
-            this.toolOpcoes.Text = "Opções";
-            // 
-            // toolVistarSolicitacao
-            // 
-            this.toolVistarSolicitacao.Image = global::SistemaHotel.Properties.Resources.certo;
-            this.toolVistarSolicitacao.ImageTransparentColor = System.Drawing.SystemColors.Control;
-            this.toolVistarSolicitacao.MergeAction = System.Windows.Forms.MergeAction.MatchOnly;
-            this.toolVistarSolicitacao.Name = "toolVistarSolicitacao";
-            this.toolVistarSolicitacao.Size = new System.Drawing.Size(115, 20);
-            this.toolVistarSolicitacao.Text = "Vistar solicitação";
-            this.toolVistarSolicitacao.Click += new System.EventHandler(this.toolVistarSolicitacao_Click);
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.gridRegistros);
+            this.panel1.Controls.Add(this.toolOpcoes);
+            this.panel1.Controls.Add(this.pnlFiltros);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(475, 344);
+            this.panel1.TabIndex = 8;
             // 
             // gridRegistros
             // 
             this.gridRegistros.AllowUserToAddRows = false;
             this.gridRegistros.AllowUserToDeleteRows = false;
             this.gridRegistros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridRegistros.Location = new System.Drawing.Point(12, 111);
+            this.gridRegistros.Location = new System.Drawing.Point(11, 109);
             this.gridRegistros.Name = "gridRegistros";
             this.gridRegistros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridRegistros.Size = new System.Drawing.Size(448, 221);
-            this.gridRegistros.TabIndex = 15;
+            this.gridRegistros.TabIndex = 18;
+            // 
+            // toolOpcoes
+            // 
+            this.toolOpcoes.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolOpcoes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolVisualizarSolicitacao});
+            this.toolOpcoes.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
+            this.toolOpcoes.Location = new System.Drawing.Point(11, 10);
+            this.toolOpcoes.Name = "toolOpcoes";
+            this.toolOpcoes.Size = new System.Drawing.Size(136, 23);
+            this.toolOpcoes.TabIndex = 17;
+            this.toolOpcoes.Text = "Opções";
+            // 
+            // toolVisualizarSolicitacao
+            // 
+            this.toolVisualizarSolicitacao.Image = global::SistemaHotel.Properties.Resources.certo;
+            this.toolVisualizarSolicitacao.ImageTransparentColor = System.Drawing.SystemColors.Control;
+            this.toolVisualizarSolicitacao.MergeAction = System.Windows.Forms.MergeAction.MatchOnly;
+            this.toolVisualizarSolicitacao.Name = "toolVisualizarSolicitacao";
+            this.toolVisualizarSolicitacao.Size = new System.Drawing.Size(135, 20);
+            this.toolVisualizarSolicitacao.Text = "Visualizar solicitação";
+            this.toolVisualizarSolicitacao.Click += new System.EventHandler(this.toolVistarSolicitacao_Click);
+            // 
+            // pnlFiltros
+            // 
+            this.pnlFiltros.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlFiltros.Controls.Add(this.ckSomenteNVisualizadas);
+            this.pnlFiltros.Controls.Add(this.cbTipo);
+            this.pnlFiltros.Controls.Add(this.lblTipo);
+            this.pnlFiltros.Location = new System.Drawing.Point(11, 36);
+            this.pnlFiltros.Name = "pnlFiltros";
+            this.pnlFiltros.Size = new System.Drawing.Size(448, 67);
+            this.pnlFiltros.TabIndex = 16;
+            // 
+            // ckSomenteNVisualizadas
+            // 
+            this.ckSomenteNVisualizadas.AutoSize = true;
+            this.ckSomenteNVisualizadas.Location = new System.Drawing.Point(261, 32);
+            this.ckSomenteNVisualizadas.Name = "ckSomenteNVisualizadas";
+            this.ckSomenteNVisualizadas.Size = new System.Drawing.Size(149, 17);
+            this.ckSomenteNVisualizadas.TabIndex = 35;
+            this.ckSomenteNVisualizadas.Text = "Somente não visualizadas";
+            this.ckSomenteNVisualizadas.UseVisualStyleBackColor = true;
+            // 
+            // cbTipo
+            // 
+            this.cbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipo.FormattingEnabled = true;
+            this.cbTipo.Location = new System.Drawing.Point(3, 29);
+            this.cbTipo.Name = "cbTipo";
+            this.cbTipo.Size = new System.Drawing.Size(232, 21);
+            this.cbTipo.TabIndex = 34;
+            // 
+            // lblTipo
+            // 
+            this.lblTipo.AutoSize = true;
+            this.lblTipo.Location = new System.Drawing.Point(0, 13);
+            this.lblTipo.Name = "lblTipo";
+            this.lblTipo.Size = new System.Drawing.Size(28, 13);
+            this.lblTipo.TabIndex = 33;
+            this.lblTipo.Text = "Tipo";
             // 
             // FrmSolicitacaoLista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(612, 344);
-            this.Controls.Add(this.gridRegistros);
-            this.Controls.Add(this.toolOpcoes);
-            this.Controls.Add(this.pnlFiltros);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlBotoes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -176,11 +224,14 @@
             this.Text = "Solicitações";
             this.Load += new System.EventHandler(this.FrmSolicitacao_Load);
             this.pnlBotoes.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridRegistros)).EndInit();
             this.toolOpcoes.ResumeLayout(false);
             this.toolOpcoes.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridRegistros)).EndInit();
+            this.pnlFiltros.ResumeLayout(false);
+            this.pnlFiltros.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -192,9 +243,13 @@
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnInserir;
         private System.Windows.Forms.Button btnPesquisar;
-        private System.Windows.Forms.Panel pnlFiltros;
-        private System.Windows.Forms.ToolStrip toolOpcoes;
-        private System.Windows.Forms.ToolStripButton toolVistarSolicitacao;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView gridRegistros;
+        private System.Windows.Forms.ToolStrip toolOpcoes;
+        private System.Windows.Forms.ToolStripButton toolVisualizarSolicitacao;
+        private System.Windows.Forms.Panel pnlFiltros;
+        private System.Windows.Forms.CheckBox ckSomenteNVisualizadas;
+        private System.Windows.Forms.ComboBox cbTipo;
+        private System.Windows.Forms.Label lblTipo;
     }
 }

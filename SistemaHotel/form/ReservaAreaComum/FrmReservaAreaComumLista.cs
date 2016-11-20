@@ -9,18 +9,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SistemaHotel.form.Modelo
+namespace SistemaHotel.form.ReservaAreaComum
 {
-    public partial class FrmModeloLista : Form
+    public partial class FrmReservaAreaComumLista : Form
     {
         private model.SistemaHotelContext _context;
-        //private repositorio.ModeloRepositorio _modeloRepositorio;
+        //private repositorio.ReservaAreaComumRepositorio _modeloRepositorio;
         private model.Permissao _permissoes;
 
-        public FrmModeloLista(model.SistemaHotelContext context)
+        public FrmReservaAreaComumLista(model.SistemaHotelContext context)
         {
             _context = context;
-            //_modeloRepositorio = new repositorio.ModeloRepositorio(_context);
+            //_modeloRepositorio = new repositorio.ReservaAreaComumRepositorio(_context);
             InitializeComponent();
             Util.acertaTabOrder(this);
         }
@@ -38,7 +38,7 @@ namespace SistemaHotel.form.Modelo
             }
             else
             {
-                //FrmModeloFormulario formulario = new FrmModeloFormulario(Operacao.Insercao, _context, new model.Modelo());
+                //FrmReservaAreaComumFormulario formulario = new FrmReservaAreaComumFormulario(Operacao.Insercao, _context, new model.ReservaAreaComum());
                 //formulario.ShowDialog();
                 atualizaLista();
 
@@ -60,8 +60,8 @@ namespace SistemaHotel.form.Modelo
                 }
                 else
                 {
-                    //var modelo = (model.Modelo)gridRegistros.CurrentRow.DataBoundItem;
-                    //FrmModeloFormulario formulario = new FrmModeloFormulario(Operacao.Alteracao, _context, fornecedor);
+                    //var modelo = (model.ReservaAreaComum)gridRegistros.CurrentRow.DataBoundItem;
+                    //FrmReservaAreaComumFormulario formulario = new FrmReservaAreaComumFormulario(Operacao.Alteracao, _context, fornecedor);
                     //formulario.ShowDialog();
                     atualizaLista();
                 }
@@ -84,8 +84,8 @@ namespace SistemaHotel.form.Modelo
                 }
                 else
                 {
-                    //var modelo = (model.Modelo)gridRegistros.CurrentRow.DataBoundItem;
-                    //FrmModeloFormulario formulario = new FrmModeloFormulario(Operacao.Exclusao, _context, fornecedor);
+                    //var modelo = (model.ReservaAreaComum)gridRegistros.CurrentRow.DataBoundItem;
+                    //FrmReservaAreaComumFormulario formulario = new FrmReservaAreaComumFormulario(Operacao.Exclusao, _context, fornecedor);
                     //formulario.ShowDialog();
                     atualizaLista();
                 }
@@ -101,8 +101,8 @@ namespace SistemaHotel.form.Modelo
             }
             else
             {
-                //var modelo = (model.Modelo)gridRegistros.CurrentRow.DataBoundItem;
-                //FrmModeloFormulario formulario = new FrmModeloFormulario(Operacao.Consulta, _context, fornecedor);
+                //var modelo = (model.ReservaAreaComum)gridRegistros.CurrentRow.DataBoundItem;
+                //FrmReservaAreaComumFormulario formulario = new FrmReservaAreaComumFormulario(Operacao.Consulta, _context, fornecedor);
                 //formulario.ShowDialog();
             }
         }
@@ -112,7 +112,7 @@ namespace SistemaHotel.form.Modelo
 
         }
 
-        private void FrmModelo_Load(object sender, EventArgs e)
+        private void FrmReservaAreaComum_Load(object sender, EventArgs e)
         {
             _permissoes = repositorio.PermissaoRepositorio.getPermissaoFuncionalidadeNome(_context, Name);
             if (_permissoes.editConsultar == util.SimNao.NAO && _permissoes.editSupervisor == util.SimNao.NAO)
@@ -130,7 +130,7 @@ namespace SistemaHotel.form.Modelo
         private void atualizaLista()
         {
 
-            //gridRegistros.DataSource = new BindingSource(new BindingList<model.Modelo>(_modeloRepositorio.getModelos(txtNome.Text)), null);
+            //gridRegistros.DataSource = new BindingSource(new BindingList<model.ReservaAreaComum>(_modeloRepositorio.getReservaAreaComums(txtNome.Text)), null);
             //gridRegistros.Refresh();
         }
     }

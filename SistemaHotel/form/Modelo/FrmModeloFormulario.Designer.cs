@@ -45,9 +45,10 @@
             this.pnlInformacoes.Controls.Add(this.lblExcluir);
             this.pnlInformacoes.Controls.Add(this.txtID);
             this.pnlInformacoes.Controls.Add(this.lblId);
-            this.pnlInformacoes.Location = new System.Drawing.Point(12, 12);
+            this.pnlInformacoes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInformacoes.Location = new System.Drawing.Point(0, 0);
             this.pnlInformacoes.Name = "pnlInformacoes";
-            this.pnlInformacoes.Size = new System.Drawing.Size(397, 121);
+            this.pnlInformacoes.Size = new System.Drawing.Size(425, 142);
             this.pnlInformacoes.TabIndex = 8;
             // 
             // lblExcluir
@@ -83,9 +84,10 @@
             this.pnlBotoes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlBotoes.Controls.Add(this.btnFechar);
             this.pnlBotoes.Controls.Add(this.btnConfirmar);
-            this.pnlBotoes.Location = new System.Drawing.Point(415, 12);
+            this.pnlBotoes.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlBotoes.Location = new System.Drawing.Point(425, 0);
             this.pnlBotoes.Name = "pnlBotoes";
-            this.pnlBotoes.Size = new System.Drawing.Size(137, 121);
+            this.pnlBotoes.Size = new System.Drawing.Size(137, 142);
             this.pnlBotoes.TabIndex = 7;
             // 
             // btnFechar

@@ -63,6 +63,16 @@ namespace SistemaHotel.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap alerta {
+            get {
+                object obj = ResourceManager.GetObject("alerta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap certo {
             get {
                 object obj = ResourceManager.GetObject("certo", resourceCulture);

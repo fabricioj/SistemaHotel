@@ -38,6 +38,8 @@
             this.lblBairro = new System.Windows.Forms.Label();
             this.lblCidade = new System.Windows.Forms.Label();
             this.lblEndereco = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
             this.txtRazaoSocial = new System.Windows.Forms.TextBox();
             this.lblRazaoSocial = new System.Windows.Forms.Label();
             this.txtTelefone = new System.Windows.Forms.TextBox();
@@ -55,8 +57,6 @@
             this.pnlBotoes = new System.Windows.Forms.Panel();
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
             this.pnlInformacoes.SuspendLayout();
             this.pnlBotoes.SuspendLayout();
             this.SuspendLayout();
@@ -89,9 +89,10 @@
             this.pnlInformacoes.Controls.Add(this.lblNumero);
             this.pnlInformacoes.Controls.Add(this.txtID);
             this.pnlInformacoes.Controls.Add(this.lblId);
-            this.pnlInformacoes.Location = new System.Drawing.Point(10, 12);
+            this.pnlInformacoes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInformacoes.Location = new System.Drawing.Point(0, 0);
             this.pnlInformacoes.Name = "pnlInformacoes";
-            this.pnlInformacoes.Size = new System.Drawing.Size(397, 413);
+            this.pnlInformacoes.Size = new System.Drawing.Size(418, 438);
             this.pnlInformacoes.TabIndex = 4;
             // 
             // lblExcluir
@@ -169,6 +170,22 @@
             this.lblEndereco.Size = new System.Drawing.Size(53, 13);
             this.lblEndereco.TabIndex = 10;
             this.lblEndereco.Text = "Endereço";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(13, 183);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(357, 20);
+            this.txtEmail.TabIndex = 20;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(10, 166);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(32, 13);
+            this.lblEmail.TabIndex = 11;
+            this.lblEmail.Text = "Email";
             // 
             // txtRazaoSocial
             // 
@@ -287,9 +304,10 @@
             this.pnlBotoes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlBotoes.Controls.Add(this.btnFechar);
             this.pnlBotoes.Controls.Add(this.btnConfirmar);
-            this.pnlBotoes.Location = new System.Drawing.Point(413, 12);
+            this.pnlBotoes.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlBotoes.Location = new System.Drawing.Point(418, 0);
             this.pnlBotoes.Name = "pnlBotoes";
-            this.pnlBotoes.Size = new System.Drawing.Size(137, 413);
+            this.pnlBotoes.Size = new System.Drawing.Size(137, 438);
             this.pnlBotoes.TabIndex = 3;
             // 
             // btnFechar
@@ -311,22 +329,6 @@
             this.btnConfirmar.Text = "CONFIRMAR";
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(10, 166);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(32, 13);
-            this.lblEmail.TabIndex = 11;
-            this.lblEmail.Text = "Email";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(13, 183);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(357, 20);
-            this.txtEmail.TabIndex = 20;
             // 
             // FrmFornecedorFormulario
             // 

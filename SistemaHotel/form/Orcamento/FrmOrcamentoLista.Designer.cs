@@ -28,10 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gridRegistros = new System.Windows.Forms.DataGridView();
-            this.pnlFiltros = new System.Windows.Forms.Panel();
-            this.txtFornecedor_nome = new System.Windows.Forms.TextBox();
-            this.lblFornecedor_nome = new System.Windows.Forms.Label();
             this.pnlBotoes = new System.Windows.Forms.Panel();
             this.btnPermissao = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
@@ -39,48 +35,18 @@
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnInserir = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
-            this.lblAtividade_nome = new System.Windows.Forms.Label();
+            this.pnlCorpo = new System.Windows.Forms.Panel();
+            this.gridRegistros = new System.Windows.Forms.DataGridView();
+            this.pnlFiltros = new System.Windows.Forms.Panel();
             this.txtAtividade_nome = new System.Windows.Forms.TextBox();
+            this.lblAtividade_nome = new System.Windows.Forms.Label();
+            this.txtFornecedor_nome = new System.Windows.Forms.TextBox();
+            this.lblFornecedor_nome = new System.Windows.Forms.Label();
+            this.pnlBotoes.SuspendLayout();
+            this.pnlCorpo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridRegistros)).BeginInit();
             this.pnlFiltros.SuspendLayout();
-            this.pnlBotoes.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // gridRegistros
-            // 
-            this.gridRegistros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridRegistros.Location = new System.Drawing.Point(12, 76);
-            this.gridRegistros.Name = "gridRegistros";
-            this.gridRegistros.Size = new System.Drawing.Size(448, 221);
-            this.gridRegistros.TabIndex = 9;
-            // 
-            // pnlFiltros
-            // 
-            this.pnlFiltros.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlFiltros.Controls.Add(this.txtAtividade_nome);
-            this.pnlFiltros.Controls.Add(this.lblAtividade_nome);
-            this.pnlFiltros.Controls.Add(this.txtFornecedor_nome);
-            this.pnlFiltros.Controls.Add(this.lblFornecedor_nome);
-            this.pnlFiltros.Location = new System.Drawing.Point(12, 12);
-            this.pnlFiltros.Name = "pnlFiltros";
-            this.pnlFiltros.Size = new System.Drawing.Size(448, 57);
-            this.pnlFiltros.TabIndex = 8;
-            // 
-            // txtFornecedor_nome
-            // 
-            this.txtFornecedor_nome.Location = new System.Drawing.Point(3, 26);
-            this.txtFornecedor_nome.Name = "txtFornecedor_nome";
-            this.txtFornecedor_nome.Size = new System.Drawing.Size(207, 20);
-            this.txtFornecedor_nome.TabIndex = 5;
-            // 
-            // lblFornecedor_nome
-            // 
-            this.lblFornecedor_nome.AutoSize = true;
-            this.lblFornecedor_nome.Location = new System.Drawing.Point(0, 10);
-            this.lblFornecedor_nome.Name = "lblFornecedor_nome";
-            this.lblFornecedor_nome.Size = new System.Drawing.Size(61, 13);
-            this.lblFornecedor_nome.TabIndex = 4;
-            this.lblFornecedor_nome.Text = "Fornecedor";
             // 
             // pnlBotoes
             // 
@@ -91,9 +57,10 @@
             this.pnlBotoes.Controls.Add(this.btnAlterar);
             this.pnlBotoes.Controls.Add(this.btnInserir);
             this.pnlBotoes.Controls.Add(this.btnPesquisar);
-            this.pnlBotoes.Location = new System.Drawing.Point(470, 12);
+            this.pnlBotoes.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlBotoes.Location = new System.Drawing.Point(480, 0);
             this.pnlBotoes.Name = "pnlBotoes";
-            this.pnlBotoes.Size = new System.Drawing.Size(137, 285);
+            this.pnlBotoes.Size = new System.Drawing.Size(137, 307);
             this.pnlBotoes.TabIndex = 7;
             // 
             // btnPermissao
@@ -155,6 +122,44 @@
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
+            // pnlCorpo
+            // 
+            this.pnlCorpo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlCorpo.Controls.Add(this.gridRegistros);
+            this.pnlCorpo.Controls.Add(this.pnlFiltros);
+            this.pnlCorpo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlCorpo.Location = new System.Drawing.Point(0, 0);
+            this.pnlCorpo.Name = "pnlCorpo";
+            this.pnlCorpo.Size = new System.Drawing.Size(480, 307);
+            this.pnlCorpo.TabIndex = 8;
+            // 
+            // gridRegistros
+            // 
+            this.gridRegistros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridRegistros.Location = new System.Drawing.Point(14, 73);
+            this.gridRegistros.Name = "gridRegistros";
+            this.gridRegistros.Size = new System.Drawing.Size(448, 221);
+            this.gridRegistros.TabIndex = 11;
+            // 
+            // pnlFiltros
+            // 
+            this.pnlFiltros.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlFiltros.Controls.Add(this.txtAtividade_nome);
+            this.pnlFiltros.Controls.Add(this.lblAtividade_nome);
+            this.pnlFiltros.Controls.Add(this.txtFornecedor_nome);
+            this.pnlFiltros.Controls.Add(this.lblFornecedor_nome);
+            this.pnlFiltros.Location = new System.Drawing.Point(14, 9);
+            this.pnlFiltros.Name = "pnlFiltros";
+            this.pnlFiltros.Size = new System.Drawing.Size(448, 57);
+            this.pnlFiltros.TabIndex = 10;
+            // 
+            // txtAtividade_nome
+            // 
+            this.txtAtividade_nome.Location = new System.Drawing.Point(225, 26);
+            this.txtAtividade_nome.Name = "txtAtividade_nome";
+            this.txtAtividade_nome.Size = new System.Drawing.Size(207, 20);
+            this.txtAtividade_nome.TabIndex = 5;
+            // 
             // lblAtividade_nome
             // 
             this.lblAtividade_nome.AutoSize = true;
@@ -164,20 +169,28 @@
             this.lblAtividade_nome.TabIndex = 4;
             this.lblAtividade_nome.Text = "Atividade";
             // 
-            // txtAtividade_nome
+            // txtFornecedor_nome
             // 
-            this.txtAtividade_nome.Location = new System.Drawing.Point(225, 26);
-            this.txtAtividade_nome.Name = "txtAtividade_nome";
-            this.txtAtividade_nome.Size = new System.Drawing.Size(207, 20);
-            this.txtAtividade_nome.TabIndex = 5;
+            this.txtFornecedor_nome.Location = new System.Drawing.Point(3, 26);
+            this.txtFornecedor_nome.Name = "txtFornecedor_nome";
+            this.txtFornecedor_nome.Size = new System.Drawing.Size(207, 20);
+            this.txtFornecedor_nome.TabIndex = 5;
+            // 
+            // lblFornecedor_nome
+            // 
+            this.lblFornecedor_nome.AutoSize = true;
+            this.lblFornecedor_nome.Location = new System.Drawing.Point(0, 10);
+            this.lblFornecedor_nome.Name = "lblFornecedor_nome";
+            this.lblFornecedor_nome.Size = new System.Drawing.Size(61, 13);
+            this.lblFornecedor_nome.TabIndex = 4;
+            this.lblFornecedor_nome.Text = "Fornecedor";
             // 
             // FrmOrcamentoLista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(617, 307);
-            this.Controls.Add(this.gridRegistros);
-            this.Controls.Add(this.pnlFiltros);
+            this.Controls.Add(this.pnlCorpo);
             this.Controls.Add(this.pnlBotoes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -186,18 +199,16 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Orçamentos";
             this.Load += new System.EventHandler(this.FrmOrcamentoLista_Load);
+            this.pnlBotoes.ResumeLayout(false);
+            this.pnlCorpo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridRegistros)).EndInit();
             this.pnlFiltros.ResumeLayout(false);
             this.pnlFiltros.PerformLayout();
-            this.pnlBotoes.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView gridRegistros;
-        private System.Windows.Forms.Panel pnlFiltros;
         private System.Windows.Forms.Panel pnlBotoes;
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.Button btnExcluir;
@@ -205,9 +216,12 @@
         private System.Windows.Forms.Button btnInserir;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.Button btnPermissao;
-        private System.Windows.Forms.TextBox txtFornecedor_nome;
-        private System.Windows.Forms.Label lblFornecedor_nome;
+        private System.Windows.Forms.Panel pnlCorpo;
+        private System.Windows.Forms.DataGridView gridRegistros;
+        private System.Windows.Forms.Panel pnlFiltros;
         private System.Windows.Forms.TextBox txtAtividade_nome;
         private System.Windows.Forms.Label lblAtividade_nome;
+        private System.Windows.Forms.TextBox txtFornecedor_nome;
+        private System.Windows.Forms.Label lblFornecedor_nome;
     }
 }

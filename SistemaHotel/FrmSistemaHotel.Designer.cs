@@ -38,8 +38,8 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuAreasComuns = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMovimentos = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuOrcamentos = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuOrcamentos = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSolicitacoes = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSistema.SuspendLayout();
             this.SuspendLayout();
@@ -122,17 +122,17 @@
             this.mnuMovimentos.Size = new System.Drawing.Size(86, 20);
             this.mnuMovimentos.Text = "Movimentos";
             // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(149, 6);
+            // 
             // mnuOrcamentos
             // 
             this.mnuOrcamentos.Name = "mnuOrcamentos";
             this.mnuOrcamentos.Size = new System.Drawing.Size(152, 22);
             this.mnuOrcamentos.Text = "Orçamentos";
             this.mnuOrcamentos.Click += new System.EventHandler(this.mnuOrcamentos_Click);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(149, 6);
             // 
             // mnuSolicitacoes
             // 
@@ -150,6 +150,7 @@
             this.Name = "FrmSistemaHotel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema hotel";
+            this.Load += new System.EventHandler(this.FrmSistemaHotel_Load);
             this.mnuSistema.ResumeLayout(false);
             this.mnuSistema.PerformLayout();
             this.ResumeLayout(false);

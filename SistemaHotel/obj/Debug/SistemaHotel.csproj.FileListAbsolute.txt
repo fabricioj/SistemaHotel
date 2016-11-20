@@ -74,4 +74,6 @@ C:\Temp\Csharp\SistemaHotel\SistemaHotel\obj\Debug\SistemaHotel.form.AreaComum.F
 C:\Temp\Csharp\SistemaHotel\SistemaHotel\obj\Debug\SistemaHotel.form.Modelo.FrmModeloFormulario.resources
 C:\Temp\Csharp\SistemaHotel\SistemaHotel\obj\Debug\SistemaHotel.form.Modelo.FrmModeloLista.resources
 C:\Temp\Csharp\SistemaHotel\SistemaHotel\obj\Debug\SistemaHotel.form.AreaComum.FrmAreaComumProcura.resources
-C:\Temp\Csharp\SistemaHotel\SistemaHotel\obj\Debug\SistemaHotel.form.Solicitacao.FrmSolicitacaoVistar.resources
+C:\Temp\Csharp\SistemaHotel\SistemaHotel\obj\Debug\SistemaHotel.form.ReservaAreaComum.FrmReservaAreaComumFormulario.resources
+C:\Temp\Csharp\SistemaHotel\SistemaHotel\obj\Debug\SistemaHotel.form.ReservaAreaComum.FrmReservaAreaComumLista.resources
+C:\Temp\Csharp\SistemaHotel\SistemaHotel\obj\Debug\SistemaHotel.form.Solicitacao.FrmSolicitacaoVisualizar.resources
