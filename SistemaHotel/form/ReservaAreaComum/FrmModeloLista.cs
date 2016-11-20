@@ -9,20 +9,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SistemaHotel.form.Solicitacao
+namespace SistemaHotel.form.Modelo
 {
-    public partial class FrmSolicitacaoLista : Form
+    public partial class FrmModeloLista : Form
     {
         private model.SistemaHotelContext _context;
-        private repositorio.SolicitacaoRepositorio _solicitacaoRepositorio;
+        //private repositorio.ModeloRepositorio _modeloRepositorio;
         private model.Permissao _permissoes;
-        private model.Usuario _usarioLogado;
 
-        public FrmSolicitacaoLista(model.SistemaHotelContext context, model.Usuario usarioLogado)
+        public FrmModeloLista(model.SistemaHotelContext context)
         {
             _context = context;
-            _usarioLogado = usarioLogado;
-            _solicitacaoRepositorio = new repositorio.SolicitacaoRepositorio(_context);
+            //_modeloRepositorio = new repositorio.ModeloRepositorio(_context);
             InitializeComponent();
             Util.acertaTabOrder(this);
         }
@@ -40,9 +38,8 @@ namespace SistemaHotel.form.Solicitacao
             }
             else
             {
-
-                FrmSolicitacaoFormulario formulario = new FrmSolicitacaoFormulario(Operacao.Insercao, _context, new model.Solicitacao { usuario_solicitante_id = _usarioLogado.id });
-                formulario.ShowDialog();
+                //FrmModeloFormulario formulario = new FrmModeloFormulario(Operacao.Insercao, _context, new model.Modelo());
+                //formulario.ShowDialog();
                 atualizaLista();
 
             }
@@ -63,9 +60,9 @@ namespace SistemaHotel.form.Solicitacao
                 }
                 else
                 {
-                    var solicitacao = (model.Solicitacao)gridRegistros.CurrentRow.DataBoundItem;
-                    FrmSolicitacaoFormulario formulario = new FrmSolicitacaoFormulario(Operacao.Alteracao, _context, solicitacao);
-                    formulario.ShowDialog();
+                    //var modelo = (model.Modelo)gridRegistros.CurrentRow.DataBoundItem;
+                    //FrmModeloFormulario formulario = new FrmModeloFormulario(Operacao.Alteracao, _context, fornecedor);
+                    //formulario.ShowDialog();
                     atualizaLista();
                 }
 
@@ -87,9 +84,9 @@ namespace SistemaHotel.form.Solicitacao
                 }
                 else
                 {
-                    var solicitacao = (model.Solicitacao)gridRegistros.CurrentRow.DataBoundItem;
-                    FrmSolicitacaoFormulario formulario = new FrmSolicitacaoFormulario(Operacao.Exclusao, _context, solicitacao);
-                    formulario.ShowDialog();
+                    //var modelo = (model.Modelo)gridRegistros.CurrentRow.DataBoundItem;
+                    //FrmModeloFormulario formulario = new FrmModeloFormulario(Operacao.Exclusao, _context, fornecedor);
+                    //formulario.ShowDialog();
                     atualizaLista();
                 }
 
@@ -104,9 +101,9 @@ namespace SistemaHotel.form.Solicitacao
             }
             else
             {
-                var solicitacao = (model.Solicitacao)gridRegistros.CurrentRow.DataBoundItem;
-                FrmSolicitacaoFormulario formulario = new FrmSolicitacaoFormulario(Operacao.Consulta, _context, solicitacao);
-                formulario.ShowDialog();
+                //var modelo = (model.Modelo)gridRegistros.CurrentRow.DataBoundItem;
+                //FrmModeloFormulario formulario = new FrmModeloFormulario(Operacao.Consulta, _context, fornecedor);
+                //formulario.ShowDialog();
             }
         }
 
@@ -115,7 +112,7 @@ namespace SistemaHotel.form.Solicitacao
 
         }
 
-        private void FrmSolicitacao_Load(object sender, EventArgs e)
+        private void FrmModelo_Load(object sender, EventArgs e)
         {
             _permissoes = repositorio.PermissaoRepositorio.getPermissaoFuncionalidadeNome(_context, Name);
             if (_permissoes.editConsultar == util.SimNao.NAO && _permissoes.editSupervisor == util.SimNao.NAO)
@@ -133,33 +130,8 @@ namespace SistemaHotel.form.Solicitacao
         private void atualizaLista()
         {
 
-            gridRegistros.DataSource = new BindingSource(new BindingList<model.Solicitacao>(_solicitacaoRepositorio.getSolicitacoes()), null);
-            gridRegistros.Refresh();
-        }
-
-        private void toolVistarSolicitacao_Click(object sender, EventArgs e)
-        {
-            if (gridRegistros.CurrentRow == null)
-            {
-                MessageBox.Show("Nenhum registro selecionado", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                var solicitacao = (model.Solicitacao)gridRegistros.CurrentRow.DataBoundItem;
-                Operacao op = Operacao.Alteracao;
-                //if (solicitacao.data_visualizacao != null && solicitacao.data_visualizacao != DateTime.MinValue)
-                //{
-                //    op = Operacao.Consulta;
-                //}
-                //else
-                //{
-                //    op = Operacao.Alteracao;
-                //}
-                                
-                FrmSolicitacaoVistar formulario = new FrmSolicitacaoVistar(op, _usarioLogado, _context, solicitacao);
-                formulario.ShowDialog();
-                
-            }
+            //gridRegistros.DataSource = new BindingSource(new BindingList<model.Modelo>(_modeloRepositorio.getModelos(txtNome.Text)), null);
+            //gridRegistros.Refresh();
         }
     }
 }

@@ -37,9 +37,12 @@ namespace SistemaHotel.form.Solicitacao
                 switch (_op)
                 {
                     case Operacao.Insercao:
+                        _solicitacao.data_emissao = DateTime.Now;
+
                         _solicitacaoRepositorio.incluir(_solicitacao);
                         _solicitacaoRepositorio.salvar();
-                        Dispose();
+                        _solicitacao = new model.Solicitacao();
+                        preencheForm();
                         break;
 
                     case Operacao.Alteracao:
@@ -114,11 +117,11 @@ namespace SistemaHotel.form.Solicitacao
 
 
             txtID.Enabled = false;
+            txtData_emissao.Enabled = false;
             txtArea_comum_nome.Enabled = false;
 
             if (_op == Operacao.Consulta || _op == Operacao.Exclusao) {
-
-                txtData_emissao.Enabled = false;
+                                
                 cbTipo.Enabled = false;
                 txtServico.Enabled = false;
                 txtLocal.Enabled = false;

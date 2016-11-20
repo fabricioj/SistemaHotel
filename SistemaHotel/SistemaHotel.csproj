@@ -159,6 +159,18 @@
     <Compile Include="form\Produto\FrmProdutoProcura.Designer.cs">
       <DependentUpon>FrmProdutoProcura.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\ReservaAreaComum\FrmModeloFormulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\ReservaAreaComum\FrmModeloFormulario.Designer.cs">
+      <DependentUpon>FrmModeloFormulario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\ReservaAreaComum\FrmModeloLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\ReservaAreaComum\FrmModeloLista.Designer.cs">
+      <DependentUpon>FrmModeloLista.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\Solicitacao\FrmSolicitacaoFormulario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +182,12 @@
     </Compile>
     <Compile Include="form\Solicitacao\FrmSolicitacaoLista.Designer.cs">
       <DependentUpon>FrmSolicitacaoLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Solicitacao\FrmSolicitacaoVistar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Solicitacao\FrmSolicitacaoVistar.Designer.cs">
+      <DependentUpon>FrmSolicitacaoVistar.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmSistemaHotel.cs">
       <SubType>Form</SubType>
@@ -248,7 +266,6 @@
     <Compile Include="util\BancoDados.cs" />
     <Compile Include="model\Dependente.cs" />
     <Compile Include="util\Dominio.cs" />
-    <Compile Include="model\Entrega_mecadoria.cs" />
     <Compile Include="model\Entrega_mercadorias.cs" />
     <Compile Include="util\EnumHelper.cs" />
     <Compile Include="model\Fornecedor.cs" />
@@ -321,11 +338,20 @@
     <EmbeddedResource Include="form\Produto\FrmProdutoProcura.resx">
       <DependentUpon>FrmProdutoProcura.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form\ReservaAreaComum\FrmModeloFormulario.resx">
+      <DependentUpon>FrmModeloFormulario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\ReservaAreaComum\FrmModeloLista.resx">
+      <DependentUpon>FrmModeloLista.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form\Solicitacao\FrmSolicitacaoFormulario.resx">
       <DependentUpon>FrmSolicitacaoFormulario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\Solicitacao\FrmSolicitacaoLista.resx">
       <DependentUpon>FrmSolicitacaoLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Solicitacao\FrmSolicitacaoVistar.resx">
+      <DependentUpon>FrmSolicitacaoVistar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSistemaHotel.resx">
       <DependentUpon>FrmSistemaHotel.cs</DependentUpon>
@@ -377,6 +403,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1479585819_15_Tick_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\certo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\certo.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

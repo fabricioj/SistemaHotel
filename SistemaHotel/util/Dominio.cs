@@ -51,4 +51,14 @@ namespace SistemaHotel.util
         [Description("2 - RESERVA DE ÁREA COMUM")]
         Reserva
     }
+
+    public enum TipoResultadoSolicitacao
+    {
+        [Description("0 - NENHUM")]
+        Nenhum,
+        [Description("1 - APROVADA")]
+        Aprovada,
+        [Description("2 - NEGADA")]
+        Negada
+    }
 }

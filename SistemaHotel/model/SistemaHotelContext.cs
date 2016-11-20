@@ -16,7 +16,6 @@ namespace SistemaHotel.model
         public virtual DbSet<Area_comum> area_comum { get; set; }
         public virtual DbSet<Atividade> atividade { get; set; }
         public virtual DbSet<Dependente> dependentes { get; set; }
-        public virtual DbSet<Entrega_mecadoria> entrega_mecadoria { get; set; }
         public virtual DbSet<Entrega_mercadorias> entrega_mercadorias { get; set; }
         public virtual DbSet<Fornecedor> fornecedor { get; set; }
         public virtual DbSet<Funcionalidade> funcionalidade { get; set; }
@@ -125,10 +124,6 @@ namespace SistemaHotel.model
                 .HasMany(e => e.visitante)
                 .WithOptional(e => e.dependentes)
                 .HasForeignKey(e => e.dependentes_id);
-
-            modelBuilder.Entity<Entrega_mecadoria>()
-                .Property(e => e.nf)
-                .IsUnicode(false);
 
             modelBuilder.Entity<Entrega_mercadorias>()
                 .Property(e => e.recibo_entrega)
@@ -297,12 +292,6 @@ namespace SistemaHotel.model
                 .HasMany(e => e.dependentes)
                 .WithOptional(e => e.morador)
                 .HasForeignKey(e => e.morador_id);
-
-            modelBuilder.Entity<Morador>()
-                .HasMany(e => e.entrega_mecadoria)
-                .WithRequired(e => e.morador)
-                .HasForeignKey(e => e.morador_id)
-                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Morador>()
                 .HasMany(e => e.entrega_mercadorias)

@@ -13,7 +13,6 @@ namespace SistemaHotel.model
         public Morador()
         {
             dependentes = new HashSet<Dependente>();
-            entrega_mecadoria = new HashSet<Entrega_mecadoria>();
             entrega_mercadorias = new HashSet<Entrega_mercadorias>();
             moradia = new HashSet<Moradia>();
             ocorrencia = new HashSet<Ocorrencia>();
@@ -52,8 +51,6 @@ namespace SistemaHotel.model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Dependente> dependentes { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Entrega_mecadoria> entrega_mecadoria { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Entrega_mercadorias> entrega_mercadorias { get; set; }

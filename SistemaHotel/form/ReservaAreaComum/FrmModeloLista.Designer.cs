@@ -1,6 +1,6 @@
-﻿namespace SistemaHotel.form.Solicitacao
+﻿namespace SistemaHotel.form.Modelo
 {
-    partial class FrmSolicitacaoLista
+    partial class FrmModeloLista
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.gridRegistros = new System.Windows.Forms.DataGridView();
+            this.pnlFiltros = new System.Windows.Forms.Panel();
             this.pnlBotoes = new System.Windows.Forms.Panel();
             this.btnPermissao = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
@@ -35,14 +37,28 @@
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnInserir = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
-            this.pnlFiltros = new System.Windows.Forms.Panel();
-            this.toolOpcoes = new System.Windows.Forms.ToolStrip();
-            this.toolVistarSolicitacao = new System.Windows.Forms.ToolStripButton();
-            this.gridRegistros = new System.Windows.Forms.DataGridView();
-            this.pnlBotoes.SuspendLayout();
-            this.toolOpcoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridRegistros)).BeginInit();
+            this.pnlBotoes.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // gridRegistros
+            // 
+            this.gridRegistros.AllowUserToAddRows = false;
+            this.gridRegistros.AllowUserToDeleteRows = false;
+            this.gridRegistros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridRegistros.Location = new System.Drawing.Point(12, 76);
+            this.gridRegistros.Name = "gridRegistros";
+            this.gridRegistros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridRegistros.Size = new System.Drawing.Size(448, 221);
+            this.gridRegistros.TabIndex = 9;
+            // 
+            // pnlFiltros
+            // 
+            this.pnlFiltros.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlFiltros.Location = new System.Drawing.Point(12, 12);
+            this.pnlFiltros.Name = "pnlFiltros";
+            this.pnlFiltros.Size = new System.Drawing.Size(448, 57);
+            this.pnlFiltros.TabIndex = 8;
             // 
             // pnlBotoes
             // 
@@ -53,9 +69,9 @@
             this.pnlBotoes.Controls.Add(this.btnAlterar);
             this.pnlBotoes.Controls.Add(this.btnInserir);
             this.pnlBotoes.Controls.Add(this.btnPesquisar);
-            this.pnlBotoes.Location = new System.Drawing.Point(472, 12);
+            this.pnlBotoes.Location = new System.Drawing.Point(470, 12);
             this.pnlBotoes.Name = "pnlBotoes";
-            this.pnlBotoes.Size = new System.Drawing.Size(137, 320);
+            this.pnlBotoes.Size = new System.Drawing.Size(137, 285);
             this.pnlBotoes.TabIndex = 7;
             // 
             // btnPermissao
@@ -118,73 +134,31 @@
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
-            // pnlFiltros
-            // 
-            this.pnlFiltros.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlFiltros.Location = new System.Drawing.Point(12, 38);
-            this.pnlFiltros.Name = "pnlFiltros";
-            this.pnlFiltros.Size = new System.Drawing.Size(448, 67);
-            this.pnlFiltros.TabIndex = 12;
-            // 
-            // toolOpcoes
-            // 
-            this.toolOpcoes.Dock = System.Windows.Forms.DockStyle.None;
-            this.toolOpcoes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolVistarSolicitacao});
-            this.toolOpcoes.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.toolOpcoes.Location = new System.Drawing.Point(12, 12);
-            this.toolOpcoes.Name = "toolOpcoes";
-            this.toolOpcoes.Size = new System.Drawing.Size(147, 23);
-            this.toolOpcoes.TabIndex = 14;
-            this.toolOpcoes.Text = "Opções";
-            // 
-            // toolVistarSolicitacao
-            // 
-            this.toolVistarSolicitacao.Image = global::SistemaHotel.Properties.Resources.certo;
-            this.toolVistarSolicitacao.ImageTransparentColor = System.Drawing.SystemColors.Control;
-            this.toolVistarSolicitacao.MergeAction = System.Windows.Forms.MergeAction.MatchOnly;
-            this.toolVistarSolicitacao.Name = "toolVistarSolicitacao";
-            this.toolVistarSolicitacao.Size = new System.Drawing.Size(115, 20);
-            this.toolVistarSolicitacao.Text = "Vistar solicitação";
-            this.toolVistarSolicitacao.Click += new System.EventHandler(this.toolVistarSolicitacao_Click);
-            // 
-            // gridRegistros
-            // 
-            this.gridRegistros.AllowUserToAddRows = false;
-            this.gridRegistros.AllowUserToDeleteRows = false;
-            this.gridRegistros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridRegistros.Location = new System.Drawing.Point(12, 111);
-            this.gridRegistros.Name = "gridRegistros";
-            this.gridRegistros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridRegistros.Size = new System.Drawing.Size(448, 221);
-            this.gridRegistros.TabIndex = 15;
-            // 
-            // FrmSolicitacaoLista
+            // FrmModeloLista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(612, 344);
+            this.ClientSize = new System.Drawing.Size(619, 305);
             this.Controls.Add(this.gridRegistros);
-            this.Controls.Add(this.toolOpcoes);
             this.Controls.Add(this.pnlFiltros);
             this.Controls.Add(this.pnlBotoes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmSolicitacaoLista";
+            this.Name = "FrmModeloLista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Solicitações";
-            this.Load += new System.EventHandler(this.FrmSolicitacao_Load);
-            this.pnlBotoes.ResumeLayout(false);
-            this.toolOpcoes.ResumeLayout(false);
-            this.toolOpcoes.PerformLayout();
+            this.Text = "Modelos";
+            this.Load += new System.EventHandler(this.FrmModelo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridRegistros)).EndInit();
+            this.pnlBotoes.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView gridRegistros;
+        private System.Windows.Forms.Panel pnlFiltros;
         private System.Windows.Forms.Panel pnlBotoes;
         private System.Windows.Forms.Button btnPermissao;
         private System.Windows.Forms.Button btnConsultar;
@@ -192,9 +166,5 @@
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnInserir;
         private System.Windows.Forms.Button btnPesquisar;
-        private System.Windows.Forms.Panel pnlFiltros;
-        private System.Windows.Forms.ToolStrip toolOpcoes;
-        private System.Windows.Forms.ToolStripButton toolVistarSolicitacao;
-        private System.Windows.Forms.DataGridView gridRegistros;
     }
 }

@@ -17,6 +17,7 @@ namespace SistemaHotel.model
             atividade = new HashSet<Atividade>();
             reserva_area_comum = new HashSet<Reserva_area_comum>();
             editTipo = TipoSolicitacao.Nenhum;
+            editResultado_visualizacao = TipoResultadoSolicitacao.Nenhum;
         }
 
         [DisplayName("ID")]
@@ -77,6 +78,14 @@ namespace SistemaHotel.model
         public string resultado_visualizacao { get; set; }
 
         [Browsable(false)]
+        [NotMapped]
+        public TipoResultadoSolicitacao editResultado_visualizacao { get { return (TipoResultadoSolicitacao)(int.Parse(resultado_visualizacao)); } set { resultado_visualizacao = ((int)value).ToString().Trim(); } }
+
+        [Browsable(false)]
+        [NotMapped]
+        public string dspResultado_visualizacao { get { return EnumHelper.GetDescription(editResultado_visualizacao); } }
+
+        [Browsable(false)]
         public int? area_comum_id { get; set; }
 
         [Browsable(false)]
@@ -106,6 +115,10 @@ namespace SistemaHotel.model
         [Browsable(false)]
         [NotMapped]
         public int editUsuario_visualizacao_id { get { return usuario_visualizacao_id != null ? (int)usuario_visualizacao_id : 0; } set { usuario_visualizacao_id = value != 0 ? (int?)value : null; } }
+
+        [Browsable(false)]
+        [NotMapped]
+        public string dspUsuario_visualizacao_nome { get { return usuario_visualizacao != null ? usuario_visualizacao.nome : string.Empty; } }
 
         [Browsable(false)]
         public virtual Usuario usuario_visualizacao { get; set; }

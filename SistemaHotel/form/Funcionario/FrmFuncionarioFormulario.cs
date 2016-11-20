@@ -41,6 +41,7 @@ namespace SistemaHotel.form.Funcionario
                 switch (_op)
                 {
                     case Operacao.Insercao:
+                        _funcionario.data_cadastro = DateTime.Now;
                         _funcionarioRepositorio.incluir(_funcionario);
                         _funcionarioRepositorio.salvar();
                         _funcionario = new model.Funcionario();
@@ -130,11 +131,11 @@ namespace SistemaHotel.form.Funcionario
             txtFuncao.Text 				= _funcionario.funcao;
 
             txtID.Enabled = false;
+            txtData_cadastro.Enabled = false;
 
             if (_op == Operacao.Consulta || _op == Operacao.Exclusao)
             {   
                 txtNome.Enabled             = false;
-                txtData_cadastro.Enabled    = false;
 
                 txtEndereco.Enabled         = false;
                 txtNumero.Enabled           = false;
