@@ -36,7 +36,7 @@ namespace SistemaHotel.repositorio
         {
             Solicitacao solicitacao = null;
 
-            solicitacao = _context.solicitacao.Find(id);
+            solicitacao = _context.solicitacao.Include(s => s.area_comum).Include(s => s.usuario_solicitante).SingleOrDefault(s => s.id == id);
 
             return solicitacao;
         }

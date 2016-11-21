@@ -107,6 +107,10 @@ namespace SistemaHotel.model
         public string dspUsuario_solicitante_nome { get { return usuario_solicitante != null ? usuario_solicitante.nome : string.Empty; } }
 
         [Browsable(false)]
+        [NotMapped]
+        public string dspSolicitante_nome { get { return usuario_solicitante != null ? usuario_solicitante.morador != null? usuario_solicitante.morador.nome: usuario_solicitante.nome : string.Empty; } }
+
+        [Browsable(false)]
         public virtual Usuario usuario_solicitante { get; set; }
 
         [Browsable(false)]

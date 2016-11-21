@@ -14,13 +14,13 @@ namespace SistemaHotel.form.ReservaAreaComum
     public partial class FrmReservaAreaComumLista : Form
     {
         private model.SistemaHotelContext _context;
-        //private repositorio.ReservaAreaComumRepositorio _modeloRepositorio;
+        private repositorio.Reserva_area_comumRepositorio _reserva_area_comumRepositorio;
         private model.Permissao _permissoes;
 
         public FrmReservaAreaComumLista(model.SistemaHotelContext context)
         {
             _context = context;
-            //_modeloRepositorio = new repositorio.ReservaAreaComumRepositorio(_context);
+            _reserva_area_comumRepositorio = new repositorio.Reserva_area_comumRepositorio(_context);
             InitializeComponent();
             Util.acertaTabOrder(this);
         }
@@ -38,8 +38,8 @@ namespace SistemaHotel.form.ReservaAreaComum
             }
             else
             {
-                //FrmReservaAreaComumFormulario formulario = new FrmReservaAreaComumFormulario(Operacao.Insercao, _context, new model.ReservaAreaComum());
-                //formulario.ShowDialog();
+                FrmReservaAreaComumFormulario formulario = new FrmReservaAreaComumFormulario(Operacao.Insercao, _context, new model.Reserva_area_comum());
+                formulario.ShowDialog();
                 atualizaLista();
 
             }
@@ -60,9 +60,9 @@ namespace SistemaHotel.form.ReservaAreaComum
                 }
                 else
                 {
-                    //var modelo = (model.ReservaAreaComum)gridRegistros.CurrentRow.DataBoundItem;
-                    //FrmReservaAreaComumFormulario formulario = new FrmReservaAreaComumFormulario(Operacao.Alteracao, _context, fornecedor);
-                    //formulario.ShowDialog();
+                    var reserva_area_comum = (model.Reserva_area_comum)gridRegistros.CurrentRow.DataBoundItem;
+                    FrmReservaAreaComumFormulario formulario = new FrmReservaAreaComumFormulario(Operacao.Alteracao, _context, reserva_area_comum);
+                    formulario.ShowDialog();
                     atualizaLista();
                 }
 
@@ -84,9 +84,9 @@ namespace SistemaHotel.form.ReservaAreaComum
                 }
                 else
                 {
-                    //var modelo = (model.ReservaAreaComum)gridRegistros.CurrentRow.DataBoundItem;
-                    //FrmReservaAreaComumFormulario formulario = new FrmReservaAreaComumFormulario(Operacao.Exclusao, _context, fornecedor);
-                    //formulario.ShowDialog();
+                    var reserva_area_comum = (model.Reserva_area_comum)gridRegistros.CurrentRow.DataBoundItem;
+                    FrmReservaAreaComumFormulario formulario = new FrmReservaAreaComumFormulario(Operacao.Exclusao, _context, reserva_area_comum);
+                    formulario.ShowDialog();
                     atualizaLista();
                 }
 
@@ -101,9 +101,9 @@ namespace SistemaHotel.form.ReservaAreaComum
             }
             else
             {
-                //var modelo = (model.ReservaAreaComum)gridRegistros.CurrentRow.DataBoundItem;
-                //FrmReservaAreaComumFormulario formulario = new FrmReservaAreaComumFormulario(Operacao.Consulta, _context, fornecedor);
-                //formulario.ShowDialog();
+                var reserva_area_comum = (model.Reserva_area_comum)gridRegistros.CurrentRow.DataBoundItem;
+                FrmReservaAreaComumFormulario formulario = new FrmReservaAreaComumFormulario(Operacao.Consulta, _context, reserva_area_comum);
+                formulario.ShowDialog();
             }
         }
 
@@ -129,9 +129,8 @@ namespace SistemaHotel.form.ReservaAreaComum
 
         private void atualizaLista()
         {
-
-            //gridRegistros.DataSource = new BindingSource(new BindingList<model.ReservaAreaComum>(_modeloRepositorio.getReservaAreaComums(txtNome.Text)), null);
-            //gridRegistros.Refresh();
+            gridRegistros.DataSource = new BindingSource(new BindingList<model.Reserva_area_comum>(_reserva_area_comumRepositorio.getReservas_area_comum()), null);
+            gridRegistros.Refresh();
         }
     }
 }

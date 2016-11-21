@@ -262,6 +262,7 @@
     <Compile Include="repositorio\Orcamento_itemRepositorio.cs" />
     <Compile Include="repositorio\PermissaoRepositorio.cs" />
     <Compile Include="repositorio\ProdutoRepositorio.cs" />
+    <Compile Include="repositorio\Reserva_area_comumRepositorio.cs" />
     <Compile Include="repositorio\SolicitacaoRepositorio.cs" />
     <Compile Include="util\BancoDados.cs" />
     <Compile Include="model\Dependente.cs" />

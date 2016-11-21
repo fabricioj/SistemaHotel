@@ -160,7 +160,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmReservaAreaComumLista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ReservaAreaComums";
+            this.Text = "Reservas de áreas comuns";
             this.Load += new System.EventHandler(this.FrmReservaAreaComum_Load);
             this.pnlBotoes.ResumeLayout(false);
             this.pnlCorpo.ResumeLayout(false);

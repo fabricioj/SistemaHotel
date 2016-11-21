@@ -36,7 +36,7 @@ namespace SistemaHotel.model
         public virtual Fornecedor fornecedor { get; set; }
 
         [DisplayName("Fornecedor")]
-        public string fornecedor_nome { get { return fornecedor != null ? fornecedor.nome : string.Empty; } }
+        public string dspFornecedor_nome { get { return fornecedor != null ? fornecedor.nome : string.Empty; } }
 
         [Browsable(false)]
         public int? atividade_id { get; set; }

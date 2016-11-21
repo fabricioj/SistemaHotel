@@ -3,6 +3,7 @@ using SistemaHotel.form.Fornecedor;
 using SistemaHotel.form.Funcionario;
 using SistemaHotel.form.Orcamento;
 using SistemaHotel.form.Produto;
+using SistemaHotel.form.ReservaAreaComum;
 using SistemaHotel.form.Solicitacao;
 using System;
 using System.Collections.Generic;
@@ -97,5 +98,13 @@ namespace SistemaHotel
             }
         }
 
+        private void mnuReservasAreasComuns_Click(object sender, EventArgs e)
+        {
+            using (var lista = new FrmReservaAreaComumLista(_context))
+            {
+                lista.ShowDialog();
+                preencheForm();
+            }
+        }
     }
 }

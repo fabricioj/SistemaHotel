@@ -61,7 +61,7 @@ namespace SistemaHotel.form.Modelo
                 else
                 {
                     //var modelo = (model.Modelo)gridRegistros.CurrentRow.DataBoundItem;
-                    //FrmModeloFormulario formulario = new FrmModeloFormulario(Operacao.Alteracao, _context, fornecedor);
+                    //FrmModeloFormulario formulario = new FrmModeloFormulario(Operacao.Alteracao, _context, modelo);
                     //formulario.ShowDialog();
                     atualizaLista();
                 }
@@ -85,7 +85,7 @@ namespace SistemaHotel.form.Modelo
                 else
                 {
                     //var modelo = (model.Modelo)gridRegistros.CurrentRow.DataBoundItem;
-                    //FrmModeloFormulario formulario = new FrmModeloFormulario(Operacao.Exclusao, _context, fornecedor);
+                    //FrmModeloFormulario formulario = new FrmModeloFormulario(Operacao.Exclusao, _context, modelo);
                     //formulario.ShowDialog();
                     atualizaLista();
                 }
@@ -102,7 +102,7 @@ namespace SistemaHotel.form.Modelo
             else
             {
                 //var modelo = (model.Modelo)gridRegistros.CurrentRow.DataBoundItem;
-                //FrmModeloFormulario formulario = new FrmModeloFormulario(Operacao.Consulta, _context, fornecedor);
+                //FrmModeloFormulario formulario = new FrmModeloFormulario(Operacao.Consulta, _context, modelo);
                 //formulario.ShowDialog();
             }
         }

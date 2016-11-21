@@ -29,26 +29,26 @@
         private void InitializeComponent()
         {
             this.pnlInformacoes = new System.Windows.Forms.Panel();
-            this.lblExcluir = new System.Windows.Forms.Label();
-            this.txtID = new System.Windows.Forms.TextBox();
-            this.lblId = new System.Windows.Forms.Label();
-            this.pnlBotoes = new System.Windows.Forms.Panel();
-            this.btnFechar = new System.Windows.Forms.Button();
-            this.btnConfirmar = new System.Windows.Forms.Button();
+            this.txtObservacao = new System.Windows.Forms.TextBox();
+            this.lblObservacao = new System.Windows.Forms.Label();
             this.txtUsuario_solicitante_nome = new System.Windows.Forms.TextBox();
             this.lblUsuario_solicitante_nome = new System.Windows.Forms.Label();
             this.txtArea_comum_nome = new System.Windows.Forms.TextBox();
             this.lblArea_comum_nome = new System.Windows.Forms.Label();
             this.txtArea_comum_id = new System.Windows.Forms.TextBox();
             this.lblArea_comum_id = new System.Windows.Forms.Label();
+            this.txtData_devolucao = new System.Windows.Forms.DateTimePicker();
+            this.lblData_devolucao = new System.Windows.Forms.Label();
             this.txtData_inicio = new System.Windows.Forms.DateTimePicker();
             this.lblData_inicio = new System.Windows.Forms.Label();
-            this.lblSolicitacao_id = new System.Windows.Forms.Label();
+            this.lblExcluir = new System.Windows.Forms.Label();
             this.txtSolicitacao_id = new System.Windows.Forms.TextBox();
-            this.lblData_devolucao = new System.Windows.Forms.Label();
-            this.txtData_devolucao = new System.Windows.Forms.DateTimePicker();
-            this.txtObservacao = new System.Windows.Forms.TextBox();
-            this.lblObservacao = new System.Windows.Forms.Label();
+            this.lblSolicitacao_id = new System.Windows.Forms.Label();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.lblId = new System.Windows.Forms.Label();
+            this.pnlBotoes = new System.Windows.Forms.Panel();
+            this.btnFechar = new System.Windows.Forms.Button();
+            this.btnConfirmar = new System.Windows.Forms.Button();
             this.pnlInformacoes.SuspendLayout();
             this.pnlBotoes.SuspendLayout();
             this.SuspendLayout();
@@ -79,64 +79,22 @@
             this.pnlInformacoes.Size = new System.Drawing.Size(362, 309);
             this.pnlInformacoes.TabIndex = 8;
             // 
-            // lblExcluir
+            // txtObservacao
             // 
-            this.lblExcluir.AutoSize = true;
-            this.lblExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExcluir.ForeColor = System.Drawing.Color.Red;
-            this.lblExcluir.Location = new System.Drawing.Point(3, 4);
-            this.lblExcluir.Name = "lblExcluir";
-            this.lblExcluir.Size = new System.Drawing.Size(210, 17);
-            this.lblExcluir.TabIndex = 29;
-            this.lblExcluir.Text = "Confirma a deleção do registro?";
-            this.lblExcluir.Visible = false;
+            this.txtObservacao.Location = new System.Drawing.Point(10, 249);
+            this.txtObservacao.Multiline = true;
+            this.txtObservacao.Name = "txtObservacao";
+            this.txtObservacao.Size = new System.Drawing.Size(342, 46);
+            this.txtObservacao.TabIndex = 40;
             // 
-            // txtID
+            // lblObservacao
             // 
-            this.txtID.Location = new System.Drawing.Point(6, 44);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(60, 20);
-            this.txtID.TabIndex = 19;
-            // 
-            // lblId
-            // 
-            this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(3, 27);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(18, 13);
-            this.lblId.TabIndex = 4;
-            this.lblId.Text = "ID";
-            // 
-            // pnlBotoes
-            // 
-            this.pnlBotoes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlBotoes.Controls.Add(this.btnFechar);
-            this.pnlBotoes.Controls.Add(this.btnConfirmar);
-            this.pnlBotoes.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlBotoes.Location = new System.Drawing.Point(362, 0);
-            this.pnlBotoes.Name = "pnlBotoes";
-            this.pnlBotoes.Size = new System.Drawing.Size(137, 309);
-            this.pnlBotoes.TabIndex = 7;
-            // 
-            // btnFechar
-            // 
-            this.btnFechar.Location = new System.Drawing.Point(4, 46);
-            this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(126, 36);
-            this.btnFechar.TabIndex = 0;
-            this.btnFechar.Text = "FECHAR";
-            this.btnFechar.UseVisualStyleBackColor = true;
-            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
-            // 
-            // btnConfirmar
-            // 
-            this.btnConfirmar.Location = new System.Drawing.Point(4, 4);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(126, 36);
-            this.btnConfirmar.TabIndex = 0;
-            this.btnConfirmar.Text = "CONFIRMAR";
-            this.btnConfirmar.UseVisualStyleBackColor = true;
-            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            this.lblObservacao.AutoSize = true;
+            this.lblObservacao.Location = new System.Drawing.Point(7, 233);
+            this.lblObservacao.Name = "lblObservacao";
+            this.lblObservacao.Size = new System.Drawing.Size(65, 13);
+            this.lblObservacao.TabIndex = 39;
+            this.lblObservacao.Text = "Observação";
             // 
             // txtUsuario_solicitante_nome
             // 
@@ -186,6 +144,24 @@
             this.lblArea_comum_id.TabIndex = 36;
             this.lblArea_comum_id.Text = "Área comum";
             // 
+            // txtData_devolucao
+            // 
+            this.txtData_devolucao.CustomFormat = "dd/MM/yyyy HH:mm";
+            this.txtData_devolucao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtData_devolucao.Location = new System.Drawing.Point(204, 200);
+            this.txtData_devolucao.Name = "txtData_devolucao";
+            this.txtData_devolucao.Size = new System.Drawing.Size(148, 20);
+            this.txtData_devolucao.TabIndex = 34;
+            // 
+            // lblData_devolucao
+            // 
+            this.lblData_devolucao.AutoSize = true;
+            this.lblData_devolucao.Location = new System.Drawing.Point(201, 183);
+            this.lblData_devolucao.Name = "lblData_devolucao";
+            this.lblData_devolucao.Size = new System.Drawing.Size(83, 13);
+            this.lblData_devolucao.TabIndex = 32;
+            this.lblData_devolucao.Text = "Data devolução";
+            // 
             // txtData_inicio
             // 
             this.txtData_inicio.CustomFormat = "dd/MM/yyyy HH:mm";
@@ -204,6 +180,26 @@
             this.lblData_inicio.TabIndex = 32;
             this.lblData_inicio.Text = "Data inicio";
             // 
+            // lblExcluir
+            // 
+            this.lblExcluir.AutoSize = true;
+            this.lblExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExcluir.ForeColor = System.Drawing.Color.Red;
+            this.lblExcluir.Location = new System.Drawing.Point(3, 4);
+            this.lblExcluir.Name = "lblExcluir";
+            this.lblExcluir.Size = new System.Drawing.Size(210, 17);
+            this.lblExcluir.TabIndex = 29;
+            this.lblExcluir.Text = "Confirma a deleção do registro?";
+            this.lblExcluir.Visible = false;
+            // 
+            // txtSolicitacao_id
+            // 
+            this.txtSolicitacao_id.Location = new System.Drawing.Point(6, 96);
+            this.txtSolicitacao_id.Name = "txtSolicitacao_id";
+            this.txtSolicitacao_id.Size = new System.Drawing.Size(60, 20);
+            this.txtSolicitacao_id.TabIndex = 19;
+            this.txtSolicitacao_id.Validated += new System.EventHandler(this.txtSolicitacao_id_Validated);
+            // 
             // lblSolicitacao_id
             // 
             this.lblSolicitacao_id.AutoSize = true;
@@ -213,47 +209,52 @@
             this.lblSolicitacao_id.TabIndex = 4;
             this.lblSolicitacao_id.Text = "Solicitação";
             // 
-            // txtSolicitacao_id
+            // txtID
             // 
-            this.txtSolicitacao_id.Location = new System.Drawing.Point(6, 96);
-            this.txtSolicitacao_id.Name = "txtSolicitacao_id";
-            this.txtSolicitacao_id.Size = new System.Drawing.Size(60, 20);
-            this.txtSolicitacao_id.TabIndex = 19;
+            this.txtID.Location = new System.Drawing.Point(6, 44);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(60, 20);
+            this.txtID.TabIndex = 19;
             // 
-            // lblData_devolucao
+            // lblId
             // 
-            this.lblData_devolucao.AutoSize = true;
-            this.lblData_devolucao.Location = new System.Drawing.Point(201, 183);
-            this.lblData_devolucao.Name = "lblData_devolucao";
-            this.lblData_devolucao.Size = new System.Drawing.Size(83, 13);
-            this.lblData_devolucao.TabIndex = 32;
-            this.lblData_devolucao.Text = "Data devolução";
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(3, 27);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(18, 13);
+            this.lblId.TabIndex = 4;
+            this.lblId.Text = "ID";
             // 
-            // txtData_devolucao
+            // pnlBotoes
             // 
-            this.txtData_devolucao.CustomFormat = "dd/MM/yyyy HH:mm";
-            this.txtData_devolucao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtData_devolucao.Location = new System.Drawing.Point(204, 200);
-            this.txtData_devolucao.Name = "txtData_devolucao";
-            this.txtData_devolucao.Size = new System.Drawing.Size(148, 20);
-            this.txtData_devolucao.TabIndex = 34;
+            this.pnlBotoes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlBotoes.Controls.Add(this.btnFechar);
+            this.pnlBotoes.Controls.Add(this.btnConfirmar);
+            this.pnlBotoes.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlBotoes.Location = new System.Drawing.Point(362, 0);
+            this.pnlBotoes.Name = "pnlBotoes";
+            this.pnlBotoes.Size = new System.Drawing.Size(137, 309);
+            this.pnlBotoes.TabIndex = 7;
             // 
-            // txtObservacao
+            // btnFechar
             // 
-            this.txtObservacao.Location = new System.Drawing.Point(10, 249);
-            this.txtObservacao.Multiline = true;
-            this.txtObservacao.Name = "txtObservacao";
-            this.txtObservacao.Size = new System.Drawing.Size(342, 46);
-            this.txtObservacao.TabIndex = 40;
+            this.btnFechar.Location = new System.Drawing.Point(4, 46);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(126, 36);
+            this.btnFechar.TabIndex = 0;
+            this.btnFechar.Text = "FECHAR";
+            this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
-            // lblObservacao
+            // btnConfirmar
             // 
-            this.lblObservacao.AutoSize = true;
-            this.lblObservacao.Location = new System.Drawing.Point(7, 233);
-            this.lblObservacao.Name = "lblObservacao";
-            this.lblObservacao.Size = new System.Drawing.Size(65, 13);
-            this.lblObservacao.TabIndex = 39;
-            this.lblObservacao.Text = "Observação";
+            this.btnConfirmar.Location = new System.Drawing.Point(4, 4);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(126, 36);
+            this.btnConfirmar.TabIndex = 0;
+            this.btnConfirmar.Text = "CONFIRMAR";
+            this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // FrmReservaAreaComumFormulario
             // 

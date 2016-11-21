@@ -87,7 +87,7 @@ namespace SistemaHotel.form.Solicitacao
 
             txtID.Text = _solicitacao.id.ToString().Trim();
 
-            txtUsuario_solicitante_nome.Text = _solicitacao.usuario_solicitante.morador != null ? _solicitacao.usuario_solicitante.morador.nome : _solicitacao.usuario_solicitante.nome;
+            txtUsuario_solicitante_nome.Text = _solicitacao.dspSolicitante_nome;
 
             cbTipo.SelectedItem = EnumHelper.SetValue(_solicitacao.editTipo);
 
