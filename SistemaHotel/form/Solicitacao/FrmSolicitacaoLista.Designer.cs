@@ -62,7 +62,7 @@
             this.pnlBotoes.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlBotoes.Location = new System.Drawing.Point(475, 0);
             this.pnlBotoes.Name = "pnlBotoes";
-            this.pnlBotoes.Size = new System.Drawing.Size(137, 344);
+            this.pnlBotoes.Size = new System.Drawing.Size(137, 328);
             this.pnlBotoes.TabIndex = 7;
             // 
             // btnPermissao
@@ -134,7 +134,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(475, 344);
+            this.panel1.Size = new System.Drawing.Size(475, 328);
             this.panel1.TabIndex = 8;
             // 
             // gridRegistros
@@ -142,7 +142,7 @@
             this.gridRegistros.AllowUserToAddRows = false;
             this.gridRegistros.AllowUserToDeleteRows = false;
             this.gridRegistros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridRegistros.Location = new System.Drawing.Point(11, 109);
+            this.gridRegistros.Location = new System.Drawing.Point(10, 99);
             this.gridRegistros.Name = "gridRegistros";
             this.gridRegistros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridRegistros.Size = new System.Drawing.Size(448, 221);
@@ -150,13 +150,12 @@
             // 
             // toolOpcoes
             // 
-            this.toolOpcoes.Dock = System.Windows.Forms.DockStyle.None;
             this.toolOpcoes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolVisualizarSolicitacao});
             this.toolOpcoes.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.toolOpcoes.Location = new System.Drawing.Point(11, 10);
+            this.toolOpcoes.Location = new System.Drawing.Point(0, 0);
             this.toolOpcoes.Name = "toolOpcoes";
-            this.toolOpcoes.Size = new System.Drawing.Size(136, 23);
+            this.toolOpcoes.Size = new System.Drawing.Size(471, 23);
             this.toolOpcoes.TabIndex = 17;
             this.toolOpcoes.Text = "Opções";
             // 
@@ -176,7 +175,7 @@
             this.pnlFiltros.Controls.Add(this.ckSomenteNVisualizadas);
             this.pnlFiltros.Controls.Add(this.cbTipo);
             this.pnlFiltros.Controls.Add(this.lblTipo);
-            this.pnlFiltros.Location = new System.Drawing.Point(11, 36);
+            this.pnlFiltros.Location = new System.Drawing.Point(10, 26);
             this.pnlFiltros.Name = "pnlFiltros";
             this.pnlFiltros.Size = new System.Drawing.Size(448, 67);
             this.pnlFiltros.TabIndex = 16;
@@ -213,7 +212,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(612, 344);
+            this.ClientSize = new System.Drawing.Size(612, 328);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlBotoes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

@@ -129,8 +129,23 @@ namespace SistemaHotel.form.ReservaAreaComum
 
         private void atualizaLista()
         {
-            gridRegistros.DataSource = new BindingSource(new BindingList<model.Reserva_area_comum>(_reserva_area_comumRepositorio.getReservas_area_comum()), null);
+            gridRegistros.DataSource = new BindingSource(new BindingList<model.Reserva_area_comum>(_reserva_area_comumRepositorio.getReservas_area_comum(ckSomenteNDevolvidas.Checked, txtArea_nome.Text)), null);
             gridRegistros.Refresh();
+        }
+
+        private void toolDevolucaoAreaComum_Click(object sender, EventArgs e)
+        {
+            if (gridRegistros.CurrentRow == null)
+            {
+                MessageBox.Show("Nenhum registro selecionado", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                var reserva_area_comum = (model.Reserva_area_comum)gridRegistros.CurrentRow.DataBoundItem;
+                FrmReservaAreaComumDevolucao devolucao = new FrmReservaAreaComumDevolucao(Operacao.Alteracao, _context, reserva_area_comum);
+                devolucao.ShowDialog();
+                atualizaLista();
+            }
         }
     }
 }

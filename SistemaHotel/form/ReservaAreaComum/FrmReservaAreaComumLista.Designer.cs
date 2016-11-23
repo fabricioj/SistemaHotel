@@ -36,11 +36,18 @@
             this.btnInserir = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.pnlCorpo = new System.Windows.Forms.Panel();
+            this.toolOpcoes = new System.Windows.Forms.ToolStrip();
             this.gridRegistros = new System.Windows.Forms.DataGridView();
             this.pnlFiltros = new System.Windows.Forms.Panel();
+            this.toolDevolucaoAreaComum = new System.Windows.Forms.ToolStripButton();
+            this.ckSomenteNDevolvidas = new System.Windows.Forms.CheckBox();
+            this.txtArea_nome = new System.Windows.Forms.TextBox();
+            this.lblNome = new System.Windows.Forms.Label();
             this.pnlBotoes.SuspendLayout();
             this.pnlCorpo.SuspendLayout();
+            this.toolOpcoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridRegistros)).BeginInit();
+            this.pnlFiltros.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlBotoes
@@ -55,7 +62,7 @@
             this.pnlBotoes.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlBotoes.Location = new System.Drawing.Point(482, 0);
             this.pnlBotoes.Name = "pnlBotoes";
-            this.pnlBotoes.Size = new System.Drawing.Size(137, 305);
+            this.pnlBotoes.Size = new System.Drawing.Size(137, 321);
             this.pnlBotoes.TabIndex = 7;
             // 
             // btnPermissao
@@ -121,20 +128,31 @@
             // pnlCorpo
             // 
             this.pnlCorpo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlCorpo.Controls.Add(this.toolOpcoes);
             this.pnlCorpo.Controls.Add(this.gridRegistros);
             this.pnlCorpo.Controls.Add(this.pnlFiltros);
             this.pnlCorpo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCorpo.Location = new System.Drawing.Point(0, 0);
             this.pnlCorpo.Name = "pnlCorpo";
-            this.pnlCorpo.Size = new System.Drawing.Size(482, 305);
+            this.pnlCorpo.Size = new System.Drawing.Size(482, 321);
             this.pnlCorpo.TabIndex = 8;
+            // 
+            // toolOpcoes
+            // 
+            this.toolOpcoes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolDevolucaoAreaComum});
+            this.toolOpcoes.Location = new System.Drawing.Point(0, 0);
+            this.toolOpcoes.Name = "toolOpcoes";
+            this.toolOpcoes.Size = new System.Drawing.Size(478, 25);
+            this.toolOpcoes.TabIndex = 12;
+            this.toolOpcoes.Text = "toolStrip1";
             // 
             // gridRegistros
             // 
             this.gridRegistros.AllowUserToAddRows = false;
             this.gridRegistros.AllowUserToDeleteRows = false;
             this.gridRegistros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridRegistros.Location = new System.Drawing.Point(15, 72);
+            this.gridRegistros.Location = new System.Drawing.Point(10, 92);
             this.gridRegistros.Name = "gridRegistros";
             this.gridRegistros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridRegistros.Size = new System.Drawing.Size(448, 221);
@@ -143,16 +161,54 @@
             // pnlFiltros
             // 
             this.pnlFiltros.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlFiltros.Location = new System.Drawing.Point(15, 8);
+            this.pnlFiltros.Controls.Add(this.txtArea_nome);
+            this.pnlFiltros.Controls.Add(this.lblNome);
+            this.pnlFiltros.Controls.Add(this.ckSomenteNDevolvidas);
+            this.pnlFiltros.Location = new System.Drawing.Point(10, 28);
             this.pnlFiltros.Name = "pnlFiltros";
             this.pnlFiltros.Size = new System.Drawing.Size(448, 57);
             this.pnlFiltros.TabIndex = 10;
+            // 
+            // toolDevolucaoAreaComum
+            // 
+            this.toolDevolucaoAreaComum.Image = global::SistemaHotel.Properties.Resources.chave;
+            this.toolDevolucaoAreaComum.ImageTransparentColor = System.Drawing.SystemColors.Control;
+            this.toolDevolucaoAreaComum.Name = "toolDevolucaoAreaComum";
+            this.toolDevolucaoAreaComum.Size = new System.Drawing.Size(169, 22);
+            this.toolDevolucaoAreaComum.Text = "Devolução de área comum";
+            this.toolDevolucaoAreaComum.Click += new System.EventHandler(this.toolDevolucaoAreaComum_Click);
+            // 
+            // ckSomenteNDevolvidas
+            // 
+            this.ckSomenteNDevolvidas.AutoSize = true;
+            this.ckSomenteNDevolvidas.Location = new System.Drawing.Point(287, 25);
+            this.ckSomenteNDevolvidas.Name = "ckSomenteNDevolvidas";
+            this.ckSomenteNDevolvidas.Size = new System.Drawing.Size(143, 17);
+            this.ckSomenteNDevolvidas.TabIndex = 36;
+            this.ckSomenteNDevolvidas.Text = "Somente não devolvidas";
+            this.ckSomenteNDevolvidas.UseVisualStyleBackColor = true;
+            // 
+            // txtArea_nome
+            // 
+            this.txtArea_nome.Location = new System.Drawing.Point(9, 25);
+            this.txtArea_nome.Name = "txtArea_nome";
+            this.txtArea_nome.Size = new System.Drawing.Size(272, 20);
+            this.txtArea_nome.TabIndex = 51;
+            // 
+            // lblNome
+            // 
+            this.lblNome.AutoSize = true;
+            this.lblNome.Location = new System.Drawing.Point(6, 8);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(35, 13);
+            this.lblNome.TabIndex = 50;
+            this.lblNome.Text = "Nome";
             // 
             // FrmReservaAreaComumLista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(619, 305);
+            this.ClientSize = new System.Drawing.Size(619, 321);
             this.Controls.Add(this.pnlCorpo);
             this.Controls.Add(this.pnlBotoes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -164,7 +220,12 @@
             this.Load += new System.EventHandler(this.FrmReservaAreaComum_Load);
             this.pnlBotoes.ResumeLayout(false);
             this.pnlCorpo.ResumeLayout(false);
+            this.pnlCorpo.PerformLayout();
+            this.toolOpcoes.ResumeLayout(false);
+            this.toolOpcoes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridRegistros)).EndInit();
+            this.pnlFiltros.ResumeLayout(false);
+            this.pnlFiltros.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -180,5 +241,10 @@
         private System.Windows.Forms.Panel pnlCorpo;
         private System.Windows.Forms.DataGridView gridRegistros;
         private System.Windows.Forms.Panel pnlFiltros;
+        private System.Windows.Forms.ToolStrip toolOpcoes;
+        private System.Windows.Forms.ToolStripButton toolDevolucaoAreaComum;
+        private System.Windows.Forms.CheckBox ckSomenteNDevolvidas;
+        private System.Windows.Forms.TextBox txtArea_nome;
+        private System.Windows.Forms.Label lblNome;
     }
 }

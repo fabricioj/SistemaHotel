@@ -39,9 +39,9 @@
             this.mnuAreasComuns = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMovimentos = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSolicitacoes = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuReservasAreasComuns = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuOrcamentos = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuReservasAreasComuns = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSistema.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -131,6 +131,13 @@
             this.mnuSolicitacoes.Text = "Solicitações";
             this.mnuSolicitacoes.Click += new System.EventHandler(this.mnuSolicitacoes_Click);
             // 
+            // mnuReservasAreasComuns
+            // 
+            this.mnuReservasAreasComuns.Name = "mnuReservasAreasComuns";
+            this.mnuReservasAreasComuns.Size = new System.Drawing.Size(211, 22);
+            this.mnuReservasAreasComuns.Text = "Reservas de áreas comuns";
+            this.mnuReservasAreasComuns.Click += new System.EventHandler(this.mnuReservasAreasComuns_Click);
+            // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
@@ -143,13 +150,6 @@
             this.mnuOrcamentos.Text = "Orçamentos";
             this.mnuOrcamentos.Click += new System.EventHandler(this.mnuOrcamentos_Click);
             // 
-            // mnuReservasAreasComuns
-            // 
-            this.mnuReservasAreasComuns.Name = "mnuReservasAreasComuns";
-            this.mnuReservasAreasComuns.Size = new System.Drawing.Size(211, 22);
-            this.mnuReservasAreasComuns.Text = "Reservas de áreas comuns";
-            this.mnuReservasAreasComuns.Click += new System.EventHandler(this.mnuReservasAreasComuns_Click);
-            // 
             // FrmSistemaHotel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -159,6 +159,7 @@
             this.Name = "FrmSistemaHotel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema hotel";
+            this.Activated += new System.EventHandler(this.FrmSistemaHotel_Activated);
             this.Load += new System.EventHandler(this.FrmSistemaHotel_Load);
             this.mnuSistema.ResumeLayout(false);
             this.mnuSistema.PerformLayout();

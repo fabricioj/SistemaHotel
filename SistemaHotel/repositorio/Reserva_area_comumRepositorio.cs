@@ -43,6 +43,17 @@ namespace SistemaHotel.repositorio
             return reservas_area_comum;
         }
 
+        public List<Reserva_area_comum> getReservas_area_comum(int solicitacao_id)
+        {
+            List<Reserva_area_comum> reservas_area_comum = new List<Reserva_area_comum>();
+            reservas_area_comum = _context.reserva_area_comum
+                .Include(r => r.solicitacao)
+                .Include(r => r.solicitacao.area_comum)
+                .Where(r => r.solicitacao_id == solicitacao_id)
+           .ToList();
+            return reservas_area_comum;
+        }
+
         public List<Reserva_area_comum> getReservas_area_comum(bool somenteNDevolvida, string area_comum_nome)
         {
             List<Reserva_area_comum> reservas_area_comum = new List<Reserva_area_comum>();

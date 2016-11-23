@@ -65,6 +65,31 @@ namespace SistemaHotel.repositorio
             return _context.solicitacao.Where(s => s.data_visualizacao == null || s.data_visualizacao == DateTime.MinValue).Count();
         }
 
+        public int gravaVisualizacao(Solicitacao solicitacao)
+        {
+            alterar(solicitacao);
+            salvar();
+            if (solicitacao.editTipo == TipoSolicitacao.Reserva)
+            {
+                var reservaRepositorio = new Reserva_area_comumRepositorio(_context);
+                var reservas = reservaRepositorio.getReservas_area_comum(solicitacao.id);
+                if (reservas.Count == 0)
+                {
+                    Reserva_area_comum reserva = new Reserva_area_comum
+                    {
+                        solicitacao = solicitacao,
+                        data_devolucao = DateTime.MinValue,
+                        observacao = "REGISTRO INSERIDO PELO SISTEMA"
+                    };
+                    reservaRepositorio.incluir(ref reserva);
+                    reservaRepositorio.salvar();
+                    return reserva.id;
+                }
+            }
+            return 0;
+
+        }
+
         public void salvar()
         {
             _context.SaveChanges();

@@ -18,11 +18,11 @@ namespace SistemaHotel.form.Solicitacao
         private model.Solicitacao _solicitacao;
         private repositorio.SolicitacaoRepositorio _solicitacaoRepositorio;
 
-        public FrmSolicitacaoVisualizar(Operacao op,model.Usuario usuarioLogado, model.SistemaHotelContext context, model.Solicitacao _solicitacao)
+        public FrmSolicitacaoVisualizar(Operacao op, model.Usuario usuarioLogado, model.SistemaHotelContext context, model.Solicitacao _solicitacao)
         {
             this._op = op;
             this._context = context;
-            this._solicitacao = _solicitacao;            
+            this._solicitacao = _solicitacao;
             this._solicitacao.editUsuario_visualizacao_id = usuarioLogado.id;
             this._solicitacaoRepositorio = new repositorio.SolicitacaoRepositorio(_context);
             InitializeComponent();
@@ -36,14 +36,24 @@ namespace SistemaHotel.form.Solicitacao
             {
                 preencheObjeto();
 
-                if (_op == Operacao.Alteracao) { 
-                    _solicitacaoRepositorio.alterar(_solicitacao);
-                    _solicitacaoRepositorio.salvar();
+                if (_op == Operacao.Alteracao)
+                {
+                    int id = _solicitacaoRepositorio.gravaVisualizacao(_solicitacao);
+                    if (_solicitacao.editTipo == TipoSolicitacao.Reserva)
+                    {
+                        if (id != 0)
+                        {
+                            var reserva = new repositorio.Reserva_area_comumRepositorio(_context).getReserva_area_comumporID(id);
+                            var formulario = new ReservaAreaComum.FrmReservaAreaComumFormulario(Operacao.Alteracao, _context, reserva);
+                            formulario.ShowDialog();
+                        }
+                    }
                     Dispose();
                 }
-                
 
-            }catch(Exception ex)
+
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -59,14 +69,20 @@ namespace SistemaHotel.form.Solicitacao
 
         }
 
-        private void FrmSolicitacaoVistar_Load(object sender, EventArgs e)
+        private void FrmSolicitacaoVisualizar_Load(object sender, EventArgs e)
         {
+            var permissoes = repositorio.PermissaoRepositorio.getPermissaoFuncionalidadeNome(_context, Name);
+            if (permissoes.editEspecial != util.SimNao.SIM && permissoes.editSupervisor != util.SimNao.SIM)
+            {
+                Dispose();
+            }
             if (_solicitacao.data_visualizacao == null || _solicitacao.data_visualizacao == DateTime.MinValue)
                 _solicitacao.data_visualizacao = DateTime.Now;
             preencheForm();
         }
 
-        private void preencheForm() {
+        private void preencheForm()
+        {
             txtID.Enabled = true;
             txtUsuario_solicitante_nome.Enabled = true;
             cbTipo.Enabled = true;
@@ -127,11 +143,12 @@ namespace SistemaHotel.form.Solicitacao
             }
         }
 
-        private void preencheObjeto() {
+        private void preencheObjeto()
+        {
             _solicitacao.data_visualizacao = txtData_visualizacao.Value != DateTimePicker.MinimumDateTime ? txtData_visualizacao.Value.Date : DateTime.MinValue;
             _solicitacao.editResultado_visualizacao = (TipoResultadoSolicitacao)EnumHelper.GetValue(cbResultado_visualizacao.SelectedItem);
             _solicitacao.observacao_visualizacao = txtObservacao.Text;
-            
+
         }
 
     }

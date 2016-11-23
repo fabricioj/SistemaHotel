@@ -386,7 +386,7 @@
             this.Name = "FrmSolicitacaoVisualizar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Visualizar solicitação";
-            this.Load += new System.EventHandler(this.FrmSolicitacaoVistar_Load);
+            this.Load += new System.EventHandler(this.FrmSolicitacaoVisualizar_Load);
             this.pnlInformacoes.ResumeLayout(false);
             this.pnlInformacoes.PerformLayout();
             this.pnlResultado.ResumeLayout(false);

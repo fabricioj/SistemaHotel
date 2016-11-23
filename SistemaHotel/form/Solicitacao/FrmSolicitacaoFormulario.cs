@@ -52,6 +52,9 @@ namespace SistemaHotel.form.Solicitacao
                         break;
 
                     case Operacao.Exclusao:
+                        if (_solicitacao.data_visualizacao != null && _solicitacao.data_visualizacao != DateTime.MinValue)
+                            throw new Exception("Impossível deletar solicitação já visualizada.");
+
                         _solicitacaoRepositorio.excluir(_solicitacao);
                         _solicitacaoRepositorio.salvar();
                         Dispose();

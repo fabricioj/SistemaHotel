@@ -28,17 +28,6 @@ namespace SistemaHotel.form.ReservaAreaComum
             Util.acertaTabOrder(this);
         }
 
-        public FrmReservaAreaComumFormulario(Operacao op, model.Solicitacao solicitacao, model.SistemaHotelContext context, model.Reserva_area_comum reserva_area_comum)
-        {
-            _op = op;
-            _context = context;
-            _reserva_area_comum = reserva_area_comum;
-            _reserva_area_comum.editSolicitacao_id = solicitacao.id;
-            _reserva_area_comumRepositorio = new repositorio.Reserva_area_comumRepositorio(_context);
-            InitializeComponent();
-            Util.acertaTabOrder(this);
-        }
-
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             try
@@ -114,13 +103,15 @@ namespace SistemaHotel.form.ReservaAreaComum
             txtArea_comum_id.Enabled = false;
             txtArea_comum_nome.Enabled = false;
             txtData_inicio.Enabled = false;
+            txtData_devolucao.Enabled = false;
 
+            if (_op != Operacao.Insercao)
+            {
+                txtSolicitacao_id.Enabled = false;
+            }
 
             if (_op == Operacao.Consulta || _op == Operacao.Exclusao)
             {
-
-                txtSolicitacao_id.Enabled = false;
-                txtData_devolucao.Enabled = false;
                 txtObservacao.Enabled = false;
 
                 if (_op == Operacao.Exclusao)
@@ -186,11 +177,14 @@ namespace SistemaHotel.form.ReservaAreaComum
                 if (_reserva_area_comum.solicitacao == null)
                 {
                     throw new Exception("Solicitação não existe");
-
                 }
                 else if (_reserva_area_comum.solicitacao.editTipo != TipoSolicitacao.Reserva)
                 {
                     throw new Exception("Solicitação não é do tipo de reserva de área comum");
+                }
+                else if (_reserva_area_comum.solicitacao.editResultado_visualizacao != TipoResultadoSolicitacao.Aprovada)
+                {
+                    throw new Exception("Solicitação deve estar aprovada");
                 }
 
             }

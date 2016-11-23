@@ -31,14 +31,13 @@ namespace SistemaHotel
 
         private void FrmSistemaHotel_Load(object sender, EventArgs e)
         {
-            preencheForm();
         }
 
         private void preencheForm() {
 
             mnuSolicitacoes.ToolTipText = string.Empty;
             mnuSolicitacoes.Image = null;
-            var permissoes = repositorio.PermissaoRepositorio.getPermissaoFuncionalidadeNome(_context, "FrmSolicitacaoListar");
+            var permissoes = repositorio.PermissaoRepositorio.getPermissaoFuncionalidadeNome(_context, "FrmSolicitacaoVisualizar");
             if (permissoes.editEspecial == util.SimNao.SIM || permissoes.editSupervisor == util.SimNao.SIM)
             {
                 var qtdSolicitacoes = new repositorio.SolicitacaoRepositorio(_context).getQuantidadeSolicitacoesNVistas();
@@ -93,8 +92,7 @@ namespace SistemaHotel
         {
             using (var lista = new FrmSolicitacaoLista(_context, _usuarioLogado))
             {
-                lista.ShowDialog();
-                preencheForm();
+                lista.ShowDialog();                
             }
         }
 
@@ -103,8 +101,12 @@ namespace SistemaHotel
             using (var lista = new FrmReservaAreaComumLista(_context))
             {
                 lista.ShowDialog();
-                preencheForm();
             }
+        }
+
+        private void FrmSistemaHotel_Activated(object sender, EventArgs e)
+        {
+            preencheForm();
         }
     }
 }
