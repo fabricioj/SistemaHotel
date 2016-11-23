@@ -483,6 +483,10 @@ namespace SistemaHotel.model
                 .Property(e => e.observacao)
                 .IsUnicode(false);
 
+            modelBuilder.Entity<Reserva_area_comum>()
+                .Property(e => e.observacao_devolucao)
+                .IsUnicode(false);
+
             modelBuilder.Entity<Solicitacao>()
                 .Property(e => e.tipo)
                 .IsUnicode(false);

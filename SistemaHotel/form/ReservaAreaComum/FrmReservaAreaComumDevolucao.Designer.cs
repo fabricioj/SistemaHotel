@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             this.pnlInformacoes = new System.Windows.Forms.Panel();
-            this.txtID = new System.Windows.Forms.TextBox();
-            this.lblId = new System.Windows.Forms.Label();
-            this.pnlBotoes = new System.Windows.Forms.Panel();
-            this.btnFechar = new System.Windows.Forms.Button();
-            this.btnConfirmar = new System.Windows.Forms.Button();
             this.txtUsuario_solicitante_nome = new System.Windows.Forms.TextBox();
             this.lblUsuario_solicitante_nome = new System.Windows.Forms.Label();
             this.txtArea_comum_nome = new System.Windows.Forms.TextBox();
@@ -44,6 +39,13 @@
             this.lblData_devolucao = new System.Windows.Forms.Label();
             this.txtData_inicio = new System.Windows.Forms.DateTimePicker();
             this.lblData_inicio = new System.Windows.Forms.Label();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.lblId = new System.Windows.Forms.Label();
+            this.pnlBotoes = new System.Windows.Forms.Panel();
+            this.btnFechar = new System.Windows.Forms.Button();
+            this.btnConfirmar = new System.Windows.Forms.Button();
+            this.txtObservacao = new System.Windows.Forms.TextBox();
+            this.lblObservacao = new System.Windows.Forms.Label();
             this.pnlInformacoes.SuspendLayout();
             this.pnlBotoes.SuspendLayout();
             this.SuspendLayout();
@@ -51,6 +53,8 @@
             // pnlInformacoes
             // 
             this.pnlInformacoes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlInformacoes.Controls.Add(this.txtObservacao);
+            this.pnlInformacoes.Controls.Add(this.lblObservacao);
             this.pnlInformacoes.Controls.Add(this.txtUsuario_solicitante_nome);
             this.pnlInformacoes.Controls.Add(this.lblUsuario_solicitante_nome);
             this.pnlInformacoes.Controls.Add(this.txtArea_comum_nome);
@@ -66,55 +70,8 @@
             this.pnlInformacoes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlInformacoes.Location = new System.Drawing.Point(0, 0);
             this.pnlInformacoes.Name = "pnlInformacoes";
-            this.pnlInformacoes.Size = new System.Drawing.Size(385, 161);
+            this.pnlInformacoes.Size = new System.Drawing.Size(385, 229);
             this.pnlInformacoes.TabIndex = 8;
-            // 
-            // txtID
-            // 
-            this.txtID.Location = new System.Drawing.Point(10, 20);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(60, 20);
-            this.txtID.TabIndex = 19;
-            // 
-            // lblId
-            // 
-            this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(7, 3);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(18, 13);
-            this.lblId.TabIndex = 4;
-            this.lblId.Text = "ID";
-            // 
-            // pnlBotoes
-            // 
-            this.pnlBotoes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlBotoes.Controls.Add(this.btnFechar);
-            this.pnlBotoes.Controls.Add(this.btnConfirmar);
-            this.pnlBotoes.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlBotoes.Location = new System.Drawing.Point(385, 0);
-            this.pnlBotoes.Name = "pnlBotoes";
-            this.pnlBotoes.Size = new System.Drawing.Size(137, 161);
-            this.pnlBotoes.TabIndex = 7;
-            // 
-            // btnFechar
-            // 
-            this.btnFechar.Location = new System.Drawing.Point(4, 46);
-            this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(126, 36);
-            this.btnFechar.TabIndex = 0;
-            this.btnFechar.Text = "FECHAR";
-            this.btnFechar.UseVisualStyleBackColor = true;
-            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
-            // 
-            // btnConfirmar
-            // 
-            this.btnConfirmar.Location = new System.Drawing.Point(4, 4);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(126, 36);
-            this.btnConfirmar.TabIndex = 0;
-            this.btnConfirmar.Text = "CONFIRMAR";
-            this.btnConfirmar.UseVisualStyleBackColor = true;
-            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // txtUsuario_solicitante_nome
             // 
@@ -200,11 +157,75 @@
             this.lblData_inicio.TabIndex = 41;
             this.lblData_inicio.Text = "Data inicio";
             // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(10, 20);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(60, 20);
+            this.txtID.TabIndex = 19;
+            // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(7, 3);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(18, 13);
+            this.lblId.TabIndex = 4;
+            this.lblId.Text = "ID";
+            // 
+            // pnlBotoes
+            // 
+            this.pnlBotoes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlBotoes.Controls.Add(this.btnFechar);
+            this.pnlBotoes.Controls.Add(this.btnConfirmar);
+            this.pnlBotoes.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlBotoes.Location = new System.Drawing.Point(385, 0);
+            this.pnlBotoes.Name = "pnlBotoes";
+            this.pnlBotoes.Size = new System.Drawing.Size(137, 229);
+            this.pnlBotoes.TabIndex = 7;
+            // 
+            // btnFechar
+            // 
+            this.btnFechar.Location = new System.Drawing.Point(4, 46);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(126, 36);
+            this.btnFechar.TabIndex = 0;
+            this.btnFechar.Text = "FECHAR";
+            this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
+            // 
+            // btnConfirmar
+            // 
+            this.btnConfirmar.Location = new System.Drawing.Point(4, 4);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(126, 36);
+            this.btnConfirmar.TabIndex = 0;
+            this.btnConfirmar.Text = "CONFIRMAR";
+            this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            // 
+            // txtObservacao
+            // 
+            this.txtObservacao.Location = new System.Drawing.Point(10, 173);
+            this.txtObservacao.Multiline = true;
+            this.txtObservacao.Name = "txtObservacao";
+            this.txtObservacao.Size = new System.Drawing.Size(354, 46);
+            this.txtObservacao.TabIndex = 50;
+            // 
+            // lblObservacao
+            // 
+            this.lblObservacao.AutoSize = true;
+            this.lblObservacao.Location = new System.Drawing.Point(7, 157);
+            this.lblObservacao.Name = "lblObservacao";
+            this.lblObservacao.Size = new System.Drawing.Size(118, 13);
+            this.lblObservacao.TabIndex = 49;
+            this.lblObservacao.Text = "Observação devolução";
+            // 
             // FrmReservaAreaComumDevolucao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(522, 161);
+            this.ClientSize = new System.Drawing.Size(522, 229);
             this.Controls.Add(this.pnlInformacoes);
             this.Controls.Add(this.pnlBotoes);
             this.MaximizeBox = false;
@@ -238,5 +259,7 @@
         private System.Windows.Forms.Label lblData_devolucao;
         private System.Windows.Forms.DateTimePicker txtData_inicio;
         private System.Windows.Forms.Label lblData_inicio;
+        private System.Windows.Forms.TextBox txtObservacao;
+        private System.Windows.Forms.Label lblObservacao;
     }
 }

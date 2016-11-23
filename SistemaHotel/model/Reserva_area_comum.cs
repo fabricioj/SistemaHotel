@@ -14,15 +14,12 @@ namespace SistemaHotel.model
         public int id { get; set; }
 
         [Browsable(false)]
-        [StringLength(100)]
+        [StringLength(254)]
         public string observacao { get; set; }
 
-        [DisplayName("Dt devolução")]
-        [Column(TypeName = "date")]
-        public DateTime? data_devolucao { get; set; }
-
         [Browsable(false)]
-        public TimeSpan? hora_devolucao { get; set; }
+        [StringLength(254)]
+        public string observacao_devolucao { get; set; }
 
         [Browsable(false)]
         public int? solicitacao_id { get; set; }
@@ -41,5 +38,12 @@ namespace SistemaHotel.model
         [DisplayName("Área comum")]
         [NotMapped]
         public string dspSolicitacao_area_comum_nome { get { return solicitacao != null ? solicitacao.area_comum.nome : string.Empty; }}
+
+        [DisplayName("Dt devolução")]
+        [Column(TypeName = "date")]
+        public DateTime? data_devolucao { get; set; }
+
+        [Browsable(false)]
+        public TimeSpan? hora_devolucao { get; set; }
     }
 }

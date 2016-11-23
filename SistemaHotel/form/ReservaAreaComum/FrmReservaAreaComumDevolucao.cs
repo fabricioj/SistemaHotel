@@ -66,6 +66,7 @@ namespace SistemaHotel.form.ReservaAreaComum
             txtArea_comum_nome.Enabled = true;
             txtData_inicio.Enabled = true;
             txtData_devolucao.Enabled = true;
+            txtObservacao.Enabled = true;
 
             txtID.Text = _reserva_area_comum.id.ToString().Trim();
             if (_reserva_area_comum.solicitacao != null)
@@ -78,18 +79,17 @@ namespace SistemaHotel.form.ReservaAreaComum
             }
             txtData_devolucao.Value = (_reserva_area_comum.data_devolucao != null && _reserva_area_comum.data_devolucao != DateTime.MinValue ? (DateTime)_reserva_area_comum.data_devolucao : DateTimePicker.MinimumDateTime) +
                                    (_reserva_area_comum.hora_devolucao != null && _reserva_area_comum.hora_devolucao != DateTime.MinValue.TimeOfDay ? (TimeSpan)_reserva_area_comum.hora_devolucao : DateTimePicker.MinimumDateTime.TimeOfDay);
+            txtObservacao.Text = _reserva_area_comum.observacao_devolucao;
 
             txtID.Enabled = false;
             txtUsuario_solicitante_nome.Enabled = false;
             txtArea_comum_id.Enabled = false;
             txtArea_comum_nome.Enabled = false;
             txtData_inicio.Enabled = false;
-            
-
-            txtID.Enabled = false;
 
             if (_op == Operacao.Consulta || _op == Operacao.Exclusao) {
                 txtData_devolucao.Enabled = false;
+                txtObservacao.Enabled     = false;
                 if (_op == Operacao.Consulta)
                 {
                     btnConfirmar.Enabled = false;
@@ -98,8 +98,9 @@ namespace SistemaHotel.form.ReservaAreaComum
         }
 
         private void preencheObjeto() {
-            _reserva_area_comum.data_devolucao = txtData_devolucao.Value != DateTimePicker.MinimumDateTime ? txtData_devolucao.Value.Date : DateTime.MinValue;
-            _reserva_area_comum.hora_devolucao = txtData_devolucao.Value != DateTimePicker.MinimumDateTime ? txtData_devolucao.Value.TimeOfDay : DateTime.MinValue.TimeOfDay;
+            _reserva_area_comum.data_devolucao       = txtData_devolucao.Value != DateTimePicker.MinimumDateTime ? txtData_devolucao.Value.Date : DateTime.MinValue;
+            _reserva_area_comum.hora_devolucao       = txtData_devolucao.Value != DateTimePicker.MinimumDateTime ? txtData_devolucao.Value.TimeOfDay : DateTime.MinValue.TimeOfDay;
+            _reserva_area_comum.observacao_devolucao = txtObservacao.Text;
         }
     }
 }
