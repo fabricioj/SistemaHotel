@@ -1,6 +1,6 @@
 ﻿namespace SistemaHotel.form.Procedimento
 {
-    partial class FrmProcedimentoFormulario
+    partial class FrmProcedimentoPasso
     {
         /// <summary>
         /// Required designer variable.
@@ -35,8 +35,10 @@
             this.pnlBotoes = new System.Windows.Forms.Panel();
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
-            this.txtDescricao = new System.Windows.Forms.TextBox();
-            this.lblDescricao = new System.Windows.Forms.Label();
+            this.lblOrdem = new System.Windows.Forms.Label();
+            this.txtOrdem_execucao = new System.Windows.Forms.TextBox();
+            this.lblDescrica_passo = new System.Windows.Forms.Label();
+            this.txtDescricao_passo = new System.Windows.Forms.TextBox();
             this.pnlInformacoes.SuspendLayout();
             this.pnlBotoes.SuspendLayout();
             this.SuspendLayout();
@@ -44,15 +46,17 @@
             // pnlInformacoes
             // 
             this.pnlInformacoes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlInformacoes.Controls.Add(this.txtDescricao);
-            this.pnlInformacoes.Controls.Add(this.lblDescricao);
             this.pnlInformacoes.Controls.Add(this.lblExcluir);
+            this.pnlInformacoes.Controls.Add(this.txtDescricao_passo);
+            this.pnlInformacoes.Controls.Add(this.lblDescrica_passo);
+            this.pnlInformacoes.Controls.Add(this.txtOrdem_execucao);
+            this.pnlInformacoes.Controls.Add(this.lblOrdem);
             this.pnlInformacoes.Controls.Add(this.txtID);
             this.pnlInformacoes.Controls.Add(this.lblId);
             this.pnlInformacoes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlInformacoes.Location = new System.Drawing.Point(0, 0);
             this.pnlInformacoes.Name = "pnlInformacoes";
-            this.pnlInformacoes.Size = new System.Drawing.Size(425, 130);
+            this.pnlInformacoes.Size = new System.Drawing.Size(337, 201);
             this.pnlInformacoes.TabIndex = 8;
             // 
             // lblExcluir
@@ -89,9 +93,9 @@
             this.pnlBotoes.Controls.Add(this.btnFechar);
             this.pnlBotoes.Controls.Add(this.btnConfirmar);
             this.pnlBotoes.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlBotoes.Location = new System.Drawing.Point(425, 0);
+            this.pnlBotoes.Location = new System.Drawing.Point(337, 0);
             this.pnlBotoes.Name = "pnlBotoes";
-            this.pnlBotoes.Size = new System.Drawing.Size(137, 130);
+            this.pnlBotoes.Size = new System.Drawing.Size(137, 201);
             this.pnlBotoes.TabIndex = 7;
             // 
             // btnFechar
@@ -114,35 +118,52 @@
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
-            // txtDescricao
+            // lblOrdem
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(6, 96);
-            this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(313, 20);
-            this.txtDescricao.TabIndex = 31;
+            this.lblOrdem.AutoSize = true;
+            this.lblOrdem.Location = new System.Drawing.Point(136, 27);
+            this.lblOrdem.Name = "lblOrdem";
+            this.lblOrdem.Size = new System.Drawing.Size(38, 13);
+            this.lblOrdem.TabIndex = 4;
+            this.lblOrdem.Text = "Ordem";
             // 
-            // lblDescricao
+            // txtOrdem_execucao
             // 
-            this.lblDescricao.AutoSize = true;
-            this.lblDescricao.Location = new System.Drawing.Point(3, 79);
-            this.lblDescricao.Name = "lblDescricao";
-            this.lblDescricao.Size = new System.Drawing.Size(55, 13);
-            this.lblDescricao.TabIndex = 30;
-            this.lblDescricao.Text = "Descrição";
+            this.txtOrdem_execucao.Location = new System.Drawing.Point(139, 44);
+            this.txtOrdem_execucao.Name = "txtOrdem_execucao";
+            this.txtOrdem_execucao.Size = new System.Drawing.Size(60, 20);
+            this.txtOrdem_execucao.TabIndex = 19;
             // 
-            // FrmProcedimentoFormulario
+            // lblDescrica_passo
+            // 
+            this.lblDescrica_passo.AutoSize = true;
+            this.lblDescrica_passo.Location = new System.Drawing.Point(3, 76);
+            this.lblDescrica_passo.Name = "lblDescrica_passo";
+            this.lblDescrica_passo.Size = new System.Drawing.Size(86, 13);
+            this.lblDescrica_passo.TabIndex = 4;
+            this.lblDescrica_passo.Text = "Descrição passo";
+            // 
+            // txtDescricao_passo
+            // 
+            this.txtDescricao_passo.Location = new System.Drawing.Point(6, 93);
+            this.txtDescricao_passo.Multiline = true;
+            this.txtDescricao_passo.Name = "txtDescricao_passo";
+            this.txtDescricao_passo.Size = new System.Drawing.Size(319, 101);
+            this.txtDescricao_passo.TabIndex = 19;
+            // 
+            // FrmProcedimentoPasso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(562, 130);
+            this.ClientSize = new System.Drawing.Size(474, 201);
             this.Controls.Add(this.pnlInformacoes);
             this.Controls.Add(this.pnlBotoes);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmProcedimentoFormulario";
+            this.Name = "FrmProcedimentoPasso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Procedimento";
-            this.Load += new System.EventHandler(this.FrmProcedimentoFormulario_Load);
+            this.Text = "Passo";
+            this.Load += new System.EventHandler(this.FrmProcedimentoPasso_Load);
             this.pnlInformacoes.ResumeLayout(false);
             this.pnlInformacoes.PerformLayout();
             this.pnlBotoes.ResumeLayout(false);
@@ -159,7 +180,9 @@
         private System.Windows.Forms.Panel pnlBotoes;
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Button btnConfirmar;
-        private System.Windows.Forms.TextBox txtDescricao;
-        private System.Windows.Forms.Label lblDescricao;
+        private System.Windows.Forms.TextBox txtOrdem_execucao;
+        private System.Windows.Forms.Label lblOrdem;
+        private System.Windows.Forms.TextBox txtDescricao_passo;
+        private System.Windows.Forms.Label lblDescrica_passo;
     }
 }

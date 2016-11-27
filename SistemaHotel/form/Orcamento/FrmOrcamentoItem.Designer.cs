@@ -78,7 +78,7 @@
             this.pnlInformacoes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlInformacoes.Location = new System.Drawing.Point(0, 0);
             this.pnlInformacoes.Name = "pnlInformacoes";
-            this.pnlInformacoes.Size = new System.Drawing.Size(405, 349);
+            this.pnlInformacoes.Size = new System.Drawing.Size(382, 319);
             this.pnlInformacoes.TabIndex = 8;
             // 
             // lblExcluir
@@ -242,9 +242,9 @@
             this.pnlBotoes.Controls.Add(this.btnFechar);
             this.pnlBotoes.Controls.Add(this.btnConfirmar);
             this.pnlBotoes.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlBotoes.Location = new System.Drawing.Point(405, 0);
+            this.pnlBotoes.Location = new System.Drawing.Point(382, 0);
             this.pnlBotoes.Name = "pnlBotoes";
-            this.pnlBotoes.Size = new System.Drawing.Size(137, 349);
+            this.pnlBotoes.Size = new System.Drawing.Size(137, 319);
             this.pnlBotoes.TabIndex = 7;
             // 
             // btnFechar
@@ -271,7 +271,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 349);
+            this.ClientSize = new System.Drawing.Size(519, 319);
             this.Controls.Add(this.pnlInformacoes);
             this.Controls.Add(this.pnlBotoes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

@@ -1,6 +1,6 @@
 ﻿namespace SistemaHotel.form.Procedimento
 {
-    partial class FrmProcedimentoFormulario
+    partial class FrmProcedimentoPassoProduto
     {
         /// <summary>
         /// Required designer variable.
@@ -35,8 +35,13 @@
             this.pnlBotoes = new System.Windows.Forms.Panel();
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
-            this.txtDescricao = new System.Windows.Forms.TextBox();
-            this.lblDescricao = new System.Windows.Forms.Label();
+            this.txtProduto_id = new System.Windows.Forms.MaskedTextBox();
+            this.btnPesquisaProduto = new System.Windows.Forms.Button();
+            this.txtProduto_descricao = new System.Windows.Forms.TextBox();
+            this.lblProduto_descricao = new System.Windows.Forms.Label();
+            this.lblProduto_id = new System.Windows.Forms.Label();
+            this.txtQuantidade_utilizada = new System.Windows.Forms.TextBox();
+            this.lblQuantidade_utilizada = new System.Windows.Forms.Label();
             this.pnlInformacoes.SuspendLayout();
             this.pnlBotoes.SuspendLayout();
             this.SuspendLayout();
@@ -44,15 +49,20 @@
             // pnlInformacoes
             // 
             this.pnlInformacoes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlInformacoes.Controls.Add(this.txtDescricao);
-            this.pnlInformacoes.Controls.Add(this.lblDescricao);
+            this.pnlInformacoes.Controls.Add(this.txtProduto_id);
+            this.pnlInformacoes.Controls.Add(this.btnPesquisaProduto);
+            this.pnlInformacoes.Controls.Add(this.txtProduto_descricao);
+            this.pnlInformacoes.Controls.Add(this.lblProduto_descricao);
+            this.pnlInformacoes.Controls.Add(this.lblProduto_id);
+            this.pnlInformacoes.Controls.Add(this.txtQuantidade_utilizada);
+            this.pnlInformacoes.Controls.Add(this.lblQuantidade_utilizada);
             this.pnlInformacoes.Controls.Add(this.lblExcluir);
             this.pnlInformacoes.Controls.Add(this.txtID);
             this.pnlInformacoes.Controls.Add(this.lblId);
             this.pnlInformacoes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlInformacoes.Location = new System.Drawing.Point(0, 0);
             this.pnlInformacoes.Name = "pnlInformacoes";
-            this.pnlInformacoes.Size = new System.Drawing.Size(425, 130);
+            this.pnlInformacoes.Size = new System.Drawing.Size(447, 133);
             this.pnlInformacoes.TabIndex = 8;
             // 
             // lblExcluir
@@ -89,9 +99,9 @@
             this.pnlBotoes.Controls.Add(this.btnFechar);
             this.pnlBotoes.Controls.Add(this.btnConfirmar);
             this.pnlBotoes.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlBotoes.Location = new System.Drawing.Point(425, 0);
+            this.pnlBotoes.Location = new System.Drawing.Point(447, 0);
             this.pnlBotoes.Name = "pnlBotoes";
-            this.pnlBotoes.Size = new System.Drawing.Size(137, 130);
+            this.pnlBotoes.Size = new System.Drawing.Size(137, 133);
             this.pnlBotoes.TabIndex = 7;
             // 
             // btnFechar
@@ -114,35 +124,79 @@
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
-            // txtDescricao
+            // txtProduto_id
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(6, 96);
-            this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(313, 20);
-            this.txtDescricao.TabIndex = 31;
+            this.txtProduto_id.Location = new System.Drawing.Point(6, 98);
+            this.txtProduto_id.Mask = "00000";
+            this.txtProduto_id.Name = "txtProduto_id";
+            this.txtProduto_id.Size = new System.Drawing.Size(65, 20);
+            this.txtProduto_id.TabIndex = 36;
+            this.txtProduto_id.Validated += new System.EventHandler(this.txtProduto_id_Validated);
             // 
-            // lblDescricao
+            // btnPesquisaProduto
             // 
-            this.lblDescricao.AutoSize = true;
-            this.lblDescricao.Location = new System.Drawing.Point(3, 79);
-            this.lblDescricao.Name = "lblDescricao";
-            this.lblDescricao.Size = new System.Drawing.Size(55, 13);
-            this.lblDescricao.TabIndex = 30;
-            this.lblDescricao.Text = "Descrição";
+            this.btnPesquisaProduto.Location = new System.Drawing.Point(75, 98);
+            this.btnPesquisaProduto.Name = "btnPesquisaProduto";
+            this.btnPesquisaProduto.Size = new System.Drawing.Size(20, 20);
+            this.btnPesquisaProduto.TabIndex = 35;
+            this.btnPesquisaProduto.Text = "P";
+            this.btnPesquisaProduto.UseVisualStyleBackColor = true;
+            this.btnPesquisaProduto.Click += new System.EventHandler(this.btnPesquisaProduto_Click);
             // 
-            // FrmProcedimentoFormulario
+            // txtProduto_descricao
+            // 
+            this.txtProduto_descricao.Location = new System.Drawing.Point(104, 98);
+            this.txtProduto_descricao.Name = "txtProduto_descricao";
+            this.txtProduto_descricao.Size = new System.Drawing.Size(259, 20);
+            this.txtProduto_descricao.TabIndex = 34;
+            // 
+            // lblProduto_descricao
+            // 
+            this.lblProduto_descricao.AutoSize = true;
+            this.lblProduto_descricao.Location = new System.Drawing.Point(101, 81);
+            this.lblProduto_descricao.Name = "lblProduto_descricao";
+            this.lblProduto_descricao.Size = new System.Drawing.Size(55, 13);
+            this.lblProduto_descricao.TabIndex = 31;
+            this.lblProduto_descricao.Text = "Descrição";
+            // 
+            // lblProduto_id
+            // 
+            this.lblProduto_id.AutoSize = true;
+            this.lblProduto_id.Location = new System.Drawing.Point(3, 81);
+            this.lblProduto_id.Name = "lblProduto_id";
+            this.lblProduto_id.Size = new System.Drawing.Size(44, 13);
+            this.lblProduto_id.TabIndex = 32;
+            this.lblProduto_id.Text = "Produto";
+            // 
+            // txtQuantidade_utilizada
+            // 
+            this.txtQuantidade_utilizada.Location = new System.Drawing.Point(369, 98);
+            this.txtQuantidade_utilizada.Name = "txtQuantidade_utilizada";
+            this.txtQuantidade_utilizada.Size = new System.Drawing.Size(60, 20);
+            this.txtQuantidade_utilizada.TabIndex = 33;
+            // 
+            // lblQuantidade_utilizada
+            // 
+            this.lblQuantidade_utilizada.AutoSize = true;
+            this.lblQuantidade_utilizada.Location = new System.Drawing.Point(366, 81);
+            this.lblQuantidade_utilizada.Name = "lblQuantidade_utilizada";
+            this.lblQuantidade_utilizada.Size = new System.Drawing.Size(62, 13);
+            this.lblQuantidade_utilizada.TabIndex = 30;
+            this.lblQuantidade_utilizada.Text = "Quantidade";
+            // 
+            // FrmProcedimentoPassoProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(562, 130);
+            this.ClientSize = new System.Drawing.Size(584, 133);
             this.Controls.Add(this.pnlInformacoes);
             this.Controls.Add(this.pnlBotoes);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmProcedimentoFormulario";
+            this.Name = "FrmProcedimentoPassoProduto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Procedimento";
-            this.Load += new System.EventHandler(this.FrmProcedimentoFormulario_Load);
+            this.Text = "Produto utilizado";
+            this.Load += new System.EventHandler(this.FrmProcedimentoPassoProduto_Load);
             this.pnlInformacoes.ResumeLayout(false);
             this.pnlInformacoes.PerformLayout();
             this.pnlBotoes.ResumeLayout(false);
@@ -159,7 +213,12 @@
         private System.Windows.Forms.Panel pnlBotoes;
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Button btnConfirmar;
-        private System.Windows.Forms.TextBox txtDescricao;
-        private System.Windows.Forms.Label lblDescricao;
+        private System.Windows.Forms.MaskedTextBox txtProduto_id;
+        private System.Windows.Forms.Button btnPesquisaProduto;
+        private System.Windows.Forms.TextBox txtProduto_descricao;
+        private System.Windows.Forms.Label lblProduto_descricao;
+        private System.Windows.Forms.Label lblProduto_id;
+        private System.Windows.Forms.TextBox txtQuantidade_utilizada;
+        private System.Windows.Forms.Label lblQuantidade_utilizada;
     }
 }

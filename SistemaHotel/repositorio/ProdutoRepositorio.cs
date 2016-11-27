@@ -30,7 +30,9 @@ namespace SistemaHotel.repositorio
 
         public Produto getProdutoporID(int id)
         {
-            return _context.produto.Find(id);
+            Produto produto = null;
+            produto = _context.produto.Find(id);
+            return produto;
         }
 
         public List<Produto> getProdutos()

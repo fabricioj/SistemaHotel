@@ -141,6 +141,24 @@
     <Compile Include="form\Perfil\FrmPerfilLista.Designer.cs">
       <DependentUpon>FrmPerfilLista.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\Procedimento\FrmProcedimentoPassoProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Procedimento\FrmProcedimentoPassoProduto.Designer.cs">
+      <DependentUpon>FrmProcedimentoPassoProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Procedimento\FrmProcedimentoCorpo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Procedimento\FrmProcedimentoCorpo.Designer.cs">
+      <DependentUpon>FrmProcedimentoCorpo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Procedimento\FrmProcedimentoPasso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Procedimento\FrmProcedimentoPasso.Designer.cs">
+      <DependentUpon>FrmProcedimentoPasso.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\Procedimento\FrmProcedimentoFormulario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,6 +285,9 @@
     <Compile Include="repositorio\OrcamentoRepositorio.cs" />
     <Compile Include="repositorio\Orcamento_itemRepositorio.cs" />
     <Compile Include="repositorio\PermissaoRepositorio.cs" />
+    <Compile Include="repositorio\ProcedimentoRepositorio.cs" />
+    <Compile Include="repositorio\Procedimento_passoRepositorio.cs" />
+    <Compile Include="repositorio\Procedimento_passo_produtoRepositorio.cs" />
     <Compile Include="repositorio\ProdutoRepositorio.cs" />
     <Compile Include="repositorio\Reserva_area_comumRepositorio.cs" />
     <Compile Include="repositorio\SolicitacaoRepositorio.cs" />
@@ -335,6 +356,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form\Perfil\FrmPerfilLista.resx">
       <DependentUpon>FrmPerfilLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Procedimento\FrmProcedimentoPassoProduto.resx">
+      <DependentUpon>FrmProcedimentoPassoProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Procedimento\FrmProcedimentoCorpo.resx">
+      <DependentUpon>FrmProcedimentoCorpo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Procedimento\FrmProcedimentoPasso.resx">
+      <DependentUpon>FrmProcedimentoPasso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\Procedimento\FrmProcedimentoFormulario.resx">
       <DependentUpon>FrmProcedimentoFormulario.cs</DependentUpon>

@@ -37,12 +37,12 @@
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.pnlCorpo = new System.Windows.Forms.Panel();
             this.toolOpcoes = new System.Windows.Forms.ToolStrip();
+            this.toolDevolucaoAreaComum = new System.Windows.Forms.ToolStripButton();
             this.gridRegistros = new System.Windows.Forms.DataGridView();
             this.pnlFiltros = new System.Windows.Forms.Panel();
-            this.toolDevolucaoAreaComum = new System.Windows.Forms.ToolStripButton();
-            this.ckSomenteNDevolvidas = new System.Windows.Forms.CheckBox();
             this.txtArea_nome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
+            this.ckSomenteNDevolvidas = new System.Windows.Forms.CheckBox();
             this.pnlBotoes.SuspendLayout();
             this.pnlCorpo.SuspendLayout();
             this.toolOpcoes.SuspendLayout();
@@ -147,6 +147,15 @@
             this.toolOpcoes.TabIndex = 12;
             this.toolOpcoes.Text = "toolStrip1";
             // 
+            // toolDevolucaoAreaComum
+            // 
+            this.toolDevolucaoAreaComum.Image = global::SistemaHotel.Properties.Resources.chave;
+            this.toolDevolucaoAreaComum.ImageTransparentColor = System.Drawing.SystemColors.Control;
+            this.toolDevolucaoAreaComum.Name = "toolDevolucaoAreaComum";
+            this.toolDevolucaoAreaComum.Size = new System.Drawing.Size(169, 22);
+            this.toolDevolucaoAreaComum.Text = "Devolução de área comum";
+            this.toolDevolucaoAreaComum.Click += new System.EventHandler(this.toolDevolucaoAreaComum_Click);
+            // 
             // gridRegistros
             // 
             this.gridRegistros.AllowUserToAddRows = false;
@@ -154,6 +163,7 @@
             this.gridRegistros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridRegistros.Location = new System.Drawing.Point(10, 92);
             this.gridRegistros.Name = "gridRegistros";
+            this.gridRegistros.ReadOnly = true;
             this.gridRegistros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridRegistros.Size = new System.Drawing.Size(448, 221);
             this.gridRegistros.TabIndex = 11;
@@ -168,25 +178,6 @@
             this.pnlFiltros.Name = "pnlFiltros";
             this.pnlFiltros.Size = new System.Drawing.Size(448, 57);
             this.pnlFiltros.TabIndex = 10;
-            // 
-            // toolDevolucaoAreaComum
-            // 
-            this.toolDevolucaoAreaComum.Image = global::SistemaHotel.Properties.Resources.chave;
-            this.toolDevolucaoAreaComum.ImageTransparentColor = System.Drawing.SystemColors.Control;
-            this.toolDevolucaoAreaComum.Name = "toolDevolucaoAreaComum";
-            this.toolDevolucaoAreaComum.Size = new System.Drawing.Size(169, 22);
-            this.toolDevolucaoAreaComum.Text = "Devolução de área comum";
-            this.toolDevolucaoAreaComum.Click += new System.EventHandler(this.toolDevolucaoAreaComum_Click);
-            // 
-            // ckSomenteNDevolvidas
-            // 
-            this.ckSomenteNDevolvidas.AutoSize = true;
-            this.ckSomenteNDevolvidas.Location = new System.Drawing.Point(287, 25);
-            this.ckSomenteNDevolvidas.Name = "ckSomenteNDevolvidas";
-            this.ckSomenteNDevolvidas.Size = new System.Drawing.Size(143, 17);
-            this.ckSomenteNDevolvidas.TabIndex = 36;
-            this.ckSomenteNDevolvidas.Text = "Somente não devolvidas";
-            this.ckSomenteNDevolvidas.UseVisualStyleBackColor = true;
             // 
             // txtArea_nome
             // 
@@ -203,6 +194,16 @@
             this.lblNome.Size = new System.Drawing.Size(35, 13);
             this.lblNome.TabIndex = 50;
             this.lblNome.Text = "Nome";
+            // 
+            // ckSomenteNDevolvidas
+            // 
+            this.ckSomenteNDevolvidas.AutoSize = true;
+            this.ckSomenteNDevolvidas.Location = new System.Drawing.Point(287, 25);
+            this.ckSomenteNDevolvidas.Name = "ckSomenteNDevolvidas";
+            this.ckSomenteNDevolvidas.Size = new System.Drawing.Size(143, 17);
+            this.ckSomenteNDevolvidas.TabIndex = 36;
+            this.ckSomenteNDevolvidas.Text = "Somente não devolvidas";
+            this.ckSomenteNDevolvidas.UseVisualStyleBackColor = true;
             // 
             // FrmReservaAreaComumLista
             // 

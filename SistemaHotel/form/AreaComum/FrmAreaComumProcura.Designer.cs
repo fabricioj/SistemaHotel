@@ -110,6 +110,7 @@
             this.data_cadastro});
             this.gridRegistros.Location = new System.Drawing.Point(12, 71);
             this.gridRegistros.Name = "gridRegistros";
+            this.gridRegistros.ReadOnly = true;
             this.gridRegistros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridRegistros.Size = new System.Drawing.Size(448, 221);
             this.gridRegistros.TabIndex = 16;
@@ -119,12 +120,14 @@
             this.id.DataPropertyName = "id";
             this.id.HeaderText = "ID";
             this.id.Name = "id";
+            this.id.ReadOnly = true;
             // 
             // nome
             // 
             this.nome.DataPropertyName = "nome";
             this.nome.HeaderText = "Nome";
             this.nome.Name = "nome";
+            this.nome.ReadOnly = true;
             this.nome.Width = 300;
             // 
             // observacao
@@ -132,6 +135,7 @@
             this.observacao.DataPropertyName = "observacao";
             this.observacao.HeaderText = "Observação";
             this.observacao.Name = "observacao";
+            this.observacao.ReadOnly = true;
             this.observacao.Visible = false;
             // 
             // data_cadastro
@@ -139,6 +143,7 @@
             this.data_cadastro.DataPropertyName = "data_cadastro";
             this.data_cadastro.HeaderText = "Dt cadastro";
             this.data_cadastro.Name = "data_cadastro";
+            this.data_cadastro.ReadOnly = true;
             this.data_cadastro.Visible = false;
             // 
             // pnlFiltros

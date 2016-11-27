@@ -112,6 +112,7 @@
             this.quantidade});
             this.gridRegistros.Location = new System.Drawing.Point(11, 72);
             this.gridRegistros.Name = "gridRegistros";
+            this.gridRegistros.ReadOnly = true;
             this.gridRegistros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridRegistros.Size = new System.Drawing.Size(448, 221);
             this.gridRegistros.TabIndex = 13;
@@ -121,12 +122,14 @@
             this.id.DataPropertyName = "id";
             this.id.HeaderText = "ID";
             this.id.Name = "id";
+            this.id.ReadOnly = true;
             // 
             // descricao
             // 
             this.descricao.DataPropertyName = "descricao";
             this.descricao.HeaderText = "Descrição";
             this.descricao.Name = "descricao";
+            this.descricao.ReadOnly = true;
             this.descricao.Width = 300;
             // 
             // dspcontrola_estoque
@@ -134,6 +137,7 @@
             this.dspcontrola_estoque.DataPropertyName = "dspcontrola_estoque";
             this.dspcontrola_estoque.HeaderText = "Controla estoque";
             this.dspcontrola_estoque.Name = "dspcontrola_estoque";
+            this.dspcontrola_estoque.ReadOnly = true;
             this.dspcontrola_estoque.Visible = false;
             // 
             // controla_estoque
@@ -141,6 +145,7 @@
             this.controla_estoque.DataPropertyName = "controla_estoque";
             this.controla_estoque.HeaderText = "Controla estoque";
             this.controla_estoque.Name = "controla_estoque";
+            this.controla_estoque.ReadOnly = true;
             this.controla_estoque.Visible = false;
             // 
             // quantidade
@@ -148,6 +153,7 @@
             this.quantidade.DataPropertyName = "quantidade";
             this.quantidade.HeaderText = "Qtd estoque";
             this.quantidade.Name = "quantidade";
+            this.quantidade.ReadOnly = true;
             this.quantidade.Visible = false;
             // 
             // pnlFiltros

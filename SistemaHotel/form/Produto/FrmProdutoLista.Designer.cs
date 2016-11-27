@@ -136,6 +136,7 @@
             this.gridRegistros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridRegistros.Location = new System.Drawing.Point(13, 74);
             this.gridRegistros.Name = "gridRegistros";
+            this.gridRegistros.ReadOnly = true;
             this.gridRegistros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridRegistros.Size = new System.Drawing.Size(448, 221);
             this.gridRegistros.TabIndex = 11;

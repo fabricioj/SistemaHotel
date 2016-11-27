@@ -23,6 +23,7 @@ namespace SistemaHotel.model
 
         }
 
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [DisplayName("ID")]
         public int id { get; set; }
 
@@ -38,6 +39,7 @@ namespace SistemaHotel.model
         [Browsable(false)]
         public SimNao editControla_estoque { get { return (SimNao)(int.Parse(controla_estoque)); } set { controla_estoque = ((int)value).ToString().Trim(); } }
 
+        [NotMapped]
         [DisplayName("Controla estoque")]
         public string dspcontrola_estoque { get { return EnumHelper.GetDescription(editControla_estoque); } }
 

@@ -154,6 +154,7 @@
             this.telefone});
             this.gridRegistros.Location = new System.Drawing.Point(14, 74);
             this.gridRegistros.Name = "gridRegistros";
+            this.gridRegistros.ReadOnly = true;
             this.gridRegistros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridRegistros.Size = new System.Drawing.Size(448, 221);
             this.gridRegistros.TabIndex = 11;
@@ -163,6 +164,7 @@
             this.id.DataPropertyName = "id";
             this.id.HeaderText = "ID";
             this.id.Name = "id";
+            this.id.ReadOnly = true;
             this.id.Width = 50;
             // 
             // nome
@@ -170,6 +172,7 @@
             this.nome.DataPropertyName = "nome";
             this.nome.HeaderText = "Nome";
             this.nome.Name = "nome";
+            this.nome.ReadOnly = true;
             this.nome.Width = 250;
             // 
             // funcao
@@ -177,6 +180,7 @@
             this.funcao.DataPropertyName = "funcao";
             this.funcao.HeaderText = "Função";
             this.funcao.Name = "funcao";
+            this.funcao.ReadOnly = true;
             this.funcao.Width = 200;
             // 
             // data_contratacao
@@ -184,12 +188,14 @@
             this.data_contratacao.DataPropertyName = "data_contratacao";
             this.data_contratacao.HeaderText = "Dt contratação";
             this.data_contratacao.Name = "data_contratacao";
+            this.data_contratacao.ReadOnly = true;
             // 
             // cidade
             // 
             this.cidade.DataPropertyName = "cidade";
             this.cidade.HeaderText = "Cidade";
             this.cidade.Name = "cidade";
+            this.cidade.ReadOnly = true;
             this.cidade.Visible = false;
             // 
             // estado
@@ -197,6 +203,7 @@
             this.estado.DataPropertyName = "estado";
             this.estado.HeaderText = "UF";
             this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
             this.estado.Visible = false;
             // 
             // telefone
@@ -204,6 +211,7 @@
             this.telefone.DataPropertyName = "telefone";
             this.telefone.HeaderText = "Telefone";
             this.telefone.Name = "telefone";
+            this.telefone.ReadOnly = true;
             this.telefone.Visible = false;
             // 
             // pnlFiltros

@@ -64,9 +64,16 @@ namespace SistemaHotel.form.Solicitacao
                 else
                 {
                     var solicitacao = (model.Solicitacao)gridRegistros.CurrentRow.DataBoundItem;
-                    FrmSolicitacaoFormulario formulario = new FrmSolicitacaoFormulario(Operacao.Alteracao, _context, solicitacao);
-                    formulario.ShowDialog();
-                    atualizaLista();
+                    if (solicitacao.data_visualizacao != null && solicitacao.data_visualizacao != DateTime.MinValue)
+                    {
+                        MessageBox.Show("Solicitação já visualizada pelo responsável", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        FrmSolicitacaoFormulario formulario = new FrmSolicitacaoFormulario(Operacao.Alteracao, _context, solicitacao);
+                        formulario.ShowDialog();
+                        atualizaLista();
+                    }
                 }
 
             }
@@ -157,7 +164,7 @@ namespace SistemaHotel.form.Solicitacao
             {
                 var solicitacao = (model.Solicitacao)gridRegistros.CurrentRow.DataBoundItem;
                 Operacao op = Operacao.Alteracao;
-                                
+
                 FrmSolicitacaoVisualizar formulario = new FrmSolicitacaoVisualizar(op, _usarioLogado, _context, solicitacao);
                 formulario.ShowDialog();
                 atualizaLista();

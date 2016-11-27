@@ -2,6 +2,7 @@
 using SistemaHotel.form.Fornecedor;
 using SistemaHotel.form.Funcionario;
 using SistemaHotel.form.Orcamento;
+using SistemaHotel.form.Procedimento;
 using SistemaHotel.form.Produto;
 using SistemaHotel.form.ReservaAreaComum;
 using SistemaHotel.form.Solicitacao;
@@ -107,6 +108,14 @@ namespace SistemaHotel
         private void FrmSistemaHotel_Activated(object sender, EventArgs e)
         {
             preencheForm();
+        }
+
+        private void mnuProcedimentos_Click(object sender, EventArgs e)
+        {
+            using (var lista = new FrmProcedimentoLista(_context))
+            {
+                lista.ShowDialog();
+            }
         }
     }
 }

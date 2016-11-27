@@ -154,6 +154,7 @@
             this.estado});
             this.gridRegistros.Location = new System.Drawing.Point(15, 72);
             this.gridRegistros.Name = "gridRegistros";
+            this.gridRegistros.ReadOnly = true;
             this.gridRegistros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridRegistros.Size = new System.Drawing.Size(448, 221);
             this.gridRegistros.TabIndex = 8;
@@ -163,6 +164,7 @@
             this.id.DataPropertyName = "id";
             this.id.HeaderText = "ID";
             this.id.Name = "id";
+            this.id.ReadOnly = true;
             this.id.Width = 50;
             // 
             // nome
@@ -170,6 +172,7 @@
             this.nome.DataPropertyName = "nome";
             this.nome.HeaderText = "Nome";
             this.nome.Name = "nome";
+            this.nome.ReadOnly = true;
             this.nome.Width = 250;
             // 
             // razao_social
@@ -177,6 +180,7 @@
             this.razao_social.DataPropertyName = "razao_social";
             this.razao_social.HeaderText = "Razão social";
             this.razao_social.Name = "razao_social";
+            this.razao_social.ReadOnly = true;
             this.razao_social.Width = 250;
             // 
             // telefone
@@ -184,12 +188,14 @@
             this.telefone.DataPropertyName = "telefone";
             this.telefone.HeaderText = "Telefone";
             this.telefone.Name = "telefone";
+            this.telefone.ReadOnly = true;
             // 
             // email
             // 
             this.email.DataPropertyName = "email";
             this.email.HeaderText = "Email";
             this.email.Name = "email";
+            this.email.ReadOnly = true;
             this.email.Width = 200;
             // 
             // cidade
@@ -197,12 +203,14 @@
             this.cidade.DataPropertyName = "cidade";
             this.cidade.HeaderText = "Cidade";
             this.cidade.Name = "cidade";
+            this.cidade.ReadOnly = true;
             // 
             // estado
             // 
             this.estado.DataPropertyName = "estado";
             this.estado.HeaderText = "Estado";
             this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
             this.estado.Width = 50;
             // 
             // pnlFiltros

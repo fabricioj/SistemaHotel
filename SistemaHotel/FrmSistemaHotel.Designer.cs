@@ -33,6 +33,7 @@
             this.mnuProdutos = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuFornecedores = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuProcedimentos = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuFuncionarios = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
@@ -64,6 +65,7 @@
             this.mnuFornecedores,
             this.toolStripSeparator2,
             this.mnuFuncionarios,
+            this.mnuProcedimentos,
             this.toolStripSeparator3,
             this.mnuAreasComuns});
             this.mnuCadastros.Name = "mnuCadastros";
@@ -73,43 +75,50 @@
             // mnuProdutos
             // 
             this.mnuProdutos.Name = "mnuProdutos";
-            this.mnuProdutos.Size = new System.Drawing.Size(149, 22);
+            this.mnuProdutos.Size = new System.Drawing.Size(154, 22);
             this.mnuProdutos.Text = "Produtos";
             this.mnuProdutos.Click += new System.EventHandler(this.mnuProdutos_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(146, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(151, 6);
             // 
             // mnuFornecedores
             // 
             this.mnuFornecedores.Name = "mnuFornecedores";
-            this.mnuFornecedores.Size = new System.Drawing.Size(149, 22);
+            this.mnuFornecedores.Size = new System.Drawing.Size(154, 22);
             this.mnuFornecedores.Text = "Fornecedores";
             this.mnuFornecedores.Click += new System.EventHandler(this.mnuFornecedores_Click);
+            // 
+            // mnuProcedimentos
+            // 
+            this.mnuProcedimentos.Name = "mnuProcedimentos";
+            this.mnuProcedimentos.Size = new System.Drawing.Size(154, 22);
+            this.mnuProcedimentos.Text = "Procedimentos";
+            this.mnuProcedimentos.Click += new System.EventHandler(this.mnuProcedimentos_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(146, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(151, 6);
             // 
             // mnuFuncionarios
             // 
             this.mnuFuncionarios.Name = "mnuFuncionarios";
-            this.mnuFuncionarios.Size = new System.Drawing.Size(149, 22);
+            this.mnuFuncionarios.Size = new System.Drawing.Size(154, 22);
             this.mnuFuncionarios.Text = "Funcionários";
             this.mnuFuncionarios.Click += new System.EventHandler(this.mnuFuncionarios_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(146, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(151, 6);
             // 
             // mnuAreasComuns
             // 
             this.mnuAreasComuns.Name = "mnuAreasComuns";
-            this.mnuAreasComuns.Size = new System.Drawing.Size(149, 22);
+            this.mnuAreasComuns.Size = new System.Drawing.Size(154, 22);
             this.mnuAreasComuns.Text = "Áreas comuns";
             this.mnuAreasComuns.Click += new System.EventHandler(this.mnuAreasComuns_Click);
             // 
@@ -184,6 +193,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuSolicitacoes;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem mnuReservasAreasComuns;
+        private System.Windows.Forms.ToolStripMenuItem mnuProcedimentos;
     }
 }
 
