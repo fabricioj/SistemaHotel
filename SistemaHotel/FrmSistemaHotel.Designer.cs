@@ -33,9 +33,9 @@
             this.mnuProdutos = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuFornecedores = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuProcedimentos = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuFuncionarios = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuProcedimentos = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuAreasComuns = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMovimentos = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,6 +43,7 @@
             this.mnuReservasAreasComuns = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuOrcamentos = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuAtividades = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSistema.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,13 +92,6 @@
             this.mnuFornecedores.Text = "Fornecedores";
             this.mnuFornecedores.Click += new System.EventHandler(this.mnuFornecedores_Click);
             // 
-            // mnuProcedimentos
-            // 
-            this.mnuProcedimentos.Name = "mnuProcedimentos";
-            this.mnuProcedimentos.Size = new System.Drawing.Size(154, 22);
-            this.mnuProcedimentos.Text = "Procedimentos";
-            this.mnuProcedimentos.Click += new System.EventHandler(this.mnuProcedimentos_Click);
-            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
@@ -109,6 +103,13 @@
             this.mnuFuncionarios.Size = new System.Drawing.Size(154, 22);
             this.mnuFuncionarios.Text = "Funcionários";
             this.mnuFuncionarios.Click += new System.EventHandler(this.mnuFuncionarios_Click);
+            // 
+            // mnuProcedimentos
+            // 
+            this.mnuProcedimentos.Name = "mnuProcedimentos";
+            this.mnuProcedimentos.Size = new System.Drawing.Size(154, 22);
+            this.mnuProcedimentos.Text = "Procedimentos";
+            this.mnuProcedimentos.Click += new System.EventHandler(this.mnuProcedimentos_Click);
             // 
             // toolStripSeparator3
             // 
@@ -127,6 +128,7 @@
             this.mnuMovimentos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuSolicitacoes,
             this.mnuReservasAreasComuns,
+            this.mnuAtividades,
             this.toolStripSeparator4,
             this.mnuOrcamentos});
             this.mnuMovimentos.Name = "mnuMovimentos";
@@ -158,6 +160,13 @@
             this.mnuOrcamentos.Size = new System.Drawing.Size(211, 22);
             this.mnuOrcamentos.Text = "Orçamentos";
             this.mnuOrcamentos.Click += new System.EventHandler(this.mnuOrcamentos_Click);
+            // 
+            // mnuAtividades
+            // 
+            this.mnuAtividades.Name = "mnuAtividades";
+            this.mnuAtividades.Size = new System.Drawing.Size(211, 22);
+            this.mnuAtividades.Text = "Atividades";
+            this.mnuAtividades.Click += new System.EventHandler(this.mnuAtividades_Click);
             // 
             // FrmSistemaHotel
             // 
@@ -194,6 +203,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem mnuReservasAreasComuns;
         private System.Windows.Forms.ToolStripMenuItem mnuProcedimentos;
+        private System.Windows.Forms.ToolStripMenuItem mnuAtividades;
     }
 }
 

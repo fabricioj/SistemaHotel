@@ -9,43 +9,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SistemaHotel.form.Produto
+namespace SistemaHotel.form.Atividade
 {
-    public partial class FrmProdutoLista : Form
+    public partial class FrmAtividadeLista : Form
     {
         private model.SistemaHotelContext _context;
         private model.Usuario _usuarioLogado;
-        private repositorio.ProdutoRepositorio _produtoRepositorio;
+        private repositorio.AtividadeRepositorio _atividadeRepositorio;
         private model.Permissao _permissoes;
 
-        public FrmProdutoLista( model.SistemaHotelContext context, model.Usuario usuarioLogado)
+        public FrmAtividadeLista(model.SistemaHotelContext context, model.Usuario usuarioLogado)
         {
             _context = context;
             _usuarioLogado = usuarioLogado;
-            _produtoRepositorio = new repositorio.ProdutoRepositorio(_context);
-            InitializeComponent();            
+            _atividadeRepositorio = new repositorio.AtividadeRepositorio(_context);
+            InitializeComponent();
             Util.acertaTabOrder(this);
-        }
-
-        private void atualizaLista()
-        {
-            gridRegistros.DataSource = new BindingSource(new BindingList<model.Produto>(_produtoRepositorio.getProdutos(txtDescricao.Text)), null);
-            gridRegistros.Refresh();
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            atualizaLista();
-        }
-
-        private void FrmProdutoLista_Load(object sender, EventArgs e)
-        {
-            _permissoes = repositorio.PermissaoRepositorio.getPermissaoFuncionalidadeNome(_context, _usuarioLogado, Name);
-            if (_permissoes.editConsultar == util.SimNao.NAO && _permissoes.editSupervisor == util.SimNao.NAO)
-            {
-                MessageBox.Show("Usuário não tem permissão para consultar registros", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Dispose();
-            }
             atualizaLista();
         }
 
@@ -57,7 +40,7 @@ namespace SistemaHotel.form.Produto
             }
             else
             {
-                FrmProdutoFormulario formulario = new FrmProdutoFormulario(Operacao.Insercao, _context, new model.Produto());
+                FrmAtividadeFormulario formulario = new FrmAtividadeFormulario(Operacao.Insercao, _context, new model.Atividade());
                 formulario.ShowDialog();
                 atualizaLista();
 
@@ -79,8 +62,8 @@ namespace SistemaHotel.form.Produto
                 }
                 else
                 {
-                    var produto = (model.Produto)gridRegistros.CurrentRow.DataBoundItem;
-                    FrmProdutoFormulario formulario = new FrmProdutoFormulario(Operacao.Alteracao, _context, produto);
+                    var atividade = (model.Atividade)gridRegistros.CurrentRow.DataBoundItem;
+                    FrmAtividadeFormulario formulario = new FrmAtividadeFormulario(Operacao.Alteracao, _context, atividade);
                     formulario.ShowDialog();
                     atualizaLista();
                 }
@@ -103,8 +86,8 @@ namespace SistemaHotel.form.Produto
                 }
                 else
                 {
-                    var produto = (model.Produto)gridRegistros.CurrentRow.DataBoundItem;
-                    FrmProdutoFormulario formulario = new FrmProdutoFormulario(Operacao.Exclusao, _context, produto);
+                    var atividade = (model.Atividade)gridRegistros.CurrentRow.DataBoundItem;
+                    FrmAtividadeFormulario formulario = new FrmAtividadeFormulario(Operacao.Exclusao, _context, atividade);
                     formulario.ShowDialog();
                     atualizaLista();
                 }
@@ -120,11 +103,37 @@ namespace SistemaHotel.form.Produto
             }
             else
             {
-                var produto = (model.Produto)gridRegistros.CurrentRow.DataBoundItem;
-                FrmProdutoFormulario formulario = new FrmProdutoFormulario(Operacao.Consulta, _context, produto);
+                var atividade = (model.Atividade)gridRegistros.CurrentRow.DataBoundItem;
+                FrmAtividadeFormulario formulario = new FrmAtividadeFormulario(Operacao.Consulta, _context, atividade);
                 formulario.ShowDialog();
             }
-            
+        }
+
+        private void btnPermissao_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmAtividade_Load(object sender, EventArgs e)
+        {
+            _permissoes = repositorio.PermissaoRepositorio.getPermissaoFuncionalidadeNome(_context, _usuarioLogado, Name);
+            if (_permissoes.editConsultar == util.SimNao.NAO && _permissoes.editSupervisor == util.SimNao.NAO)
+            {
+                MessageBox.Show("Usuário não tem permissão para consultar registros", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Dispose();
+            }
+            atualizaLista();
+            if (_permissoes.editSupervisor == util.SimNao.NAO)
+            {
+                btnPermissao.Visible = false;
+            }
+        }
+
+        private void atualizaLista()
+        {
+
+            gridRegistros.DataSource = new BindingSource(new BindingList<model.Atividade>(_atividadeRepositorio.getAtividades()), null);
+            gridRegistros.Refresh();
         }
     }
 }

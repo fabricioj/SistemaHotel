@@ -14,12 +14,14 @@ namespace SistemaHotel.form.Procedimento
     public partial class FrmProcedimentoLista : Form
     {
         private model.SistemaHotelContext _context;
+        private model.Usuario _usuarioLogado;
         private repositorio.ProcedimentoRepositorio _procedimentoRepositorio;
         private model.Permissao _permissoes;
 
-        public FrmProcedimentoLista(model.SistemaHotelContext context)
+        public FrmProcedimentoLista(model.SistemaHotelContext context, model.Usuario usuarioLogado)
         {
             _context = context;
+            _usuarioLogado = usuarioLogado;
             _procedimentoRepositorio = new repositorio.ProcedimentoRepositorio(_context);
             InitializeComponent();
             Util.acertaTabOrder(this);
@@ -120,7 +122,7 @@ namespace SistemaHotel.form.Procedimento
 
         private void FrmProcedimento_Load(object sender, EventArgs e)
         {
-            _permissoes = repositorio.PermissaoRepositorio.getPermissaoFuncionalidadeNome(_context, Name);
+            _permissoes = repositorio.PermissaoRepositorio.getPermissaoFuncionalidadeNome(_context, _usuarioLogado, Name);
             if (_permissoes.editConsultar == util.SimNao.NAO && _permissoes.editSupervisor == util.SimNao.NAO)
             {
                 MessageBox.Show("Usuário não tem permissão para consultar registros", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);

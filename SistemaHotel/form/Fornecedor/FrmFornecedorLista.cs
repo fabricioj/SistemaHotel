@@ -15,13 +15,15 @@ namespace SistemaHotel.form.Fornecedor
     public partial class FrmFornecedorLista : Form
     {
         private model.SistemaHotelContext _context;
+        private model.Usuario _usuarioLogado;
         private repositorio.FornecedorRepositorio _fornecedorRepositorio;
 
         private model.Permissao _permissoes;
 
-        public FrmFornecedorLista( model.SistemaHotelContext context)
+        public FrmFornecedorLista( model.SistemaHotelContext context, model.Usuario usuarioLogado)
         {
             _context = context;
+            _usuarioLogado = usuarioLogado;
             _fornecedorRepositorio = new repositorio.FornecedorRepositorio(_context);
 
             InitializeComponent();            
@@ -38,7 +40,7 @@ namespace SistemaHotel.form.Fornecedor
 
         private void FrmFornecedorLista_Load(object sender, EventArgs e)
         {
-            _permissoes = repositorio.PermissaoRepositorio.getPermissaoFuncionalidadeNome(_context, Name);
+            _permissoes = repositorio.PermissaoRepositorio.getPermissaoFuncionalidadeNome(_context, _usuarioLogado, Name);
             if (_permissoes.editConsultar == util.SimNao.NAO && _permissoes.editSupervisor == util.SimNao.NAO)
             {
                 MessageBox.Show("Usuário não tem permissão para consultar registros", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);

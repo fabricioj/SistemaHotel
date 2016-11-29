@@ -14,6 +14,7 @@ namespace SistemaHotel.form.Solicitacao
     public partial class FrmSolicitacaoVisualizar : Form
     {
         private Operacao _op;
+        private model.Usuario _usuarioLogado;
         private model.SistemaHotelContext _context;
         private model.Solicitacao _solicitacao;
         private repositorio.SolicitacaoRepositorio _solicitacaoRepositorio;
@@ -22,6 +23,7 @@ namespace SistemaHotel.form.Solicitacao
         {
             this._op = op;
             this._context = context;
+            _usuarioLogado = usuarioLogado;
             this._solicitacao = _solicitacao;
             this._solicitacao.editUsuario_visualizacao_id = usuarioLogado.id;
             this._solicitacaoRepositorio = new repositorio.SolicitacaoRepositorio(_context);
@@ -71,7 +73,7 @@ namespace SistemaHotel.form.Solicitacao
 
         private void FrmSolicitacaoVisualizar_Load(object sender, EventArgs e)
         {
-            var permissoes = repositorio.PermissaoRepositorio.getPermissaoFuncionalidadeNome(_context, Name);
+            var permissoes = repositorio.PermissaoRepositorio.getPermissaoFuncionalidadeNome(_context, _usuarioLogado, Name);
             if (permissoes.editEspecial != util.SimNao.SIM && permissoes.editSupervisor != util.SimNao.SIM)
             {
                 Dispose();

@@ -14,14 +14,14 @@ namespace SistemaHotel.form.Solicitacao
     public partial class FrmSolicitacaoLista : Form
     {
         private model.SistemaHotelContext _context;
+        private model.Usuario _usuarioLogado;
         private repositorio.SolicitacaoRepositorio _solicitacaoRepositorio;
         private model.Permissao _permissoes;
-        private model.Usuario _usarioLogado;
 
-        public FrmSolicitacaoLista(model.SistemaHotelContext context, model.Usuario usarioLogado)
+        public FrmSolicitacaoLista(model.SistemaHotelContext context, model.Usuario usuarioLogado)
         {
             _context = context;
-            _usarioLogado = usarioLogado;
+            _usuarioLogado = usuarioLogado;
             _solicitacaoRepositorio = new repositorio.SolicitacaoRepositorio(_context);
             InitializeComponent();
             Util.acertaTabOrder(this);
@@ -41,7 +41,7 @@ namespace SistemaHotel.form.Solicitacao
             else
             {
 
-                FrmSolicitacaoFormulario formulario = new FrmSolicitacaoFormulario(Operacao.Insercao, _context, new model.Solicitacao { usuario_solicitante_id = _usarioLogado.id });
+                FrmSolicitacaoFormulario formulario = new FrmSolicitacaoFormulario(Operacao.Insercao, _context, new model.Solicitacao { usuario_solicitante_id = _usuarioLogado.id });
                 formulario.ShowDialog();
                 atualizaLista();
 
@@ -124,7 +124,7 @@ namespace SistemaHotel.form.Solicitacao
 
         private void FrmSolicitacao_Load(object sender, EventArgs e)
         {
-            _permissoes = repositorio.PermissaoRepositorio.getPermissaoFuncionalidadeNome(_context, Name);
+            _permissoes = repositorio.PermissaoRepositorio.getPermissaoFuncionalidadeNome(_context, _usuarioLogado, Name);
             if (_permissoes.editConsultar == util.SimNao.NAO && _permissoes.editSupervisor == util.SimNao.NAO)
             {
                 MessageBox.Show("Usuário não tem permissão para consultar registros", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -165,7 +165,7 @@ namespace SistemaHotel.form.Solicitacao
                 var solicitacao = (model.Solicitacao)gridRegistros.CurrentRow.DataBoundItem;
                 Operacao op = Operacao.Alteracao;
 
-                FrmSolicitacaoVisualizar formulario = new FrmSolicitacaoVisualizar(op, _usarioLogado, _context, solicitacao);
+                FrmSolicitacaoVisualizar formulario = new FrmSolicitacaoVisualizar(op, _usuarioLogado, _context, solicitacao);
                 formulario.ShowDialog();
                 atualizaLista();
 

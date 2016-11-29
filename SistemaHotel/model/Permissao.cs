@@ -81,16 +81,46 @@ namespace SistemaHotel.model
         [DisplayName("Especial")]
         public string dspEspecial { get { return EnumHelper.GetDescription(editEspecial); } }
 
+        [Browsable(false)]
         public int? funcionalidade_id { get; set; }
 
+        [Browsable(false)]
+        [NotMapped]
+        public int editFuncionalidade_id { get { return funcionalidade_id != null ? (int)funcionalidade_id : 0; } set { funcionalidade_id = value != 0 ? (int?)value : null; } }
+
+        [DisplayName("Funcionalidade")]
+        [NotMapped]
+        public string dspFuncionalidade_nome { get { return funcionalidade != null ? funcionalidade.nome_funcionalidade : string.Empty; }}
+
+        [Browsable(false)]
         public int? perfil_id { get; set; }
 
+        [Browsable(false)]
+        [NotMapped]
+        public int editPerfil_id { get { return perfil_id != null ? (int)perfil_id : 0; } set { perfil_id = value != 0 ? (int?)value : null; } }
+
+        [DisplayName("Perfil")]
+        [NotMapped]
+        public string dspPerfil_nome { get { return perfil != null ? perfil.nome : string.Empty; } }
+
+        [Browsable(false)]
         public int? usuario_id { get; set; }
 
+        [Browsable(false)]
+        [NotMapped]
+        public int editUsuario_id { get { return usuario_id != null ? (int)usuario_id : 0; } set { usuario_id = value != 0 ? (int?)value : null; } }
+
+        [DisplayName("Usuário")]
+        [NotMapped]
+        public string dspUsuario_nome { get { return usuario != null ? usuario.nome : string.Empty; } }
+
+        [Browsable(false)]
         public virtual Funcionalidade funcionalidade { get; set; }
 
+        [Browsable(false)]
         public virtual Perfil perfil { get; set; }
 
+        [Browsable(false)]
         public virtual Usuario usuario { get; set; }
 
         [NotMapped]

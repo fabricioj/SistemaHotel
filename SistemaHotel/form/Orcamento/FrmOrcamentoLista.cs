@@ -14,12 +14,14 @@ namespace SistemaHotel.form.Orcamento
     public partial class FrmOrcamentoLista : Form
     {
         private model.SistemaHotelContext _context;
+        private model.Usuario _usuarioLogado;
         private repositorio.OrcamentoRepositorio _orcamentoRepositorio;
         private model.Permissao _permissoes;
 
-        public FrmOrcamentoLista(model.SistemaHotelContext context)
+        public FrmOrcamentoLista(model.SistemaHotelContext context, model.Usuario usuarioLogado)
         {
             _context = context;
+            _usuarioLogado = usuarioLogado;
             _orcamentoRepositorio = new repositorio.OrcamentoRepositorio(_context);
             InitializeComponent();
             Util.acertaTabOrder(this);
@@ -27,7 +29,7 @@ namespace SistemaHotel.form.Orcamento
 
         private void FrmOrcamentoLista_Load(object sender, EventArgs e)
         {
-            _permissoes = repositorio.PermissaoRepositorio.getPermissaoFuncionalidadeNome(_context, Name);
+            _permissoes = repositorio.PermissaoRepositorio.getPermissaoFuncionalidadeNome(_context, _usuarioLogado, Name);
             if (_permissoes.editConsultar == util.SimNao.NAO && _permissoes.editSupervisor == util.SimNao.NAO)
             {
                 MessageBox.Show("Usuário não tem permissão para consultar registros", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);

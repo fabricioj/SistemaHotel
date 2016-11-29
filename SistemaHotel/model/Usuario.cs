@@ -68,5 +68,9 @@ namespace SistemaHotel.model
         [Browsable(false)]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Solicitacao> solicitacao_visualizacao { get; set; }
+
+        [Browsable(false)]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Atividade> atividade_confirmacao { get; set; }
     }
 }

@@ -560,6 +560,11 @@ namespace SistemaHotel.model
                 .WithOptional(e => e.usuario_visualizacao)
                 .HasForeignKey(e => e.usuario_visualizacao_id);
 
+            modelBuilder.Entity<Usuario>()
+                .HasMany(e => e.atividade_confirmacao)
+                .WithOptional(e => e.usuario_confirmacao)
+                .HasForeignKey(e => e.usuario_confirmacao_id);
+
             modelBuilder.Entity<Veiculo>()
                 .Property(e => e.marca)
                 .IsUnicode(false);

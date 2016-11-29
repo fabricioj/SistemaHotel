@@ -14,12 +14,14 @@ namespace SistemaHotel.form.ReservaAreaComum
     public partial class FrmReservaAreaComumLista : Form
     {
         private model.SistemaHotelContext _context;
+        private model.Usuario _usuarioLogado;
         private repositorio.Reserva_area_comumRepositorio _reserva_area_comumRepositorio;
         private model.Permissao _permissoes;
 
-        public FrmReservaAreaComumLista(model.SistemaHotelContext context)
+        public FrmReservaAreaComumLista(model.SistemaHotelContext context, model.Usuario usuarioLogado)
         {
             _context = context;
+            _usuarioLogado = usuarioLogado;
             _reserva_area_comumRepositorio = new repositorio.Reserva_area_comumRepositorio(_context);
             InitializeComponent();
             Util.acertaTabOrder(this);
@@ -114,7 +116,7 @@ namespace SistemaHotel.form.ReservaAreaComum
 
         private void FrmReservaAreaComum_Load(object sender, EventArgs e)
         {
-            _permissoes = repositorio.PermissaoRepositorio.getPermissaoFuncionalidadeNome(_context, Name);
+            _permissoes = repositorio.PermissaoRepositorio.getPermissaoFuncionalidadeNome(_context, _usuarioLogado, Name);
             if (_permissoes.editConsultar == util.SimNao.NAO && _permissoes.editSupervisor == util.SimNao.NAO)
             {
                 MessageBox.Show("Usuário não tem permissão para consultar registros", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);

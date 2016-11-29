@@ -87,6 +87,18 @@
     <Compile Include="form\AreaComum\FrmAreaComumProcura.Designer.cs">
       <DependentUpon>FrmAreaComumProcura.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\Atividade\FrmAtividadeFormulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Atividade\FrmAtividadeFormulario.Designer.cs">
+      <DependentUpon>FrmAtividadeFormulario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Atividade\FrmAtividadeLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Atividade\FrmAtividadeLista.Designer.cs">
+      <DependentUpon>FrmAtividadeLista.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\Fornecedor\FrmFornecedorProcura.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +116,12 @@
     </Compile>
     <Compile Include="form\Funcionalidade\FrmFuncionalidadeLista.Designer.cs">
       <DependentUpon>FrmFuncionalidadeLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Funcionario\FrmFuncionarioProcura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Funcionario\FrmFuncionarioProcura.Designer.cs">
+      <DependentUpon>FrmFuncionarioProcura.cs</DependentUpon>
     </Compile>
     <Compile Include="form\Funcionario\FrmFuncionarioFormulario.cs">
       <SubType>Form</SubType>
@@ -140,6 +158,24 @@
     </Compile>
     <Compile Include="form\Perfil\FrmPerfilLista.Designer.cs">
       <DependentUpon>FrmPerfilLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Permissao\FrmPermissaoFormulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Permissao\FrmPermissaoFormulario.Designer.cs">
+      <DependentUpon>FrmPermissaoFormulario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Permissao\FrmPermissaoLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Permissao\FrmPermissaoLista.Designer.cs">
+      <DependentUpon>FrmPermissaoLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Procedimento\FrmProcedimentoProcura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Procedimento\FrmProcedimentoProcura.Designer.cs">
+      <DependentUpon>FrmProcedimentoProcura.cs</DependentUpon>
     </Compile>
     <Compile Include="form\Procedimento\FrmProcedimentoPassoProduto.cs">
       <SubType>Form</SubType>
@@ -288,6 +324,7 @@
     <Compile Include="repositorio\ProcedimentoRepositorio.cs" />
     <Compile Include="repositorio\Procedimento_passoRepositorio.cs" />
     <Compile Include="repositorio\Procedimento_passo_produtoRepositorio.cs" />
+    <Compile Include="repositorio\AtividadeRepositorio.cs" />
     <Compile Include="repositorio\ProdutoRepositorio.cs" />
     <Compile Include="repositorio\Reserva_area_comumRepositorio.cs" />
     <Compile Include="repositorio\SolicitacaoRepositorio.cs" />
@@ -330,6 +367,12 @@
     <EmbeddedResource Include="form\AreaComum\FrmAreaComumProcura.resx">
       <DependentUpon>FrmAreaComumProcura.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form\Atividade\FrmAtividadeFormulario.resx">
+      <DependentUpon>FrmAtividadeFormulario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Atividade\FrmAtividadeLista.resx">
+      <DependentUpon>FrmAtividadeLista.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form\Fornecedor\FrmFornecedorProcura.resx">
       <DependentUpon>FrmFornecedorProcura.cs</DependentUpon>
     </EmbeddedResource>
@@ -338,6 +381,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form\Funcionalidade\FrmFuncionalidadeLista.resx">
       <DependentUpon>FrmFuncionalidadeLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Funcionario\FrmFuncionarioProcura.resx">
+      <DependentUpon>FrmFuncionarioProcura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\Funcionario\FrmFuncionarioFormulario.resx">
       <DependentUpon>FrmFuncionarioFormulario.cs</DependentUpon>
@@ -356,6 +402,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form\Perfil\FrmPerfilLista.resx">
       <DependentUpon>FrmPerfilLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Permissao\FrmPermissaoFormulario.resx">
+      <DependentUpon>FrmPermissaoFormulario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Permissao\FrmPermissaoLista.resx">
+      <DependentUpon>FrmPermissaoLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Procedimento\FrmProcedimentoProcura.resx">
+      <DependentUpon>FrmProcedimentoProcura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\Procedimento\FrmProcedimentoPassoProduto.resx">
       <DependentUpon>FrmProcedimentoPassoProduto.cs</DependentUpon>
@@ -453,6 +508,7 @@
   <ItemGroup>
     <None Include="Resources\chave.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

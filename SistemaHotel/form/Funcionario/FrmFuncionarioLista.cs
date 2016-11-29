@@ -14,12 +14,14 @@ namespace SistemaHotel.form.Funcionario
     public partial class FrmFuncionarioLista : Form
     {
         private model.SistemaHotelContext _context;
+        private model.Usuario _usuarioLogado;
         private repositorio.FuncionarioRepositorio _funcionarioRepositorio;
         private model.Permissao _permissoes;
 
-        public FrmFuncionarioLista(model.SistemaHotelContext context)
+        public FrmFuncionarioLista(model.SistemaHotelContext context, model.Usuario usuarioLogado)
         {
             _context = context;
+            _usuarioLogado = usuarioLogado;
             _funcionarioRepositorio = new repositorio.FuncionarioRepositorio(_context);
             InitializeComponent();
             Util.acertaTabOrder(this);
@@ -114,7 +116,7 @@ namespace SistemaHotel.form.Funcionario
 
         private void FrmFuncionarioLista_Load(object sender, EventArgs e)
         {
-            _permissoes = repositorio.PermissaoRepositorio.getPermissaoFuncionalidadeNome(_context, Name);
+            _permissoes = repositorio.PermissaoRepositorio.getPermissaoFuncionalidadeNome(_context, _usuarioLogado, Name);
             if (_permissoes.editConsultar == util.SimNao.NAO && _permissoes.editSupervisor == util.SimNao.NAO)
             {
                 MessageBox.Show("Usuário não tem permissão para consultar registros", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);

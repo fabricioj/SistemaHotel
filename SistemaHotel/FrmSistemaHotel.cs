@@ -1,4 +1,5 @@
 ﻿using SistemaHotel.form.AreaComum;
+using SistemaHotel.form.Atividade;
 using SistemaHotel.form.Fornecedor;
 using SistemaHotel.form.Funcionario;
 using SistemaHotel.form.Orcamento;
@@ -38,7 +39,7 @@ namespace SistemaHotel
 
             mnuSolicitacoes.ToolTipText = string.Empty;
             mnuSolicitacoes.Image = null;
-            var permissoes = repositorio.PermissaoRepositorio.getPermissaoFuncionalidadeNome(_context, "FrmSolicitacaoVisualizar");
+            var permissoes = repositorio.PermissaoRepositorio.getPermissaoFuncionalidadeNome(_context, _usuarioLogado, "FrmSolicitacaoVisualizar");
             if (permissoes.editEspecial == util.SimNao.SIM || permissoes.editSupervisor == util.SimNao.SIM)
             {
                 var qtdSolicitacoes = new repositorio.SolicitacaoRepositorio(_context).getQuantidadeSolicitacoesNVistas();
@@ -53,7 +54,7 @@ namespace SistemaHotel
 
         private void mnuProdutos_Click(object sender, EventArgs e)
         {
-            using (var lista = new FrmProdutoLista(_context)) {
+            using (var lista = new FrmProdutoLista(_context, _usuarioLogado)) {
                 lista.ShowDialog();
             } ;
             
@@ -61,21 +62,21 @@ namespace SistemaHotel
 
         private void mnuFornecedores_Click(object sender, EventArgs e)
         {
-            using (var lista = new FrmFornecedorLista(_context)) {
+            using (var lista = new FrmFornecedorLista(_context, _usuarioLogado)) {
                 lista.ShowDialog();
             };
         }
 
         private void mnuOrcamentos_Click(object sender, EventArgs e)
         {
-            using (var lista = new FrmOrcamentoLista(_context)) {
+            using (var lista = new FrmOrcamentoLista(_context, _usuarioLogado)) {
                 lista.ShowDialog();
             };
         }
 
         private void mnuFuncionarios_Click(object sender, EventArgs e)
         {
-            using (var lista = new FrmFuncionarioLista(_context))
+            using (var lista = new FrmFuncionarioLista(_context, _usuarioLogado))
             {
                 lista.ShowDialog();
             }
@@ -83,7 +84,7 @@ namespace SistemaHotel
 
         private void mnuAreasComuns_Click(object sender, EventArgs e)
         {
-            using (var lista = new FrmAreaComumLista(_context))
+            using (var lista = new FrmAreaComumLista(_context, _usuarioLogado))
             {
                 lista.ShowDialog();
             }
@@ -99,7 +100,7 @@ namespace SistemaHotel
 
         private void mnuReservasAreasComuns_Click(object sender, EventArgs e)
         {
-            using (var lista = new FrmReservaAreaComumLista(_context))
+            using (var lista = new FrmReservaAreaComumLista(_context, _usuarioLogado))
             {
                 lista.ShowDialog();
             }
@@ -112,7 +113,15 @@ namespace SistemaHotel
 
         private void mnuProcedimentos_Click(object sender, EventArgs e)
         {
-            using (var lista = new FrmProcedimentoLista(_context))
+            using (var lista = new FrmProcedimentoLista(_context, _usuarioLogado))
+            {
+                lista.ShowDialog();
+            }
+        }
+
+        private void mnuAtividades_Click(object sender, EventArgs e)
+        {
+            using (var lista = new FrmAtividadeLista(_context, _usuarioLogado))
             {
                 lista.ShowDialog();
             }
