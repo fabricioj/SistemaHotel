@@ -71,6 +71,7 @@
             this.btnPermissao.TabIndex = 1;
             this.btnPermissao.Text = "PERMISSÃO";
             this.btnPermissao.UseVisualStyleBackColor = true;
+            this.btnPermissao.Click += new System.EventHandler(this.btnPermissao_Click);
             // 
             // btnConsultar
             // 

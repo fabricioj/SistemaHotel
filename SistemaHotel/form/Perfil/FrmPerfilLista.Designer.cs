@@ -28,46 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gridRegistros = new System.Windows.Forms.DataGridView();
-            this.pnlFiltros = new System.Windows.Forms.Panel();
             this.pnlBotoes = new System.Windows.Forms.Panel();
+            this.btnPermissao = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnInserir = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.gridRegistros)).BeginInit();
+            this.pnlInformacoes = new System.Windows.Forms.Panel();
+            this.gridRegistros = new System.Windows.Forms.DataGridView();
+            this.pnlFiltros = new System.Windows.Forms.Panel();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.lblNome = new System.Windows.Forms.Label();
             this.pnlBotoes.SuspendLayout();
+            this.pnlInformacoes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridRegistros)).BeginInit();
+            this.pnlFiltros.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // gridRegistros
-            // 
-            this.gridRegistros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridRegistros.Location = new System.Drawing.Point(12, 76);
-            this.gridRegistros.Name = "gridRegistros";
-            this.gridRegistros.Size = new System.Drawing.Size(448, 221);
-            this.gridRegistros.TabIndex = 9;
-            // 
-            // pnlFiltros
-            // 
-            this.pnlFiltros.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlFiltros.Location = new System.Drawing.Point(12, 12);
-            this.pnlFiltros.Name = "pnlFiltros";
-            this.pnlFiltros.Size = new System.Drawing.Size(448, 57);
-            this.pnlFiltros.TabIndex = 8;
             // 
             // pnlBotoes
             // 
             this.pnlBotoes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlBotoes.Controls.Add(this.btnPermissao);
             this.pnlBotoes.Controls.Add(this.btnConsultar);
             this.pnlBotoes.Controls.Add(this.btnExcluir);
             this.pnlBotoes.Controls.Add(this.btnAlterar);
             this.pnlBotoes.Controls.Add(this.btnInserir);
             this.pnlBotoes.Controls.Add(this.btnPesquisar);
-            this.pnlBotoes.Location = new System.Drawing.Point(470, 12);
+            this.pnlBotoes.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlBotoes.Location = new System.Drawing.Point(478, 0);
             this.pnlBotoes.Name = "pnlBotoes";
-            this.pnlBotoes.Size = new System.Drawing.Size(137, 285);
+            this.pnlBotoes.Size = new System.Drawing.Size(137, 308);
             this.pnlBotoes.TabIndex = 7;
+            // 
+            // btnPermissao
+            // 
+            this.btnPermissao.Location = new System.Drawing.Point(5, 214);
+            this.btnPermissao.Name = "btnPermissao";
+            this.btnPermissao.Size = new System.Drawing.Size(126, 36);
+            this.btnPermissao.TabIndex = 1;
+            this.btnPermissao.Text = "PERMISSÃO";
+            this.btnPermissao.UseVisualStyleBackColor = true;
+            this.btnPermissao.Click += new System.EventHandler(this.btnPermissao_Click);
             // 
             // btnConsultar
             // 
@@ -77,6 +79,7 @@
             this.btnConsultar.TabIndex = 0;
             this.btnConsultar.Text = "CONSULTAR";
             this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // btnExcluir
             // 
@@ -86,6 +89,7 @@
             this.btnExcluir.TabIndex = 0;
             this.btnExcluir.Text = "EXCLUIR";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnAlterar
             // 
@@ -95,6 +99,7 @@
             this.btnAlterar.TabIndex = 0;
             this.btnAlterar.Text = "ALTERAR";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnInserir
             // 
@@ -104,6 +109,7 @@
             this.btnInserir.TabIndex = 0;
             this.btnInserir.Text = "INSERIR";
             this.btnInserir.UseVisualStyleBackColor = true;
+            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
             // btnPesquisar
             // 
@@ -113,33 +119,89 @@
             this.btnPesquisar.TabIndex = 0;
             this.btnPesquisar.Text = "PESQUISAR";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            // 
+            // pnlInformacoes
+            // 
+            this.pnlInformacoes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlInformacoes.Controls.Add(this.gridRegistros);
+            this.pnlInformacoes.Controls.Add(this.pnlFiltros);
+            this.pnlInformacoes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlInformacoes.Location = new System.Drawing.Point(0, 0);
+            this.pnlInformacoes.Name = "pnlInformacoes";
+            this.pnlInformacoes.Size = new System.Drawing.Size(478, 308);
+            this.pnlInformacoes.TabIndex = 8;
+            // 
+            // gridRegistros
+            // 
+            this.gridRegistros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridRegistros.Location = new System.Drawing.Point(3, 73);
+            this.gridRegistros.Name = "gridRegistros";
+            this.gridRegistros.Size = new System.Drawing.Size(467, 228);
+            this.gridRegistros.TabIndex = 11;
+            // 
+            // pnlFiltros
+            // 
+            this.pnlFiltros.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlFiltros.Controls.Add(this.txtNome);
+            this.pnlFiltros.Controls.Add(this.lblNome);
+            this.pnlFiltros.Location = new System.Drawing.Point(3, 10);
+            this.pnlFiltros.Name = "pnlFiltros";
+            this.pnlFiltros.Size = new System.Drawing.Size(467, 57);
+            this.pnlFiltros.TabIndex = 10;
+            // 
+            // txtNome
+            // 
+            this.txtNome.Location = new System.Drawing.Point(6, 24);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(413, 20);
+            this.txtNome.TabIndex = 1;
+            // 
+            // lblNome
+            // 
+            this.lblNome.AutoSize = true;
+            this.lblNome.Location = new System.Drawing.Point(3, 8);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(35, 13);
+            this.lblNome.TabIndex = 0;
+            this.lblNome.Text = "Nome";
             // 
             // FrmPerfilLista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(615, 308);
-            this.Controls.Add(this.gridRegistros);
-            this.Controls.Add(this.pnlFiltros);
+            this.Controls.Add(this.pnlInformacoes);
             this.Controls.Add(this.pnlBotoes);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmPerfilLista";
-            this.Text = "FrmPerfilLista";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Perfis";
             this.Load += new System.EventHandler(this.FrmPerfilLista_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gridRegistros)).EndInit();
             this.pnlBotoes.ResumeLayout(false);
+            this.pnlInformacoes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridRegistros)).EndInit();
+            this.pnlFiltros.ResumeLayout(false);
+            this.pnlFiltros.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView gridRegistros;
-        private System.Windows.Forms.Panel pnlFiltros;
         private System.Windows.Forms.Panel pnlBotoes;
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnInserir;
         private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.Button btnPermissao;
+        private System.Windows.Forms.Panel pnlInformacoes;
+        private System.Windows.Forms.DataGridView gridRegistros;
+        private System.Windows.Forms.Panel pnlFiltros;
+        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.Label lblNome;
     }
 }

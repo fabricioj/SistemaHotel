@@ -37,7 +37,7 @@ namespace SistemaHotel.model
         public string celular { get; set; }
 
         [StringLength(15)]
-        public string tel_fixo { get; set; }
+        public string telefone { get; set; }
 
         [StringLength(35)]
         public string email { get; set; }
@@ -46,7 +46,7 @@ namespace SistemaHotel.model
         public string empresa { get; set; }
 
         [StringLength(15)]
-        public string tel_comercial { get; set; }
+        public string telefone_comercial { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Dependente> dependentes { get; set; }

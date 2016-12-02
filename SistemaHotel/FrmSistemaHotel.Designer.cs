@@ -41,9 +41,17 @@
             this.mnuMovimentos = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSolicitacoes = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuReservasAreasComuns = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuAtividades = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuOrcamentos = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuAtividades = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestãoDeContasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFuncionalidades = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuPerfis = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuUsuarios = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuTrocaUsuario = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuTrocaSenha = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSistema.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +59,8 @@
             // 
             this.mnuSistema.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuCadastros,
-            this.mnuMovimentos});
+            this.mnuMovimentos,
+            this.gestãoDeContasToolStripMenuItem});
             this.mnuSistema.Location = new System.Drawing.Point(0, 0);
             this.mnuSistema.Name = "mnuSistema";
             this.mnuSistema.Size = new System.Drawing.Size(784, 24);
@@ -149,6 +158,13 @@
             this.mnuReservasAreasComuns.Text = "Reservas de áreas comuns";
             this.mnuReservasAreasComuns.Click += new System.EventHandler(this.mnuReservasAreasComuns_Click);
             // 
+            // mnuAtividades
+            // 
+            this.mnuAtividades.Name = "mnuAtividades";
+            this.mnuAtividades.Size = new System.Drawing.Size(211, 22);
+            this.mnuAtividades.Text = "Atividades";
+            this.mnuAtividades.Click += new System.EventHandler(this.mnuAtividades_Click);
+            // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
@@ -161,12 +177,63 @@
             this.mnuOrcamentos.Text = "Orçamentos";
             this.mnuOrcamentos.Click += new System.EventHandler(this.mnuOrcamentos_Click);
             // 
-            // mnuAtividades
+            // gestãoDeContasToolStripMenuItem
             // 
-            this.mnuAtividades.Name = "mnuAtividades";
-            this.mnuAtividades.Size = new System.Drawing.Size(211, 22);
-            this.mnuAtividades.Text = "Atividades";
-            this.mnuAtividades.Click += new System.EventHandler(this.mnuAtividades_Click);
+            this.gestãoDeContasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuFuncionalidades,
+            this.toolStripSeparator5,
+            this.mnuPerfis,
+            this.mnuUsuarios,
+            this.toolStripSeparator6,
+            this.mnuTrocaUsuario,
+            this.mnuTrocaSenha});
+            this.gestãoDeContasToolStripMenuItem.Name = "gestãoDeContasToolStripMenuItem";
+            this.gestãoDeContasToolStripMenuItem.Size = new System.Drawing.Size(109, 20);
+            this.gestãoDeContasToolStripMenuItem.Text = "Gestão de contas";
+            // 
+            // mnuFuncionalidades
+            // 
+            this.mnuFuncionalidades.Name = "mnuFuncionalidades";
+            this.mnuFuncionalidades.Size = new System.Drawing.Size(161, 22);
+            this.mnuFuncionalidades.Text = "Funcionalidades";
+            this.mnuFuncionalidades.Click += new System.EventHandler(this.mnuFuncionalidades_Click);
+            // 
+            // mnuPerfis
+            // 
+            this.mnuPerfis.Name = "mnuPerfis";
+            this.mnuPerfis.Size = new System.Drawing.Size(161, 22);
+            this.mnuPerfis.Text = "Perfis";
+            this.mnuPerfis.Click += new System.EventHandler(this.mnuPerfis_Click);
+            // 
+            // mnuUsuarios
+            // 
+            this.mnuUsuarios.Name = "mnuUsuarios";
+            this.mnuUsuarios.Size = new System.Drawing.Size(161, 22);
+            this.mnuUsuarios.Text = "Usuários";
+            this.mnuUsuarios.Click += new System.EventHandler(this.mnuUsuarios_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(158, 6);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(158, 6);
+            // 
+            // mnuTrocaUsuario
+            // 
+            this.mnuTrocaUsuario.Name = "mnuTrocaUsuario";
+            this.mnuTrocaUsuario.Size = new System.Drawing.Size(161, 22);
+            this.mnuTrocaUsuario.Text = "Troca de usuário";
+            this.mnuTrocaUsuario.Click += new System.EventHandler(this.mnuTrocaUsuario_Click);
+            // 
+            // mnuTrocaSenha
+            // 
+            this.mnuTrocaSenha.Name = "mnuTrocaSenha";
+            this.mnuTrocaSenha.Size = new System.Drawing.Size(161, 22);
+            this.mnuTrocaSenha.Text = "Troca de senha";
             // 
             // FrmSistemaHotel
             // 
@@ -204,6 +271,14 @@
         private System.Windows.Forms.ToolStripMenuItem mnuReservasAreasComuns;
         private System.Windows.Forms.ToolStripMenuItem mnuProcedimentos;
         private System.Windows.Forms.ToolStripMenuItem mnuAtividades;
+        private System.Windows.Forms.ToolStripMenuItem gestãoDeContasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuFuncionalidades;
+        private System.Windows.Forms.ToolStripMenuItem mnuPerfis;
+        private System.Windows.Forms.ToolStripMenuItem mnuUsuarios;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripMenuItem mnuTrocaUsuario;
+        private System.Windows.Forms.ToolStripMenuItem mnuTrocaSenha;
     }
 }
 

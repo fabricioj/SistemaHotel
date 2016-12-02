@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace SistemaHotel.repositorio
 {
     class FuncionalidadeRepositorio
@@ -14,7 +15,13 @@ namespace SistemaHotel.repositorio
         {
             _context = new SistemaHotelContext();
         }
-        public void incluir(ref Funcionalidade funcionalidade)
+
+        public FuncionalidadeRepositorio(SistemaHotelContext _context)
+        {
+            // TODO: Complete member initialization
+            this._context = _context;
+        }
+        public void incluir(Funcionalidade funcionalidade)
         {
             _context.funcionalidade.Add(funcionalidade);
         }
@@ -26,16 +33,24 @@ namespace SistemaHotel.repositorio
 
         public void excluir(Funcionalidade funcionalidade)
         {
-            var funcionarioTemp = getFuncionalidadeporID(funcionalidade.id);
-            _context.funcionalidade.Remove(funcionarioTemp);
+            var funcionaldidadeTemp = getFuncionalidadeporID(funcionalidade.id);
+
+            _context.funcionalidade.Remove(funcionaldidadeTemp);
+
 
         }
         public Funcionalidade getFuncionalidadeporID(int id)
         {
             Funcionalidade funcionalidade = null;
-            funcionalidade = _context.funcionalidade.Find();
+            funcionalidade = _context.funcionalidade.Find(id);
             return funcionalidade;
         }
+
+        public Funcionalidade getFuncionalidadeporNome_tela(string nome_tela)
+        {
+            return _context.funcionalidade.Where(f => f.nome_tela == nome_tela).FirstOrDefault();
+        }
+
         public List<Funcionalidade> getFuncionalidades()
         {
             List<Funcionalidade> funcionalidades = new List<Funcionalidade>();

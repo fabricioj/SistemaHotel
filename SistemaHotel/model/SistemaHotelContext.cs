@@ -277,7 +277,7 @@ namespace SistemaHotel.model
                 .IsUnicode(false);
 
             modelBuilder.Entity<Morador>()
-                .Property(e => e.tel_fixo)
+                .Property(e => e.telefone)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Morador>()
@@ -289,7 +289,7 @@ namespace SistemaHotel.model
                 .IsUnicode(false);
 
             modelBuilder.Entity<Morador>()
-                .Property(e => e.tel_comercial)
+                .Property(e => e.telefone_comercial)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Morador>()

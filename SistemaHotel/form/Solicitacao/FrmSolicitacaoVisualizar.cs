@@ -68,7 +68,10 @@ namespace SistemaHotel.form.Solicitacao
 
         private void btnPermissao_Click(object sender, EventArgs e)
         {
-
+            using (var permissaoLista = new Permissao.FrmPermissaoLista(_context, _usuarioLogado, Name))
+            {
+                permissaoLista.ShowDialog();
+            }
         }
 
         private void FrmSolicitacaoVisualizar_Load(object sender, EventArgs e)

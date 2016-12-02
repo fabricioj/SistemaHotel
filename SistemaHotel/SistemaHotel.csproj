@@ -105,6 +105,12 @@
     <Compile Include="form\Fornecedor\FrmFornecedorProcura.Designer.cs">
       <DependentUpon>FrmFornecedorProcura.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\Funcionalidade\FrmFuncionalidadeProcura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Funcionalidade\FrmFuncionalidadeProcura.Designer.cs">
+      <DependentUpon>FrmFuncionalidadeProcura.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\Funcionalidade\FrmFuncionalidadeFormulario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,24 @@
     <Compile Include="form\Modelo\FrmModeloLista.Designer.cs">
       <DependentUpon>FrmModeloLista.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\Morador\FrmMoradorFormulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Morador\FrmMoradorFormulario.Designer.cs">
+      <DependentUpon>FrmMoradorFormulario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Morador\FrmMoradorLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Morador\FrmMoradorLista.Designer.cs">
+      <DependentUpon>FrmMoradorLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Morador\FrmProcuraMorador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Morador\FrmProcuraMorador.Designer.cs">
+      <DependentUpon>FrmProcuraMorador.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\Perfil\FrmPerfilFormulario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +182,12 @@
     </Compile>
     <Compile Include="form\Perfil\FrmPerfilLista.Designer.cs">
       <DependentUpon>FrmPerfilLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Perfil\FrmPerfilProcura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Perfil\FrmPerfilProcura.Designer.cs">
+      <DependentUpon>FrmPerfilProcura.cs</DependentUpon>
     </Compile>
     <Compile Include="form\Permissao\FrmPermissaoFormulario.cs">
       <SubType>Form</SubType>
@@ -249,6 +279,30 @@
     <Compile Include="form\Solicitacao\FrmSolicitacaoVisualizar.Designer.cs">
       <DependentUpon>FrmSolicitacaoVisualizar.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\Usuario\FrmUsuarioLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Usuario\FrmUsuarioLogin.Designer.cs">
+      <DependentUpon>FrmUsuarioLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Usuario\FrmUsuarioFormulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Usuario\FrmUsuarioFormulario.Designer.cs">
+      <DependentUpon>FrmUsuarioFormulario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Usuario\FrmUsuarioLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Usuario\FrmUsuarioLista.Designer.cs">
+      <DependentUpon>FrmUsuarioLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Usuario\FrmUsuarioProcura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Usuario\FrmUsuarioProcura.Designer.cs">
+      <DependentUpon>FrmUsuarioProcura.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSistemaHotel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -315,11 +369,14 @@
     <Compile Include="model\Area_comum.cs" />
     <Compile Include="model\Atividade.cs" />
     <Compile Include="repositorio\Area_comumRepositorio.cs" />
+    <Compile Include="repositorio\UsuarioRepositorio.cs" />
     <Compile Include="repositorio\FornecedorRepositorio.cs" />
     <Compile Include="repositorio\FuncionalidadeRepositorio.cs" />
     <Compile Include="repositorio\FuncionarioRepositorio.cs" />
+    <Compile Include="repositorio\MoradorRepositorio.cs" />
     <Compile Include="repositorio\OrcamentoRepositorio.cs" />
     <Compile Include="repositorio\Orcamento_itemRepositorio.cs" />
+    <Compile Include="repositorio\PerfilRepositorio.cs" />
     <Compile Include="repositorio\PermissaoRepositorio.cs" />
     <Compile Include="repositorio\ProcedimentoRepositorio.cs" />
     <Compile Include="repositorio\Procedimento_passoRepositorio.cs" />
@@ -376,6 +433,9 @@
     <EmbeddedResource Include="form\Fornecedor\FrmFornecedorProcura.resx">
       <DependentUpon>FrmFornecedorProcura.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form\Funcionalidade\FrmFuncionalidadeProcura.resx">
+      <DependentUpon>FrmFuncionalidadeProcura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form\Funcionalidade\FrmFuncionalidadeFormulario.resx">
       <DependentUpon>FrmFuncionalidadeFormulario.cs</DependentUpon>
     </EmbeddedResource>
@@ -397,11 +457,23 @@
     <EmbeddedResource Include="form\Modelo\FrmModeloLista.resx">
       <DependentUpon>FrmModeloLista.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form\Morador\FrmMoradorFormulario.resx">
+      <DependentUpon>FrmMoradorFormulario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Morador\FrmMoradorLista.resx">
+      <DependentUpon>FrmMoradorLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Morador\FrmProcuraMorador.resx">
+      <DependentUpon>FrmProcuraMorador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form\Perfil\FrmPerfilFormulario.resx">
       <DependentUpon>FrmPerfilFormulario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\Perfil\FrmPerfilLista.resx">
       <DependentUpon>FrmPerfilLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Perfil\FrmPerfilProcura.resx">
+      <DependentUpon>FrmPerfilProcura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\Permissao\FrmPermissaoFormulario.resx">
       <DependentUpon>FrmPermissaoFormulario.cs</DependentUpon>
@@ -447,6 +519,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form\Solicitacao\FrmSolicitacaoVisualizar.resx">
       <DependentUpon>FrmSolicitacaoVisualizar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Usuario\FrmUsuarioLogin.resx">
+      <DependentUpon>FrmUsuarioLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Usuario\FrmUsuarioFormulario.resx">
+      <DependentUpon>FrmUsuarioFormulario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Usuario\FrmUsuarioLista.resx">
+      <DependentUpon>FrmUsuarioLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Usuario\FrmUsuarioProcura.resx">
+      <DependentUpon>FrmUsuarioProcura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSistemaHotel.resx">
       <DependentUpon>FrmSistemaHotel.cs</DependentUpon>

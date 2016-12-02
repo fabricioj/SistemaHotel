@@ -40,15 +40,20 @@ namespace SistemaHotel.repositorio
         {
             return _context.permissao.Include(p => p.funcionalidade).Include(p => p.perfil).Include(p => p.usuario).ToList();
         }
-
+        public List<Permissao> getPermissoes(int funcionalidade_id, string funcionalidade_nome)
+        {
+            return _context.permissao.Include(p => p.funcionalidade).Include(p => p.perfil).Include(p => p.usuario).Where(p => p.funcionalidade_id == funcionalidade_id).Where(p => p.funcionalidade.nome_funcionalidade.Contains(funcionalidade_nome)).ToList();
+        }
         public void salvar() {
             _context.SaveChanges();
         }
 
         public static Permissao getPermissaoFuncionalidadeNome(SistemaHotelContext context, Usuario usuarioLogado, string nome)
         {
-            Permissao permissao = context.permissao.Include(p => p.funcionalidade).Include(p => p.perfil).Include(p => p.usuario).Where(p => p.funcionalidade.nome_funcionalidade == nome).Where(p => p.usuario_id == usuarioLogado.id || p.perfil_id == usuarioLogado.perfil_id).OrderBy(p => p.perfil_id).FirstOrDefault();
-            if (usuarioLogado.perfil.editSupervisor == SimNao.SIM) {
+            Permissao permissao = context.permissao.Include(p => p.funcionalidade).Include(p => p.perfil).Include(p => p.usuario).Where(p => p.funcionalidade.nome_tela.Equals(nome)).Where(p => p.usuario_id == usuarioLogado.id || p.perfil_id == usuarioLogado.perfil_id).OrderBy(p => p.perfil_id).OrderBy(p => p.perfil_id).FirstOrDefault();
+            if (usuarioLogado.perfil != null && usuarioLogado.perfil.editSupervisor == SimNao.SIM) {
+                if (permissao == null)
+                    permissao = new Permissao();
                 permissao.editSupervisor = SimNao.SIM;
             }
             return permissao;

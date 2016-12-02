@@ -38,9 +38,14 @@
             this.pnlCorpo = new System.Windows.Forms.Panel();
             this.gridRegistros = new System.Windows.Forms.DataGridView();
             this.pnlFiltros = new System.Windows.Forms.Panel();
+            this.txtFuncionalidade_id = new System.Windows.Forms.MaskedTextBox();
+            this.txtFuncionalidade_nome_funcionalidade = new System.Windows.Forms.TextBox();
+            this.lblFuncionalidade_nome_funcionalidade = new System.Windows.Forms.Label();
+            this.lblFuncionalidade_id = new System.Windows.Forms.Label();
             this.pnlBotoes.SuspendLayout();
             this.pnlCorpo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridRegistros)).BeginInit();
+            this.pnlFiltros.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlBotoes
@@ -144,10 +149,47 @@
             // pnlFiltros
             // 
             this.pnlFiltros.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlFiltros.Controls.Add(this.txtFuncionalidade_id);
+            this.pnlFiltros.Controls.Add(this.txtFuncionalidade_nome_funcionalidade);
+            this.pnlFiltros.Controls.Add(this.lblFuncionalidade_nome_funcionalidade);
+            this.pnlFiltros.Controls.Add(this.lblFuncionalidade_id);
             this.pnlFiltros.Location = new System.Drawing.Point(15, 8);
             this.pnlFiltros.Name = "pnlFiltros";
             this.pnlFiltros.Size = new System.Drawing.Size(448, 57);
             this.pnlFiltros.TabIndex = 10;
+            // 
+            // txtFuncionalidade_id
+            // 
+            this.txtFuncionalidade_id.Location = new System.Drawing.Point(3, 25);
+            this.txtFuncionalidade_id.Mask = "00000";
+            this.txtFuncionalidade_id.Name = "txtFuncionalidade_id";
+            this.txtFuncionalidade_id.Size = new System.Drawing.Size(65, 20);
+            this.txtFuncionalidade_id.TabIndex = 50;
+            // 
+            // txtFuncionalidade_nome_funcionalidade
+            // 
+            this.txtFuncionalidade_nome_funcionalidade.Location = new System.Drawing.Point(101, 25);
+            this.txtFuncionalidade_nome_funcionalidade.Name = "txtFuncionalidade_nome_funcionalidade";
+            this.txtFuncionalidade_nome_funcionalidade.Size = new System.Drawing.Size(224, 20);
+            this.txtFuncionalidade_nome_funcionalidade.TabIndex = 49;
+            // 
+            // lblFuncionalidade_nome_funcionalidade
+            // 
+            this.lblFuncionalidade_nome_funcionalidade.AutoSize = true;
+            this.lblFuncionalidade_nome_funcionalidade.Location = new System.Drawing.Point(98, 8);
+            this.lblFuncionalidade_nome_funcionalidade.Name = "lblFuncionalidade_nome_funcionalidade";
+            this.lblFuncionalidade_nome_funcionalidade.Size = new System.Drawing.Size(122, 13);
+            this.lblFuncionalidade_nome_funcionalidade.TabIndex = 47;
+            this.lblFuncionalidade_nome_funcionalidade.Text = "Nome da funcionalidade";
+            // 
+            // lblFuncionalidade_id
+            // 
+            this.lblFuncionalidade_id.AutoSize = true;
+            this.lblFuncionalidade_id.Location = new System.Drawing.Point(0, 8);
+            this.lblFuncionalidade_id.Name = "lblFuncionalidade_id";
+            this.lblFuncionalidade_id.Size = new System.Drawing.Size(79, 13);
+            this.lblFuncionalidade_id.TabIndex = 48;
+            this.lblFuncionalidade_id.Text = "Funcionalidade";
             // 
             // FrmPermissaoLista
             // 
@@ -166,6 +208,8 @@
             this.pnlBotoes.ResumeLayout(false);
             this.pnlCorpo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridRegistros)).EndInit();
+            this.pnlFiltros.ResumeLayout(false);
+            this.pnlFiltros.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -181,5 +225,9 @@
         private System.Windows.Forms.Panel pnlCorpo;
         private System.Windows.Forms.DataGridView gridRegistros;
         private System.Windows.Forms.Panel pnlFiltros;
+        private System.Windows.Forms.MaskedTextBox txtFuncionalidade_id;
+        private System.Windows.Forms.TextBox txtFuncionalidade_nome_funcionalidade;
+        private System.Windows.Forms.Label lblFuncionalidade_nome_funcionalidade;
+        private System.Windows.Forms.Label lblFuncionalidade_id;
     }
 }

@@ -111,16 +111,20 @@ namespace SistemaHotel.form.Funcionario
 
         private void btnPermissao_Click(object sender, EventArgs e)
         {
-
+            using (var permissaoLista = new Permissao.FrmPermissaoLista(_context, _usuarioLogado, Name))
+            {
+                permissaoLista.ShowDialog();
+            }
         }
 
         private void FrmFuncionarioLista_Load(object sender, EventArgs e)
         {
             _permissoes = repositorio.PermissaoRepositorio.getPermissaoFuncionalidadeNome(_context, _usuarioLogado, Name);
-            if (_permissoes.editConsultar == util.SimNao.NAO && _permissoes.editSupervisor == util.SimNao.NAO)
+            if (_permissoes == null || (_permissoes.editConsultar == util.SimNao.NAO && _permissoes.editSupervisor == util.SimNao.NAO))
             {
                 MessageBox.Show("Usuário não tem permissão para consultar registros", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Dispose();
+                return;
             }
             atualizaLista();
             if (_permissoes.editSupervisor == util.SimNao.NAO)

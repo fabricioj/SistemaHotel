@@ -15,13 +15,17 @@ namespace SistemaHotel.model
         public Funcionalidade()
         {
             permissao = new HashSet<Permissao>();
+            editTipo = TipoFuncionalidade.Menu;
         }
 
+        [DisplayName("ID")]
         public int id { get; set; }
 
+        [DisplayName("Nome")]
         [StringLength(45)]
         public string nome_funcionalidade { get; set; }
 
+        [DisplayName("Nome tela")]
         [StringLength(45)]
         public string nome_tela { get; set; }
 
@@ -37,6 +41,7 @@ namespace SistemaHotel.model
         [DisplayName("Tipo")]
         public string dspEspecial { get { return EnumHelper.GetDescription(editTipo); } }
 
+        [Browsable(false)]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Permissao> permissao { get; set; }
     }

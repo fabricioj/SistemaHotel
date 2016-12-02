@@ -48,8 +48,24 @@ namespace SistemaHotel.model
         [Browsable(false)]
         public int? perfil_id { get; set; }
 
+        [DisplayName("ID perfil")]
+        [NotMapped]
+        public int editPerfil_id { get { return perfil_id != null ? (int)perfil_id : 0; } set { perfil_id = value != 0 ? (int?)value : null; } }
+
+        [DisplayName("Nome perfil")]
+        [NotMapped]
+        public string dspPerfil_nome { get { return perfil != null ? perfil.nome : string.Empty; } }
+
         [Browsable(false)]
         public int? morador_id { get; set; }
+
+        [DisplayName("ID morador")]
+        [NotMapped]
+        public int editMorador_id { get { return morador_id != null ? (int)morador_id : 0; } set { morador_id = value != 0 ? (int?)value : null; } }
+
+        [DisplayName("Nome morador")]
+        [NotMapped]
+        public string dspMorador_nome { get { return morador != null ? morador.nome : string.Empty; } }
 
         [Browsable(false)]
         public virtual Morador morador { get; set; }
