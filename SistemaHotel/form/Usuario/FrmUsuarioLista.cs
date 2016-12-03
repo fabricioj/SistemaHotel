@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SistemaHotel.form.Usuarios
+namespace SistemaHotel.form.Usuario
 {
     public partial class FrmUsuarioLista : Form
     {
@@ -42,10 +42,6 @@ namespace SistemaHotel.form.Usuarios
                 return;
             }
             atualizaLista();
-            if (_permissoes.editSupervisor == util.SimNao.NAO)
-            {
-                btnPermissao.Visible  = false; 
-            }
           
         }
 

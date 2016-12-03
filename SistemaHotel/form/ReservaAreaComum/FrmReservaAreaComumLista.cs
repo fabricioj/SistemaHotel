@@ -127,10 +127,6 @@ namespace SistemaHotel.form.ReservaAreaComum
                 return;
             }
             atualizaLista();
-            if (_permissoes.editSupervisor == util.SimNao.NAO)
-            {
-                btnPermissao.Visible = false;
-            }
         }
 
         private void atualizaLista()
@@ -148,8 +144,10 @@ namespace SistemaHotel.form.ReservaAreaComum
             else
             {
                 var reserva_area_comum = (model.Reserva_area_comum)gridRegistros.CurrentRow.DataBoundItem;
-                FrmReservaAreaComumDevolucao devolucao = new FrmReservaAreaComumDevolucao(Operacao.Alteracao, _context, reserva_area_comum);
-                devolucao.ShowDialog();
+                using (var devolucao = new FrmReservaAreaComumDevolucao(Operacao.Alteracao, _context, _usuarioLogado, reserva_area_comum)) {
+                    devolucao.ShowDialog();
+                } ;
+
                 atualizaLista();
             }
         }

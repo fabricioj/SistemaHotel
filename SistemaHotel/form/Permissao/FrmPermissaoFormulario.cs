@@ -119,15 +119,20 @@ namespace SistemaHotel.form.Permissao
             txtID.Enabled = true;
 
             txtID.Text = _permissao.id.ToString().Trim();
+
             txtFuncionalidade_id.Text = _permissao.editFuncionalidade_id.ToString().Trim();
+            txtFuncionalidade_nome_funcionalidade.Text = string.Empty;
             if (_permissao.funcionalidade != null)
                 txtFuncionalidade_nome_funcionalidade.Text = _permissao.funcionalidade.nome_funcionalidade;
 
             txtPerfil_id.Text = _permissao.editPerfil_id.ToString().Trim();
+            txtPerfil_nome.Text = string.Empty;
             if (_permissao.perfil != null)
                 txtPerfil_nome.Text = _permissao.perfil.nome;
 
             txtUsuario_id.Text = _permissao.editUsuario_id.ToString().Trim();
+
+            txtUsuario_nome.Text = string.Empty;
             if (_permissao.usuario != null)
                 txtUsuario_nome.Text = _permissao.usuario.nome;
 

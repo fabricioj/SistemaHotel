@@ -144,11 +144,6 @@ namespace SistemaHotel.form.Solicitacao
             ckSomenteNVisualizadas.Checked = false;
 
             atualizaLista();
-
-            if (_permissoes.editSupervisor == util.SimNao.NAO)
-            {
-                btnPermissao.Visible = false;
-            }
         }
 
         private void atualizaLista()

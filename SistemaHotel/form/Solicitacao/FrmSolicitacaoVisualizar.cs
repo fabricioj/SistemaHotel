@@ -79,8 +79,11 @@ namespace SistemaHotel.form.Solicitacao
             var permissoes = repositorio.PermissaoRepositorio.getPermissaoFuncionalidadeNome(_context, _usuarioLogado, Name);
             if (permissoes.editEspecial != util.SimNao.SIM && permissoes.editSupervisor != util.SimNao.SIM)
             {
+                MessageBox.Show("Usuário não tem permissão para visualizar solicitações", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Dispose();
+                return;
             }
+
             if (_solicitacao.data_visualizacao == null || _solicitacao.data_visualizacao == DateTime.MinValue)
                 _solicitacao.data_visualizacao = DateTime.Now;
             preencheForm();

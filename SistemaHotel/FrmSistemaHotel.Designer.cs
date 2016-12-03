@@ -46,9 +46,9 @@
             this.mnuOrcamentos = new System.Windows.Forms.ToolStripMenuItem();
             this.gestãoDeContasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFuncionalidades = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuPerfis = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuUsuarios = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuTrocaUsuario = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTrocaSenha = new System.Windows.Forms.ToolStripMenuItem();
@@ -198,6 +198,11 @@
             this.mnuFuncionalidades.Text = "Funcionalidades";
             this.mnuFuncionalidades.Click += new System.EventHandler(this.mnuFuncionalidades_Click);
             // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(158, 6);
+            // 
             // mnuPerfis
             // 
             this.mnuPerfis.Name = "mnuPerfis";
@@ -211,11 +216,6 @@
             this.mnuUsuarios.Size = new System.Drawing.Size(161, 22);
             this.mnuUsuarios.Text = "Usuários";
             this.mnuUsuarios.Click += new System.EventHandler(this.mnuUsuarios_Click);
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(158, 6);
             // 
             // toolStripSeparator6
             // 
@@ -234,6 +234,7 @@
             this.mnuTrocaSenha.Name = "mnuTrocaSenha";
             this.mnuTrocaSenha.Size = new System.Drawing.Size(161, 22);
             this.mnuTrocaSenha.Text = "Troca de senha";
+            this.mnuTrocaSenha.Click += new System.EventHandler(this.mnuTrocaSenha_Click);
             // 
             // FrmSistemaHotel
             // 

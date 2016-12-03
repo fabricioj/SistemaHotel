@@ -279,6 +279,12 @@
     <Compile Include="form\Solicitacao\FrmSolicitacaoVisualizar.Designer.cs">
       <DependentUpon>FrmSolicitacaoVisualizar.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\Usuario\FrmUsuarioTrocaSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Usuario\FrmUsuarioTrocaSenha.Designer.cs">
+      <DependentUpon>FrmUsuarioTrocaSenha.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\Usuario\FrmUsuarioLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -519,6 +525,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form\Solicitacao\FrmSolicitacaoVisualizar.resx">
       <DependentUpon>FrmSolicitacaoVisualizar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Usuario\FrmUsuarioTrocaSenha.resx">
+      <DependentUpon>FrmUsuarioTrocaSenha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\Usuario\FrmUsuarioLogin.resx">
       <DependentUpon>FrmUsuarioLogin.cs</DependentUpon>

@@ -10,7 +10,7 @@ using SistemaHotel.form.Produto;
 using SistemaHotel.form.ReservaAreaComum;
 using SistemaHotel.form.Solicitacao;
 using SistemaHotel.form.UsuarioLogin;
-using SistemaHotel.form.Usuarios;
+using SistemaHotel.form.Usuario;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -43,6 +43,13 @@ namespace SistemaHotel
         private void mnuTrocaUsuario_Click(object sender, EventArgs e)
         {
             login();
+        }
+        private void mnuTrocaSenha_Click(object sender, EventArgs e)
+        {
+            using (var trocaSenha = new FrmUsuarioTrocaSenha(_context, _usuarioLogado))
+            {
+                trocaSenha.ShowDialog();
+            }
         }
 
         private void login() {

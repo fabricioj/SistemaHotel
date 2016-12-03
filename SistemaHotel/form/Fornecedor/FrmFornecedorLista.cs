@@ -48,9 +48,6 @@ namespace SistemaHotel.form.Fornecedor
                 return;
             }
             atualizaLista();
-            if (_permissoes.editSupervisor == util.SimNao.NAO) {
-                btnPermissao.Visible = false;
-            }
         }
 
         private void btnInserir_Click(object sender, EventArgs e)

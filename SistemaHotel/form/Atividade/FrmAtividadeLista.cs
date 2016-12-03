@@ -127,10 +127,6 @@ namespace SistemaHotel.form.Atividade
                 return;
             }
             atualizaLista();
-            if (_permissoes.editSupervisor == util.SimNao.NAO)
-            {
-                btnPermissao.Visible = false;
-            }
         }
 
         private void atualizaLista()

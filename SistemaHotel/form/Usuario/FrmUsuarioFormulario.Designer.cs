@@ -1,4 +1,4 @@
-﻿namespace SistemaHotel.form.Usuarios
+﻿namespace SistemaHotel.form.Usuario
 {
     partial class FrmUsuarioFormulario
     {

@@ -43,9 +43,6 @@ namespace SistemaHotel.form.Funcionalidade
                 return;
             }
             atualizaLista();
-            if (_permissoes.editSupervisor == util.SimNao.NAO){
-                btnPermissao.Visible = false;            
-            }
         }
        
 

@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SistemaHotel.form.Usuarios
+namespace SistemaHotel.form.Usuario
 {
     public partial class FrmUsuarioFormulario : Form
     {
@@ -38,6 +38,7 @@ namespace SistemaHotel.form.Usuarios
             txtCelular.Enabled              = true;
             txtEmail.Enabled                = true;
             txtSenha.Enabled                = true;
+            txtSenha_confirmacao.Enabled    = true;
             txtPerfil_nome.Enabled          = true;
             txtMorador_nome.Enabled         = true;
 
@@ -71,6 +72,7 @@ namespace SistemaHotel.form.Usuarios
                 txtCelular.Enabled            = false;
                 txtEmail.Enabled              = false;
                 txtSenha.Enabled              = false;
+                txtSenha_confirmacao.Enabled  = false;
                 txtPerfil_id.Enabled          = false;
                 txtMorador_id.Enabled         = false;
 
@@ -92,10 +94,12 @@ namespace SistemaHotel.form.Usuarios
             if (txtSenha.Text != txtSenha_confirmacao.Text)
                 throw new Exception("Senha e confirmação de senha não conferem");
 
-            if (_usuarioRepositorio.getUsuarioEmail(txtEmail.Text) != null)
-                throw new Exception("Email já está sendo utilizado");
+            _usuario.id = int.Parse(txtID.Text);
 
-            _usuario.id          = int.Parse(txtID.Text);
+            var usuariotemp = _usuarioRepositorio.getUsuarioEmail(txtEmail.Text);
+            if (usuariotemp != null && usuariotemp.id != _usuario.id)
+                throw new Exception("Email já está sendo utilizado");
+            
             _usuario.nome        = txtNome.Text;
             _usuario.cpf         = txtCpf.Text;
             _usuario.telefone    = txtTelefone.Text;

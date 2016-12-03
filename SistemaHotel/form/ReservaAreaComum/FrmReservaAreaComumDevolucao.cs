@@ -15,13 +15,15 @@ namespace SistemaHotel.form.ReservaAreaComum
     {
         private Operacao _op;
         private model.SistemaHotelContext _context;
+        private model.Usuario _usuarioLogado;
         private model.Reserva_area_comum _reserva_area_comum;
         private repositorio.Reserva_area_comumRepositorio _reserva_area_comumRepositorio;
 
-        public FrmReservaAreaComumDevolucao(Operacao op, model.SistemaHotelContext context, model.Reserva_area_comum reserva_area_comum)
+        public FrmReservaAreaComumDevolucao(Operacao op, model.SistemaHotelContext context, model.Usuario usuarioLogado, model.Reserva_area_comum reserva_area_comum)
         {
             _op = op;
             _context = context;
+            _usuarioLogado = usuarioLogado;
             _reserva_area_comum = reserva_area_comum;
             _reserva_area_comumRepositorio = new repositorio.Reserva_area_comumRepositorio(_context);
             InitializeComponent();
@@ -53,6 +55,13 @@ namespace SistemaHotel.form.ReservaAreaComum
 
         private void FrmReservaAreaComumDevolucao_Load(object sender, EventArgs e)
         {
+            var permissoes = repositorio.PermissaoRepositorio.getPermissaoFuncionalidadeNome(_context, _usuarioLogado, Name);
+            if (permissoes.editEspecial != util.SimNao.SIM && permissoes.editSupervisor != util.SimNao.SIM)
+            {
+                MessageBox.Show("Usuário não tem permissão para devolver áreas comuns", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Dispose();
+                return;
+            }
             preencheForm();
         }
 

@@ -133,7 +133,7 @@ namespace SistemaHotel.form.Permissao
             _permissoes = repositorio.PermissaoRepositorio.getPermissaoFuncionalidadeNome(_context, _usuarioLogado, Name);
             if (_permissoes == null || (_permissoes.editConsultar == util.SimNao.NAO && _permissoes.editSupervisor == util.SimNao.NAO))
             {
-                MessageBox.Show("Usuário não tem permissão para consultar registros", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Usuário não tem permissão para consultar informações das permissões", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Dispose();
                 return;
             }
@@ -152,11 +152,6 @@ namespace SistemaHotel.form.Permissao
             }
 
             atualizaLista();
-            
-            if (_permissoes.editSupervisor == util.SimNao.NAO || _funcionalidadeEntrada != null)
-            {
-                btnPermissao.Visible = false;
-            }
         }
 
         private void atualizaLista()
