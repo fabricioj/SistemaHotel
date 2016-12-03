@@ -83,7 +83,7 @@ namespace SistemaHotel.form.Usuario
                     lblExcluir.Visible = true;
 
                 if (_op == Operacao.Consulta)
-                    btnConfirmar.Visible = true;    
+                    btnConfirmar.Enabled = false;    
             }          
                     
 

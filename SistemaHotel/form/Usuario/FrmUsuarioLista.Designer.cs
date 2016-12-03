@@ -56,7 +56,7 @@
             this.pnlBotoes.Controls.Add(this.btnInserir);
             this.pnlBotoes.Controls.Add(this.btnPesquisar);
             this.pnlBotoes.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlBotoes.Location = new System.Drawing.Point(564, 0);
+            this.pnlBotoes.Location = new System.Drawing.Point(457, 0);
             this.pnlBotoes.Name = "pnlBotoes";
             this.pnlBotoes.Size = new System.Drawing.Size(138, 276);
             this.pnlBotoes.TabIndex = 11;
@@ -129,7 +129,7 @@
             this.pnlInformacoes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlInformacoes.Location = new System.Drawing.Point(0, 0);
             this.pnlInformacoes.Name = "pnlInformacoes";
-            this.pnlInformacoes.Size = new System.Drawing.Size(564, 276);
+            this.pnlInformacoes.Size = new System.Drawing.Size(457, 276);
             this.pnlInformacoes.TabIndex = 12;
             // 
             // gridRegistros
@@ -137,7 +137,8 @@
             this.gridRegistros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridRegistros.Location = new System.Drawing.Point(9, 78);
             this.gridRegistros.Name = "gridRegistros";
-            this.gridRegistros.Size = new System.Drawing.Size(543, 184);
+            this.gridRegistros.ReadOnly = true;
+            this.gridRegistros.Size = new System.Drawing.Size(436, 184);
             this.gridRegistros.TabIndex = 12;
             // 
             // pnlFiltros
@@ -147,7 +148,7 @@
             this.pnlFiltros.Controls.Add(this.lblNome);
             this.pnlFiltros.Location = new System.Drawing.Point(9, 10);
             this.pnlFiltros.Name = "pnlFiltros";
-            this.pnlFiltros.Size = new System.Drawing.Size(543, 62);
+            this.pnlFiltros.Size = new System.Drawing.Size(436, 62);
             this.pnlFiltros.TabIndex = 11;
             // 
             // txtNome
@@ -170,7 +171,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(702, 276);
+            this.ClientSize = new System.Drawing.Size(595, 276);
             this.Controls.Add(this.pnlInformacoes);
             this.Controls.Add(this.pnlBotoes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

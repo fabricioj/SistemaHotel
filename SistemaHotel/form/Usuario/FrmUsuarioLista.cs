@@ -68,7 +68,7 @@ namespace SistemaHotel.form.Usuario
             else {
                 if (gridRegistros.CurrentRow == null)
                 {
-                    MessageBox.Show("Nenhum usuario selecionado", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Nenhum registro selecionado", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else {
                     var usuario = (model.Usuario)gridRegistros.CurrentRow.DataBoundItem;
@@ -89,6 +89,10 @@ namespace SistemaHotel.form.Usuario
             else {
                 if (gridRegistros.CurrentRow == null)
                 {
+                    MessageBox.Show("Nenhum registro selecionado", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
                     var usuario = (model.Usuario)gridRegistros.CurrentRow.DataBoundItem;
                     FrmUsuarioFormulario formulario = new FrmUsuarioFormulario(Operacao.Exclusao, _context, usuario);
                     formulario.ShowDialog();
@@ -101,7 +105,7 @@ namespace SistemaHotel.form.Usuario
         {
             if (gridRegistros.CurrentRow == null)
             {
-                MessageBox.Show("Nenhum usuario selecionado", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Nenhum registro selecionado", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else {
                 var usuario = (model.Usuario)gridRegistros.CurrentRow.DataBoundItem;
